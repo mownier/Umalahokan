@@ -16,6 +16,7 @@
 		B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25351E3F0C31009801F0 /* AppDelegate.swift */; };
 		B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25371E3F0C31009801F0 /* Umalahokan.xcdatamodeld */; };
 		B9FA25431E3F0CC6009801F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25411E3F0CC6009801F0 /* ViewController.swift */; };
+		B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25441E3F0CF1009801F0 /* RecentChatViewController.swift */; };
 		CA64D2EE2AEFD14331716AF1 /* Pods_UmalahokanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2459AB3591528198FD3F7752 /* Pods_UmalahokanTests.framework */; };
 		E97EEF66F8A8EEDE3B3CD77A /* Pods_Umalahokan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540B994954F58692428A6E2F /* Pods_Umalahokan.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		B9FA25351E3F0C31009801F0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9FA25381E3F0C31009801F0 /* Umalahokan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Umalahokan.xcdatamodel; sourceTree = "<group>"; };
 		B9FA25411E3F0CC6009801F0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9FA25441E3F0CF1009801F0 /* RecentChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatViewController.swift; sourceTree = "<group>"; };
 		C8FACF9A1FB6B8D13215A085 /* Pods-UmalahokanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmalahokanUITests/Pods-UmalahokanUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,6 +222,7 @@
 		B9FA25421E3F0CC6009801F0 /* Recent Chat */ = {
 			isa = PBXGroup;
 			children = (
+				B9FA25441E3F0CF1009801F0 /* RecentChatViewController.swift */,
 			);
 			path = "Recent Chat";
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9FA25431E3F0CC6009801F0 /* ViewController.swift in Sources */,
+				B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
 				B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */,
 			);
@@ -585,6 +589,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -635,6 +640,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -664,6 +670,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 82B69C16C676C8100B11E9BB /* Pods-Umalahokan.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
 				INFOPLIST_FILE = Umalahokan/Info.plist;
@@ -678,6 +685,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E706696618A9188E5C554DB /* Pods-Umalahokan.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
 				INFOPLIST_FILE = Umalahokan/Info.plist;
