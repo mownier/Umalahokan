@@ -15,22 +15,34 @@ class MessageWriterViewController: UIViewController {
     override func loadView() {
         var rect = CGRect.zero
         rect.size = UIScreen.main.bounds.size
+        
         messageWriterView = MessageWriterView(frame: rect)
         messageWriterView.header.delegate = self
-        
+        messageWriterView.tableView.dataSource = self
+        messageWriterView.tableView.rowHeight = 52
+        messageWriterView.tableView.separatorStyle = .none
 
+        RecipientCell.register(in: messageWriterView.tableView)
         
         view = messageWriterView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
-    }
-    
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+}
+
+extension MessageWriterViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = RecipientCell.dequeue(from: tableView)!
+        cell.displayNameLabel.text = "Jana Rychla"
+        cell.selectionStyle = .none
+        return cell
     }
 }
 
