@@ -102,6 +102,7 @@ class MessageWriterHeader: UIView {
         inputTextField.tintColor = UIColor.white
         inputTextField.textColor = UIColor.white
         inputTextField.font = UIFont(name: "AvenirNext-Medium", size: 12)
+        inputTextField.keyboardAppearance = .dark
         
         addSubview(backgroundView)
         addSubview(closeButton)
