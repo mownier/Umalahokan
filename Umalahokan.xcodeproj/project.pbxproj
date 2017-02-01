@@ -19,6 +19,7 @@
 		B9BDC7981E41A478001805D8 /* MessageWriterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */; };
 		B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */; };
 		B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */; };
+		B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */; };
 		B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25351E3F0C31009801F0 /* AppDelegate.swift */; };
 		B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25371E3F0C31009801F0 /* Umalahokan.xcdatamodeld */; };
 		B9FA25431E3F0CC6009801F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25411E3F0CC6009801F0 /* ViewController.swift */; };
@@ -70,6 +71,7 @@
 		B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterViewController.swift; sourceTree = "<group>"; };
 		B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterView.swift; sourceTree = "<group>"; };
 		B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterHeader.swift; sourceTree = "<group>"; };
+		B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientCell.swift; sourceTree = "<group>"; };
 		B9FA25351E3F0C31009801F0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9FA25381E3F0C31009801F0 /* Umalahokan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Umalahokan.xcdatamodel; sourceTree = "<group>"; };
 		B9FA25411E3F0CC6009801F0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */,
 				B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */,
 				B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */,
+				B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */,
 			);
 			path = "Message Writer";
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */,
 				B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */,
 				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
+				B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
 				B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */,
 				B9BDC7981E41A478001805D8 /* MessageWriterViewController.swift in Sources */,
