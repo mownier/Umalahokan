@@ -13,6 +13,7 @@
 		B9086EBB1E3EEFFB003AECC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9086EB91E3EEFFB003AECC4 /* LaunchScreen.storyboard */; };
 		B9086EC61E3EEFFB003AECC4 /* UmalahokanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9086EC51E3EEFFB003AECC4 /* UmalahokanTests.swift */; };
 		B9086ED11E3EEFFB003AECC4 /* UmalahokanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9086ED01E3EEFFB003AECC4 /* UmalahokanUITests.swift */; };
+		B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D11D41E40694C003A681B /* RecentChatCell.swift */; };
 		B9355E071E40454400086815 /* RecentChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E061E40454400086815 /* RecentChatView.swift */; };
 		B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E081E40457D00086815 /* RecentChatTopBar.swift */; };
 		B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25351E3F0C31009801F0 /* AppDelegate.swift */; };
@@ -60,6 +61,7 @@
 		B9086ECC1E3EEFFB003AECC4 /* UmalahokanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UmalahokanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9086ED01E3EEFFB003AECC4 /* UmalahokanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmalahokanUITests.swift; sourceTree = "<group>"; };
 		B9086ED21E3EEFFB003AECC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B90D11D41E40694C003A681B /* RecentChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatCell.swift; sourceTree = "<group>"; };
 		B9355E061E40454400086815 /* RecentChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatView.swift; sourceTree = "<group>"; };
 		B9355E081E40457D00086815 /* RecentChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatTopBar.swift; sourceTree = "<group>"; };
 		B9FA25351E3F0C31009801F0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				B9355E081E40457D00086815 /* RecentChatTopBar.swift */,
 				B9355E061E40454400086815 /* RecentChatView.swift */,
 				B9FA25441E3F0CF1009801F0 /* RecentChatViewController.swift */,
+				B90D11D41E40694C003A681B /* RecentChatCell.swift */,
 			);
 			path = "Recent Chat";
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				B9355E071E40454400086815 /* RecentChatView.swift in Sources */,
 				B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */,
 				B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */,
+				B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
 				B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */,
 			);
