@@ -16,6 +16,7 @@ class RecentChatViewController: UIViewController {
         var rect = CGRect.zero
         rect.size = UIScreen.main.bounds.size
         recentChatView = RecentChatView(frame: rect)
+        recentChatView.delegate = self
         recentChatView.topBar.delegate = self
         recentChatView.tableView.dataSource = self
         recentChatView.tableView.rowHeight = 80
@@ -56,5 +57,13 @@ extension RecentChatViewController: RecentChatTopBarDelegate {
     
     func didTapLeft() {
         print("left")
+    }
+}
+
+extension RecentChatViewController: RecentChatViewDelegate {
+    
+    func didTapComposer() {
+        let vc = MessageWriterViewController()
+        present(vc, animated: true, completion: nil)
     }
 }
