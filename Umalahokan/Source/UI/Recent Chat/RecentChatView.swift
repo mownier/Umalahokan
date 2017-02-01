@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol RecentChatViewDelegate: class {
+    
+    func didTapComposer()
+}
+
 class RecentChatView: UIView {
 
+    weak var delegate: RecentChatViewDelegate?
+    
     var topBar: RecentChatTopBar!
     var tableView: UITableView!
     var composerButton: UIButton!
@@ -67,9 +74,14 @@ class RecentChatView: UIView {
         composerButton.layer.shadowRadius = 2
         composerButton.layer.shadowOpacity = 0.5
         composerButton.layer.masksToBounds = false
+        composerButton.addTarget(self, action: #selector(self.didTapComposer), for: .touchUpInside)
         
         addSubview(topBar)
         addSubview(tableView)
         addSubview(composerButton)
+    }
+    
+    func didTapComposer() {
+        delegate?.didTapComposer()
     }
 }
