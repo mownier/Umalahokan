@@ -18,6 +18,7 @@ class MessageWriterViewController: UIViewController {
         
         messageWriterView = MessageWriterView(frame: rect)
         messageWriterView.header.delegate = self
+        messageWriterView.tableView.delegate = self
         messageWriterView.tableView.dataSource = self
         messageWriterView.tableView.rowHeight = 52
         messageWriterView.tableView.separatorStyle = .none
@@ -43,6 +44,13 @@ extension MessageWriterViewController: UITableViewDataSource {
         cell.displayNameLabel.text = "Jana Rychla"
         cell.selectionStyle = .none
         return cell
+    }
+}
+
+extension MessageWriterViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        view.endEditing(true)
     }
 }
 
