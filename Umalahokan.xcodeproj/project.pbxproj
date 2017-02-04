@@ -20,6 +20,8 @@
 		B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */; };
 		B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */; };
 		B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */; };
+		B9D3CC341E457A6C0082098A /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3CC331E457A6C0082098A /* Animator.swift */; };
+		B9D3CC361E457B1E0082098A /* MessageWriterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3CC351E457B1E0082098A /* MessageWriterAnimator.swift */; };
 		B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25351E3F0C31009801F0 /* AppDelegate.swift */; };
 		B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25371E3F0C31009801F0 /* Umalahokan.xcdatamodeld */; };
 		B9FA25431E3F0CC6009801F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25411E3F0CC6009801F0 /* ViewController.swift */; };
@@ -66,12 +68,15 @@
 		B9086ED01E3EEFFB003AECC4 /* UmalahokanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmalahokanUITests.swift; sourceTree = "<group>"; };
 		B9086ED21E3EEFFB003AECC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B90D11D41E40694C003A681B /* RecentChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatCell.swift; sourceTree = "<group>"; };
+		B90D36971E431AB000586201 /* park.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = park.playground; sourceTree = "<group>"; };
 		B9355E061E40454400086815 /* RecentChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatView.swift; sourceTree = "<group>"; };
 		B9355E081E40457D00086815 /* RecentChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatTopBar.swift; sourceTree = "<group>"; };
 		B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterViewController.swift; sourceTree = "<group>"; };
 		B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterView.swift; sourceTree = "<group>"; };
 		B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterHeader.swift; sourceTree = "<group>"; };
 		B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientCell.swift; sourceTree = "<group>"; };
+		B9D3CC331E457A6C0082098A /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
+		B9D3CC351E457B1E0082098A /* MessageWriterAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterAnimator.swift; sourceTree = "<group>"; };
 		B9FA25351E3F0C31009801F0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9FA25381E3F0C31009801F0 /* Umalahokan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Umalahokan.xcdatamodel; sourceTree = "<group>"; };
 		B9FA25411E3F0CC6009801F0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +138,7 @@
 		B9086EA11E3EEFFA003AECC4 = {
 			isa = PBXGroup;
 			children = (
+				B90D36971E431AB000586201 /* park.playground */,
 				B9086EAC1E3EEFFB003AECC4 /* Umalahokan */,
 				B9086EC41E3EEFFB003AECC4 /* UmalahokanTests */,
 				B9086ECF1E3EEFFB003AECC4 /* UmalahokanUITests */,
@@ -190,9 +196,19 @@
 			path = "Message Writer";
 			sourceTree = "<group>";
 		};
+		B9D3CC321E457A570082098A /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				B9D3CC331E457A6C0082098A /* Animator.swift */,
+				B9D3CC351E457B1E0082098A /* MessageWriterAnimator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
 		B9FA25331E3F0C31009801F0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B9D3CC321E457A570082098A /* Animator */,
 				B9FA25341E3F0C31009801F0 /* Application */,
 				B9FA25361E3F0C31009801F0 /* Core Data */,
 				B9FA25391E3F0C31009801F0 /* Resources */,
@@ -540,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D3CC341E457A6C0082098A /* Animator.swift in Sources */,
 				B9FA25431E3F0CC6009801F0 /* ViewController.swift in Sources */,
 				B9355E071E40454400086815 /* RecentChatView.swift in Sources */,
 				B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */,
@@ -547,6 +564,7 @@
 				B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */,
 				B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */,
 				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
+				B9D3CC361E457B1E0082098A /* MessageWriterAnimator.swift in Sources */,
 				B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
 				B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */,
