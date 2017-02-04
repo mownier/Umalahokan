@@ -63,7 +63,19 @@ extension RecentChatViewController: RecentChatTopBarDelegate {
 extension RecentChatViewController: RecentChatViewDelegate {
     
     func didTapComposer() {
-        let vc = MessageWriterViewController()
-        present(vc, animated: true, completion: nil)
+        // let vc = MessageWriterViewController()
+        // present(vc, animated: true, completion: nil)
+        
+        let target = MessageWriterView()
+        target.frame = recentChatView.composerButton.frame
+        target.clipsToBounds = true
+        target.layer.cornerRadius = target.frame.width / 2
+        target.header.closeButton.isHidden = true
+        target.header.titleLabel.isHidden = true
+        
+        view.addSubview(target)
+        
+        let animator = MessageWriterAnimator(target: target)
+        animator.play()
     }
 }
