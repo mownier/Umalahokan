@@ -77,8 +77,15 @@ class MessageWriterHeader: UIView {
     private func initSetup() {
         backgroundColor = UIColor.white
         
-        backgroundView = UIImageView(image: #imageLiteral(resourceName: "background-header"))
-        backgroundView.contentMode = .scaleAspectFill
+        // backgroundView = UIImageView(image: #imageLiteral(resourceName: "background-header"))
+        // backgroundView.contentMode = .scaleAspectFill
+        backgroundView = UIImageView()
+        backgroundView.backgroundColor = UIColor(
+            red: 142/255,
+            green: 135/255,
+            blue: 251/255,
+            alpha: 1.0
+        )
         
         closeButton = UIButton()
         closeButton.tintColor = UIColor.white

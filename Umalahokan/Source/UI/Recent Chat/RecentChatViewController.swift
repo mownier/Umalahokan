@@ -63,19 +63,26 @@ extension RecentChatViewController: RecentChatTopBarDelegate {
 extension RecentChatViewController: RecentChatViewDelegate {
     
     func didTapComposer() {
-        // let vc = MessageWriterViewController()
-        // present(vc, animated: true, completion: nil)
+        let vc = MessageWriterViewController()
+        vc.transitioningDelegate = self
+        vc.modalPresentationStyle = .custom
+        present(vc, animated: true, completion: nil)
+    }
+}
+
+extension RecentChatViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        recentChatView.composerButton.isHidden = true
         
-        let target = MessageWriterView()
-        target.frame = recentChatView.composerButton.frame
-        target.clipsToBounds = true
-        target.layer.cornerRadius = target.frame.width / 2
-        target.header.closeButton.isHidden = true
-        target.header.titleLabel.isHidden = true
+        let transition = MessageWriterTransition()
+        transition.startingFrame = recentChatView.composerButton.frame
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        recentChatView.composerButton.isHidden = false
         
-        view.addSubview(target)
-        
-        let animator = MessageWriterTransition(target: target)
-        animator.play()
+        return nil
     }
 }
