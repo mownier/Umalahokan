@@ -28,7 +28,7 @@ class MessageWriterTransition: Transition {
     }
     
     func setupQueue() {
-        var anim = Animation(executor: animatePosition, duration: 0.5)
+        var anim = Animation(duration: 0.5, executor: animatePosition)
         queue.append(anim)
         
         anim.executor = animateCornerRadius

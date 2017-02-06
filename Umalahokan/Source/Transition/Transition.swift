@@ -36,6 +36,8 @@ extension Transition {
         let anim = queue.removeFirst()
         UIView.animate(
             withDuration: anim.duration,
+            delay: anim.delay,
+            options: anim.options,
             animations: anim.executor) { completed in
                 if self.queue.count == 0 {
                     self.isPlaying = false
@@ -51,4 +53,11 @@ struct Animation {
     
     var executor: () -> Void
     var duration: TimeInterval
+    var delay: TimeInterval = 0
+    var options: UIViewAnimationOptions = [.curveEaseInOut]
+    
+    init(duration: TimeInterval, executor: @escaping () -> Void) {
+        self.duration = duration
+        self.executor = executor
+    }
 }

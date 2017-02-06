@@ -75,7 +75,7 @@ extension RecentChatViewController: RecentChatViewDelegate {
         
         view.addSubview(target)
         
-        let animator = MessageWriterAnimator(target: target)
+        let animator = MessageWriterTransition(target: target)
         animator.play()
     }
 }
