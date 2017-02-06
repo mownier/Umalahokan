@@ -1,5 +1,5 @@
 //
-//  MessageWriterAnimator.swift
+//  MessageWriterTransition.swift
 //  Umalahokan
 //
 //  Created by Mounir Ybanez on 04/02/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageWriterAnimator: Animator {
+class MessageWriterTransition: Transition {
 
     typealias Target = MessageWriterView
     

@@ -1,5 +1,5 @@
 //
-//  Animator.swift
+//  Transition.swift
 //  Umalahokan
 //
 //  Created by Mounir Ybanez on 04/02/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol Animator: class {
+protocol Transition: class {
 
     var target: Target! { set get }
     var duration: TimeInterval { set get }
@@ -24,7 +24,7 @@ protocol Animator: class {
     associatedtype Target
 }
 
-extension Animator {
+extension Transition {
     
     func play() {        
         if queue.count == 0 && !isPlaying {
