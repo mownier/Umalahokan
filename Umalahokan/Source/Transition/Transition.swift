@@ -39,18 +39,24 @@ extension Transition {
 
 protocol SequentialTransition: Transition {
     
-    var sequences: [TransitionSequence] { set get }
+    var sequences: [TransitionSequence]! { get }
     
-    func setupSequences()
-    func playSequences(_ next: @escaping () -> Void)
+    func playSequences(_ index: Int, _ next: @escaping () -> Void)
 }
 
 extension SequentialTransition {
     
+    var duration: TimeInterval {
+        var time: TimeInterval = 0
+        for seq in sequences {
+            time += seq.duration
+        }
+        return time
+    }
+    
     func play(_ completion: @escaping () -> Void) {
-        setupSequences()
         prelude {
-            self.playSequences {
+            self.playSequences(0) {
                 self.epilogue {
                     completion()
                 }
@@ -58,15 +64,15 @@ extension SequentialTransition {
         }
     }
     
-    func playSequences(_ end: @escaping () -> Void) {
-        guard sequences.count > 0 else {
+    func playSequences(_ index: Int, _ end: @escaping () -> Void) {
+        guard index > -1, index < sequences.count else {
             end()
             return
         }
         
-        let sequence = sequences.removeFirst()
+        let sequence = sequences[index]
         sequence.perform {
-            self.playSequences(end)
+            self.playSequences(index + 1, end)
         }
     }
 }

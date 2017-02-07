@@ -10,16 +10,26 @@ import UIKit
 
 class MessageWriterPresentation: NSObject, SequentialTransition {
     
-    private(set) var duration: TimeInterval = 1.75
-    private(set) var fromViewController: UIViewController!
-    private(set) var toViewController: UIViewController!
-    private(set) var context: UIViewControllerContextTransitioning!
+    fileprivate(set) var fromViewController: UIViewController!
+    fileprivate(set) var toViewController: UIViewController!
+    fileprivate(set) var context: UIViewControllerContextTransitioning!
+    fileprivate(set) var sequences: [TransitionSequence]!
     
     fileprivate var composerButton: UIButton!
     fileprivate var presented: MessageWriterView!
     
     var startingFrame: CGRect = .zero
-    var sequences = [TransitionSequence]()
+    
+    override init() {
+        super.init()
+        
+        let seq001 = TransitionSequence(duration: 0.25, executor: animateSeq001)
+        let seq002 = TransitionSequence(duration: 0.50, executor: animateSeq002)
+        let seq003 = TransitionSequence(duration: 0.50, executor: animateSeq003)
+        let seq004 = TransitionSequence(duration: 0.50, executor: animateSeq004)
+        
+        sequences = [seq001, seq002, seq003, seq004]
+    }
     
     func setup(for context: UIViewControllerContextTransitioning) {
         self.context = context
@@ -67,25 +77,6 @@ class MessageWriterPresentation: NSObject, SequentialTransition {
         presented.insertSubview(composerButton, at: 0)
         
         container.addSubview(presented)
-    }
-    
-    func setupSequences() {
-        sequences.removeAll()
-        
-        var sequence = TransitionSequence(duration: 0.25, executor: animateSeq001)
-        sequences.append(sequence)
-        
-        sequence.duration = 0.5
-        sequence.executor = animateSeq002
-        sequences.append(sequence)
-        
-        sequence.duration = 0.5
-        sequence.executor = animateSeq003
-        sequences.append(sequence)
-        
-        sequence.duration = 0.5
-        sequence.executor = animateSeq004
-        sequences.append(sequence)
     }
 }
 
