@@ -9,8 +9,7 @@
 import UIKit
 
 protocol Transition: class {
-
-    var duration: TimeInterval { set get }
+    
 }
 
 struct Animation {

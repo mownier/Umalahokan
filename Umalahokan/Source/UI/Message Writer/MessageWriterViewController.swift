@@ -28,6 +28,12 @@ class MessageWriterViewController: UIViewController {
         view = messageWriterView
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        messageWriterView.header.inputTextField.becomeFirstResponder()
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }

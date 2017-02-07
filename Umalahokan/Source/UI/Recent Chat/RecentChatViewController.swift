@@ -75,14 +75,20 @@ extension RecentChatViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         recentChatView.composerButton.isHidden = true
         
-        let transition = MessageWriterTransition()
+        let transition = MessageWriterPresentation()
         transition.startingFrame = recentChatView.composerButton.frame
         return transition
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        recentChatView.composerButton.isHidden = false
+//        recentChatView.composerButton.isHidden = false
+//        
+//        let transition = MessageWriterDismissal()
+//        transition.endingFrame = recentChatView.composerButton.frame
+//        
+//        return transition
         
+        recentChatView.composerButton.isHidden = false
         return nil
     }
 }
