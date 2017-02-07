@@ -36,3 +36,52 @@ extension Transition {
         end()
     }
 }
+
+protocol SequentialTransition: Transition {
+    
+    var sequences: [TransitionSequence] { set get }
+    
+    func setupSequences()
+    func playSequences(_ next: @escaping () -> Void)
+}
+
+extension SequentialTransition {
+    
+    func play(_ completion: @escaping () -> Void) {
+        setupSequences()
+        prelude {
+            self.playSequences {
+                self.epilogue {
+                    completion()
+                }
+            }
+        }
+    }
+    
+    func playSequences(_ end: @escaping () -> Void) {
+        guard sequences.count > 0 else {
+            end()
+            return
+        }
+        
+        let sequence = sequences.removeFirst()
+        sequence.perform {
+            self.playSequences(end)
+        }
+    }
+}
+
+struct TransitionSequence {
+    
+    var executor: (TimeInterval, @escaping () -> Void) -> Void
+    var duration: TimeInterval
+    
+    init(duration: TimeInterval, executor: @escaping (TimeInterval, @escaping () -> Void) -> Void) {
+        self.duration = duration
+        self.executor = executor
+    }
+    
+    func perform(_ next: @escaping () -> Void) {
+        executor(duration, next)
+    }
+}

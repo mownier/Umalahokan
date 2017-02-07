@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageWriterPresentation: NSObject, Transition {
+class MessageWriterPresentation: NSObject, SequentialTransition {
     
     private(set) var duration: TimeInterval = 1.75
     private(set) var fromViewController: UIViewController!
@@ -19,6 +19,7 @@ class MessageWriterPresentation: NSObject, Transition {
     fileprivate var presented: MessageWriterView!
     
     var startingFrame: CGRect = .zero
+    var sequences = [TransitionSequence]()
     
     func setup(for context: UIViewControllerContextTransitioning) {
         self.context = context
@@ -68,20 +69,23 @@ class MessageWriterPresentation: NSObject, Transition {
         container.addSubview(presented)
     }
     
-    func play(_ completion: @escaping () -> Void) {
-        prelude {
-            self.animateSeq001 {
-                self.animateSeq002 {
-                    self.animateSeq003 {
-                        self.animateSeq004 {
-                            self.epilogue {
-                                completion()
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    func setupSequences() {
+        sequences.removeAll()
+        
+        var sequence = TransitionSequence(duration: 0.25, executor: animateSeq001)
+        sequences.append(sequence)
+        
+        sequence.duration = 0.5
+        sequence.executor = animateSeq002
+        sequences.append(sequence)
+        
+        sequence.duration = 0.5
+        sequence.executor = animateSeq003
+        sequences.append(sequence)
+        
+        sequence.duration = 0.5
+        sequence.executor = animateSeq004
+        sequences.append(sequence)
     }
 }
 
@@ -99,7 +103,7 @@ extension MessageWriterPresentation: UIViewControllerAnimatedTransitioning {
 
 extension MessageWriterPresentation {
     
-    fileprivate func animateSeq001(_ next: @escaping () -> Void) {
+    fileprivate func animateSeq001(_ duration: TimeInterval, _ next: @escaping () -> Void) {
         UIView.animate(withDuration: 0.25, animations: {
             self.presented.backgroundColor = UIColor.white
             
@@ -112,8 +116,8 @@ extension MessageWriterPresentation {
         }
     }
     
-    fileprivate func animateSeq002(_ next: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.5, animations: {
+    fileprivate func animateSeq002(_ duration: TimeInterval, _ next: @escaping () -> Void) {
+        UIView.animate(withDuration: duration, animations: {
             let anim = CABasicAnimation(keyPath: "cornerRadius")
             anim.fromValue = self.composerButton.layer.cornerRadius
             anim.toValue = 0
@@ -125,10 +129,10 @@ extension MessageWriterPresentation {
         }
     }
     
-    fileprivate func animateSeq003(_ next: @escaping () -> Void) {
+    fileprivate func animateSeq003(_ duration: TimeInterval, _ next: @escaping () -> Void) {
         presented.header.isHidden = false
         
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: duration, animations: {
             self.presented.header.closeButton.alpha = 1
             self.presented.header.titleLabel.alpha = 1
             
@@ -141,11 +145,11 @@ extension MessageWriterPresentation {
         }
     }
     
-    fileprivate func animateSeq004(_ next: @escaping () -> Void) {
+    fileprivate func animateSeq004(_ duration: TimeInterval, _ next: @escaping () -> Void) {
         composerButton.removeFromSuperview()
         presented.header.backgroundView.alpha = 1
         
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: duration, animations: {
             self.presented.header.inputBackground.alpha = 1
             self.presented.header.inputLabel.alpha = 1
             self.presented.header.inputTextField.alpha = 1
