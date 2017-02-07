@@ -17,7 +17,7 @@
 		B9355E071E40454400086815 /* RecentChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E061E40454400086815 /* RecentChatView.swift */; };
 		B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E081E40457D00086815 /* RecentChatTopBar.swift */; };
 		B9BC0DD01E48288E00054442 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC0DCE1E48288E00054442 /* Transition.swift */; };
-		B9BC0DD11E48288E00054442 /* MessageWriterTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC0DCF1E48288E00054442 /* MessageWriterTransition.swift */; };
+		B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */; };
 		B9BDC7981E41A478001805D8 /* MessageWriterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */; };
 		B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */; };
 		B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */; };
@@ -72,7 +72,7 @@
 		B9355E061E40454400086815 /* RecentChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatView.swift; sourceTree = "<group>"; };
 		B9355E081E40457D00086815 /* RecentChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatTopBar.swift; sourceTree = "<group>"; };
 		B9BC0DCE1E48288E00054442 /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
-		B9BC0DCF1E48288E00054442 /* MessageWriterTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterTransition.swift; sourceTree = "<group>"; };
+		B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterPresentation.swift; sourceTree = "<group>"; };
 		B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterViewController.swift; sourceTree = "<group>"; };
 		B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterView.swift; sourceTree = "<group>"; };
 		B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterHeader.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				B9BC0DCE1E48288E00054442 /* Transition.swift */,
-				B9BC0DCF1E48288E00054442 /* MessageWriterTransition.swift */,
+				B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -564,7 +564,7 @@
 				B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */,
 				B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */,
 				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
-				B9BC0DD11E48288E00054442 /* MessageWriterTransition.swift in Sources */,
+				B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */,
 				B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
 				B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */,

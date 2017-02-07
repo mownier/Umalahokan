@@ -9,7 +9,32 @@
 import UIKit
 
 protocol Transition: class {
+
+    var duration: TimeInterval { get }
+    var context: UIViewControllerContextTransitioning! { get }
+    var fromViewController: UIViewController! { get }
+    var toViewController: UIViewController! { get }
     
+    func setup(for context: UIViewControllerContextTransitioning)
+    func play(_ completion: @escaping () -> Void)
+    func prelude(_ next: @escaping () -> Void)
+    func epilogue(_ end: @escaping () -> Void)
+}
+
+extension Transition {
+    
+    func prelude(_ next: @escaping () -> Void) {
+        fromViewController.beginAppearanceTransition(false, animated: true)
+        toViewController.beginAppearanceTransition(true, animated: true)
+        next()
+    }
+    
+    func epilogue(_ end: @escaping () -> Void) {
+        context.completeTransition(true)
+        fromViewController.endAppearanceTransition()
+        toViewController.endAppearanceTransition()
+        end()
+    }
 }
 
 struct Animation {
