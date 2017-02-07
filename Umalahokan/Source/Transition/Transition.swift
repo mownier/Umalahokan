@@ -36,16 +36,3 @@ extension Transition {
         end()
     }
 }
-
-struct Animation {
-    
-    var executor: () -> Void
-    var duration: TimeInterval
-    var delay: TimeInterval = 0
-    var options: UIViewAnimationOptions = [.curveEaseInOut]
-    
-    init(duration: TimeInterval, executor: @escaping () -> Void) {
-        self.duration = duration
-        self.executor = executor
-    }
-}
