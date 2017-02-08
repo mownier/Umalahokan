@@ -81,14 +81,12 @@ extension RecentChatViewController: UIViewControllerTransitioningDelegate {
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        recentChatView.composerButton.isHidden = false
-//        
-//        let transition = MessageWriterDismissal()
-//        transition.endingFrame = recentChatView.composerButton.frame
-//        
-//        return transition
+        let transition = MessageWriterDismissal()
+        transition.endingFrame = recentChatView.composerButton.frame
+        transition.completion = { [unowned self] in
+            self.recentChatView.composerButton.isHidden = false
+        }
         
-        recentChatView.composerButton.isHidden = false
-        return nil
+        return transition
     }
 }
