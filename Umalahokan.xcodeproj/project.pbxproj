@@ -14,6 +14,7 @@
 		B9086EC61E3EEFFB003AECC4 /* UmalahokanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9086EC51E3EEFFB003AECC4 /* UmalahokanTests.swift */; };
 		B9086ED11E3EEFFB003AECC4 /* UmalahokanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9086ED01E3EEFFB003AECC4 /* UmalahokanUITests.swift */; };
 		B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D11D41E40694C003A681B /* RecentChatCell.swift */; };
+		B917922D1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */; };
 		B9355E071E40454400086815 /* RecentChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E061E40454400086815 /* RecentChatView.swift */; };
 		B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E081E40457D00086815 /* RecentChatTopBar.swift */; };
 		B9BC0DD01E48288E00054442 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC0DCE1E48288E00054442 /* Transition.swift */; };
@@ -69,6 +70,7 @@
 		B9086ED21E3EEFFB003AECC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B90D11D41E40694C003A681B /* RecentChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatCell.swift; sourceTree = "<group>"; };
 		B90D36971E431AB000586201 /* park.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = park.playground; sourceTree = "<group>"; };
+		B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterDismissal.swift; sourceTree = "<group>"; };
 		B9355E061E40454400086815 /* RecentChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatView.swift; sourceTree = "<group>"; };
 		B9355E081E40457D00086815 /* RecentChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatTopBar.swift; sourceTree = "<group>"; };
 		B9BC0DCE1E48288E00054442 /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				B9BC0DCE1E48288E00054442 /* Transition.swift */,
 				B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */,
+				B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */,
 				B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */,
 				B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */,
+				B917922D1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift in Sources */,
 				B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */,
 				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
 				B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */,
