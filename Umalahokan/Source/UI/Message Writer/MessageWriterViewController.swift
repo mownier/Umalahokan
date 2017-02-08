@@ -11,6 +11,8 @@ import UIKit
 class MessageWriterViewController: UIViewController {
 
     var messageWriterView: MessageWriterView!
+    var keyboardObserver: NSObjectProtocol?
+    var keyboardHandler = KeyboardHandler()
     
     override func loadView() {
         var rect = CGRect.zero
@@ -25,13 +27,57 @@ class MessageWriterViewController: UIViewController {
 
         RecipientCell.register(in: messageWriterView.tableView)
         
+        messageWriterView.setNeedsLayout()
+        messageWriterView.layoutIfNeeded()
+        
         view = messageWriterView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        keyboardObserver = NotificationCenter.default.addObserver(
+            forName: Notification.Name.UIKeyboardWillChangeFrame,
+            object: nil,
+            queue: nil,
+            using: {  [unowned self] notif in
+                self.keyboardHandler.willMoveUsedView = false
+                self.keyboardHandler.info = notif.userInfo
+                self.keyboardHandler.handle(using: self.messageWriterView.tableView, with: { delta in
+                    switch delta.direction {
+                    case .up:
+                        if delta.height == 0 {
+                            self.messageWriterView.tableView.contentInset.bottom = abs(delta.y)
+                            self.messageWriterView.tableView.scrollIndicatorInsets.bottom = abs(delta.y)
+                            
+                        } else {
+                            self.messageWriterView.tableView.contentInset.bottom += abs(delta.height)
+                            self.messageWriterView.tableView.scrollIndicatorInsets.bottom += abs(delta.height)
+                        }
+                        
+                    case .down:
+                        if delta.height == 0 {
+                            self.messageWriterView.tableView.contentInset.bottom = 0
+                            self.messageWriterView.tableView.scrollIndicatorInsets.bottom = 0
+                            
+                        } else {
+                            self.messageWriterView.tableView.contentInset.bottom -= abs(delta.height)
+                            self.messageWriterView.tableView.scrollIndicatorInsets.bottom -= abs(delta.height)
+                        }
+                        
+                    default:
+                        break
+                    }
+                })
+            })
         
         messageWriterView.header.inputTextField.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.removeObserver(keyboardObserver)
     }
     
     override var prefersStatusBarHidden: Bool {
