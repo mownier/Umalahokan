@@ -56,7 +56,6 @@ extension MessageWriterViewController: UITableViewDataSource {
 extension MessageWriterViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        view.endEditing(true)
     }
 }
 
