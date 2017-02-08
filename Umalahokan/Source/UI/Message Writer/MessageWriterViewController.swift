@@ -63,6 +63,7 @@ extension MessageWriterViewController: UITableViewDelegate {
 extension MessageWriterViewController: MessageWriterHeaderDelegate {
     
     func didTapClose() {
+        view.perform(#selector(UIView.endEditing), with: true, afterDelay: 0.5)
         dismiss(animated: true, completion: nil)
     }
 }
