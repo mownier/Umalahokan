@@ -122,6 +122,9 @@ extension MessageWriterPresentation {
     
     fileprivate func animateSeq003(_ duration: TimeInterval, _ next: @escaping () -> Void) {
         presented.header.isHidden = false
+        presented.tableView.alpha = 1
+        presented.isValidToReload = true
+        presented.tableView.reloadData()
         
         UIView.animate(withDuration: duration, animations: {
             self.presented.header.closeButton.alpha = 1
@@ -144,7 +147,6 @@ extension MessageWriterPresentation {
             self.presented.header.inputBackground.alpha = 1
             self.presented.header.inputLabel.alpha = 1
             self.presented.header.inputTextField.alpha = 1
-            self.presented.tableView.alpha = 1
         }) { _ in
             next()
         }

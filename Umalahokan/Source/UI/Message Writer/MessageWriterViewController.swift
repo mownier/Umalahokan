@@ -14,6 +14,25 @@ class MessageWriterViewController: UIViewController {
     var keyboardObserver: NSObjectProtocol?
     var keyboardHandler = KeyboardHandler()
     
+    struct Contact {
+        
+        var name: String = ""
+        var isOnline: Bool = false
+        var isAnimatable: Bool = false
+    }
+    
+    lazy var contacts: [Contact] = {
+        var data = [Contact]()
+        for _ in 0..<20 {
+            var contact = Contact()
+            contact.name = "Jana Rychla"
+            contact.isAnimatable = true
+            contact.isOnline = arc4random() % 2 == 0 ? false : true
+            data.append(contact)
+        }
+        return data
+    }()
+    
     override func loadView() {
         var rect = CGRect.zero
         rect.size = UIScreen.main.bounds.size
@@ -88,12 +107,14 @@ class MessageWriterViewController: UIViewController {
 extension MessageWriterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return messageWriterView.isValidToReload ? contacts.count : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = RecipientCell.dequeue(from: tableView)!
-        cell.displayNameLabel.text = "Jana Rychla"
+        let contact = contacts[indexPath.row]
+        cell.displayNameLabel.text = contact.name
+        cell.onlineStatusIndicator.isHidden = !contact.isOnline
         cell.selectionStyle = .none
         return cell
     }
@@ -102,6 +123,36 @@ extension MessageWriterViewController: UITableViewDataSource {
 extension MessageWriterViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        var contact = contacts[indexPath.row]
+        
+        guard contact.isAnimatable,
+            let recipientCell = cell as? RecipientCell else {
+            return
+        }
+        
+        recipientCell.avatarImageView.transform = CGAffineTransform(scaleX: 0, y: 0)
+        recipientCell.displayNameLabel.transform = CGAffineTransform(scaleX: 0, y: 0)
+        recipientCell.onlineStatusIndicator.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
+        let indexPaths = tableView.indexPathsForVisibleRows?.sorted(by: { indexPath1, indexPath2 -> Bool in
+            return indexPath1.row < indexPath2.row
+        })
+        let relativeIndex = indexPaths?.index(where: { visibleRowIndexpath -> Bool in
+            return indexPath == visibleRowIndexpath
+        }) ?? 0
+        
+        let delay: TimeInterval = 0.25 + (Double(relativeIndex) / 50.0)
+        UIView.animate(withDuration: 0.5, delay: delay, animations: {
+            recipientCell.avatarImageView.transform = CGAffineTransform.identity
+            recipientCell.displayNameLabel.transform = CGAffineTransform.identity
+            recipientCell.onlineStatusIndicator.transform = CGAffineTransform.identity
+        }) { _ in }
+        
+        contact.isAnimatable = false
+        contacts[indexPath.row] = contact
     }
 }
 

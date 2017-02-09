@@ -12,6 +12,8 @@ class MessageWriterView: UIView {
 
     var header: MessageWriterHeader!
     var tableView: UITableView!
+    var isValidToReload: Bool = false
+    var isInitiallyReloaded: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
