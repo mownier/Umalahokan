@@ -85,7 +85,6 @@ extension MessageWriterDismissal {
             self.presented.header.inputBackground.alpha = 0
             self.presented.header.inputLabel.alpha = 0
             self.presented.header.inputTextField.alpha = 0
-            self.presented.tableView.alpha = 0
         }) { _ in
             next()
         }

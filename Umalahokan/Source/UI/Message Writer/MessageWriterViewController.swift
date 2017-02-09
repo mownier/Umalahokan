@@ -13,6 +13,7 @@ class MessageWriterViewController: UIViewController {
     var messageWriterView: MessageWriterView!
     var keyboardObserver: NSObjectProtocol?
     var keyboardHandler = KeyboardHandler()
+    var isDismissing: Bool = false
     
     struct Contact {
         
@@ -116,6 +117,7 @@ extension MessageWriterViewController: UITableViewDataSource {
         cell.displayNameLabel.text = contact.name
         cell.onlineStatusIndicator.isHidden = !contact.isOnline
         cell.selectionStyle = .none
+        cell.backgroundColor = UIColor.clear
         return cell
     }
 }
@@ -126,39 +128,76 @@ extension MessageWriterViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        var contact = contacts[indexPath.row]
-        
-        guard contact.isAnimatable,
-            let recipientCell = cell as? RecipientCell else {
-            return
-        }
-        
-        recipientCell.avatarImageView.transform = CGAffineTransform(scaleX: 0, y: 0)
-        recipientCell.displayNameLabel.transform = CGAffineTransform(scaleX: 0, y: 0)
-        recipientCell.onlineStatusIndicator.transform = CGAffineTransform(scaleX: 0, y: 0)
+        guard let recipientCell = cell as? RecipientCell else { return }
         
         let indexPaths = tableView.indexPathsForVisibleRows?.sorted(by: { indexPath1, indexPath2 -> Bool in
-            return indexPath1.row < indexPath2.row
+            return isDismissing ? indexPath1.row > indexPath2.row : indexPath1.row < indexPath2.row
         })
         let relativeIndex = indexPaths?.index(where: { visibleRowIndexpath -> Bool in
             return indexPath == visibleRowIndexpath
         }) ?? 0
         
         let delay: TimeInterval = 0.25 + (Double(relativeIndex) / 50.0)
-        UIView.animate(withDuration: 0.5, delay: delay, animations: {
-            recipientCell.avatarImageView.transform = CGAffineTransform.identity
-            recipientCell.displayNameLabel.transform = CGAffineTransform.identity
-            recipientCell.onlineStatusIndicator.transform = CGAffineTransform.identity
-        }) { _ in }
-        
-        contact.isAnimatable = false
-        contacts[indexPath.row] = contact
+        let duration: TimeInterval = 0.5
+
+        if isDismissing {
+            UIView.animate(withDuration: duration, delay: delay, animations: {
+                let animation = CABasicAnimation()
+                animation.keyPath = "transform.scale"
+                animation.toValue = 0
+                animation.duration = CFTimeInterval(duration)
+                animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+                
+                recipientCell.strip.layer.add(animation, forKey: "scaleDown")
+                recipientCell.avatarImageView.layer.add(animation, forKey: "scaleDown")
+                recipientCell.displayNameLabel.layer.add(animation, forKey: "scaleDown")
+                recipientCell.onlineStatusIndicator.layer.add(animation, forKey: "scaleDown")
+                
+                recipientCell.strip.alpha = 0
+                recipientCell.avatarImageView.alpha = 0
+                recipientCell.displayNameLabel.alpha = 0
+                recipientCell.onlineStatusIndicator.alpha = 0
+            }) { _ in
+                recipientCell.isHidden = true
+            }
+            
+            
+        } else {
+            var contact = contacts[indexPath.row]
+            
+            guard contact.isAnimatable else { return }
+            
+            let from: CGAffineTransform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+            let to: CGAffineTransform = CGAffineTransform.identity
+            
+            recipientCell.avatarImageView.transform = from
+            recipientCell.displayNameLabel.transform = from
+            recipientCell.onlineStatusIndicator.transform = from
+            recipientCell.strip.transform = from
+            
+            UIView.animate(withDuration: duration, delay: delay, animations: {
+                recipientCell.avatarImageView.transform = to
+                recipientCell.displayNameLabel.transform = to
+                recipientCell.onlineStatusIndicator.transform = to
+                recipientCell.strip.transform = to
+            }) { _ in }
+            
+            contact.isAnimatable = false
+            contacts[indexPath.row] = contact
+        }
     }
 }
 
 extension MessageWriterViewController: MessageWriterHeaderDelegate {
     
     func didTapClose() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        messageWriterView.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .top)
+        
+        isDismissing = true
+        messageWriterView.tableView.backgroundColor = UIColor.clear
+        messageWriterView.tableView.reloadData()
+        
         view.perform(#selector(UIView.endEditing), with: true, afterDelay: 0.5)
         dismiss(animated: true, completion: nil)
     }
