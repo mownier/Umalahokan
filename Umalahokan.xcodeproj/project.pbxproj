@@ -224,12 +224,12 @@
 		B9FA25331E3F0C31009801F0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B917922E1E4AECD7007F1BB8 /* Util */,
-				B9BC0DCD1E48288E00054442 /* Transition */,
 				B9FA25341E3F0C31009801F0 /* Application */,
 				B9FA25361E3F0C31009801F0 /* Core Data */,
 				B9FA25391E3F0C31009801F0 /* Resources */,
+				B9BC0DCD1E48288E00054442 /* Transition */,
 				B9FA253F1E3F0CC6009801F0 /* UI */,
+				B917922E1E4AECD7007F1BB8 /* Util */,
 			);
 			path = Source;
 			sourceTree = "<group>";
