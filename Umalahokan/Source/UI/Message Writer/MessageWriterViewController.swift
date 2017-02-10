@@ -76,15 +76,17 @@ class MessageWriterViewController: UIViewController {
                         }
                         
                     case .down:
-                        if delta.height == 0 {
-                            self.messageWriterView.tableView.contentInset.bottom = 0
-                            self.messageWriterView.tableView.scrollIndicatorInsets.bottom = 0
-                            
-                        } else {
-                            self.messageWriterView.tableView.contentInset.bottom -= abs(delta.height)
-                            self.messageWriterView.tableView.scrollIndicatorInsets.bottom -= abs(delta.height)
+                        UIView.performWithoutAnimation {
+                            if delta.height == 0 {
+                                self.messageWriterView.tableView.contentInset.bottom = 0
+                                self.messageWriterView.tableView.scrollIndicatorInsets.bottom = 0
+                                
+                            } else {
+                                self.messageWriterView.tableView.contentInset.bottom -= abs(delta.height)
+                                self.messageWriterView.tableView.scrollIndicatorInsets.bottom -= abs(delta.height)
+                            }
                         }
-                        
+
                     default:
                         break
                     }
@@ -118,6 +120,8 @@ extension MessageWriterViewController: UITableViewDataSource {
         cell.onlineStatusIndicator.isHidden = !contact.isOnline
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor.clear
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
         return cell
     }
 }
@@ -141,26 +145,22 @@ extension MessageWriterViewController: UITableViewDelegate {
         let duration: TimeInterval = 0.5
 
         if isDismissing {
+            let from: CGAffineTransform = .identity
+            let to: CGAffineTransform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+            
+            recipientCell.strip.transform = from
+            recipientCell.avatarImageView.transform = from
+            recipientCell.displayNameLabel.transform = from
+            recipientCell.onlineStatusIndicator.transform = from
+
             UIView.animate(withDuration: duration, delay: delay, animations: {
-                let animation = CABasicAnimation()
-                animation.keyPath = "transform.scale"
-                animation.toValue = 0
-                animation.duration = CFTimeInterval(duration)
-                animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-                
-                recipientCell.strip.layer.add(animation, forKey: "scaleDown")
-                recipientCell.avatarImageView.layer.add(animation, forKey: "scaleDown")
-                recipientCell.displayNameLabel.layer.add(animation, forKey: "scaleDown")
-                recipientCell.onlineStatusIndicator.layer.add(animation, forKey: "scaleDown")
-                
-                recipientCell.strip.alpha = 0
-                recipientCell.avatarImageView.alpha = 0
-                recipientCell.displayNameLabel.alpha = 0
-                recipientCell.onlineStatusIndicator.alpha = 0
+                recipientCell.strip.transform = to
+                recipientCell.avatarImageView.transform = to
+                recipientCell.displayNameLabel.transform = to
+                recipientCell.onlineStatusIndicator.transform = to
             }) { _ in
                 recipientCell.isHidden = true
             }
-            
             
         } else {
             var contact = contacts[indexPath.row]
@@ -191,9 +191,6 @@ extension MessageWriterViewController: UITableViewDelegate {
 extension MessageWriterViewController: MessageWriterHeaderDelegate {
     
     func didTapClose() {
-        let indexPath = IndexPath(row: 0, section: 0)
-        messageWriterView.tableView.selectRow(at: indexPath, animated: false, scrollPosition: .top)
-        
         isDismissing = true
         messageWriterView.tableView.backgroundColor = UIColor.clear
         messageWriterView.tableView.reloadData()
