@@ -34,32 +34,40 @@ class RecipientCell: UITableViewCell {
         let indicatorDimension: CGFloat = 8
         var rect = CGRect.zero
         
-        rect.size.width = 36
-        rect.size.height = rect.width
-        rect.origin.x = spacing * 2
-        rect.origin.y = (frame.height - rect.height) / 2
-        avatarImageView.layer.cornerRadius = rect.width / 2
-        avatarImageView.frame = rect
+        if !avatarImageView.layer.hasAnimation {
+            rect.size.width = 36
+            rect.size.height = rect.width
+            rect.origin.x = spacing * 2
+            rect.origin.y = (frame.height - rect.height) / 2
+            avatarImageView.layer.cornerRadius = rect.width / 2
+            avatarImageView.frame = rect
+        }
+
+        if !displayNameLabel.layer.hasAnimation {
+            displayNameLabel.sizeToFit()
+            rect.origin.x = rect.maxX + spacing
+            rect.size.width = min(frame.width - rect.origin.x - (spacing * 3) - indicatorDimension, displayNameLabel.frame.width)
+            rect.size.height = displayNameLabel.frame.height
+            rect.origin.y = (frame.height - rect.height) / 2
+            displayNameLabel.frame = rect
+        }
         
-        displayNameLabel.sizeToFit()
-        rect.origin.x = rect.maxX + spacing
-        rect.size.width = min(frame.width - rect.origin.x - (spacing * 3) - indicatorDimension, displayNameLabel.frame.width)
-        rect.size.height = displayNameLabel.frame.height
-        rect.origin.y = (frame.height - rect.height) / 2
-        displayNameLabel.frame = rect
+        if !onlineStatusIndicator.layer.hasAnimation {
+            rect.origin.x = rect.maxX + spacing
+            rect.origin.y += (rect.height - indicatorDimension) / 2
+            rect.size.width = indicatorDimension
+            rect.size.height = rect.width
+            onlineStatusIndicator.layer.cornerRadius = rect.width / 2
+            onlineStatusIndicator.frame = rect
+        }
         
-        rect.origin.x = rect.maxX + spacing
-        rect.origin.y += (rect.height - indicatorDimension) / 2
-        rect.size.width = indicatorDimension
-        rect.size.height = rect.width
-        onlineStatusIndicator.layer.cornerRadius = rect.width / 2
-        onlineStatusIndicator.frame = rect
-        
-        rect.origin.x = 0
-        rect.size.height = 0.4
-        rect.origin.y = frame.height - rect.height
-        rect.size.width = frame.width
-        strip.frame = rect
+        if !strip.layer.hasAnimation {
+            rect.origin.x = 0
+            rect.size.height = 0.4
+            rect.origin.y = frame.height - rect.height
+            rect.size.width = frame.width
+            strip.frame = rect
+        }
     }
     
     private func initSetup() {
