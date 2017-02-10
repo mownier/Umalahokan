@@ -44,15 +44,16 @@ class MessageWriterHeader: UIView {
         let spacing: CGFloat = 8
         var rect = CGRect.zero
         
-        rect.size.width = 14
+        rect.size.width = 28
         rect.size.height = rect.width
-        rect.origin.x = spacing * 2
-        rect.origin.y = spacing * 2
+        rect.origin.x = spacing
+        rect.origin.y = spacing
         closeButton.frame = rect
         
         titleLabel.sizeToFit()
         rect.size = titleLabel.frame.size
         rect.origin.x = (frame.width - rect.width) / 2
+        rect.origin.y = spacing * 2
         titleLabel.frame = rect
         
         rect.origin.x = 0
@@ -91,6 +92,7 @@ class MessageWriterHeader: UIView {
         closeButton.tintColor = UIColor.white
         closeButton.setImage(#imageLiteral(resourceName: "button-close"), for: .normal)
         closeButton.addTarget(self, action: #selector(self.didTapClose), for: .touchUpInside)
+        closeButton.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         
         titleLabel = UILabel()
         titleLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 12)
