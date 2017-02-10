@@ -148,13 +148,12 @@ extension MessageWriterViewController: UITableViewDelegate {
             let from: CGAffineTransform = .identity
             let to: CGAffineTransform = CGAffineTransform(scaleX: 0.001, y: 0.001)
             
-            recipientCell.strip.transform = from
+            recipientCell.strip.isHidden = true
             recipientCell.avatarImageView.transform = from
             recipientCell.displayNameLabel.transform = from
             recipientCell.onlineStatusIndicator.transform = from
 
             UIView.animate(withDuration: duration, delay: delay, animations: {
-                recipientCell.strip.transform = to
                 recipientCell.avatarImageView.transform = to
                 recipientCell.displayNameLabel.transform = to
                 recipientCell.onlineStatusIndicator.transform = to
@@ -170,17 +169,18 @@ extension MessageWriterViewController: UITableViewDelegate {
             let from: CGAffineTransform = CGAffineTransform(scaleX: 0.001, y: 0.001)
             let to: CGAffineTransform = CGAffineTransform.identity
             
+            recipientCell.strip.isHidden = true
             recipientCell.avatarImageView.transform = from
             recipientCell.displayNameLabel.transform = from
             recipientCell.onlineStatusIndicator.transform = from
-            recipientCell.strip.transform = from
             
             UIView.animate(withDuration: duration, delay: delay, animations: {
                 recipientCell.avatarImageView.transform = to
                 recipientCell.displayNameLabel.transform = to
                 recipientCell.onlineStatusIndicator.transform = to
-                recipientCell.strip.transform = to
-            }) { _ in }
+            }) { _ in
+                recipientCell.strip.isHidden = false
+            }
             
             contact.isAnimatable = false
             contacts[indexPath.row] = contact
