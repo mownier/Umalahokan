@@ -42,7 +42,7 @@ class ContactListPresentation: NSObject, SequentialTransition {
 extension ContactListPresentation: UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using context: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
+        return duration
     }
     
     func animateTransition(using context: UIViewControllerContextTransitioning) {
