@@ -19,6 +19,11 @@
 		B9355E071E40454400086815 /* RecentChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E061E40454400086815 /* RecentChatView.swift */; };
 		B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E081E40457D00086815 /* RecentChatTopBar.swift */; };
 		B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */; };
+		B992FCEC1E4EBFFA000C694B /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */; };
+		B992FCEE1E4EC018000C694B /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCED1E4EC018000C694B /* ContactListView.swift */; };
+		B992FCF01E4EC298000C694B /* ContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCEF1E4EC298000C694B /* ContactListCell.swift */; };
+		B992FCF21E4EE6B5000C694B /* ContactListPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCF11E4EE6B5000C694B /* ContactListPresentation.swift */; };
+		B992FCF41E4EE76A000C694B /* ContactListTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCF31E4EE76A000C694B /* ContactListTransitionDelegate.swift */; };
 		B9BC0DD01E48288E00054442 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC0DCE1E48288E00054442 /* Transition.swift */; };
 		B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */; };
 		B9BDC7981E41A478001805D8 /* MessageWriterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */; };
@@ -77,6 +82,11 @@
 		B9355E061E40454400086815 /* RecentChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatView.swift; sourceTree = "<group>"; };
 		B9355E081E40457D00086815 /* RecentChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatTopBar.swift; sourceTree = "<group>"; };
 		B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		B992FCED1E4EC018000C694B /* ContactListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		B992FCEF1E4EC298000C694B /* ContactListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListCell.swift; sourceTree = "<group>"; };
+		B992FCF11E4EE6B5000C694B /* ContactListPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListPresentation.swift; sourceTree = "<group>"; };
+		B992FCF31E4EE76A000C694B /* ContactListTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListTransitionDelegate.swift; sourceTree = "<group>"; };
 		B9BC0DCE1E48288E00054442 /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterPresentation.swift; sourceTree = "<group>"; };
 		B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterViewController.swift; sourceTree = "<group>"; };
@@ -200,12 +210,24 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		B992FCEA1E4EBFDD000C694B /* Contact List */ = {
+			isa = PBXGroup;
+			children = (
+				B992FCEF1E4EC298000C694B /* ContactListCell.swift */,
+				B992FCED1E4EC018000C694B /* ContactListView.swift */,
+				B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */,
+			);
+			path = "Contact List";
+			sourceTree = "<group>";
+		};
 		B9BC0DCD1E48288E00054442 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
 				B9BC0DCE1E48288E00054442 /* Transition.swift */,
 				B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */,
 				B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */,
+				B992FCF11E4EE6B5000C694B /* ContactListPresentation.swift */,
+				B992FCF31E4EE76A000C694B /* ContactListTransitionDelegate.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -263,6 +285,7 @@
 		B9FA253F1E3F0CC6009801F0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B992FCEA1E4EBFDD000C694B /* Contact List */,
 				B9FA25401E3F0CC6009801F0 /* Default */,
 				B9BDC7961E41A453001805D8 /* Message Writer */,
 				B9FA25421E3F0CC6009801F0 /* Recent Chat */,
@@ -576,12 +599,17 @@
 				B91792301E4AECE4007F1BB8 /* KeyboardHandler.swift in Sources */,
 				B9BC0DD01E48288E00054442 /* Transition.swift in Sources */,
 				B9FA25431E3F0CC6009801F0 /* ViewController.swift in Sources */,
+				B992FCF41E4EE76A000C694B /* ContactListTransitionDelegate.swift in Sources */,
 				B9355E071E40454400086815 /* RecentChatView.swift in Sources */,
+				B992FCEC1E4EBFFA000C694B /* ContactListViewController.swift in Sources */,
+				B992FCF01E4EC298000C694B /* ContactListCell.swift in Sources */,
 				B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */,
 				B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */,
 				B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */,
 				B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */,
+				B992FCEE1E4EC018000C694B /* ContactListView.swift in Sources */,
 				B917922D1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift in Sources */,
+				B992FCF21E4EE6B5000C694B /* ContactListPresentation.swift in Sources */,
 				B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */,
 				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
 				B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */,
