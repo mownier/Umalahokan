@@ -223,11 +223,11 @@
 		B9BC0DCD1E48288E00054442 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
-				B9BC0DCE1E48288E00054442 /* Transition.swift */,
-				B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */,
-				B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */,
 				B992FCF11E4EE6B5000C694B /* ContactListPresentation.swift */,
 				B992FCF31E4EE76A000C694B /* ContactListTransitionDelegate.swift */,
+				B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */,
+				B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */,
+				B9BC0DCE1E48288E00054442 /* Transition.swift */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
