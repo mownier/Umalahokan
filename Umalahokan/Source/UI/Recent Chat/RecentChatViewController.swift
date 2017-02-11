@@ -10,6 +10,8 @@ import UIKit
 
 class RecentChatViewController: UIViewController {
     
+    let contactListTransitionDelegate = ContactListTransitionDelegate()
+    
     var recentChatView: RecentChatView!
     
     override func loadView() {
@@ -52,11 +54,13 @@ extension RecentChatViewController: UITableViewDataSource {
 extension RecentChatViewController: RecentChatTopBarDelegate {
     
     func didTapRight() {
-        print("right")
     }
     
     func didTapLeft() {
-        print("left")
+        let vc = ContactListViewController()
+        vc.transitioningDelegate = contactListTransitionDelegate
+        vc.modalPresentationStyle = .custom
+        present(vc, animated: true, completion: nil)
     }
 }
 
