@@ -53,8 +53,13 @@ extension ContactListDismissal: UIViewControllerAnimatedTransitioning {
 extension ContactListDismissal {
     
     func animSeq001(_ duration: TimeInterval, _ next: @escaping () -> Void) {
+        let toX: CGFloat = -self.presented.tableView.frame.width
+        
         UIView.animate(withDuration: duration, animations: {
-            self.presented.alpha = 0
+            self.presented.backgroundView.alpha = 0
+            
+            self.presented.tableView.frame.origin.x = toX
+            self.presented.searchTextField.frame.origin.x = toX
         }) { _ in
             next()
         }

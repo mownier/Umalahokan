@@ -53,9 +53,21 @@ extension ContactListPresentation: UIViewControllerAnimatedTransitioning {
 extension ContactListPresentation {
     
     func animSeq001(_ duration: TimeInterval, _ next: @escaping () -> Void) {
-        presented.alpha = 0
+        presented.setNeedsLayout()
+        presented.layoutIfNeeded()
+        
+        presented.backgroundView.alpha = 0
+        
+        let fromX: CGFloat = -presented.tableView.frame.width
+        let toX: CGFloat = 0
+        presented.tableView.frame.origin.x = fromX
+        presented.searchTextField.frame.origin.x = fromX
+        
         UIView.animate(withDuration: duration, animations: {
-            self.presented.alpha = 1
+            self.presented.backgroundView.alpha = 1
+            
+            self.presented.tableView.frame.origin.x = toX
+            self.presented.searchTextField.frame.origin.x = toX
         }) { _ in
             next()
         }
