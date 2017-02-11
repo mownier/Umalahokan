@@ -16,6 +16,7 @@ class ContactListTransitionDelegate: NSObject, UIViewControllerTransitioningDele
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+        let dismissal = ContactListDismissal()
+        return dismissal
     }
 }
