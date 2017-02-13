@@ -28,14 +28,12 @@ class ContactListDismissal: NSObject, SequentialTransition {
     func setup(for transitionContext: UIViewControllerContextTransitioning) {
         context = transitionContext
         
-        let container = context.containerView
-        
         fromViewController = context.viewController(forKey: .from)
         toViewController = context.viewController(forKey: .to)
         
         presented = context.view(forKey: .from) as! ContactListView
         
-        container.addSubview(presented)
+        context.containerView.addSubview(presented)
     }
 }
 
@@ -53,13 +51,13 @@ extension ContactListDismissal: UIViewControllerAnimatedTransitioning {
 extension ContactListDismissal {
     
     func animSeq001(_ duration: TimeInterval, _ next: @escaping () -> Void) {
-        let toX: CGFloat = -self.presented.tableView.frame.width
+        let toX: CGFloat = -self.presented.frame.width
         
         UIView.animate(withDuration: duration, animations: {
-            self.presented.backgroundView.alpha = 0
+            self.context.containerView.backgroundColor = UIColor.clear
             
-            self.presented.tableView.frame.origin.x = toX
-            self.presented.searchTextField.frame.origin.x = toX
+            self.presented.frame.origin.x = toX
+            self.presented.frame.origin.x = toX
         }) { _ in
             next()
         }

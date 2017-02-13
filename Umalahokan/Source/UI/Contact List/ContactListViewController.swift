@@ -19,11 +19,6 @@ class ContactListViewController: UIViewController {
         contactListView.frame.size = size
         contactListView.tableView.dataSource = self
         
-        let tap = UITapGestureRecognizer()
-        tap.numberOfTapsRequired = 1
-        tap.addTarget(self, action: #selector(self.didTapToDismiss))
-        contactListView.backgroundView.addGestureRecognizer(tap)
-        
         ContactListCell.register(in: contactListView.tableView)
         
         view = contactListView

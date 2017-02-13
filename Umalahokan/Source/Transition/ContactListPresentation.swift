@@ -28,14 +28,24 @@ class ContactListPresentation: NSObject, SequentialTransition {
     func setup(for transitionContext: UIViewControllerContextTransitioning) {
         context = transitionContext
         
-        let container = context.containerView
-        
         fromViewController = context.viewController(forKey: .from)
         toViewController = context.viewController(forKey: .to)
         
         presented = context.view(forKey: .to) as! ContactListView
+        presented.frame.size.width *= (2/3)
         
-        container.addSubview(presented)
+        let tap = UITapGestureRecognizer()
+        tap.numberOfTapsRequired = 1
+        tap.addTarget(self, action: #selector(self.didTapToDismiss(_:)))
+        
+        context.containerView.addGestureRecognizer(tap)
+        context.containerView.addSubview(presented)
+    }
+    
+    func didTapToDismiss(_ gesture: UITapGestureRecognizer) {
+        fromViewController.dismiss(animated: true) { 
+            self.context.containerView.removeGestureRecognizer(gesture)
+        }
     }
 }
 
@@ -53,22 +63,41 @@ extension ContactListPresentation: UIViewControllerAnimatedTransitioning {
 extension ContactListPresentation {
     
     func animSeq001(_ duration: TimeInterval, _ next: @escaping () -> Void) {
-        presented.setNeedsLayout()
-        presented.layoutIfNeeded()
+        let container = context.containerView
+        container.backgroundColor = UIColor.clear
         
-        presented.backgroundView.alpha = 0
+        let maskLayer = CAShapeLayer()
+        let menuView = presented!
+        menuView.layer.mask = maskLayer
         
-        let fromX: CGFloat = -presented.tableView.frame.width
-        let toX: CGFloat = 0
-        presented.tableView.frame.origin.x = fromX
-        presented.searchTextField.frame.origin.x = fromX
+        let menuWidth = menuView.frame.width
+        let maxSideSize = max(menuView.bounds.width, menuView.bounds.height)
+        let beginRect = CGRect(x: 1, y: menuView.bounds.height / 2 - 1, width: 2, height: 2)
+        let middleRect = CGRect(x: -menuWidth, y: 0, width: menuWidth * 2, height: menuView.bounds.height)
+        let endRect = CGRect(x: -maxSideSize, y: menuView.bounds.height / 2 - maxSideSize, width: maxSideSize * 2, height: maxSideSize * 2)
+        
+        let beginPath = UIBezierPath(rect: menuView.bounds)
+        beginPath.append(UIBezierPath(ovalIn: beginRect).reversing())
+        
+        let middlePath = UIBezierPath(rect: menuView.bounds)
+        middlePath.append(UIBezierPath(ovalIn: middleRect).reversing())
+        
+        let endPath = UIBezierPath(rect: menuView.bounds)
+        endPath.append(UIBezierPath(ovalIn: endRect).reversing())
+        
+        let bubbleAnim = CAKeyframeAnimation(keyPath: "path")
+        bubbleAnim.values = [beginRect, middleRect, endRect].map { UIBezierPath(ovalIn: $0).cgPath }
+        bubbleAnim.keyTimes = [0, 0.4, 1]
+        bubbleAnim.duration = duration
+        bubbleAnim.isRemovedOnCompletion = true
+        bubbleAnim.fillMode = kCAFillModeForwards
         
         UIView.animate(withDuration: duration, animations: {
-            self.presented.backgroundView.alpha = 1
+            maskLayer.add(bubbleAnim, forKey: "bubbleAnim")
             
-            self.presented.tableView.frame.origin.x = toX
-            self.presented.searchTextField.frame.origin.x = toX
+            container.backgroundColor = UIColor(red: 57/255, green: 59/255, blue: 88/255, alpha: 0.7)
         }) { _ in
+            maskLayer.removeFromSuperlayer()
             next()
         }
     }

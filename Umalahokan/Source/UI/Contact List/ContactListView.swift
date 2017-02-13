@@ -12,7 +12,6 @@ class ContactListView: UIView {
 
     var tableView: UITableView!
     var searchTextField: UITextField!
-    var backgroundView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +24,7 @@ class ContactListView: UIView {
     }
     
     override func layoutSubviews() {
-        let width: CGFloat = frame.width * 0.7
+        let width: CGFloat = frame.width
         var rect = CGRect.zero
         
         rect.size.width = width
@@ -37,10 +36,6 @@ class ContactListView: UIView {
         rect.size.height = rect.origin.y
         rect.origin.y = 0
         tableView.frame = rect
-        
-        rect.origin = .zero
-        rect.size = frame.size
-        backgroundView.frame = rect
     }
     
     func initSetup() {
@@ -69,11 +64,6 @@ class ContactListView: UIView {
         searchTextField.leftView = searchIconContainer
         searchTextField.layer.sublayerTransform = CATransform3DMakeTranslation(16, 0, 0)
         
-        backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor(red: 57/255, green: 59/255, blue: 88/255, alpha: 0.7)
-        
-        
-        addSubview(backgroundView)
         addSubview(tableView)
         addSubview(searchTextField)
     }
