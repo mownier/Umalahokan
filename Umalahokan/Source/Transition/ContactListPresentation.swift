@@ -28,24 +28,32 @@ class ContactListPresentation: NSObject, SequentialTransition {
     func setup(for transitionContext: UIViewControllerContextTransitioning) {
         context = transitionContext
         
+        let containerView = context.containerView
+        
         fromViewController = context.viewController(forKey: .from)
         toViewController = context.viewController(forKey: .to)
         
         presented = context.view(forKey: .to) as! ContactListView
-        presented.frame.size.width *= (2/3)
+        presented.frame.size.width = containerView.frame.width * (2/3)
+        
+        let tapHelperView = UIView()
+        tapHelperView.backgroundColor = UIColor.clear
+        tapHelperView.frame.size.width = containerView.frame.width * (1/3)
+        tapHelperView.frame.size.height = containerView.frame.height
+        tapHelperView.frame.origin.x = presented.frame.maxX
         
         let tap = UITapGestureRecognizer()
         tap.numberOfTapsRequired = 1
-        tap.addTarget(self, action: #selector(self.didTapToDismiss(_:)))
+        tap.addTarget(self, action: #selector(self.didTapToDismiss))
         
-        context.containerView.addGestureRecognizer(tap)
-        context.containerView.addSubview(presented)
+        tapHelperView.addGestureRecognizer(tap)
+        
+        containerView.addSubview(tapHelperView)
+        containerView.addSubview(presented)
     }
     
-    func didTapToDismiss(_ gesture: UITapGestureRecognizer) {
-        fromViewController.dismiss(animated: true) { 
-            self.context.containerView.removeGestureRecognizer(gesture)
-        }
+    func didTapToDismiss() {
+        fromViewController.dismiss(animated: true, completion: nil)
     }
 }
 
