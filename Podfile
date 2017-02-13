@@ -8,6 +8,7 @@ def shared_pods
   pod 'Firebase/Storage'
   pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git', :tag => '3.1.1'
   pod 'DateTools'
+  pod 'DKChainableAnimationKit', :git => 'https://github.com/Draveness/DKChainableAnimationKit.git', :tag => '2.0.0'
 end
 
 target 'Umalahokan' do

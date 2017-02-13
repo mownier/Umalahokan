@@ -1,5 +1,6 @@
 PODS:
   - DateTools (1.7.0)
+  - DKChainableAnimationKit (2.0.0)
   - Firebase (3.4.0):
     - Firebase/Core (= 3.4.0)
   - Firebase/Analytics (3.4.0):
@@ -45,6 +46,7 @@ PODS:
 
 DEPENDENCIES:
   - DateTools
+  - DKChainableAnimationKit (from `https://github.com/Draveness/DKChainableAnimationKit.git`, tag `2.0.0`)
   - Firebase
   - Firebase/Auth
   - Firebase/Database
@@ -52,17 +54,24 @@ DEPENDENCIES:
   - Kingfisher (from `https://github.com/onevcat/Kingfisher.git`, tag `3.1.1`)
 
 EXTERNAL SOURCES:
+  DKChainableAnimationKit:
+    :git: https://github.com/Draveness/DKChainableAnimationKit.git
+    :tag: 2.0.0
   Kingfisher:
     :git: https://github.com/onevcat/Kingfisher.git
     :tag: 3.1.1
 
 CHECKOUT OPTIONS:
+  DKChainableAnimationKit:
+    :git: https://github.com/Draveness/DKChainableAnimationKit.git
+    :tag: 2.0.0
   Kingfisher:
     :git: https://github.com/onevcat/Kingfisher.git
     :tag: 3.1.1
 
 SPEC CHECKSUMS:
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  DKChainableAnimationKit: 20401b3ad31b57d90548bfdb214077f2d2d79d49
   Firebase: 754562547af419cc2f4b15247fee419081924bc2
   FirebaseAnalytics: 228be2991cb28efb96cdafc4d62f64680e615c69
   FirebaseAuth: 26fd291c3b552fc9658420b867520d5ae080421c
@@ -76,6 +85,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
 
-PODFILE CHECKSUM: 765ee96288c5d6d583597a308f4025faf12f6366
+PODFILE CHECKSUM: db919fa14909a5d74359c0425141bebe18c1bd4d
 
 COCOAPODS: 1.1.1
