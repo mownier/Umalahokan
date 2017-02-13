@@ -52,9 +52,26 @@ class ContactListView: UIView {
         
         searchTextField = UITextField()
         searchTextField.backgroundColor = UIColor.white
+        searchTextField.leftViewMode = .always
+        searchTextField.tintColor = UIColor(red: 133/255, green: 138/255, blue: 154/255, alpha: 1.0)
+        searchTextField.font = UIFont(name: "AvenirNext-Medium", size: 12.0)
+        searchTextField.placeholder = NSLocalizedString("Search", comment: "search")
+        
+        let searchIcon = UIImageView()
+        searchIcon.image = #imageLiteral(resourceName: "button-search")
+        searchIcon.tintColor = searchTextField.tintColor
+        searchIcon.frame.size = CGSize(width: 14, height: 14)
+        
+        let searchIconContainer = UIView()
+        searchIconContainer.frame.size = CGSize(width: 22, height: 14)
+        searchIconContainer.addSubview(searchIcon)
+        
+        searchTextField.leftView = searchIconContainer
+        searchTextField.layer.sublayerTransform = CATransform3DMakeTranslation(16, 0, 0)
         
         backgroundView = UIView()
         backgroundView.backgroundColor = UIColor(red: 57/255, green: 59/255, blue: 88/255, alpha: 0.7)
+        
         
         addSubview(backgroundView)
         addSubview(tableView)
