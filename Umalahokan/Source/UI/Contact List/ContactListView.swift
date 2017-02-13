@@ -52,10 +52,11 @@ class ContactListView: UIView {
         searchTextField.font = UIFont(name: "AvenirNext-Medium", size: 12.0)
         searchTextField.placeholder = NSLocalizedString("Search", comment: "search")
         
-        let searchIcon = UIImageView()
-        searchIcon.image = #imageLiteral(resourceName: "button-search")
+        let searchIcon = UIButton()
+        searchIcon.setImage(#imageLiteral(resourceName: "button-search"), for: .normal)
         searchIcon.tintColor = searchTextField.tintColor
         searchIcon.frame.size = CGSize(width: 14, height: 14)
+        searchIcon.addTarget(searchTextField, action: #selector(UIView.becomeFirstResponder), for: .touchUpInside)
         
         let searchIconContainer = UIView()
         searchIconContainer.frame.size = CGSize(width: 22, height: 14)
