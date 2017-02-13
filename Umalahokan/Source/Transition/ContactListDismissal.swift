@@ -51,7 +51,7 @@ extension ContactListDismissal: UIViewControllerAnimatedTransitioning {
 extension ContactListDismissal {
     
     func animSeq001(_ duration: TimeInterval, _ next: @escaping () -> Void) {
-        let toX: CGFloat = -self.presented.frame.width
+        let toX: CGFloat = -presented.frame.width
         
         UIView.animate(withDuration: duration, animations: {
             self.context.containerView.backgroundColor = UIColor.clear
