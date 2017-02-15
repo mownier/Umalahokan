@@ -10,7 +10,6 @@ import UIKit
 
 class RecentChatViewController: UIViewController {
     
-    let contactListTransitionDelegate = ContactListTransitionDelegate()
     let contactListTransitioning = ContactListTransitioning()
     
     var recentChatView: RecentChatView!
