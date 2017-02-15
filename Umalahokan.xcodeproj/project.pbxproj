@@ -16,6 +16,7 @@
 		B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D11D41E40694C003A681B /* RecentChatCell.swift */; };
 		B917922D1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */; };
 		B91792301E4AECE4007F1BB8 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */; };
+		B9183E621E51A088000933F8 /* ContactListTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9183E611E51A088000933F8 /* ContactListTransitioning.swift */; };
 		B9355E071E40454400086815 /* RecentChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E061E40454400086815 /* RecentChatView.swift */; };
 		B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E081E40457D00086815 /* RecentChatTopBar.swift */; };
 		B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */; };
@@ -80,6 +81,7 @@
 		B90D36971E431AB000586201 /* park.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = park.playground; sourceTree = "<group>"; };
 		B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterDismissal.swift; sourceTree = "<group>"; };
 		B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		B9183E611E51A088000933F8 /* ContactListTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListTransitioning.swift; sourceTree = "<group>"; };
 		B9355E061E40454400086815 /* RecentChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatView.swift; sourceTree = "<group>"; };
 		B9355E081E40457D00086815 /* RecentChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatTopBar.swift; sourceTree = "<group>"; };
 		B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				B992FCF51E4EF376000C694B /* ContactListDismissal.swift */,
 				B992FCF11E4EE6B5000C694B /* ContactListPresentation.swift */,
 				B992FCF31E4EE76A000C694B /* ContactListTransitionDelegate.swift */,
+				B9183E611E51A088000933F8 /* ContactListTransitioning.swift */,
 				B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */,
 				B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */,
 				B9BC0DCE1E48288E00054442 /* Transition.swift */,
@@ -617,6 +620,7 @@
 				B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */,
 				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
 				B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */,
+				B9183E621E51A088000933F8 /* ContactListTransitioning.swift in Sources */,
 				B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
 				B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */,

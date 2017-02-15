@@ -18,6 +18,7 @@ class ContactListViewController: UIViewController {
         contactListView = ContactListView()
         contactListView.frame.size = size
         contactListView.tableView.dataSource = self
+        contactListView.delegate = self
         
         ContactListCell.register(in: contactListView.tableView)
         
@@ -30,6 +31,13 @@ class ContactListViewController: UIViewController {
     
     func didTapToDismiss() {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ContactListViewController: ContactListViewDelegate {
+    
+    func didTapHelperView() {
+        didTapToDismiss()
     }
 }
 

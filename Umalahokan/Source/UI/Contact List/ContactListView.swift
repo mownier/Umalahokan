@@ -8,8 +8,34 @@
 
 import UIKit
 
+protocol ContactListViewDelegate: class {
+    
+    func didTapHelperView()
+}
+
+extension ContactListViewDelegate {
+    
+    func didTapHelperView() { }
+}
+
 class ContactListView: UIView {
 
+    weak var delegate: ContactListViewDelegate?
+    
+    lazy var helperView: UIView = {
+        let tap = UITapGestureRecognizer()
+        tap.numberOfTapsRequired = 1
+        tap.addTarget(self, action: #selector(self.didTapHelperView))
+        
+        let view = UIView()
+        view.addGestureRecognizer(tap)
+        
+        self.addSubview(view)
+        
+        return view
+    }()
+    
+    var subviewWidthLayoutRatio: CGFloat = 1 // 0-1
     var tableView: UITableView!
     var searchTextField: UITextField!
     
@@ -24,18 +50,29 @@ class ContactListView: UIView {
     }
     
     override func layoutSubviews() {
-        let width: CGFloat = frame.width
+        let width: CGFloat = frame.width * subviewWidthLayoutRatio
         var rect = CGRect.zero
         
-        rect.size.width = width
-        rect.size.height = 52
-        rect.origin.y = frame.height - rect.height
-        searchTextField.frame = rect
-        
-        rect.size.width = width
-        rect.size.height = rect.origin.y
-        rect.origin.y = 0
-        tableView.frame = rect
+        if !searchTextField.layer.hasAnimation {
+            rect.size.width = width
+            rect.size.height = 52
+            rect.origin.y = frame.height - rect.height
+            searchTextField.frame = rect
+        }
+
+        if !tableView.layer.hasAnimation {
+            rect.size.width = width
+            rect.size.height = rect.origin.y
+            rect.origin.y = 0
+            tableView.frame = rect
+        }
+
+        if subviewWidthLayoutRatio < 1 {
+            rect.size.width = frame.width - width
+            rect.size.height = frame.height
+            rect.origin.x = frame.width - rect.width
+            helperView.frame = rect
+        }
     }
     
     func initSetup() {
@@ -67,5 +104,9 @@ class ContactListView: UIView {
         
         addSubview(tableView)
         addSubview(searchTextField)
+    }
+    
+    func didTapHelperView() {
+        delegate?.didTapHelperView()
     }
 }
