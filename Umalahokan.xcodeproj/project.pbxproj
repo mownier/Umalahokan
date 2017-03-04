@@ -17,7 +17,6 @@
 		B9164A741E542C50006D22E2 /* MessageWriterTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9164A731E542C50006D22E2 /* MessageWriterTransitioning.swift */; };
 		B917922D1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */; };
 		B91792301E4AECE4007F1BB8 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */; };
-		B9183E621E51A088000933F8 /* ContactListTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9183E611E51A088000933F8 /* ContactListTransitioning.swift */; };
 		B9355E071E40454400086815 /* RecentChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E061E40454400086815 /* RecentChatView.swift */; };
 		B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E081E40457D00086815 /* RecentChatTopBar.swift */; };
 		B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */; };
@@ -26,6 +25,13 @@
 		B992FCF01E4EC298000C694B /* ContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCEF1E4EC298000C694B /* ContactListCell.swift */; };
 		B9AFD8BA1E6A74AC003401FE /* AlphaTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8B81E6A74AC003401FE /* AlphaTransitioning.swift */; };
 		B9AFD8BB1E6A74AC003401FE /* TranslationTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8B91E6A74AC003401FE /* TranslationTransitioning.swift */; };
+		B9AFD8BD1E6A77E2003401FE /* ContactListTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8BC1E6A77E2003401FE /* ContactListTransitionAnimator.swift */; };
+		B9AFD8E01E6A97A6003401FE /* DrawerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8DB1E6A97A6003401FE /* DrawerProtocols.swift */; };
+		B9AFD8E11E6A97A6003401FE /* DrawerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8DC1E6A97A6003401FE /* DrawerContainerViewController.swift */; };
+		B9AFD8E21E6A97A6003401FE /* DrawerMenuInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8DD1E6A97A6003401FE /* DrawerMenuInteractiveTransition.swift */; };
+		B9AFD8E31E6A97A6003401FE /* DrawerMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8DE1E6A97A6003401FE /* DrawerMenuTransition.swift */; };
+		B9AFD8E41E6A97A6003401FE /* DrawerMenuTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8DF1E6A97A6003401FE /* DrawerMenuTransitioning.swift */; };
+		B9AFD8E61E6AA5DC003401FE /* UmalahokanDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8E51E6AA5DC003401FE /* UmalahokanDrawerController.swift */; };
 		B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */; };
 		B9BDC7981E41A478001805D8 /* MessageWriterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */; };
 		B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */; };
@@ -81,7 +87,6 @@
 		B9164A731E542C50006D22E2 /* MessageWriterTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterTransitioning.swift; sourceTree = "<group>"; };
 		B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterDismissal.swift; sourceTree = "<group>"; };
 		B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
-		B9183E611E51A088000933F8 /* ContactListTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListTransitioning.swift; sourceTree = "<group>"; };
 		B9355E061E40454400086815 /* RecentChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatView.swift; sourceTree = "<group>"; };
 		B9355E081E40457D00086815 /* RecentChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatTopBar.swift; sourceTree = "<group>"; };
 		B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
@@ -90,6 +95,13 @@
 		B992FCEF1E4EC298000C694B /* ContactListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListCell.swift; sourceTree = "<group>"; };
 		B9AFD8B81E6A74AC003401FE /* AlphaTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaTransitioning.swift; sourceTree = "<group>"; };
 		B9AFD8B91E6A74AC003401FE /* TranslationTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationTransitioning.swift; sourceTree = "<group>"; };
+		B9AFD8BC1E6A77E2003401FE /* ContactListTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListTransitionAnimator.swift; sourceTree = "<group>"; };
+		B9AFD8DB1E6A97A6003401FE /* DrawerProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerProtocols.swift; sourceTree = "<group>"; };
+		B9AFD8DC1E6A97A6003401FE /* DrawerContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerContainerViewController.swift; sourceTree = "<group>"; };
+		B9AFD8DD1E6A97A6003401FE /* DrawerMenuInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuInteractiveTransition.swift; sourceTree = "<group>"; };
+		B9AFD8DE1E6A97A6003401FE /* DrawerMenuTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuTransition.swift; sourceTree = "<group>"; };
+		B9AFD8DF1E6A97A6003401FE /* DrawerMenuTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuTransitioning.swift; sourceTree = "<group>"; };
+		B9AFD8E51E6AA5DC003401FE /* UmalahokanDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmalahokanDrawerController.swift; sourceTree = "<group>"; };
 		B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterPresentation.swift; sourceTree = "<group>"; };
 		B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterViewController.swift; sourceTree = "<group>"; };
 		B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterView.swift; sourceTree = "<group>"; };
@@ -206,8 +218,9 @@
 		B917922E1E4AECD7007F1BB8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */,
 				B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */,
+				B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */,
+				B9AFD8E51E6AA5DC003401FE /* UmalahokanDrawerController.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -222,11 +235,23 @@
 			path = "Contact List";
 			sourceTree = "<group>";
 		};
+		B9AFD8DA1E6A97A6003401FE /* Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				B9AFD8DC1E6A97A6003401FE /* DrawerContainerViewController.swift */,
+				B9AFD8DD1E6A97A6003401FE /* DrawerMenuInteractiveTransition.swift */,
+				B9AFD8DE1E6A97A6003401FE /* DrawerMenuTransition.swift */,
+				B9AFD8DF1E6A97A6003401FE /* DrawerMenuTransitioning.swift */,
+				B9AFD8DB1E6A97A6003401FE /* DrawerProtocols.swift */,
+			);
+			path = Drawer;
+			sourceTree = "<group>";
+		};
 		B9BC0DCD1E48288E00054442 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
 				B9AFD8B81E6A74AC003401FE /* AlphaTransitioning.swift */,
-				B9183E611E51A088000933F8 /* ContactListTransitioning.swift */,
+				B9AFD8BC1E6A77E2003401FE /* ContactListTransitionAnimator.swift */,
 				B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */,
 				B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */,
 				B9164A731E542C50006D22E2 /* MessageWriterTransitioning.swift */,
@@ -288,6 +313,7 @@
 		B9FA253F1E3F0CC6009801F0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B9AFD8DA1E6A97A6003401FE /* Drawer */,
 				B992FCEA1E4EBFDD000C694B /* Contact List */,
 				B9FA25401E3F0CC6009801F0 /* Default */,
 				B9BDC7961E41A453001805D8 /* Message Writer */,
@@ -601,22 +627,28 @@
 			files = (
 				B91792301E4AECE4007F1BB8 /* KeyboardHandler.swift in Sources */,
 				B9AFD8BA1E6A74AC003401FE /* AlphaTransitioning.swift in Sources */,
+				B9AFD8E21E6A97A6003401FE /* DrawerMenuInteractiveTransition.swift in Sources */,
 				B9FA25431E3F0CC6009801F0 /* ViewController.swift in Sources */,
 				B9355E071E40454400086815 /* RecentChatView.swift in Sources */,
 				B992FCEC1E4EBFFA000C694B /* ContactListViewController.swift in Sources */,
 				B992FCF01E4EC298000C694B /* ContactListCell.swift in Sources */,
 				B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */,
+				B9AFD8BD1E6A77E2003401FE /* ContactListTransitionAnimator.swift in Sources */,
 				B9AFD8BB1E6A74AC003401FE /* TranslationTransitioning.swift in Sources */,
 				B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */,
 				B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */,
+				B9AFD8E31E6A97A6003401FE /* DrawerMenuTransition.swift in Sources */,
 				B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */,
 				B992FCEE1E4EC018000C694B /* ContactListView.swift in Sources */,
 				B917922D1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift in Sources */,
+				B9AFD8E01E6A97A6003401FE /* DrawerProtocols.swift in Sources */,
 				B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */,
+				B9AFD8E61E6AA5DC003401FE /* UmalahokanDrawerController.swift in Sources */,
+				B9AFD8E11E6A97A6003401FE /* DrawerContainerViewController.swift in Sources */,
 				B9164A741E542C50006D22E2 /* MessageWriterTransitioning.swift in Sources */,
+				B9AFD8E41E6A97A6003401FE /* DrawerMenuTransitioning.swift in Sources */,
 				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
 				B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */,
-				B9183E621E51A088000933F8 /* ContactListTransitioning.swift in Sources */,
 				B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
 				B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */,

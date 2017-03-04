@@ -10,6 +10,8 @@ import UIKit
 
 class ContactListViewController: UIViewController {
 
+    weak var drawerMenuInteractiveTransition: DrawerMenuInteractiveTransition?
+    
     var contactListView: ContactListView!
     
     override func loadView() {
@@ -36,8 +38,15 @@ class ContactListViewController: UIViewController {
 
 extension ContactListViewController: ContactListViewDelegate {
     
-    func didTapHelperView() {
-        didTapToDismiss()
+    func handleGestureHelperOnPan(_ gesture: UIPanGestureRecognizer) {
+        guard let interactiveTransition = drawerMenuInteractiveTransition else { return }
+        
+        let translation = gesture.translation(in: view)
+        let progress = interactiveTransition.computeProgress(translation, viewBounds: view.bounds, direction: .left)
+        interactiveTransition.updateUsing(gesture.state, progress: progress) {
+            [unowned self] in
+            self.didTapToDismiss()
+        }
     }
 }
 
@@ -54,3 +63,11 @@ extension ContactListViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension ContactListViewController: DrawerMenuProtocol {
+    
+    var drawerMenuViewController: UIViewController {
+        return self
+    }
+}
+

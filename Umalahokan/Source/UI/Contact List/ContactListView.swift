@@ -10,32 +10,16 @@ import UIKit
 
 protocol ContactListViewDelegate: class {
     
-    func didTapHelperView()
-}
-
-extension ContactListViewDelegate {
-    
-    func didTapHelperView() { }
+    func handleGestureHelperOnPan(_ gesture: UIPanGestureRecognizer)
 }
 
 class ContactListView: UIView {
 
     weak var delegate: ContactListViewDelegate?
     
-    lazy var helperView: UIView = {
-        let tap = UITapGestureRecognizer()
-        tap.numberOfTapsRequired = 1
-        tap.addTarget(self, action: #selector(self.didTapHelperView))
-        
-        let view = UIView()
-        view.addGestureRecognizer(tap)
-        
-        self.addSubview(view)
-        
-        return view
-    }()
+    var subviewWidthLayoutRatio: CGFloat = 0.8 // 0-1
     
-    var subviewWidthLayoutRatio: CGFloat = 1 // 0-1
+    var gestureHelperView: UIView!
     var tableView: UITableView!
     var searchTextField: UITextField!
     
@@ -71,7 +55,7 @@ class ContactListView: UIView {
             rect.size.width = frame.width - width
             rect.size.height = frame.height
             rect.origin.x = frame.width - rect.width
-            helperView.frame = rect
+            gestureHelperView.frame = rect
         }
     }
     
@@ -102,11 +86,24 @@ class ContactListView: UIView {
         searchTextField.leftView = searchIconContainer
         searchTextField.layer.sublayerTransform = CATransform3DMakeTranslation(16, 0, 0)
         
+        gestureHelperView = UIView()
+        gestureHelperView.backgroundColor = UIColor.clear
+        
+        let panGesture = UIPanGestureRecognizer()
+        panGesture.minimumNumberOfTouches = 1
+        panGesture.addTarget(self, action: #selector(self.handlePanGesture(_ :)))
+        panGesture.isEnabled = true
+        panGesture.cancelsTouchesInView = true
+        panGesture.delaysTouchesEnded = true
+        panGesture.delaysTouchesBegan = false
+        gestureHelperView.addGestureRecognizer(panGesture)
+        
         addSubview(tableView)
         addSubview(searchTextField)
+        addSubview(gestureHelperView)
     }
     
-    func didTapHelperView() {
-        delegate?.didTapHelperView()
+    func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        delegate?.handleGestureHelperOnPan(gesture)
     }
 }

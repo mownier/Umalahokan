@@ -6,7 +6,7 @@
 //  Copyright © 2017 Ner. All rights reserved.
 //
 
-import DKChainableAnimationKit
+import UIKit
 
 class MessageWriterTransitioning: NSObject, UIViewControllerTransitioningDelegate {
 
@@ -121,33 +121,33 @@ class MessageWriterTransition: NSObject, UIViewControllerAnimatedTransitioning {
             toViewController.endAppearanceTransition()
         })
         
-        switch style {
-        case .presentation:
-            
-//            presented.animation
-//                .makeBackground(color)
-//            .animate(0.25)
-            
-            composerButton.animation
-                .makeX(x)
-                .makeY(y)
-            .thenAfter(0.25)
-                .makeHeight(height)
-                .easeInOut
-            .animate(5.0)
-            
-//            presented.header.closeButton.animation.delay(0.75).makeAlpha(1).animate(0.5)
-//            presented.header.titleLabel.animation.delay(0.75).makeAlpha(1).animateWithCompletion(0.5, { _ in
-//                composerButton.removeFromSuperview()
-//                presented.header.backgroundView.alpha = 1
-//            })
-//            presented.header.inputBackground.animation.delay(1.25).makeAlpha(1).animate(0.5)
-//            presented.header.inputLabel.animation.delay(1.25).makeAlpha(1).animate(0.5)
-//            presented.header.inputTextField.animation.delay(1.25).makeAlpha(1).animate(0.5)
-            
-        case .dismissal:
-            break
-        }
+//        switch style {
+//        case .presentation:
+//            
+////            presented.animation
+////                .makeBackground(color)
+////            .animate(0.25)
+//            
+//            composerButton.animation
+//                .makeX(x)
+//                .makeY(y)
+//            .thenAfter(0.25)
+//                .makeHeight(height)
+//                .easeInOut
+//            .animate(5.0)
+//            
+////            presented.header.closeButton.animation.delay(0.75).makeAlpha(1).animate(0.5)
+////            presented.header.titleLabel.animation.delay(0.75).makeAlpha(1).animateWithCompletion(0.5, { _ in
+////                composerButton.removeFromSuperview()
+////                presented.header.backgroundView.alpha = 1
+////            })
+////            presented.header.inputBackground.animation.delay(1.25).makeAlpha(1).animate(0.5)
+////            presented.header.inputLabel.animation.delay(1.25).makeAlpha(1).animate(0.5)
+////            presented.header.inputTextField.animation.delay(1.25).makeAlpha(1).animate(0.5)
+//            
+//        case .dismissal:
+//            break
+//        }
         
         CATransaction.commit()
     }

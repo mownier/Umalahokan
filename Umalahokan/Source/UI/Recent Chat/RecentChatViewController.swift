@@ -10,8 +10,9 @@ import UIKit
 
 class RecentChatViewController: UIViewController {
     
-    let contactListTransitioning = ContactListTransitioning()
     let messageWriterTransitioning = MessageWriterTransitioning()
+    
+    weak var hamburger: DrawerContainerHamburger?
     
     var recentChatView: RecentChatView!
     
@@ -58,10 +59,7 @@ extension RecentChatViewController: RecentChatTopBarDelegate {
     }
     
     func didTapLeft() {
-        let vc = ContactListViewController()
-        vc.transitioningDelegate = contactListTransitioning
-        vc.modalPresentationStyle = .custom
-        present(vc, animated: true, completion: nil)
+        hamburger?.showMenu()
     }
 }
 
@@ -76,23 +74,13 @@ extension RecentChatViewController: RecentChatViewDelegate {
     }
 }
 
-extension RecentChatViewController: UIViewControllerTransitioningDelegate {
+extension RecentChatViewController: DrawerContainerContentProtocol {
     
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        recentChatView.composerButton.isHidden = true
-        
-        let transition = MessageWriterPresentation()
-        transition.startingFrame = recentChatView.composerButton.frame
-        return transition
+    var drawerContentViewController: UIViewController {
+        return self
     }
     
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let transition = MessageWriterDismissal()
-        transition.endingFrame = recentChatView.composerButton.frame
-        transition.completion = { [unowned self] in
-            self.recentChatView.composerButton.isHidden = false
-        }
-        
-        return transition
+    var drawerContentId: String {
+        return "Recent Chat"
     }
 }
