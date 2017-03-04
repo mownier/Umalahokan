@@ -26,7 +26,6 @@
 		B992FCF01E4EC298000C694B /* ContactListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCEF1E4EC298000C694B /* ContactListCell.swift */; };
 		B9AFD8BA1E6A74AC003401FE /* AlphaTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8B81E6A74AC003401FE /* AlphaTransitioning.swift */; };
 		B9AFD8BB1E6A74AC003401FE /* TranslationTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8B91E6A74AC003401FE /* TranslationTransitioning.swift */; };
-		B9BC0DD01E48288E00054442 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC0DCE1E48288E00054442 /* Transition.swift */; };
 		B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */; };
 		B9BDC7981E41A478001805D8 /* MessageWriterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */; };
 		B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */; };
@@ -91,7 +90,6 @@
 		B992FCEF1E4EC298000C694B /* ContactListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListCell.swift; sourceTree = "<group>"; };
 		B9AFD8B81E6A74AC003401FE /* AlphaTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaTransitioning.swift; sourceTree = "<group>"; };
 		B9AFD8B91E6A74AC003401FE /* TranslationTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationTransitioning.swift; sourceTree = "<group>"; };
-		B9BC0DCE1E48288E00054442 /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterPresentation.swift; sourceTree = "<group>"; };
 		B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterViewController.swift; sourceTree = "<group>"; };
 		B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterView.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 				B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */,
 				B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */,
 				B9164A731E542C50006D22E2 /* MessageWriterTransitioning.swift */,
-				B9BC0DCE1E48288E00054442 /* Transition.swift */,
 				B9AFD8B91E6A74AC003401FE /* TranslationTransitioning.swift */,
 			);
 			path = Transition;
@@ -603,7 +600,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B91792301E4AECE4007F1BB8 /* KeyboardHandler.swift in Sources */,
-				B9BC0DD01E48288E00054442 /* Transition.swift in Sources */,
 				B9AFD8BA1E6A74AC003401FE /* AlphaTransitioning.swift in Sources */,
 				B9FA25431E3F0CC6009801F0 /* ViewController.swift in Sources */,
 				B9355E071E40454400086815 /* RecentChatView.swift in Sources */,
