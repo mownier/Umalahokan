@@ -11,6 +11,7 @@ import UIKit
 class RecentChatViewController: UIViewController {
     
     let contactListTransitioning = ContactListTransitioning()
+    let messageWriterTransitioning = MessageWriterTransitioning()
     
     var recentChatView: RecentChatView!
     
@@ -68,7 +69,8 @@ extension RecentChatViewController: RecentChatViewDelegate {
     
     func didTapComposer() {
         let vc = MessageWriterViewController()
-        vc.transitioningDelegate = self
+        messageWriterTransitioning.composerButtonFrame = recentChatView.composerButton.frame
+        vc.transitioningDelegate = messageWriterTransitioning
         vc.modalPresentationStyle = .custom
         present(vc, animated: true, completion: nil)
     }
