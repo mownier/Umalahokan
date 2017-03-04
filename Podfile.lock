@@ -43,6 +43,7 @@ PODS:
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
   - Kingfisher (3.1.1)
+  - Viper (1.0)
 
 DEPENDENCIES:
   - DateTools
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - Kingfisher (from `https://github.com/onevcat/Kingfisher.git`, tag `3.1.1`)
+  - Viper (from `https://github.com/mownier/viper.git`, tag `1.0`)
 
 EXTERNAL SOURCES:
   DKChainableAnimationKit:
@@ -60,6 +62,9 @@ EXTERNAL SOURCES:
   Kingfisher:
     :git: https://github.com/onevcat/Kingfisher.git
     :tag: 3.1.1
+  Viper:
+    :git: https://github.com/mownier/viper.git
+    :tag: '1.0'
 
 CHECKOUT OPTIONS:
   DKChainableAnimationKit:
@@ -68,6 +73,9 @@ CHECKOUT OPTIONS:
   Kingfisher:
     :git: https://github.com/onevcat/Kingfisher.git
     :tag: 3.1.1
+  Viper:
+    :git: https://github.com/mownier/viper.git
+    :tag: '1.0'
 
 SPEC CHECKSUMS:
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
@@ -84,7 +92,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
+  Viper: 527d968c88066a179ea283e52967c59ab4dd3588
 
-PODFILE CHECKSUM: db919fa14909a5d74359c0425141bebe18c1bd4d
+PODFILE CHECKSUM: c4244f71686819d18d69eb61c0b356317001e663
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
