@@ -113,14 +113,26 @@ class MessageWriterTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
         let color = whiteColor.withAlphaComponent(1)
         
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(duration)
-        CATransaction.setCompletionBlock({
+        let duration: TimeInterval = 0.75
+        UIView.animateKeyframes(withDuration: duration, delay: 0, options: .calculationModeLinear, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25/duration) {
+                presented.backgroundColor = color
+                composerButton.frame.origin.x = x
+                composerButton.frame.origin.y = y
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.25/duration, relativeDuration: 1) {
+                composerButton.frame.size.height = height
+                composerButton.frame.size.width = width + composerButton.layer.cornerRadius * 2
+                composerButton.frame.origin.x = 0 - composerButton.layer.cornerRadius
+            }
+            
+        }) { _ in
             context.completeTransition(true)
             fromViewController.endAppearanceTransition()
             toViewController.endAppearanceTransition()
-        })
-        
+        }
+//        
 //        switch style {
 //        case .presentation:
 //            
@@ -148,7 +160,5 @@ class MessageWriterTransition: NSObject, UIViewControllerAnimatedTransitioning {
 //        case .dismissal:
 //            break
 //        }
-        
-        CATransaction.commit()
     }
 }
