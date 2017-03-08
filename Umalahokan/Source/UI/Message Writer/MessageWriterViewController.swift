@@ -94,8 +94,6 @@ class MessageWriterViewController: UIViewController {
                     }
                 })
             })
-        
-        messageWriterView.header.inputTextField.becomeFirstResponder()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
