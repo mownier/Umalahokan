@@ -15,7 +15,6 @@
 		B9086ED11E3EEFFB003AECC4 /* UmalahokanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9086ED01E3EEFFB003AECC4 /* UmalahokanUITests.swift */; };
 		B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90D11D41E40694C003A681B /* RecentChatCell.swift */; };
 		B9164A741E542C50006D22E2 /* MessageWriterTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9164A731E542C50006D22E2 /* MessageWriterTransitioning.swift */; };
-		B917922D1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */; };
 		B91792301E4AECE4007F1BB8 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */; };
 		B9355E071E40454400086815 /* RecentChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E061E40454400086815 /* RecentChatView.swift */; };
 		B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E081E40457D00086815 /* RecentChatTopBar.swift */; };
@@ -32,7 +31,6 @@
 		B9AFD8E31E6A97A6003401FE /* DrawerMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8DE1E6A97A6003401FE /* DrawerMenuTransition.swift */; };
 		B9AFD8E41E6A97A6003401FE /* DrawerMenuTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8DF1E6A97A6003401FE /* DrawerMenuTransitioning.swift */; };
 		B9AFD8E61E6AA5DC003401FE /* UmalahokanDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8E51E6AA5DC003401FE /* UmalahokanDrawerController.swift */; };
-		B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */; };
 		B9BDC7981E41A478001805D8 /* MessageWriterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */; };
 		B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */; };
 		B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */; };
@@ -84,7 +82,6 @@
 		B9086ED21E3EEFFB003AECC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B90D11D41E40694C003A681B /* RecentChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatCell.swift; sourceTree = "<group>"; };
 		B9164A731E542C50006D22E2 /* MessageWriterTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterTransitioning.swift; sourceTree = "<group>"; };
-		B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterDismissal.swift; sourceTree = "<group>"; };
 		B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		B9355E061E40454400086815 /* RecentChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatView.swift; sourceTree = "<group>"; };
 		B9355E081E40457D00086815 /* RecentChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatTopBar.swift; sourceTree = "<group>"; };
@@ -101,7 +98,6 @@
 		B9AFD8DE1E6A97A6003401FE /* DrawerMenuTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuTransition.swift; sourceTree = "<group>"; };
 		B9AFD8DF1E6A97A6003401FE /* DrawerMenuTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuTransitioning.swift; sourceTree = "<group>"; };
 		B9AFD8E51E6AA5DC003401FE /* UmalahokanDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmalahokanDrawerController.swift; sourceTree = "<group>"; };
-		B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterPresentation.swift; sourceTree = "<group>"; };
 		B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterViewController.swift; sourceTree = "<group>"; };
 		B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterView.swift; sourceTree = "<group>"; };
 		B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterHeader.swift; sourceTree = "<group>"; };
@@ -250,8 +246,6 @@
 			children = (
 				B9AFD8B81E6A74AC003401FE /* AlphaTransitioning.swift */,
 				B9AFD8BC1E6A77E2003401FE /* ContactListTransitionAnimator.swift */,
-				B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */,
-				B9BC0DCF1E48288E00054442 /* MessageWriterPresentation.swift */,
 				B9164A731E542C50006D22E2 /* MessageWriterTransitioning.swift */,
 				B9AFD8B91E6A74AC003401FE /* TranslationTransitioning.swift */,
 			);
@@ -638,7 +632,6 @@
 				B9AFD8E31E6A97A6003401FE /* DrawerMenuTransition.swift in Sources */,
 				B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */,
 				B992FCEE1E4EC018000C694B /* ContactListView.swift in Sources */,
-				B917922D1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift in Sources */,
 				B9AFD8E01E6A97A6003401FE /* DrawerProtocols.swift in Sources */,
 				B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */,
 				B9AFD8E61E6AA5DC003401FE /* UmalahokanDrawerController.swift in Sources */,
@@ -646,7 +639,6 @@
 				B9164A741E542C50006D22E2 /* MessageWriterTransitioning.swift in Sources */,
 				B9AFD8E41E6A97A6003401FE /* DrawerMenuTransitioning.swift in Sources */,
 				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
-				B9BC0DD11E48288E00054442 /* MessageWriterPresentation.swift in Sources */,
 				B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
 				B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */,
