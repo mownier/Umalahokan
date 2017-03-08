@@ -60,30 +60,32 @@ class MessageWriterViewController: UIViewController {
             forName: Notification.Name.UIKeyboardWillChangeFrame,
             object: nil,
             queue: nil,
-            using: {  [unowned self] notif in
-                self.keyboardHandler.willMoveUsedView = false
-                self.keyboardHandler.info = notif.userInfo
-                self.keyboardHandler.handle(using: self.messageWriterView.tableView, with: { delta in
+            using: {  [weak self] notif in
+                guard let this = self else { return }
+                
+                this.keyboardHandler.willMoveUsedView = false
+                this.keyboardHandler.info = notif.userInfo
+                this.keyboardHandler.handle(using: this.messageWriterView.tableView, with: { delta in
                     switch delta.direction {
                     case .up:
                         if delta.height == 0 {
-                            self.messageWriterView.tableView.contentInset.bottom = abs(delta.y)
-                            self.messageWriterView.tableView.scrollIndicatorInsets.bottom = abs(delta.y)
+                            this.messageWriterView.tableView.contentInset.bottom = abs(delta.y)
+                            this.messageWriterView.tableView.scrollIndicatorInsets.bottom = abs(delta.y)
                             
                         } else {
-                            self.messageWriterView.tableView.contentInset.bottom += abs(delta.height)
-                            self.messageWriterView.tableView.scrollIndicatorInsets.bottom += abs(delta.height)
+                            this.messageWriterView.tableView.contentInset.bottom += abs(delta.height)
+                            this.messageWriterView.tableView.scrollIndicatorInsets.bottom += abs(delta.height)
                         }
                         
                     case .down:
                         UIView.performWithoutAnimation {
                             if delta.height == 0 {
-                                self.messageWriterView.tableView.contentInset.bottom = 0
-                                self.messageWriterView.tableView.scrollIndicatorInsets.bottom = 0
+                                this.messageWriterView.tableView.contentInset.bottom = 0
+                                this.messageWriterView.tableView.scrollIndicatorInsets.bottom = 0
                                 
                             } else {
-                                self.messageWriterView.tableView.contentInset.bottom -= abs(delta.height)
-                                self.messageWriterView.tableView.scrollIndicatorInsets.bottom -= abs(delta.height)
+                                this.messageWriterView.tableView.contentInset.bottom -= abs(delta.height)
+                                this.messageWriterView.tableView.scrollIndicatorInsets.bottom -= abs(delta.height)
                             }
                         }
 
