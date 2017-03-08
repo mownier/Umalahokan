@@ -72,7 +72,9 @@ class MessageWriterHeader: UIView {
         rect.size.width = frame.width - rect.origin.x - (spacing * 2)
         inputTextField.frame = rect
         
-        backgroundView.frame = bounds
+        if !backgroundView.layer.hasAnimation {
+            backgroundView.frame = bounds
+        }
     }
     
     private func initSetup() {
