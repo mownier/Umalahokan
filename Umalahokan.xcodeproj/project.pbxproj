@@ -83,7 +83,6 @@
 		B9086ED01E3EEFFB003AECC4 /* UmalahokanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmalahokanUITests.swift; sourceTree = "<group>"; };
 		B9086ED21E3EEFFB003AECC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B90D11D41E40694C003A681B /* RecentChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatCell.swift; sourceTree = "<group>"; };
-		B90D36971E431AB000586201 /* park.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = park.playground; sourceTree = "<group>"; };
 		B9164A731E542C50006D22E2 /* MessageWriterTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterTransitioning.swift; sourceTree = "<group>"; };
 		B917922C1E4ADA0E007F1BB8 /* MessageWriterDismissal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterDismissal.swift; sourceTree = "<group>"; };
 		B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
@@ -168,7 +167,6 @@
 		B9086EA11E3EEFFA003AECC4 = {
 			isa = PBXGroup;
 			children = (
-				B90D36971E431AB000586201 /* park.playground */,
 				B9086EAC1E3EEFFB003AECC4 /* Umalahokan */,
 				B9086EC41E3EEFFB003AECC4 /* UmalahokanTests */,
 				B9086ECF1E3EEFFB003AECC4 /* UmalahokanUITests */,
