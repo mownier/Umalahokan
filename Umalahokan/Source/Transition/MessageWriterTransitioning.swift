@@ -19,7 +19,8 @@ class MessageWriterTransitioning: NSObject, UIViewControllerTransitioningDelegat
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
+        let transition = AlphaTransition(style: .dismissal)
+        return transition
     }
 }
 
