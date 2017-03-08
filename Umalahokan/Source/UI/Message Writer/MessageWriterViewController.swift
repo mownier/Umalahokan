@@ -197,7 +197,7 @@ extension MessageWriterViewController: MessageWriterHeaderDelegate {
         messageWriterView.tableView.backgroundColor = UIColor.clear
         messageWriterView.tableView.reloadData()
         
-        view.perform(#selector(UIView.endEditing), with: true, afterDelay: 0.5)
+        view.perform(#selector(UIView.endEditing), with: true, afterDelay: 0.0)
         dismiss(animated: true, completion: nil)
     }
 }
