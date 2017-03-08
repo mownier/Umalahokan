@@ -46,119 +46,104 @@ class MessageWriterTransition: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using context: UIViewControllerContextTransitioning) {
         // Setting up context
         let presentedKey: UITransitionContextViewKey = style == .presentation ? .to : .from
-        
-        let fromViewController = context.viewController(forKey: .from)!
-        let toViewController = context.viewController(forKey: .to)!
-        
         let presented = context.view(forKey: presentedKey) as! MessageWriterView
         let container = context.containerView
-        
-        let composerButton = UIButton()
-        composerButton.frame = composerButtonFrame
-        composerButton.tintColor = UIColor.white
-        composerButton.clipsToBounds = true
-        composerButton.backgroundColor = UIColor(
-            red: 142/255,
-            green: 135/255,
-            blue: 251/255,
-            alpha: 1.0
-        )
-        composerButton.imageEdgeInsets.left = 4
-        composerButton.imageEdgeInsets.bottom = 4
-        composerButton.layer.shadowColor = UIColor.black.cgColor
-        composerButton.layer.shadowOffset = CGSize(width: 2, height: 2)
-        composerButton.layer.shadowRadius = 2
-        composerButton.layer.shadowOpacity = 0.5
-        composerButton.layer.masksToBounds = false
-        composerButton.layer.cornerRadius = composerButtonFrame.width / 2
-        composerButton.isUserInteractionEnabled = false
         
         let whiteColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         switch style {
         case .presentation:
-            presented.backgroundColor = whiteColor.withAlphaComponent(0)
-            
-            presented.header.isHidden = true
             presented.header.closeButton.alpha = 0
             presented.header.titleLabel.alpha = 0
             presented.header.inputBackground.alpha = 0
             presented.header.inputLabel.alpha = 0
             presented.header.inputTextField.alpha = 0
-            presented.header.backgroundView.alpha = 0
             
-            presented.tableView.isHidden = true
+            presented.backgroundColor = whiteColor.withAlphaComponent(0)
+            presented.tableView.backgroundColor = UIColor.clear
+            presented.header.backgroundColor = UIColor.clear
             
-            // presented.insertSubview(composerButton, at: 0)
+            presented.header.backgroundView.frame = composerButtonFrame
+            presented.header.backgroundView.layer.cornerRadius = composerButtonFrame.width / 2
+            presented.header.backgroundView.layer.masksToBounds = true
             
             container.addSubview(presented)
-            container.addSubview(composerButton)
         
+            presentationAnimation(presented, context: context)
+            
         case .dismissal:
             break
         }
-
-        // Setting up animation
-        fromViewController.beginAppearanceTransition(false, animated: true)
-        toViewController.beginAppearanceTransition(true, animated: true)
-        
-        let y: CGFloat = 0
-        var x: CGFloat = 0
-        let width: CGFloat = composerButton.superview == nil ? composerButton.frame.width : composerButton.superview!.frame.width
-        let height: CGFloat = 108
-        
-        x = composerButton.superview == nil ? 0 : composerButton.superview!.frame.width
-        x -= composerButton.frame.width
-        x /= 2
-
+    }
+    
+    func presentationAnimation(_ presented: MessageWriterView, context: UIViewControllerContextTransitioning) {
+        let whiteColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         let color = whiteColor.withAlphaComponent(1)
         
-        let duration: TimeInterval = 0.75
+        let duration: TimeInterval = 1.25
         UIView.animateKeyframes(withDuration: duration, delay: 0, options: .calculationModeLinear, animations: {
-            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25/duration) {
-                presented.backgroundColor = color
-                composerButton.frame.origin.x = x
-                composerButton.frame.origin.y = y
-            }
+            var keyframeDuration: TimeInterval = 0.25
+            var delay: TimeInterval = 0
+            var relativeStartTime: TimeInterval = 0 + (delay / duration)
+            var relativeDuration: TimeInterval = keyframeDuration / duration
+            var totalKeyframeDuration = keyframeDuration + delay
             
-            UIView.addKeyframe(withRelativeStartTime: 0.25/duration, relativeDuration: 1) {
-                composerButton.frame.size.height = height
-                composerButton.frame.size.width = width + composerButton.layer.cornerRadius * 2
-                composerButton.frame.origin.x = 0 - composerButton.layer.cornerRadius
-            }
+            UIView.addKeyframe(withRelativeStartTime: relativeStartTime, relativeDuration: relativeDuration, animations: {
+                presented.backgroundColor = color
+                
+                presented.header.backgroundView.frame.origin.y = 0
+                presented.header.backgroundView.frame.origin.x = (presented.header.frame.width - presented.header.backgroundView.frame.width) / 2
+            })
+            
+            keyframeDuration = 0.25
+            delay = 0
+            relativeStartTime = relativeDuration + (delay / duration)
+            relativeDuration += (keyframeDuration / duration)
+            totalKeyframeDuration += (keyframeDuration + delay)
+            
+            UIView.addKeyframe(withRelativeStartTime: relativeStartTime, relativeDuration: relativeDuration, animations: {
+                presented.header.backgroundView.transform = CGAffineTransform(scaleX: 10, y: 10)
+            })
+            
+            keyframeDuration = 0.25
+            delay = 0
+            relativeStartTime = relativeDuration + (delay / duration)
+            relativeDuration += (keyframeDuration / duration)
+            totalKeyframeDuration += (keyframeDuration + delay)
+            
+            UIView.addKeyframe(withRelativeStartTime: relativeStartTime, relativeDuration: relativeDuration, animations: {
+                presented.header.closeButton.alpha = 1
+                presented.header.titleLabel.alpha = 1
+            })
+            
+            keyframeDuration = 0.25
+            delay = 0.25
+            relativeStartTime = relativeDuration + (delay / duration)
+            relativeDuration += (keyframeDuration / duration)
+            totalKeyframeDuration += (keyframeDuration + delay)
+            
+            UIView.addKeyframe(withRelativeStartTime: relativeStartTime, relativeDuration: relativeDuration, animations: {
+                presented.header.inputBackground.alpha = 1
+                presented.header.inputLabel.alpha = 1
+                presented.header.inputTextField.alpha = 1
+            })
+            
+            assert(totalKeyframeDuration == duration, "Total keyframe duration is not in sync.")
             
         }) { _ in
-            context.completeTransition(true)
-            fromViewController.endAppearanceTransition()
-            toViewController.endAppearanceTransition()
+            context.completeTransition(!context.transitionWasCancelled)
         }
-//        
-//        switch style {
-//        case .presentation:
-//            
-////            presented.animation
-////                .makeBackground(color)
-////            .animate(0.25)
-//            
-//            composerButton.animation
-//                .makeX(x)
-//                .makeY(y)
-//            .thenAfter(0.25)
-//                .makeHeight(height)
-//                .easeInOut
-//            .animate(5.0)
-//            
-////            presented.header.closeButton.animation.delay(0.75).makeAlpha(1).animate(0.5)
-////            presented.header.titleLabel.animation.delay(0.75).makeAlpha(1).animateWithCompletion(0.5, { _ in
-////                composerButton.removeFromSuperview()
-////                presented.header.backgroundView.alpha = 1
-////            })
-////            presented.header.inputBackground.animation.delay(1.25).makeAlpha(1).animate(0.5)
-////            presented.header.inputLabel.animation.delay(1.25).makeAlpha(1).animate(0.5)
-////            presented.header.inputTextField.animation.delay(1.25).makeAlpha(1).animate(0.5)
-//            
-//        case .dismissal:
-//            break
-//        }
+        
+        perform(#selector(self.reloadTableView(_:)), with: presented, afterDelay: 0.50)
+        perform(#selector(self.clipToBounds(_:)), with: presented, afterDelay: 0.49)
+    }
+    
+    @objc func reloadTableView(_ presented: MessageWriterView) {
+        presented.isValidToReload = true
+        presented.tableView.reloadData()
+    }
+    
+    @objc func clipToBounds(_ presented: MessageWriterView) {
+        presented.header.clipsToBounds = true
     }
 }
