@@ -142,6 +142,8 @@ class MessageWriterTransition: NSObject, UIViewControllerAnimatedTransitioning {
     @objc func reloadTableView(_ presented: MessageWriterView) {
         presented.isValidToReload = true
         presented.tableView.reloadData()
+        
+        presented.header.inputTextField.becomeFirstResponder()
     }
     
     @objc func clipToBounds(_ presented: MessageWriterView) {
