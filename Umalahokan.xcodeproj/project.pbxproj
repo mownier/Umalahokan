@@ -18,6 +18,7 @@
 		B91792301E4AECE4007F1BB8 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */; };
 		B9355E071E40454400086815 /* RecentChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E061E40454400086815 /* RecentChatView.swift */; };
 		B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E081E40457D00086815 /* RecentChatTopBar.swift */; };
+		B99043F11E712138008D6D31 /* MessageWriterSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99043F01E712138008D6D31 /* MessageWriterSendView.swift */; };
 		B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */; };
 		B992FCEC1E4EBFFA000C694B /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */; };
 		B992FCEE1E4EC018000C694B /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCED1E4EC018000C694B /* ContactListView.swift */; };
@@ -85,6 +86,7 @@
 		B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		B9355E061E40454400086815 /* RecentChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatView.swift; sourceTree = "<group>"; };
 		B9355E081E40457D00086815 /* RecentChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatTopBar.swift; sourceTree = "<group>"; };
+		B99043F01E712138008D6D31 /* MessageWriterSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterSendView.swift; sourceTree = "<group>"; };
 		B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 		B992FCED1E4EC018000C694B /* ContactListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */,
 				B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */,
 				B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */,
+				B99043F01E712138008D6D31 /* MessageWriterSendView.swift */,
 			);
 			path = "Message Writer";
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B91792301E4AECE4007F1BB8 /* KeyboardHandler.swift in Sources */,
+				B99043F11E712138008D6D31 /* MessageWriterSendView.swift in Sources */,
 				B9AFD8BA1E6A74AC003401FE /* AlphaTransitioning.swift in Sources */,
 				B9AFD8E21E6A97A6003401FE /* DrawerMenuInteractiveTransition.swift in Sources */,
 				B9FA25431E3F0CC6009801F0 /* ViewController.swift in Sources */,
