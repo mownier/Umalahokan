@@ -72,6 +72,7 @@ class ContactListView: UIView {
         searchTextField.tintColor = UIColor(red: 133/255, green: 138/255, blue: 154/255, alpha: 1.0)
         searchTextField.font = UIFont(name: "AvenirNext-Medium", size: 12.0)
         searchTextField.placeholder = NSLocalizedString("Search", comment: "search")
+        searchTextField.keyboardAppearance = .dark
         
         let searchIcon = UIButton()
         searchIcon.setImage(#imageLiteral(resourceName: "button-search"), for: .normal)
