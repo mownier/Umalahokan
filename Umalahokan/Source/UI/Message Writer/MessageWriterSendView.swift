@@ -44,6 +44,7 @@ class MessageWriterSendView: UIView {
         messageTextField.font = UIFont(name: "AvenirNext-Medium", size: 12.0)
         messageTextField.textColor = UIColor(red: 133/255, green: 138/255, blue: 154/255, alpha: 1.0)
         messageTextField.tintColor = UIColor(red: 133/255, green: 138/255, blue: 154/255, alpha: 1.0)
+        messageTextField.keyboardAppearance = .dark
         
         sendButton = UIButton()
         sendButton.setTitle("SEND", for: .normal)
