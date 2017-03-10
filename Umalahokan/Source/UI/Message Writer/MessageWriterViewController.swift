@@ -97,6 +97,9 @@ extension MessageWriterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let recipientCell = cell as? RecipientCell else { return }
         
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        
         let indexPaths = tableView.indexPathsForVisibleRows?.sorted(by: { indexPath1, indexPath2 -> Bool in
             return isDismissing ? indexPath1.row > indexPath2.row : indexPath1.row < indexPath2.row
         })
