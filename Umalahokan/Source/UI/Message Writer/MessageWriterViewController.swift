@@ -11,7 +11,7 @@ import UIKit
 class MessageWriterViewController: UIViewController {
 
     var messageWriterView: MessageWriterView!
-    var keyboardObserver: NSObjectProtocol?
+    var keyboardObserver: Any?
     var keyboardHandler = KeyboardHandler()
     var isDismissing: Bool = false
     
@@ -56,50 +56,13 @@ class MessageWriterViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        keyboardObserver = NotificationCenter.default.addObserver(
-            forName: Notification.Name.UIKeyboardWillChangeFrame,
-            object: nil,
-            queue: nil,
-            using: {  [weak self] notif in
-                guard let this = self else { return }
-                
-                this.keyboardHandler.willMoveUsedView = false
-                this.keyboardHandler.info = notif.userInfo
-                this.keyboardHandler.handle(using: this.messageWriterView.tableView, with: { delta in
-                    switch delta.direction {
-                    case .up:
-                        if delta.height == 0 {
-                            this.messageWriterView.tableView.contentInset.bottom = abs(delta.y)
-                            this.messageWriterView.tableView.scrollIndicatorInsets.bottom = abs(delta.y)
-                            
-                        } else {
-                            this.messageWriterView.tableView.contentInset.bottom += abs(delta.height)
-                            this.messageWriterView.tableView.scrollIndicatorInsets.bottom += abs(delta.height)
-                        }
-                        
-                    case .down:
-                        UIView.performWithoutAnimation {
-                            if delta.height == 0 {
-                                this.messageWriterView.tableView.contentInset.bottom = 0
-                                this.messageWriterView.tableView.scrollIndicatorInsets.bottom = 0
-                                
-                            } else {
-                                this.messageWriterView.tableView.contentInset.bottom -= abs(delta.height)
-                                this.messageWriterView.tableView.scrollIndicatorInsets.bottom -= abs(delta.height)
-                            }
-                        }
-
-                    default:
-                        break
-                    }
-                })
-            })
+        addKeyboardObserver()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NotificationCenter.default.removeObserver(keyboardObserver)
+        removeKeyboardObserver()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -197,5 +160,12 @@ extension MessageWriterViewController: MessageWriterHeaderDelegate {
         
         view.perform(#selector(UIView.endEditing), with: true, afterDelay: 0.0)
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension MessageWriterViewController: KeyboardObserverProtocol {
+    
+    func willHandleKeyboardNotification(with notif: Notification) {
+        willHandle(userInfo: notif.userInfo, view: messageWriterView.sendView, scrollView: messageWriterView.tableView, offsetOnUp: -messageWriterView.sendView.frame.height)
     }
 }
