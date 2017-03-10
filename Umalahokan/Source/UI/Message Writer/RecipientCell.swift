@@ -71,6 +71,9 @@ class RecipientCell: UITableViewCell {
     }
     
     private func initSetup() {
+        selectionStyle = .none
+        backgroundColor = UIColor.clear
+        
         avatarImageView = UIImageView()
         avatarImageView.backgroundColor = UIColor.lightGray
         avatarImageView.clipsToBounds = true
