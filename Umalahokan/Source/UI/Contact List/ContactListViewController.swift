@@ -13,6 +13,7 @@ class ContactListViewController: UIViewController {
     weak var drawerMenuInteractiveTransition: DrawerMenuInteractiveTransition?
     
     var contactListView: ContactListView!
+    var keyboardObserver: Any?
     
     override func loadView() {
         let size = UIScreen.main.bounds.size
@@ -25,6 +26,19 @@ class ContactListViewController: UIViewController {
         ContactListCell.register(in: contactListView.tableView)
         
         view = contactListView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        addKeyboardObserver()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        view.endEditing(true)
+        removeKeyboardObserver()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -71,3 +85,9 @@ extension ContactListViewController: DrawerMenuProtocol {
     }
 }
 
+extension ContactListViewController: KeyboardObserverProtocol {
+    
+    func willHandleKeyboardNotification(with notif: Notification) {
+        willHandle(userInfo: notif.userInfo, view: contactListView.searchTextField, scrollView: contactListView.tableView, offsetOnUp: 0)
+    }
+}
