@@ -15,23 +15,9 @@ class MessageWriterViewController: UIViewController {
     var keyboardHandler = KeyboardHandler()
     var isDismissing: Bool = false
     
-    struct Contact {
-        
-        var name: String = ""
-        var isOnline: Bool = false
-        var isAnimatable: Bool = false
-    }
-    
-    lazy var contacts: [Contact] = {
-        var data = [Contact]()
-        for _ in 0..<20 {
-            var contact = Contact()
-            contact.name = "Jana Rychla"
-            contact.isAnimatable = true
-            contact.isOnline = arc4random() % 2 == 0 ? false : true
-            data.append(contact)
-        }
-        return data
+
+    lazy var recipients: [RecipientCellItem] = {
+        return Contact.generateRandomList()
     }()
     
     override func loadView() {
@@ -73,16 +59,13 @@ class MessageWriterViewController: UIViewController {
 extension MessageWriterViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messageWriterView.isValidToReload ? contacts.count : 0
+        return messageWriterView.isValidToReload ? recipients.count : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = RecipientCell.dequeue(from: tableView)!
-        let contact = contacts[indexPath.row]
-        cell.displayNameLabel.text = contact.name
-        cell.onlineStatusIndicator.isHidden = !contact.isOnline
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
+        let recipient = recipients[indexPath.row]
+        cell.configure(recipient)
         return cell
     }
 }
@@ -126,9 +109,9 @@ extension MessageWriterViewController: UITableViewDelegate {
             }
             
         } else {
-            var contact = contacts[indexPath.row]
+            var recipient = recipients[indexPath.row]
             
-            guard contact.isAnimatable else { return }
+            guard recipient.isAnimatable else { return }
             
             let from: CGAffineTransform = CGAffineTransform(scaleX: 0.001, y: 0.001)
             let to: CGAffineTransform = CGAffineTransform.identity
@@ -146,8 +129,8 @@ extension MessageWriterViewController: UITableViewDelegate {
                 recipientCell.strip.isHidden = false
             }
             
-            contact.isAnimatable = false
-            contacts[indexPath.row] = contact
+            recipient.isAnimatable = false
+            recipients[indexPath.row] = recipient
         }
     }
 }
