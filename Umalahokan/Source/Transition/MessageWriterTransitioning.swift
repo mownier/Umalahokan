@@ -59,6 +59,7 @@ class MessageWriterTransition: NSObject, UIViewControllerAnimatedTransitioning {
             presented.header.inputBackground.alpha = 0
             presented.header.inputLabel.alpha = 0
             presented.header.inputTextField.alpha = 0
+            presented.sendView.alpha = 0
             
             presented.backgroundColor = whiteColor.withAlphaComponent(0)
             presented.tableView.backgroundColor = UIColor.clear
@@ -127,6 +128,7 @@ class MessageWriterTransition: NSObject, UIViewControllerAnimatedTransitioning {
                 presented.header.inputBackground.alpha = 1
                 presented.header.inputLabel.alpha = 1
                 presented.header.inputTextField.alpha = 1
+                presented.sendView.alpha = 1
             })
             
             assert(totalKeyframeDuration == duration, "Total keyframe duration is not in sync.")
