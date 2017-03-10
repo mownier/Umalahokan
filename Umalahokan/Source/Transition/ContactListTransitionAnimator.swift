@@ -10,12 +10,14 @@ import UIKit
 
 class ContactListTransitionAnimator: DrawerMenuTransitionDelegate {
     
-    var view: ContactListView!
+    weak var view: ContactListView?
     
     private(set) var toX: CGFloat!
     private(set) var toBackgroundColor: UIColor!
     
     func dismissalPreAnimation(transition: DrawerMenuTransition) {
+        guard let view = view else { return }
+        
         toX = -max(view.tableView.frame.width, view.searchTextField.frame.width)
         toBackgroundColor = toBackgroundColor.withAlphaComponent(0.0)
     }
@@ -25,6 +27,8 @@ class ContactListTransitionAnimator: DrawerMenuTransitionDelegate {
     }
     
     func presentationPreAnimation(transition: DrawerMenuTransition) {
+        guard let view = view else { return }
+        
         view.setNeedsLayout()
         view.layoutIfNeeded()
         
@@ -42,6 +46,8 @@ class ContactListTransitionAnimator: DrawerMenuTransitionDelegate {
     }
     
     private func animate() {
+        guard let view = view else { return }
+        
         view.backgroundColor = toBackgroundColor
         view.tableView.frame.origin.x = toX
         view.searchTextField.frame.origin.x = toX
