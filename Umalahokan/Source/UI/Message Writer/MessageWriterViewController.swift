@@ -81,8 +81,6 @@ extension MessageWriterViewController: UITableViewDataSource {
         let contact = contacts[indexPath.row]
         cell.displayNameLabel.text = contact.name
         cell.onlineStatusIndicator.isHidden = !contact.isOnline
-        cell.selectionStyle = .none
-        cell.backgroundColor = UIColor.clear
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
         return cell
