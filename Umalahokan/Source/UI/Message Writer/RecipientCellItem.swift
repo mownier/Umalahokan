@@ -13,7 +13,14 @@ protocol RecipientCellItem {
     var avatarURL: URL? { get }
     var displayNameText: String { get }
     var isOnline: Bool { get }
-    var isAnimatable: Bool { set get }
+}
+
+struct RecipientCellDisplayItem: RecipientCellItem {
+    
+    var avatarURL: URL?
+    var displayNameText: String = ""
+    var isOnline: Bool = false
+    var isAnimatable: Bool = true
 }
 
 protocol RecipientCellConfiguration {
@@ -41,16 +48,5 @@ extension RecipientCell: RecipientCellConfiguration {
         
         setNeedsLayout()
         layoutIfNeeded()
-    }
-}
-
-extension Contact: RecipientCellItem {
-    
-    var avatarURL: URL? {
-        return URL(string: avatar)
-    }
-    
-    var displayNameText: String {
-        return name
     }
 }
