@@ -15,9 +15,8 @@ class MessageWriterViewController: UIViewController {
     var keyboardHandler = KeyboardHandler()
     var isDismissing: Bool = false
     
-
-    lazy var recipients: [RecipientCellItem] = {
-        return Contact.generateRandomList()
+    lazy var recipients: [RecipientCellDisplayItem] = {
+        return RecipientCellDisplayItem.generateRandomDisplayItems()
     }()
     
     override func loadView() {
@@ -92,43 +91,15 @@ extension MessageWriterViewController: UITableViewDelegate {
         let duration: TimeInterval = 0.5
 
         if isDismissing {
-            let from: CGAffineTransform = .identity
-            let to: CGAffineTransform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-            
-            recipientCell.strip.isHidden = true
-            recipientCell.avatarImageView.transform = from
-            recipientCell.displayNameLabel.transform = from
-            recipientCell.onlineStatusIndicator.transform = from
-
-            UIView.animate(withDuration: duration, delay: delay, animations: {
-                recipientCell.avatarImageView.transform = to
-                recipientCell.displayNameLabel.transform = to
-                recipientCell.onlineStatusIndicator.transform = to
-            }) { _ in
-                recipientCell.isHidden = true
-            }
+            recipientCell.animation2(duration, delay: delay)
             
         } else {
             var recipient = recipients[indexPath.row]
             
             guard recipient.isAnimatable else { return }
             
-            let from: CGAffineTransform = CGAffineTransform(scaleX: 0.001, y: 0.001)
-            let to: CGAffineTransform = CGAffineTransform.identity
-            
-            recipientCell.strip.isHidden = true
-            recipientCell.avatarImageView.transform = from
-            recipientCell.displayNameLabel.transform = from
-            recipientCell.onlineStatusIndicator.transform = from
-            
-            UIView.animate(withDuration: duration, delay: delay, animations: {
-                recipientCell.avatarImageView.transform = to
-                recipientCell.displayNameLabel.transform = to
-                recipientCell.onlineStatusIndicator.transform = to
-            }) { _ in
-                recipientCell.strip.isHidden = false
-            }
-            
+            recipientCell.animation1(duration, delay: delay)
+                        
             recipient.isAnimatable = false
             recipients[indexPath.row] = recipient
         }
