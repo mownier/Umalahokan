@@ -39,6 +39,8 @@
 		B9D3ABDA1E72699C00DB34BE /* KeyboardObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3ABD91E72699C00DB34BE /* KeyboardObserverProtocol.swift */; };
 		B9D3ABDC1E72734300DB34BE /* RecipientCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3ABDB1E72734300DB34BE /* RecipientCellItem.swift */; };
 		B9D3ABDF1E7275AD00DB34BE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3ABDE1E7275AD00DB34BE /* Contact.swift */; };
+		B9D3ABE11E727A4400DB34BE /* RecipientCellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3ABE01E727A4400DB34BE /* RecipientCellAnimator.swift */; };
+		B9D3ABE31E727CA200DB34BE /* MessageWriterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3ABE21E727CA200DB34BE /* MessageWriterData.swift */; };
 		B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25351E3F0C31009801F0 /* AppDelegate.swift */; };
 		B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25371E3F0C31009801F0 /* Umalahokan.xcdatamodeld */; };
 		B9FA25431E3F0CC6009801F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA25411E3F0CC6009801F0 /* ViewController.swift */; };
@@ -110,6 +112,8 @@
 		B9D3ABD91E72699C00DB34BE /* KeyboardObserverProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserverProtocol.swift; sourceTree = "<group>"; };
 		B9D3ABDB1E72734300DB34BE /* RecipientCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientCellItem.swift; sourceTree = "<group>"; };
 		B9D3ABDE1E7275AD00DB34BE /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		B9D3ABE01E727A4400DB34BE /* RecipientCellAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientCellAnimator.swift; sourceTree = "<group>"; };
+		B9D3ABE21E727CA200DB34BE /* MessageWriterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterData.swift; sourceTree = "<group>"; };
 		B9FA25351E3F0C31009801F0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9FA25381E3F0C31009801F0 /* Umalahokan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Umalahokan.xcdatamodel; sourceTree = "<group>"; };
 		B9FA25411E3F0CC6009801F0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -264,11 +268,13 @@
 		B9BDC7961E41A453001805D8 /* Message Writer */ = {
 			isa = PBXGroup;
 			children = (
+				B9D3ABE21E727CA200DB34BE /* MessageWriterData.swift */,
 				B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */,
 				B99043F01E712138008D6D31 /* MessageWriterSendView.swift */,
 				B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */,
 				B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */,
 				B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */,
+				B9D3ABE01E727A4400DB34BE /* RecipientCellAnimator.swift */,
 				B9D3ABDB1E72734300DB34BE /* RecipientCellItem.swift */,
 			);
 			path = "Message Writer";
@@ -651,6 +657,7 @@
 				B9AFD8BB1E6A74AC003401FE /* TranslationTransitioning.swift in Sources */,
 				B9D3ABDF1E7275AD00DB34BE /* Contact.swift in Sources */,
 				B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */,
+				B9D3ABE31E727CA200DB34BE /* MessageWriterData.swift in Sources */,
 				B9D3ABDA1E72699C00DB34BE /* KeyboardObserverProtocol.swift in Sources */,
 				B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */,
 				B9AFD8E31E6A97A6003401FE /* DrawerMenuTransition.swift in Sources */,
@@ -662,6 +669,7 @@
 				B9AFD8E11E6A97A6003401FE /* DrawerContainerViewController.swift in Sources */,
 				B9164A741E542C50006D22E2 /* MessageWriterTransitioning.swift in Sources */,
 				B9AFD8E41E6A97A6003401FE /* DrawerMenuTransitioning.swift in Sources */,
+				B9D3ABE11E727A4400DB34BE /* RecipientCellAnimator.swift in Sources */,
 				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
 				B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
