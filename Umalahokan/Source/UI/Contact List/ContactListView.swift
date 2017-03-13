@@ -40,14 +40,13 @@ class ContactListView: UIView {
         if !searchTextField.layer.hasAnimation {
             rect.size.width = width
             rect.size.height = 52
-            rect.origin.y = frame.height - rect.height
             searchTextField.frame = rect
         }
 
         if !tableView.layer.hasAnimation {
+            rect.origin.y = rect.maxY
             rect.size.width = width
-            rect.size.height = rect.origin.y
-            rect.origin.y = 0
+            rect.size.height = frame.height - rect.height
             tableView.frame = rect
         }
 
