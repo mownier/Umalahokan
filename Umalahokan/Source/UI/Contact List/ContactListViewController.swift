@@ -88,6 +88,6 @@ extension ContactListViewController: DrawerMenuProtocol {
 extension ContactListViewController: KeyboardObserverProtocol {
     
     func willHandleKeyboardNotification(with notif: Notification) {
-        willHandle(userInfo: notif.userInfo, view: contactListView.searchTextField, scrollView: contactListView.tableView, offsetOnUp: 0)
+        willHandle(userInfo: notif.userInfo, scrollView: contactListView.tableView, offsetOnUp: 0)
     }
 }
