@@ -32,16 +32,15 @@ class ContactListViewController: UIViewController {
         view = contactListView
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         addKeyboardObserver()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         
-        view.endEditing(true)
         removeKeyboardObserver()
     }
     
@@ -50,6 +49,7 @@ class ContactListViewController: UIViewController {
     }
     
     func didTapToDismiss() {
+        contactListView.searchTextField.resignFirstResponder()
         dismiss(animated: true, completion: nil)
     }
 }
@@ -92,6 +92,6 @@ extension ContactListViewController: DrawerMenuProtocol {
 extension ContactListViewController: KeyboardObserverProtocol {
     
     func willHandleKeyboardNotification(with notif: Notification) {
-        willHandle(userInfo: notif.userInfo, scrollView: contactListView.tableView, offsetOnUp: 0)
+        willHandle(userInfo: notif.userInfo, view: contactListView, scrollView: contactListView.tableView, offsetOnUp: 0, willMoveUsedView: false)
     }
 }
