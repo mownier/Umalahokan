@@ -72,4 +72,37 @@ extension KeyboardObserverProtocol {
             }
         })
     }
+    
+    func willHandle(userInfo: [AnyHashable: Any]?, scrollView: UIScrollView, offsetOnUp: CGFloat) {
+        var handler = KeyboardHandler()
+        handler.info = userInfo
+        handler.willMoveUsedView = false
+        
+        handler.handle(using: scrollView, with: { delta in
+            switch delta.direction {
+            case .down:
+                if delta.height == 0 {
+                    scrollView.contentInset.bottom = 0
+                    scrollView.scrollIndicatorInsets.bottom = 0
+                    
+                } else {
+                    scrollView.contentInset.bottom -= abs(delta.height)
+                    scrollView.scrollIndicatorInsets.bottom -= abs(delta.height)
+                }
+                
+            case .up:
+                if delta.height == 0 {
+                    scrollView.contentInset.bottom = abs(delta.y) - offsetOnUp
+                    scrollView.scrollIndicatorInsets.bottom = abs(delta.y) - offsetOnUp
+                    
+                } else {
+                    scrollView.contentInset.bottom += abs(delta.height)
+                    scrollView.scrollIndicatorInsets.bottom += abs(delta.height)
+                }
+                
+            default:
+                break
+            }
+        })
+    }
 }
