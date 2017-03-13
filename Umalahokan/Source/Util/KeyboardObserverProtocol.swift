@@ -40,45 +40,12 @@ extension KeyboardObserverProtocol {
         willHandle(userInfo: userInfo, view: nil, scrollView: scrollView, offsetOnUp: 0)
     }
     
-    func willHandle(userInfo: [AnyHashable: Any]?, view: UIView?, scrollView: UIScrollView, offsetOnUp: CGFloat) {
+    func willHandle(userInfo: [AnyHashable: Any]?, view: UIView?, scrollView: UIScrollView, offsetOnUp: CGFloat, willMoveUsedView: Bool = true) {
         var handler = KeyboardHandler()
         handler.info = userInfo
-        handler.willMoveUsedView = true
+        handler.willMoveUsedView = willMoveUsedView
         
         handler.handle(using: view ?? scrollView, with: { delta in
-            switch delta.direction {
-            case .down:
-                if delta.height == 0 {
-                    scrollView.contentInset.bottom = 0
-                    scrollView.scrollIndicatorInsets.bottom = 0
-                    
-                } else {
-                    scrollView.contentInset.bottom -= abs(delta.height)
-                    scrollView.scrollIndicatorInsets.bottom -= abs(delta.height)
-                }
-                
-            case .up:
-                if delta.height == 0 {
-                    scrollView.contentInset.bottom = abs(delta.y) - offsetOnUp
-                    scrollView.scrollIndicatorInsets.bottom = abs(delta.y) - offsetOnUp
-                    
-                } else {
-                    scrollView.contentInset.bottom += abs(delta.height)
-                    scrollView.scrollIndicatorInsets.bottom += abs(delta.height)
-                }
-                
-            default:
-                break
-            }
-        })
-    }
-    
-    func willHandle(userInfo: [AnyHashable: Any]?, scrollView: UIScrollView, offsetOnUp: CGFloat) {
-        var handler = KeyboardHandler()
-        handler.info = userInfo
-        handler.willMoveUsedView = false
-        
-        handler.handle(using: scrollView, with: { delta in
             switch delta.direction {
             case .down:
                 if delta.height == 0 {
