@@ -10,7 +10,11 @@ import UIKit
 
 class ContactListViewController: UIViewController {
 
-    weak var drawerMenuInteractiveTransition: DrawerMenuInteractiveTransition?
+    weak var drawerMenuInteractiveTransition: DrawerMenuInteractiveTransition? {
+        didSet {
+            drawerMenuInteractiveTransition?.wantsInteractiveStart = false
+        }
+    }
     
     var contactListView: ContactListView!
     var keyboardObserver: Any?
