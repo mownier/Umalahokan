@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89BA489C8FD76613E2413FA5 /* Pods_UmalahokanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5824898C2C8A72A58719BFE3 /* Pods_UmalahokanUITests.framework */; };
+		B905834D1E7796DA00B18334 /* UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B905834C1E7796DA00B18334 /* UITheme.swift */; };
 		B9086EB31E3EEFFB003AECC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9086EB11E3EEFFB003AECC4 /* Main.storyboard */; };
 		B9086EB81E3EEFFB003AECC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9086EB71E3EEFFB003AECC4 /* Assets.xcassets */; };
 		B9086EBB1E3EEFFB003AECC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9086EB91E3EEFFB003AECC4 /* LaunchScreen.storyboard */; };
@@ -75,6 +76,7 @@
 		7E706696618A9188E5C554DB /* Pods-Umalahokan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umalahokan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umalahokan/Pods-Umalahokan.release.xcconfig"; sourceTree = "<group>"; };
 		82B69C16C676C8100B11E9BB /* Pods-Umalahokan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umalahokan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Umalahokan/Pods-Umalahokan.debug.xcconfig"; sourceTree = "<group>"; };
 		941AD80F9B17F58342F1AC30 /* Pods-UmalahokanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmalahokanUITests/Pods-UmalahokanUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B905834C1E7796DA00B18334 /* UITheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITheme.swift; sourceTree = "<group>"; };
 		B9086EAA1E3EEFFB003AECC4 /* Umalahokan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umalahokan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9086EB21E3EEFFB003AECC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B9086EB71E3EEFFB003AECC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */,
 				B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */,
 				B9D3ABD91E72699C00DB34BE /* KeyboardObserverProtocol.swift */,
+				B905834C1E7796DA00B18334 /* UITheme.swift */,
 				B9AFD8E51E6AA5DC003401FE /* UmalahokanDrawerController.swift */,
 			);
 			path = Util;
@@ -658,6 +661,7 @@
 				B9D3ABDF1E7275AD00DB34BE /* Contact.swift in Sources */,
 				B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */,
 				B9D3ABE31E727CA200DB34BE /* MessageWriterData.swift in Sources */,
+				B905834D1E7796DA00B18334 /* UITheme.swift in Sources */,
 				B9D3ABDA1E72699C00DB34BE /* KeyboardObserverProtocol.swift in Sources */,
 				B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */,
 				B9AFD8E31E6A97A6003401FE /* DrawerMenuTransition.swift in Sources */,
