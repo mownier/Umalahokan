@@ -58,6 +58,38 @@ struct UITheme {
         var pink: UIColor {
             return UIColor(red: 236/255, green: 107/255, blue: 178/255, alpha: 1.0)
         }
+        
+        var gray: UIColor {
+            return UIColor(red: 133/255, green: 138/255, blue: 154/255, alpha: 1.0)
+        }
+        
+        var gray2: UIColor {
+            return UIColor(red: 233/255, green: 234/255, blue: 243/255, alpha: 1.0)
+        }
+        
+        var gray3: UIColor {
+            return UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1.0)
+        }
+        
+        var green: UIColor {
+            return UIColor(red: 42/255, green: 198/255, blue: 173/255, alpha: 1.0)
+        }
+        
+        var yellow: UIColor {
+            return UIColor(red: 236/255, green: 107/255, blue: 178/255, alpha: 1.0)
+        }
+        
+        var yellow2: UIColor {
+            return UIColor(red: 236/255, green: 107/255, blue: 178/255, alpha: 1.0)
+        }
+        
+        var brown: UIColor {
+            return UIColor(red: 207/255, green: 174/255, blue: 175/255, alpha: 1.0)
+        }
+        
+        var blue: UIColor {
+            return UIColor(red: 117/255, green: 168/255, blue: 252/255, alpha: 1.0)
+        }
     }
     
     let font = Font()
