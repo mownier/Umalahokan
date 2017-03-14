@@ -54,6 +54,7 @@ class ContactListView: UIView {
             rect.size.width = frame.width - width
             rect.size.height = frame.height
             rect.origin.x = frame.width - rect.width
+            rect.origin.y = 0
             gestureHelperView.frame = rect
         }
     }
