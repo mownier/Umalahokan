@@ -66,6 +66,10 @@ extension ContactListViewController: ContactListViewDelegate {
             self.didTapToDismiss()
         }
     }
+    
+    func handleGestureHelperOnTap(_ gesture: UITapGestureRecognizer) {
+        didTapToDismiss()
+    }
 }
 
 extension ContactListViewController: UITableViewDataSource {

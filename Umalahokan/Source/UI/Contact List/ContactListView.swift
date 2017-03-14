@@ -11,6 +11,7 @@ import UIKit
 protocol ContactListViewDelegate: class {
     
     func handleGestureHelperOnPan(_ gesture: UIPanGestureRecognizer)
+    func handleGestureHelperOnTap(_ gesture: UITapGestureRecognizer)
 }
 
 class ContactListView: UIView {
@@ -99,6 +100,11 @@ class ContactListView: UIView {
         panGesture.delaysTouchesBegan = false
         gestureHelperView.addGestureRecognizer(panGesture)
         
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.addTarget(self, action: #selector(self.handleTapGesture(_ :)))
+        gestureHelperView.addGestureRecognizer(tapGesture)
+        
         addSubview(tableView)
         addSubview(searchTextField)
         addSubview(gestureHelperView)
@@ -106,5 +112,9 @@ class ContactListView: UIView {
     
     func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
         delegate?.handleGestureHelperOnPan(gesture)
+    }
+    
+    func handleTapGesture(_ gesture: UITapGestureRecognizer) {
+        delegate?.handleGestureHelperOnTap(gesture)
     }
 }
