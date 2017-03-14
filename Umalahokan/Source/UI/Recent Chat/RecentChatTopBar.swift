@@ -87,10 +87,8 @@ class RecentChatTopBar: UIView {
         rightItem.clipsToBounds = true
 
         onlineStatusIndicator = UIView()
-        onlineStatusIndicator.backgroundColor = UIColor.clear
-        onlineStatusIndicator.clipsToBounds = true
-        onlineStatusIndicator.layer.borderWidth = 3.0
-        onlineStatusIndicator.layer.borderColor = theme.color.green.cgColor
+        onlineStatusIndicator.backgroundColor = theme.color.green
+        onlineStatusIndicator.layer.masksToBounds = true
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.didTapRight))
         tap.numberOfTapsRequired = 1
