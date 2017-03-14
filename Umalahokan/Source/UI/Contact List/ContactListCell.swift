@@ -56,25 +56,22 @@ class ContactListCell: UITableViewCell {
     }
     
     func initSetup() {
+        let theme = UITheme()
+        
         selectionStyle = .none
         backgroundColor = UIColor.clear
         
         avatarImageView = UIImageView()
-        avatarImageView.backgroundColor = UIColor.lightGray
+        avatarImageView.backgroundColor = theme.color.gray5
         avatarImageView.clipsToBounds = true
         
         displayNameLabel = UILabel()
-        displayNameLabel.font = UIFont(name: "AvenirNext-Medium", size: 12.0)
+        displayNameLabel.font = theme.font.medium.size(12)
         
         onlineStatusIndicator = UIView()
         onlineStatusIndicator.clipsToBounds = true
-        onlineStatusIndicator.backgroundColor = UIColor(
-            red: 42/255,
-            green: 198/255,
-            blue: 173/255,
-            alpha: 1.0
-        )
-
+        onlineStatusIndicator.backgroundColor = theme.color.green
+        
         addSubview(avatarImageView)
         addSubview(displayNameLabel)
         addSubview(onlineStatusIndicator)

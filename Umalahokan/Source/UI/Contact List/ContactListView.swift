@@ -61,8 +61,10 @@ class ContactListView: UIView {
     }
     
     func initSetup() {
+        let theme = UITheme()
+        
         tableView = UITableView()
-        tableView.backgroundColor = UIColor(red: 233/255, green: 234/255, blue: 243/255, alpha: 1.0)
+        tableView.backgroundColor = theme.color.gray2
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 52
@@ -70,8 +72,8 @@ class ContactListView: UIView {
         searchTextField = UITextField()
         searchTextField.backgroundColor = UIColor.white
         searchTextField.leftViewMode = .always
-        searchTextField.tintColor = UIColor(red: 133/255, green: 138/255, blue: 154/255, alpha: 1.0)
-        searchTextField.font = UIFont(name: "AvenirNext-Medium", size: 12.0)
+        searchTextField.tintColor = theme.color.gray
+        searchTextField.font = theme.font.medium.size(12)
         searchTextField.placeholder = NSLocalizedString("Search", comment: "search")
         searchTextField.keyboardAppearance = .dark
         

@@ -29,11 +29,13 @@ class ContactListTransitionAnimator: DrawerMenuTransitionDelegate {
     func presentationPreAnimation(transition: DrawerMenuTransition) {
         guard let view = view else { return }
         
+        let theme = UITheme()
+        
         view.setNeedsLayout()
         view.layoutIfNeeded()
         
         toX = 0
-        toBackgroundColor = UIColor(red: 57/255, green: 59/255, blue: 88/255, alpha: 0.5)
+        toBackgroundColor = theme.color.violet.withAlphaComponent(0.5)
         
         let fromX = -max(view.tableView.frame.width, view.searchTextField.frame.width)
         view.backgroundColor = toBackgroundColor.withAlphaComponent(0.0)

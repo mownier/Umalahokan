@@ -52,6 +52,8 @@ class RecentChatView: UIView {
     }
     
     private func initSetup() {
+        let theme = UITheme()
+        
         topBar = RecentChatTopBar()
         
         tableView = UITableView()
@@ -61,12 +63,7 @@ class RecentChatView: UIView {
         composerButton.tintColor = UIColor.white
         composerButton.clipsToBounds = true
         composerButton.setImage(#imageLiteral(resourceName: "button-composer"), for: .normal)
-        composerButton.backgroundColor = UIColor(
-            red: 142/255,
-            green: 135/255,
-            blue: 251/255,
-            alpha: 1.0
-        )
+        composerButton.backgroundColor = theme.color.violet2
         composerButton.imageEdgeInsets.left = 4
         composerButton.imageEdgeInsets.bottom = 4
         composerButton.layer.shadowColor = UIColor.black.cgColor

@@ -69,11 +69,13 @@ class RecentChatTopBar: UIView {
     }
     
     private func initSetup() {
-        backgroundColor = UIColor(red: 57/255, green: 59/255, blue: 88/255, alpha: 1.0)
+        let theme = UITheme()
+        
+        backgroundColor = theme.color.violet
         
         titleLabel = UILabel()
         titleLabel.text = "CHAT"
-        titleLabel.font = UIFont(name: "AvenirNext-Medium", size: 13)
+        titleLabel.font = theme.font.medium.size(13)
         titleLabel.textColor = UIColor.white
         
         leftItem = UIButton()
@@ -88,11 +90,7 @@ class RecentChatTopBar: UIView {
         onlineStatusIndicator.backgroundColor = UIColor.clear
         onlineStatusIndicator.clipsToBounds = true
         onlineStatusIndicator.layer.borderWidth = 3.0
-        onlineStatusIndicator.layer.borderColor = UIColor(
-            red: 42/255,
-            green: 198/255,
-            blue: 173/255,
-            alpha: 1.0).cgColor
+        onlineStatusIndicator.layer.borderColor = theme.color.green.cgColor
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.didTapRight))
         tap.numberOfTapsRequired = 1

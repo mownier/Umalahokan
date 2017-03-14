@@ -85,59 +85,36 @@ class RecentChatCell: UITableViewCell {
     }
     
     private func initSetup() {
+        let theme = UITheme()
+        
         avatarImageView = UIImageView()
-        avatarImageView.backgroundColor = UIColor.gray
+        avatarImageView.backgroundColor = theme.color.gray5
         
         moodIndicator = UIView()
-        moodIndicator.backgroundColor = UIColor(
-            red: 188/255,
-            green: 103/255,
-            blue: 212/255,
-            alpha: 1.0
-        )
+        moodIndicator.backgroundColor = theme.color.violet3
         
         moodLabel = UILabel()
-        moodLabel.font = UIFont(name: "AvenirNext-Regular", size: 10.0)
-        moodLabel.textColor = UIColor(
-            red: 185/255,
-            green: 185/255,
-            blue: 185/255,
-            alpha: 1.0
-        )
+        moodLabel.font = theme.font.regular.size(10)
+        moodLabel.textColor = theme.color.gray4
         
         displayNameLabel = UILabel()
-        displayNameLabel.font = UIFont(name: "AvenirNext-Medium", size: 12.0)
+        displayNameLabel.font = theme.font.medium.size(12)
         
         messageLabel = UILabel()
-        messageLabel.font = UIFont(name: "AvenirNext-Regular", size: 12.0)
-        moodLabel.textColor = UIColor(
-            red: 182/255,
-            green: 182/255,
-            blue: 182/255,
-            alpha: 1.0
-        )
+        messageLabel.font = theme.font.regular.size(12)
+        moodLabel.textColor = theme.color.gray5
         
         timeLabel = UILabel()
-        timeLabel.font = UIFont(name: "AvenirNext-Regular", size: 10.0)
+        timeLabel.font = theme.font.regular.size(10)
         timeLabel.textColor = moodLabel.textColor
         
         strip = UIView()
-        strip.backgroundColor = UIColor(
-            red: 242/255,
-            green: 242/255,
-            blue: 242/255,
-            alpha: 1.0
-        )
+        strip.backgroundColor = theme.color.gray6
         
         onlineStatusIndicator = UIView()
         onlineStatusIndicator.clipsToBounds = true
-        onlineStatusIndicator.backgroundColor = UIColor(
-            red: 42/255,
-            green: 198/255,
-            blue: 173/255,
-            alpha: 1.0
-        )
-            
+        onlineStatusIndicator.backgroundColor = theme.color.green
+        
         addSubview(avatarImageView)
         addSubview(moodIndicator)
         addSubview(moodLabel)

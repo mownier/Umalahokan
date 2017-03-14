@@ -37,20 +37,22 @@ class MessageWriterSendView: UIView {
     }
 
     func initSetup() {
-        backgroundColor = UIColor(red: 237/255, green: 237/255, blue: 237/255, alpha: 1.0)
+        let theme = UITheme()
+        
+        backgroundColor = theme.color.gray3
         
         messageTextField = UITextField()
         messageTextField.placeholder = "Your message"
-        messageTextField.font = UIFont(name: "AvenirNext-Medium", size: 12.0)
-        messageTextField.textColor = UIColor(red: 133/255, green: 138/255, blue: 154/255, alpha: 1.0)
-        messageTextField.tintColor = UIColor(red: 133/255, green: 138/255, blue: 154/255, alpha: 1.0)
+        messageTextField.font = theme.font.medium.size(12)
+        messageTextField.textColor = theme.color.gray
+        messageTextField.tintColor = theme.color.gray
         messageTextField.keyboardAppearance = .dark
         
         sendButton = UIButton()
         sendButton.setTitle("SEND", for: .normal)
-        sendButton.setTitleColor(UIColor(red: 133/255, green: 138/255, blue: 154/255, alpha: 1.0), for: .normal)
+        sendButton.setTitleColor(theme.color.gray, for: .normal)
         sendButton.titleLabel?.textAlignment = .center
-        sendButton.titleLabel?.font = UIFont(name: "AvenirNext-Bold", size: 12.0)
+        sendButton.titleLabel?.font = theme.font.bold.size(12)
         
         addSubview(messageTextField)
         addSubview(sendButton)

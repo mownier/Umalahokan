@@ -78,18 +78,15 @@ class MessageWriterHeader: UIView {
     }
     
     private func initSetup() {
+        let theme = UITheme()
+        
         backgroundColor = UIColor.white
         
         // backgroundView = UIImageView(image: #imageLiteral(resourceName: "background-header"))
         // backgroundView.contentMode = .scaleAspectFill
         backgroundView = UIImageView()
-        backgroundView.backgroundColor = UIColor(
-            red: 142/255,
-            green: 135/255,
-            blue: 251/255,
-            alpha: 1.0
-        )
-        
+        backgroundView.backgroundColor = theme.color.violet2
+            
         closeButton = UIButton()
         closeButton.tintColor = UIColor.white
         closeButton.setImage(#imageLiteral(resourceName: "button-close"), for: .normal)
@@ -97,7 +94,7 @@ class MessageWriterHeader: UIView {
         closeButton.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         
         titleLabel = UILabel()
-        titleLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 12)
+        titleLabel.font = theme.font.semiBold.size(12)
         titleLabel.text = "NEW MESSAGE"
         titleLabel.textColor = UIColor.white
         
@@ -105,14 +102,14 @@ class MessageWriterHeader: UIView {
         inputBackground.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         
         inputLabel = UILabel()
-        inputLabel.font = UIFont(name: "AvenirNext-Regular", size: 12)
+        inputLabel.font = theme.font.regular.size(12)
         inputLabel.text = "Write to:"
         inputLabel.textColor = UIColor.white
         
         inputTextField = UITextField()
         inputTextField.tintColor = UIColor.white
         inputTextField.textColor = UIColor.white
-        inputTextField.font = UIFont(name: "AvenirNext-Medium", size: 12)
+        inputTextField.font = theme.font.medium.size(12)
         inputTextField.keyboardAppearance = .dark
         
         addSubview(backgroundView)
