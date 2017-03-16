@@ -23,6 +23,7 @@ class RecentChatViewController: UIViewController {
         recentChatView.delegate = self
         recentChatView.topBar.delegate = self
         recentChatView.tableView.dataSource = self
+        recentChatView.tableView.delegate = self
         recentChatView.tableView.rowHeight = 80
         recentChatView.tableView.separatorStyle = .none
         
@@ -50,6 +51,19 @@ extension RecentChatViewController: UITableViewDataSource {
         cell.timeLabel.text = "now"
         cell.selectionStyle = .none
         return cell
+    }
+}
+
+extension RecentChatViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chat = ChatViewController()
+        present(chat, animated: true, completion: nil)
+        // A work around when cell selectionStyle set to .none.
+        // The delay of showing the chat view controller is
+        // being resolved by this line.
+        // See related problem here: goo.gl/VlN0JQ
+        CFRunLoopWakeUp(CFRunLoopGetCurrent())
     }
 }
 
