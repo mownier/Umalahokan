@@ -48,13 +48,15 @@ class ChatTopBar: UIView {
         rect.origin.y = (frameHeightOffset - rect.height) / 2
         backButton.frame = rect
         
-        rect.size.width = 32
-        rect.size.height = rect.width
-        rect.origin.x = frame.width - spacing - rect.width
-        rect.origin.y = (frameHeightOffset - rect.height) / 2
-        avatarImageView.frame = rect
-        avatarImageView.layer.cornerRadius = rect.width / 2
-        
+        if !avatarImageView.layer.hasAnimation {
+            rect.size.width = 32
+            rect.size.height = rect.width
+            rect.origin.x = frame.width - spacing - rect.width
+            rect.origin.y = (frameHeightOffset - rect.height) / 2
+            avatarImageView.frame = rect
+            avatarImageView.layer.cornerRadius = rect.width / 2
+        }
+
         moodLabel.sizeToFit()
         displayNameLabel.sizeToFit()
         
