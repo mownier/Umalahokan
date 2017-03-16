@@ -39,7 +39,7 @@ class ChatView: UIView {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = UIColor.clear
         
-        addSubview(topBar)
         addSubview(collectionView)
+        addSubview(topBar)
     }
 }
