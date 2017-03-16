@@ -11,6 +11,7 @@ import UIKit
 class RecentChatViewController: UIViewController {
     
     let messageWriterTransitioning = MessageWriterTransitioning()
+    let chatTransitioning = ChatTransitioning()
     
     weak var hamburger: DrawerContainerHamburger?
     
@@ -32,6 +33,12 @@ class RecentChatViewController: UIViewController {
         view = recentChatView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        recentChatView.tableView.reloadData()
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -50,6 +57,7 @@ extension RecentChatViewController: UITableViewDataSource {
         cell.messageLabel.text = "Hey there. How is it going?"
         cell.timeLabel.text = "now"
         cell.selectionStyle = .none
+        cell.avatarImageView.backgroundColor = UITheme().color.gray5
         return cell
     }
 }
@@ -57,7 +65,15 @@ extension RecentChatViewController: UITableViewDataSource {
 extension RecentChatViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! RecentChatCell
+        cell.avatarImageView.image = nil
+        cell.avatarImageView.backgroundColor = UIColor.white
+        let frame = cell.convert(cell.avatarImageView.frame, to: nil)
+        chatTransitioning.avatarFrame = frame
+        
         let chat = ChatViewController()
+        chat.transitioningDelegate = chatTransitioning
+        chat.modalPresentationStyle = .custom
         present(chat, animated: true, completion: nil)
         // A work around when cell selectionStyle set to .none.
         // The delay of showing the chat view controller is
