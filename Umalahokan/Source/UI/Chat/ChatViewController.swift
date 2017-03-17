@@ -81,7 +81,7 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
             myMessageCellPrototype.setNeedsLayout()
             myMessageCellPrototype.layoutIfNeeded()
             let width = collectionView.frame.width
-            let height = myMessageCellPrototype.messageLabel.frame.maxY + LayoutDimension().spacing * 0.5
+            let height = myMessageCellPrototype.messageLabel.frame.maxY
             return CGSize(width: width, height: height)
             
         } else {
@@ -89,12 +89,12 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
             otherMessageCellPrototype.setNeedsLayout()
             otherMessageCellPrototype.layoutIfNeeded()
             let width = collectionView.frame.width
-            let height = otherMessageCellPrototype.containerView.frame.maxY + LayoutDimension().spacing * 0.5
+            let height = otherMessageCellPrototype.messageLabel.frame.maxY
             return CGSize(width: width, height: height)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return LayoutDimension().spacing
     }
 }
