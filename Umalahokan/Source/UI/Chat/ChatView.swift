@@ -32,12 +32,16 @@ class ChatView: UIView {
     }
     
     func initSetup() {
+        let spacing = LayoutDimension().spacing
+        
         backgroundColor = UIColor.white
         
         topBar = ChatTopBar()
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = UIColor.clear
+        collectionView.contentInset.top = spacing
+        collectionView.contentInset.bottom = spacing
         
         addSubview(collectionView)
         addSubview(topBar)
