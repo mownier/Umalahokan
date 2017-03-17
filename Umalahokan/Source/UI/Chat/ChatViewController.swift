@@ -13,28 +13,8 @@ class ChatViewController: UIViewController {
     var chatView: ChatView!
     
     lazy var otherMessageCellPrototype = ChatOtherMessageCell()
-    lazy var messages: [String] = {
-        var data = [String]()
-        for i in 0..<(arc4random() % 20 + 20) {
-            switch arc4random() % 5 + 1 {
-            case 1:
-                data.append("Hello! Are you free tonight?")
-                
-            case 2:
-               data.append("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.")
-                
-            case 3:
-                data.append("No, I have an appointment with my boss.")
-                
-            case 4:
-                data.append("Ok, how about tomorrow night?")
-                
-            default:
-                data.append("The quick brown fox jumps over the lazy dog.")
-            }
-        }
-        return data
-    }()
+    lazy var myMessageCellPrototype = ChatMyMessageCell()
+    lazy var messages: [ChatDisplayData] = generateRandomChatDisplayItems()
     
     override func loadView() {
         let size = UIScreen.main.bounds.size
@@ -46,8 +26,10 @@ class ChatViewController: UIViewController {
         chatView.collectionView.dataSource = self
         
         ChatOtherMessageCell.register(in: chatView.collectionView)
+        ChatMyMessageCell.register(in: chatView.collectionView)
         
         otherMessageCellPrototype.frame.size.width = size.width
+        myMessageCellPrototype.frame.size.width = size.width
         
         view = chatView
     }
@@ -71,10 +53,20 @@ extension ChatViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = ChatOtherMessageCell.dequeue(from: collectionView, at: indexPath)
-        cell.messageLabel.text = messages[indexPath.row]
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
+        let cell: UICollectionViewCell
+        let item = messages[indexPath.row]
+        
+        if item.isMe {
+            let messageCell = ChatMyMessageCell.dequeue(from: collectionView, at: indexPath)
+            messageCell.messageLabel.text = item.message
+            cell = messageCell
+            
+        } else {
+            let messageCell = ChatOtherMessageCell.dequeue(from: collectionView, at: indexPath)
+            messageCell.messageLabel.text = item.message
+            cell = messageCell
+        }
+        
         return cell
     }
 }
@@ -82,12 +74,24 @@ extension ChatViewController: UICollectionViewDataSource {
 extension ChatViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        otherMessageCellPrototype.messageLabel.text = messages[indexPath.row]
-        otherMessageCellPrototype.setNeedsLayout()
-        otherMessageCellPrototype.layoutIfNeeded()
-        let width = collectionView.frame.width
-        let height = otherMessageCellPrototype.containerView.frame.maxY + LayoutDimension().spacing * 0.5
-        return CGSize(width: width, height: height)
+        let item = messages[indexPath.row]
+        
+        if item.isMe {
+            myMessageCellPrototype.messageLabel.text = item.message
+            myMessageCellPrototype.setNeedsLayout()
+            myMessageCellPrototype.layoutIfNeeded()
+            let width = collectionView.frame.width
+            let height = myMessageCellPrototype.messageLabel.frame.maxY + LayoutDimension().spacing * 0.5
+            return CGSize(width: width, height: height)
+            
+        } else {
+            otherMessageCellPrototype.messageLabel.text = item.message
+            otherMessageCellPrototype.setNeedsLayout()
+            otherMessageCellPrototype.layoutIfNeeded()
+            let width = collectionView.frame.width
+            let height = otherMessageCellPrototype.containerView.frame.maxY + LayoutDimension().spacing * 0.5
+            return CGSize(width: width, height: height)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
