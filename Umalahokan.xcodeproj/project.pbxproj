@@ -37,6 +37,8 @@
 		B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */; };
 		B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */; };
 		B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */; };
+		B9C1EF8F1E7BABBE001CA14D /* ChatMessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1EF8E1E7BABBE001CA14D /* ChatMessageLabel.swift */; };
+		B9C1EF911E7BAEDE001CA14D /* ChatDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1EF901E7BAEDE001CA14D /* ChatDisplayData.swift */; };
 		B9C5F9BD1E7A3635004C930A /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F9BC1E7A3635004C930A /* ChatView.swift */; };
 		B9C5F9BF1E7A3941004C930A /* LayoutDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F9BE1E7A3941004C930A /* LayoutDimension.swift */; };
 		B9C5F9C11E7A3CBF004C930A /* ChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F9C01E7A3CBF004C930A /* ChatTopBar.swift */; };
@@ -119,6 +121,8 @@
 		B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterView.swift; sourceTree = "<group>"; };
 		B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterHeader.swift; sourceTree = "<group>"; };
 		B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientCell.swift; sourceTree = "<group>"; };
+		B9C1EF8E1E7BABBE001CA14D /* ChatMessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageLabel.swift; sourceTree = "<group>"; };
+		B9C1EF901E7BAEDE001CA14D /* ChatDisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDisplayData.swift; sourceTree = "<group>"; };
 		B9C5F9BC1E7A3635004C930A /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		B9C5F9BE1E7A3941004C930A /* LayoutDimension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutDimension.swift; sourceTree = "<group>"; };
 		B9C5F9C01E7A3CBF004C930A /* ChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTopBar.swift; sourceTree = "<group>"; };
@@ -305,6 +309,8 @@
 		B9C5F9BB1E7A3627004C930A /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				B9C1EF901E7BAEDE001CA14D /* ChatDisplayData.swift */,
+				B9C1EF8E1E7BABBE001CA14D /* ChatMessageLabel.swift */,
 				B9C5F9C81E7A6D83004C930A /* ChatMyMessageCell.swift */,
 				B9C5F9CA1E7A6DF2004C930A /* ChatOtherMessageCell.swift */,
 				B9C5F9C01E7A3CBF004C930A /* ChatTopBar.swift */,
@@ -694,12 +700,14 @@
 				B9C5F9BD1E7A3635004C930A /* ChatView.swift in Sources */,
 				B9D3ABDF1E7275AD00DB34BE /* Contact.swift in Sources */,
 				B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */,
+				B9C1EF8F1E7BABBE001CA14D /* ChatMessageLabel.swift in Sources */,
 				B9C5F9C11E7A3CBF004C930A /* ChatTopBar.swift in Sources */,
 				B9D3ABE31E727CA200DB34BE /* MessageWriterData.swift in Sources */,
 				B905834D1E7796DA00B18334 /* UITheme.swift in Sources */,
 				B9D3ABDA1E72699C00DB34BE /* KeyboardObserverProtocol.swift in Sources */,
 				B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */,
 				B9AFD8E31E6A97A6003401FE /* DrawerMenuTransition.swift in Sources */,
+				B9C1EF911E7BAEDE001CA14D /* ChatDisplayData.swift in Sources */,
 				B9FA25451E3F0CF1009801F0 /* RecentChatViewController.swift in Sources */,
 				B992FCEE1E4EC018000C694B /* ContactListView.swift in Sources */,
 				B9AFD8E01E6A97A6003401FE /* DrawerProtocols.swift in Sources */,
