@@ -10,8 +10,7 @@ import UIKit
 
 class ChatOtherMessageCell: UICollectionViewCell {
     
-    var containerView: UIView!
-    var messageLabel: UILabel!
+    var messageLabel: ChatMessageLabel!
     
     convenience init() {
         self.init(frame: .zero)
@@ -29,47 +28,22 @@ class ChatOtherMessageCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         let spacing = LayoutDimension().spacing
-        let containerViewMaxWidth: CGFloat = (frame.width - (spacing * 2)) * 0.8
         var rect = CGRect.zero
         
-        rect.size.width = containerViewMaxWidth - (spacing * 2)
-        let messageLabelHeight = messageLabel.sizeThatFits(rect.size).height
-        let charSize = messageLabel.font!.lineHeight
-        let lineCount = floorf(Float(messageLabelHeight/charSize))
-        
-        if lineCount <= 0 {
-            rect.size = .zero
-        
-        } else if lineCount == 1 {
-            messageLabel.sizeToFit()
-            rect.size.width = messageLabel.intrinsicContentSize.width
-        }
-        rect.size.height = messageLabelHeight
-        rect.origin.x = spacing
-        rect.origin.y = spacing
+        rect.size.width = (frame.width - spacing * 4) * 0.8 - messageLabel.padding.left - messageLabel.padding.right
+        rect.size.height = messageLabel.sizeThatFits(rect.size).height
+        rect.size.height += messageLabel.padding.top
+        rect.size.height += messageLabel.padding.bottom
+        rect.size.width += messageLabel.padding.left
+        rect.size.width += messageLabel.padding.right
+        rect.origin.x = spacing * 2
         messageLabel.frame = rect
-        
-        rect.origin.y = spacing * 0.5
-        rect.size.width = rect.maxX + spacing
-        rect.size.height = rect.maxY + spacing
-        containerView.frame = rect
     }
     
     func initSetup() {
-        let theme = UITheme()
+        messageLabel = ChatMessageLabel()
         
-        containerView = UIView()
-        containerView.layer.borderWidth = 1
-        containerView.layer.borderColor = theme.color.gray5.cgColor
-        
-        messageLabel = UILabel()
-        messageLabel.numberOfLines = 0
-        messageLabel.text = "Hi! Are you free tonight"
-        messageLabel.font = theme.font.regular.size(13)
-        messageLabel.lineBreakMode = .byWordWrapping
-        
-        containerView.addSubview(messageLabel)
-        addSubview(containerView)
+        addSubview(messageLabel)
     }
 }
 
