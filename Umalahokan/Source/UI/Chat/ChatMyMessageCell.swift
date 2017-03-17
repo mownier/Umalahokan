@@ -37,7 +37,6 @@ class ChatMyMessageCell: UICollectionViewCell {
         rect.size.width += messageLabel.padding.left
         rect.size.width += messageLabel.padding.right
         rect.origin.x = frame.width - rect.width - spacing
-        rect.origin.y = spacing * 2
         messageLabel.frame = rect
     }
     
