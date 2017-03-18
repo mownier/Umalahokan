@@ -87,6 +87,8 @@ class RecentChatCell: UITableViewCell {
     private func initSetup() {
         let theme = UITheme()
         
+        selectionStyle = .none
+        
         avatarImageView = UIImageView()
         avatarImageView.backgroundColor = theme.color.gray5
         
@@ -126,18 +128,7 @@ class RecentChatCell: UITableViewCell {
     }
 }
 
-extension RecentChatCell {
+extension RecentChatCell: TableViewReusableProtocol {
     
-    static var reuseId: String {
-        return "RecentChatCell"
-    }
-    
-    class func register(in tableView: UITableView) {
-        tableView.register(self, forCellReuseIdentifier: self.reuseId)
-    }
-    
-    class func dequeue(from tableView: UITableView) -> RecentChatCell? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseId)
-        return cell as? RecentChatCell
-    }
+    typealias Cell = RecentChatCell
 }
