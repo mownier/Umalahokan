@@ -53,8 +53,8 @@ extension ChatViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = ChatMessageCell.dequeue(from: collectionView, at: indexPath)
-        let item = messages[indexPath.row] as? ChatMessageCellItem
-        cell.configure(item)
+        let messageItem = messages[indexPath.row] as? ChatMessageCellItem
+        cell.configure(messageItem, meBackgroundColor: item?.moodColor)
         return cell
     }
 }
