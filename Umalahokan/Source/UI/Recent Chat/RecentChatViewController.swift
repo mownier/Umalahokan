@@ -69,6 +69,7 @@ extension RecentChatViewController: UITableViewDelegate {
         chatTransitioning.avatarFrame = frame
         
         let chat = ChatViewController()
+        chat.item = chats[indexPath.row] as? ChatViewItem
         chat.transitioningDelegate = chatTransitioning
         chat.modalPresentationStyle = .custom
         present(chat, animated: true, completion: nil)
