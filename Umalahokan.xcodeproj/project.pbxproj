@@ -25,6 +25,8 @@
 		B972643D1E7CE8F500A49B50 /* RecentChatDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B972643C1E7CE8F500A49B50 /* RecentChatDisplayData.swift */; };
 		B97264411E7CEBDA00A49B50 /* RecentChatCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97264401E7CEBDA00A49B50 /* RecentChatCellItem.swift */; };
 		B97264431E7CFF8600A49B50 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97264421E7CFF8600A49B50 /* Mood.swift */; };
+		B97264451E7D113600A49B50 /* ContactListCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97264441E7D113600A49B50 /* ContactListCellItem.swift */; };
+		B97264471E7D120900A49B50 /* ContactListDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97264461E7D120900A49B50 /* ContactListDisplayData.swift */; };
 		B99043F11E712138008D6D31 /* MessageWriterSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99043F01E712138008D6D31 /* MessageWriterSendView.swift */; };
 		B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */; };
 		B992FCEC1E4EBFFA000C694B /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */; };
@@ -113,6 +115,8 @@
 		B972643C1E7CE8F500A49B50 /* RecentChatDisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatDisplayData.swift; sourceTree = "<group>"; };
 		B97264401E7CEBDA00A49B50 /* RecentChatCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatCellItem.swift; sourceTree = "<group>"; };
 		B97264421E7CFF8600A49B50 /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		B97264441E7D113600A49B50 /* ContactListCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListCellItem.swift; sourceTree = "<group>"; };
+		B97264461E7D120900A49B50 /* ContactListDisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListDisplayData.swift; sourceTree = "<group>"; };
 		B99043F01E712138008D6D31 /* MessageWriterSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterSendView.swift; sourceTree = "<group>"; };
 		B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				B992FCEF1E4EC298000C694B /* ContactListCell.swift */,
+				B97264441E7D113600A49B50 /* ContactListCellItem.swift */,
+				B97264461E7D120900A49B50 /* ContactListDisplayData.swift */,
 				B992FCED1E4EC018000C694B /* ContactListView.swift */,
 				B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */,
 			);
@@ -713,6 +719,7 @@
 				B9AFD8BB1E6A74AC003401FE /* TranslationTransitioning.swift in Sources */,
 				B9C5F9BD1E7A3635004C930A /* ChatView.swift in Sources */,
 				B9D3ABDF1E7275AD00DB34BE /* Contact.swift in Sources */,
+				B97264471E7D120900A49B50 /* ContactListDisplayData.swift in Sources */,
 				B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */,
 				B9C1EF8F1E7BABBE001CA14D /* ChatMessageLabel.swift in Sources */,
 				B9C5F9C11E7A3CBF004C930A /* ChatTopBar.swift in Sources */,
@@ -739,6 +746,7 @@
 				B97264391E7CE05100A49B50 /* ChatMessageCellItem.swift in Sources */,
 				B9C5F9BF1E7A3941004C930A /* LayoutDimension.swift in Sources */,
 				B9C5F9C31E7A4349004C930A /* ChatViewController.swift in Sources */,
+				B97264451E7D113600A49B50 /* ContactListCellItem.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
 				B9FA253C1E3F0C31009801F0 /* AppDelegate.swift in Sources */,
 				B9C5F9CD1E7A6E23004C930A /* ReusableProtocol.swift in Sources */,
