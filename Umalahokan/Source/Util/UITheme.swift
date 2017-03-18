@@ -94,7 +94,7 @@ struct UITheme {
         }
         
         var yellow: UIColor {
-            return UIColor(red: 236/255, green: 107/255, blue: 178/255, alpha: 1.0)
+            return UIColor(red: 223/255, green: 206/255, blue: 31/255, alpha: 1.0)
         }
         
         var brown: UIColor {
