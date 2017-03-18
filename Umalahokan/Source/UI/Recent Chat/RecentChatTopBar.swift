@@ -21,7 +21,6 @@ class RecentChatTopBar: UIView {
     var titleLabel: UILabel!
     var leftItem: UIButton!
     var rightItem: UIImageView!
-    var onlineStatusIndicator: UIView!
     
     convenience init() {
         var rect = CGRect.zero
@@ -55,17 +54,12 @@ class RecentChatTopBar: UIView {
         rect.origin.y = (frame.height - rect.height) / 2
         leftItem.frame = rect
         
-        rect.size.width = titleLabel.frame.height
+        rect.size.width = titleLabel.frame.height + 10
         rect.size.height = rect.size.width
         rect.origin.x = frame.width - rect.width - (spacing * 2)
         rect.origin.y = (frame.height - rect.height) / 2
         rightItem.layer.cornerRadius = rect.width / 2
         rightItem.frame = rect
-        
-        rect.size.width = 10
-        rect.size.height = rect.width
-        onlineStatusIndicator.layer.cornerRadius = rect.width / 2
-        onlineStatusIndicator.frame = rect
     }
     
     private func initSetup() {
@@ -85,10 +79,8 @@ class RecentChatTopBar: UIView {
         rightItem = UIImageView()
         rightItem.backgroundColor = UIColor.white
         rightItem.clipsToBounds = true
-
-        onlineStatusIndicator = UIView()
-        onlineStatusIndicator.backgroundColor = theme.color.green
-        onlineStatusIndicator.layer.masksToBounds = true
+        rightItem.layer.borderWidth = 2
+        rightItem.layer.borderColor = theme.color.green.cgColor
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.didTapRight))
         tap.numberOfTapsRequired = 1
@@ -98,7 +90,6 @@ class RecentChatTopBar: UIView {
         addSubview(titleLabel)
         addSubview(leftItem)
         addSubview(rightItem)
-        addSubview(onlineStatusIndicator)
     }
     
     func didTapLeft() {
