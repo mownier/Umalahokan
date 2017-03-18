@@ -18,6 +18,7 @@ class ContactListViewController: UIViewController {
     
     var contactListView: ContactListView!
     var keyboardObserver: Any?
+    var contacts = generateRandomContactListDisplayItems()
     
     override func loadView() {
         let size = UIScreen.main.bounds.size
@@ -75,13 +76,13 @@ extension ContactListViewController: ContactListViewDelegate {
 extension ContactListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ContactListCell.dequeue(from: tableView)!
-        cell.displayNameLabel.text = "Tereza Mala"
-        cell.onlineStatusIndicator.isHidden = arc4random() % 2 == 0 ? false : true
+        let cell = ContactListCell.dequeue(from: tableView)
+        let item = contacts[indexPath.row] as? ContactListCellItem
+        cell.configure(item)
         return cell
     }
 }
