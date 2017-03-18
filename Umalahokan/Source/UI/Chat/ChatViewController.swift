@@ -9,17 +9,19 @@
 import UIKit
 
 class ChatViewController: UIViewController {
-
-    var chatView: ChatView!
     
     lazy var messageCellPrototype = ChatMessageCell()
     lazy var messages: [ChatDisplayData] = generateRandomChatDisplayItems()
+    
+    var chatView: ChatView!
+    var item: ChatViewItem?
     
     override func loadView() {
         let size = UIScreen.main.bounds.size
         
         chatView = ChatView()
         chatView.frame.size = size
+        chatView.configure(item)
         chatView.topBar.delegate = self
         chatView.collectionView.delegate = self
         chatView.collectionView.dataSource = self
