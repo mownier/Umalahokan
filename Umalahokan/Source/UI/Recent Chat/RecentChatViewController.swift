@@ -16,6 +16,7 @@ class RecentChatViewController: UIViewController {
     weak var hamburger: DrawerContainerHamburger?
     
     var recentChatView: RecentChatView!
+    var chats = genereRecentChatRandomDisplayItems()
     
     override func loadView() {
         var rect = CGRect.zero
@@ -47,17 +48,13 @@ class RecentChatViewController: UIViewController {
 extension RecentChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return chats.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = RecentChatCell.dequeue(from: tableView)!
-        cell.moodLabel.text = "RELAXED"
-        cell.displayNameLabel.text = "Dominika Faniz"
-        cell.messageLabel.text = "Hey there. How is it going?"
-        cell.timeLabel.text = "now"
-        cell.selectionStyle = .none
-        cell.avatarImageView.backgroundColor = UITheme().color.gray5
+        let cell = RecentChatCell.dequeue(from: tableView)
+        let item = chats[indexPath.row] as? RecentChatCellItem
+        cell.configure(item)
         return cell
     }
 }
