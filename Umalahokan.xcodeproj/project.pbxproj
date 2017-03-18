@@ -19,6 +19,8 @@
 		B91792301E4AECE4007F1BB8 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */; };
 		B9355E071E40454400086815 /* RecentChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E061E40454400086815 /* RecentChatView.swift */; };
 		B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9355E081E40457D00086815 /* RecentChatTopBar.swift */; };
+		B97264371E7CDE6D00A49B50 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97264361E7CDE6D00A49B50 /* ChatMessageCell.swift */; };
+		B97264391E7CE05100A49B50 /* ChatMessageCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97264381E7CE05100A49B50 /* ChatMessageCellItem.swift */; };
 		B99043F11E712138008D6D31 /* MessageWriterSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99043F01E712138008D6D31 /* MessageWriterSendView.swift */; };
 		B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */; };
 		B992FCEC1E4EBFFA000C694B /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */; };
@@ -44,8 +46,6 @@
 		B9C5F9C11E7A3CBF004C930A /* ChatTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F9C01E7A3CBF004C930A /* ChatTopBar.swift */; };
 		B9C5F9C31E7A4349004C930A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F9C21E7A4349004C930A /* ChatViewController.swift */; };
 		B9C5F9C51E7A6038004C930A /* ChatTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F9C41E7A6038004C930A /* ChatTransitioning.swift */; };
-		B9C5F9C91E7A6D83004C930A /* ChatMyMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F9C81E7A6D83004C930A /* ChatMyMessageCell.swift */; };
-		B9C5F9CB1E7A6DF2004C930A /* ChatOtherMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F9CA1E7A6DF2004C930A /* ChatOtherMessageCell.swift */; };
 		B9C5F9CD1E7A6E23004C930A /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C5F9CC1E7A6E23004C930A /* ReusableProtocol.swift */; };
 		B9D3ABDA1E72699C00DB34BE /* KeyboardObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3ABD91E72699C00DB34BE /* KeyboardObserverProtocol.swift */; };
 		B9D3ABDC1E72734300DB34BE /* RecipientCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3ABDB1E72734300DB34BE /* RecipientCellItem.swift */; };
@@ -103,6 +103,8 @@
 		B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		B9355E061E40454400086815 /* RecentChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatView.swift; sourceTree = "<group>"; };
 		B9355E081E40457D00086815 /* RecentChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatTopBar.swift; sourceTree = "<group>"; };
+		B97264361E7CDE6D00A49B50 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		B97264381E7CE05100A49B50 /* ChatMessageCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCellItem.swift; sourceTree = "<group>"; };
 		B99043F01E712138008D6D31 /* MessageWriterSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterSendView.swift; sourceTree = "<group>"; };
 		B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
@@ -128,8 +130,6 @@
 		B9C5F9C01E7A3CBF004C930A /* ChatTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTopBar.swift; sourceTree = "<group>"; };
 		B9C5F9C21E7A4349004C930A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B9C5F9C41E7A6038004C930A /* ChatTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTransitioning.swift; sourceTree = "<group>"; };
-		B9C5F9C81E7A6D83004C930A /* ChatMyMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMyMessageCell.swift; sourceTree = "<group>"; };
-		B9C5F9CA1E7A6DF2004C930A /* ChatOtherMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatOtherMessageCell.swift; sourceTree = "<group>"; };
 		B9C5F9CC1E7A6E23004C930A /* ReusableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		B9D3ABD91E72699C00DB34BE /* KeyboardObserverProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardObserverProtocol.swift; sourceTree = "<group>"; };
 		B9D3ABDB1E72734300DB34BE /* RecipientCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientCellItem.swift; sourceTree = "<group>"; };
@@ -310,9 +310,9 @@
 			isa = PBXGroup;
 			children = (
 				B9C1EF901E7BAEDE001CA14D /* ChatDisplayData.swift */,
+				B97264361E7CDE6D00A49B50 /* ChatMessageCell.swift */,
+				B97264381E7CE05100A49B50 /* ChatMessageCellItem.swift */,
 				B9C1EF8E1E7BABBE001CA14D /* ChatMessageLabel.swift */,
-				B9C5F9C81E7A6D83004C930A /* ChatMyMessageCell.swift */,
-				B9C5F9CA1E7A6DF2004C930A /* ChatOtherMessageCell.swift */,
 				B9C5F9C01E7A3CBF004C930A /* ChatTopBar.swift */,
 				B9C5F9BC1E7A3635004C930A /* ChatView.swift */,
 				B9C5F9C21E7A4349004C930A /* ChatViewController.swift */,
@@ -713,14 +713,14 @@
 				B9AFD8E01E6A97A6003401FE /* DrawerProtocols.swift in Sources */,
 				B90D11D51E40694C003A681B /* RecentChatCell.swift in Sources */,
 				B9AFD8E61E6AA5DC003401FE /* UmalahokanDrawerController.swift in Sources */,
-				B9C5F9C91E7A6D83004C930A /* ChatMyMessageCell.swift in Sources */,
-				B9C5F9CB1E7A6DF2004C930A /* ChatOtherMessageCell.swift in Sources */,
+				B97264371E7CDE6D00A49B50 /* ChatMessageCell.swift in Sources */,
 				B9AFD8E11E6A97A6003401FE /* DrawerContainerViewController.swift in Sources */,
 				B9164A741E542C50006D22E2 /* MessageWriterTransitioning.swift in Sources */,
 				B9AFD8E41E6A97A6003401FE /* DrawerMenuTransitioning.swift in Sources */,
 				B9D3ABE11E727A4400DB34BE /* RecipientCellAnimator.swift in Sources */,
 				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
 				B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */,
+				B97264391E7CE05100A49B50 /* ChatMessageCellItem.swift in Sources */,
 				B9C5F9BF1E7A3941004C930A /* LayoutDimension.swift in Sources */,
 				B9C5F9C31E7A4349004C930A /* ChatViewController.swift in Sources */,
 				B9FA253D1E3F0C31009801F0 /* Umalahokan.xcdatamodeld in Sources */,
