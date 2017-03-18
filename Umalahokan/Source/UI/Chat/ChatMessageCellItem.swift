@@ -16,26 +16,24 @@ protocol ChatMessageCellItem {
 
 protocol ChatMessageCellConfiguration {
     
-    func configure(_ item: ChatMessageCellItem?, isPrototype: Bool)
+    func configure(_ item: ChatMessageCellItem?, meBackgroundColor: UIColor?)
 }
 
 extension ChatMessageCell: ChatMessageCellConfiguration {
     
-    func configure(_ item: ChatMessageCellItem?, isPrototype: Bool = false) {
+    func configure(_ item: ChatMessageCellItem?, meBackgroundColor: UIColor? = nil) {
         guard let item = item else { return }
         
         messageLabel.text = item.messageText
         layoutStyle = item.layoutStyle
         
-        let theme = UITheme()
-        
-        let backgroundColor: UIColor
+        let backgroundColor: UIColor?
         let textColor: UIColor
         let borderWidth: CGFloat
         
         switch layoutStyle {
         case .me:
-            backgroundColor = theme.color.green
+            backgroundColor = meBackgroundColor
             textColor = UIColor.white
             borderWidth = 0
         
