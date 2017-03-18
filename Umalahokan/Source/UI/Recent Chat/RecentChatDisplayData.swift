@@ -31,15 +31,25 @@ struct RecentChatDisplayDataItem: RecentChatDisplayData {
 }
 
 func genereRecentChatRandomDisplayItems() -> [RecentChatDisplayData] {
-    let theme = UITheme()
     var items = [RecentChatDisplayData]()
     for _ in 0..<(arc4random() % 20 + 20) {
         var item = RecentChatDisplayDataItem()
         item.displayNameText = "Dominika Faniz"
         item.timeText = "now"
         item.recentMessageText = "Hey there. How is it going?"
-        item.moodText = "ROMANTIC"
-        item.moodColor = theme.color.pink
+        
+        let mood: Mood
+        switch arc4random() % 5 {
+        case 0  : mood = .curious
+        case 1  : mood = .happy
+        case 2  : mood = .relaxed
+        case 3  : mood = .romantic
+        case 4  : mood = .neutral
+        default : mood = .happy
+        }
+        item.moodText = mood.text
+        item.moodColor = mood.color
+        item.isOnline = arc4random() % 2 == 0 ? true : false
         items.append(item)
     }
     return items
