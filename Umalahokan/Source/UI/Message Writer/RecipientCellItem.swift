@@ -36,10 +36,10 @@ extension RecipientCell: RecipientCellConfiguration {
         if !isPrototype {
             if item.avatarURL != nil {
                 let resource = ImageResource(downloadURL: item.avatarURL!)
-                avatarImageView.kf.setImage(with: resource)
+                avatarImageView.kf.setImage(with: resource, placeholder: #imageLiteral(resourceName: "avatar-placeholder"), options: nil, progressBlock: nil, completionHandler: nil)
                 
             } else {
-                avatarImageView.image = nil
+                avatarImageView.image = #imageLiteral(resourceName: "avatar-placeholder")
             }
         }
 
