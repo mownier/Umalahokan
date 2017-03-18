@@ -40,7 +40,7 @@ class ContactListView: UIView {
         
         if !searchTextField.layer.hasAnimation {
             rect.size.width = width
-            rect.size.height = 52
+            rect.size.height = 55
             searchTextField.frame = rect
         }
 
@@ -64,13 +64,13 @@ class ContactListView: UIView {
         let theme = UITheme()
         
         tableView = UITableView()
-        tableView.backgroundColor = theme.color.gray2
+        tableView.backgroundColor = .white//theme.color.gray2
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 52
         
         searchTextField = UITextField()
-        searchTextField.backgroundColor = UIColor.white
+        searchTextField.backgroundColor = theme.color.gray2
         searchTextField.leftViewMode = .always
         searchTextField.tintColor = theme.color.gray
         searchTextField.font = theme.font.medium.size(12)
