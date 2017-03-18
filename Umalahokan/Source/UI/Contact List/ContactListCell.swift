@@ -78,18 +78,7 @@ class ContactListCell: UITableViewCell {
     }
 }
 
-extension ContactListCell {
+extension ContactListCell: TableViewReusableProtocol {
     
-    static var reuseId: String {
-        return "ContactListCell"
-    }
-    
-    class func register(in tableView: UITableView) {
-        tableView.register(self, forCellReuseIdentifier: self.reuseId)
-    }
-    
-    class func dequeue(from tableView: UITableView) -> ContactListCell? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseId)
-        return cell as? ContactListCell
-    }
+    typealias Cell = ContactListCell
 }
