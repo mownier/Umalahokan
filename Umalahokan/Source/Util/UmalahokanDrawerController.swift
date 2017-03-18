@@ -17,7 +17,15 @@ class UmalahokanDrawerController: DrawerContainerController {
         let _ = contactList.view
         self.init(drawerMenu: contactList)
         
+        // Removed this if business logic is already determined
+        struct Item: RecentChatViewItem {
+            
+            var isOnline: Bool = true
+            var avatarUrl: URL?
+        }
+        
         let recentChat = RecentChatViewController()
+        recentChat.item = Item()
         changeContentUsing(recentChat)
         
         drawerMenuTransitionDelegate.view = contactList.contactListView
