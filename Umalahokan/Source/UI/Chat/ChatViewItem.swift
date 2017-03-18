@@ -30,10 +30,10 @@ extension ChatView: ChatViewConfiguration {
         if !isPrototype {
             if let url = item.avatarUrl {
                 let resource = ImageResource(downloadURL: url)
-                topBar.avatarImageView.kf.setImage(with: resource)
+                topBar.avatarImageView.kf.setImage(with: resource, placeholder: #imageLiteral(resourceName: "avatar-placeholder"), options: nil, progressBlock: nil, completionHandler: nil)
             
             } else {
-                topBar.avatarImageView.image = nil
+                topBar.avatarImageView.image = #imageLiteral(resourceName: "avatar-placeholder")
             }
         }
         

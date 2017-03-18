@@ -33,9 +33,10 @@ extension RecentChatCell: RecentChatChellConfiguration {
             if let url = item.avatarUrl {
                 let resource = ImageResource(downloadURL: url)
                 avatarImageView.kf.setImage(with: resource)
+                avatarImageView.kf.setImage(with: resource, placeholder: #imageLiteral(resourceName: "avatar-placeholder"), options: nil, progressBlock: nil, completionHandler: nil)
             
             } else {
-                avatarImageView.image = nil
+                avatarImageView.image = #imageLiteral(resourceName: "avatar-placeholder")
             }
         }
         
