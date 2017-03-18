@@ -17,11 +17,13 @@ class RecentChatViewController: UIViewController {
     
     var recentChatView: RecentChatView!
     var chats = genereRecentChatRandomDisplayItems()
+    var item: RecentChatViewItem?
     
     override func loadView() {
         var rect = CGRect.zero
         rect.size = UIScreen.main.bounds.size
         recentChatView = RecentChatView(frame: rect)
+        recentChatView.configure(item)
         recentChatView.delegate = self
         recentChatView.topBar.delegate = self
         recentChatView.tableView.dataSource = self
