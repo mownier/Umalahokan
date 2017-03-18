@@ -12,7 +12,7 @@ protocol ChatViewItem {
 
     var isOnline: Bool { get }
     var moodText: String { get }
-    var moodColor: UIColor { get }
+    var moodColor: UIColor? { get }
     var avatarUrl: URL? { get }
     var displayNameText: String { get }
 }
@@ -47,4 +47,4 @@ extension ChatView: ChatViewConfiguration {
     }
 }
 
-
+extension RecentChatDisplayDataItem: ChatViewItem { }
