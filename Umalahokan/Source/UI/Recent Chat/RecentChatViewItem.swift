@@ -32,6 +32,9 @@ extension RecentChatView: RecentChatViewConfiguration {
             topBar.rightItem.image = #imageLiteral(resourceName: "avatar-placeholder")
         }
         
-        topBar.onlineStatusIndicator.isHidden = !item.isOnline
+        topBar.rightItem.layer.borderWidth = item.isOnline ? 2 : 0
+        
+        setNeedsLayout()
+        layoutIfNeeded()
     }
 }
