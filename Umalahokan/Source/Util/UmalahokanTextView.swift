@@ -18,6 +18,7 @@ class UmalahokanTextView: UITextView {
     
     var verticalAlignment: UmalahokanTextViewVerticalAlignment = .center
     var placeholderLabel: UILabel!
+    var notificationCenter = NotificationCenter.default
     
     override var contentSize: CGSize {
         didSet {
@@ -31,6 +32,16 @@ class UmalahokanTextView: UITextView {
                 break
             }
         }
+    }
+    
+    
+    deinit {
+        notificationCenter.removeObserver(self)
+    }
+    
+    convenience init() {
+        self.init(frame: .zero)
+        initSetup()
     }
     
     override func layoutSubviews() {
@@ -50,31 +61,20 @@ class UmalahokanTextView: UITextView {
         
         placeholderLabel.frame = rect
     }
-    
-    convenience init() {
-        self.init(frame: .zero)
-        initSetup()
-    }
 
     func initSetup() {
+        notificationCenter.addObserver(
+            self, selector: #selector(self.didChangeText(_:)),
+            name: Notification.Name.UITextViewTextDidChange,
+            object: nil
+        )
+        
         placeholderLabel = UILabel()
         
         addSubview(placeholderLabel)
     }
     
-    override func becomeFirstResponder() -> Bool {
-        if placeholderLabel != nil {
-            placeholderLabel.isHidden = true
-        }
-        
-        return super.becomeFirstResponder()
-    }
-    
-    override func resignFirstResponder() -> Bool {
-        if placeholderLabel != nil {
-            placeholderLabel.isHidden = false
-        }
-        
-        return super.resignFirstResponder()
+    func didChangeText(_ notif: Notification) {
+        placeholderLabel.isHidden = text != nil && !text!.isEmpty
     }
 }
