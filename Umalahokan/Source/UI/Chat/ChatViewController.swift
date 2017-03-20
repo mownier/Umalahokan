@@ -62,7 +62,7 @@ extension ChatViewController: ChatTopBarDelegate {
 extension ChatViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return messages.count
+        return chatView.isValidToReload ? messages.count : 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -74,6 +74,40 @@ extension ChatViewController: UICollectionViewDataSource {
 }
 
 extension ChatViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? ChatMessageCell else { return }
+        
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        
+        let toX: CGFloat = cell.messageLabel.frame.origin.x
+        let toAlpha: CGFloat = 1
+        let fromX: CGFloat
+        let fromAlpha: CGFloat = 0
+        
+        let indexPaths = collectionView.indexPathsForVisibleItems.sorted(by: { indexPath1, indexPath2 -> Bool in
+            return indexPath1.item < indexPath2.item
+        })
+        let relativeIndex = indexPaths.index(where: { visibleRowIndexpath -> Bool in
+            return indexPath == visibleRowIndexpath
+        }) ?? 0
+        
+        let delay: TimeInterval = 0.25 + (Double(relativeIndex) / 50.0)
+        let duration: TimeInterval = 0.5
+        
+        switch cell.layoutStyle {
+        case .me    : fromX = cell.frame.width
+        case .other : fromX = -cell.messageLabel.frame.width
+        }
+        
+        cell.messageLabel.frame.origin.x = fromX
+        cell.messageLabel.alpha = fromAlpha
+        UIView.animate(withDuration: duration, delay: delay, options: .curveEaseInOut, animations: {
+            cell.messageLabel.frame.origin.x = toX
+            cell.messageLabel.alpha = toAlpha
+        })
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let item = messages[indexPath.row] as? ChatMessageCellItem
