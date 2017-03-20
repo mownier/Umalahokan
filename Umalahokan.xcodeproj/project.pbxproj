@@ -30,7 +30,7 @@
 		B97264491E7D15D000A49B50 /* RecentChatViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97264481E7D15D000A49B50 /* RecentChatViewItem.swift */; };
 		B98C12021E7F6CF30072B440 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C12011E7F6CF30072B440 /* SendView.swift */; };
 		B98C12041E7F7F290072B440 /* UmalahokanTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C12031E7F7F290072B440 /* UmalahokanTextView.swift */; };
-		B99043F11E712138008D6D31 /* MessageWriterSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99043F01E712138008D6D31 /* MessageWriterSendView.swift */; };
+		B98C12061E7F9B370072B440 /* MessageWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C12051E7F9B370072B440 /* MessageWriterView.swift */; };
 		B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */; };
 		B992FCEC1E4EBFFA000C694B /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */; };
 		B992FCEE1E4EC018000C694B /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCED1E4EC018000C694B /* ContactListView.swift */; };
@@ -45,7 +45,6 @@
 		B9AFD8E41E6A97A6003401FE /* DrawerMenuTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8DF1E6A97A6003401FE /* DrawerMenuTransitioning.swift */; };
 		B9AFD8E61E6AA5DC003401FE /* UmalahokanDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AFD8E51E6AA5DC003401FE /* UmalahokanDrawerController.swift */; };
 		B9BDC7981E41A478001805D8 /* MessageWriterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */; };
-		B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */; };
 		B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */; };
 		B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */; };
 		B9C1EF8F1E7BABBE001CA14D /* ChatMessageLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C1EF8E1E7BABBE001CA14D /* ChatMessageLabel.swift */; };
@@ -123,7 +122,7 @@
 		B97264481E7D15D000A49B50 /* RecentChatViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatViewItem.swift; sourceTree = "<group>"; };
 		B98C12011E7F6CF30072B440 /* SendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
 		B98C12031E7F7F290072B440 /* UmalahokanTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmalahokanTextView.swift; sourceTree = "<group>"; };
-		B99043F01E712138008D6D31 /* MessageWriterSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterSendView.swift; sourceTree = "<group>"; };
+		B98C12051E7F9B370072B440 /* MessageWriterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterView.swift; sourceTree = "<group>"; };
 		B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 		B992FCED1E4EC018000C694B /* ContactListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
@@ -138,7 +137,6 @@
 		B9AFD8DF1E6A97A6003401FE /* DrawerMenuTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuTransitioning.swift; sourceTree = "<group>"; };
 		B9AFD8E51E6AA5DC003401FE /* UmalahokanDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmalahokanDrawerController.swift; sourceTree = "<group>"; };
 		B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterViewController.swift; sourceTree = "<group>"; };
-		B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterView.swift; sourceTree = "<group>"; };
 		B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterHeader.swift; sourceTree = "<group>"; };
 		B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientCell.swift; sourceTree = "<group>"; };
 		B9C1EF8E1E7BABBE001CA14D /* ChatMessageLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageLabel.swift; sourceTree = "<group>"; };
@@ -318,8 +316,7 @@
 			children = (
 				B9D3ABE21E727CA200DB34BE /* MessageWriterData.swift */,
 				B9BDC79B1E41A57C001805D8 /* MessageWriterHeader.swift */,
-				B99043F01E712138008D6D31 /* MessageWriterSendView.swift */,
-				B9BDC7991E41A4C8001805D8 /* MessageWriterView.swift */,
+				B98C12051E7F9B370072B440 /* MessageWriterView.swift */,
 				B9BDC7971E41A478001805D8 /* MessageWriterViewController.swift */,
 				B9BDC79D1E41C1C1001805D8 /* RecipientCell.swift */,
 				B9D3ABE01E727A4400DB34BE /* RecipientCellAnimator.swift */,
@@ -713,7 +710,6 @@
 			files = (
 				B91792301E4AECE4007F1BB8 /* KeyboardHandler.swift in Sources */,
 				B9D3ABDC1E72734300DB34BE /* RecipientCellItem.swift in Sources */,
-				B99043F11E712138008D6D31 /* MessageWriterSendView.swift in Sources */,
 				B97264411E7CEBDA00A49B50 /* RecentChatCellItem.swift in Sources */,
 				B9AFD8BA1E6A74AC003401FE /* AlphaTransitioning.swift in Sources */,
 				B9AFD8E21E6A97A6003401FE /* DrawerMenuInteractiveTransition.swift in Sources */,
@@ -722,6 +718,7 @@
 				B9355E071E40454400086815 /* RecentChatView.swift in Sources */,
 				B992FCEC1E4EBFFA000C694B /* ContactListViewController.swift in Sources */,
 				B972643D1E7CE8F500A49B50 /* RecentChatDisplayData.swift in Sources */,
+				B98C12061E7F9B370072B440 /* MessageWriterView.swift in Sources */,
 				B992FCF01E4EC298000C694B /* ContactListCell.swift in Sources */,
 				B9355E091E40457D00086815 /* RecentChatTopBar.swift in Sources */,
 				B9AFD8BD1E6A77E2003401FE /* ContactListTransitionAnimator.swift in Sources */,
@@ -753,7 +750,6 @@
 				B9164A741E542C50006D22E2 /* MessageWriterTransitioning.swift in Sources */,
 				B9AFD8E41E6A97A6003401FE /* DrawerMenuTransitioning.swift in Sources */,
 				B9D3ABE11E727A4400DB34BE /* RecipientCellAnimator.swift in Sources */,
-				B9BDC79A1E41A4C8001805D8 /* MessageWriterView.swift in Sources */,
 				B9BDC79E1E41C1C1001805D8 /* RecipientCell.swift in Sources */,
 				B97264391E7CE05100A49B50 /* ChatMessageCellItem.swift in Sources */,
 				B9C5F9BF1E7A3941004C930A /* LayoutDimension.swift in Sources */,
