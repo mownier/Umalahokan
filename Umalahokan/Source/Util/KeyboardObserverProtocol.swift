@@ -40,7 +40,7 @@ extension KeyboardObserverProtocol {
         willHandle(userInfo: userInfo, view: nil, scrollView: scrollView, offsetOnUp: 0)
     }
     
-    func willHandle(userInfo: [AnyHashable: Any]?, view: UIView?, scrollView: UIScrollView, offsetOnUp: CGFloat, willMoveUsedView: Bool = true) {
+    func willHandle(userInfo: [AnyHashable: Any]?, view: UIView?, scrollView: UIScrollView, offsetOnUp: CGFloat = 0, willMoveUsedView: Bool = true) {
         var handler = KeyboardHandler()
         handler.info = userInfo
         handler.willMoveUsedView = willMoveUsedView
@@ -49,8 +49,8 @@ extension KeyboardObserverProtocol {
             switch delta.direction {
             case .down:
                 if delta.height == 0 {
-                    scrollView.contentInset.bottom = 0
-                    scrollView.scrollIndicatorInsets.bottom = 0
+                    scrollView.contentInset.bottom -= abs(delta.y)
+                    scrollView.scrollIndicatorInsets.bottom -= abs(delta.y)
                     
                 } else {
                     scrollView.contentInset.bottom -= abs(delta.height)
@@ -59,8 +59,8 @@ extension KeyboardObserverProtocol {
                 
             case .up:
                 if delta.height == 0 {
-                    scrollView.contentInset.bottom = abs(delta.y) - offsetOnUp
-                    scrollView.scrollIndicatorInsets.bottom = abs(delta.y) - offsetOnUp
+                    scrollView.contentInset.bottom += (abs(delta.y) - offsetOnUp)
+                    scrollView.scrollIndicatorInsets.bottom += (abs(delta.y) - offsetOnUp)
                     
                 } else {
                     scrollView.contentInset.bottom += abs(delta.height)
