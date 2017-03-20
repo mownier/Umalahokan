@@ -76,7 +76,11 @@ extension ChatViewController: UICollectionViewDataSource {
 extension ChatViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let cell = cell as? ChatMessageCell else { return }
+        var item = messages[indexPath.item]
+        guard let cell = cell as? ChatMessageCell, item.isAnimatable else { return }
+        
+        item.isAnimatable = false
+        messages[indexPath.item] = item
         
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
