@@ -15,6 +15,7 @@ class ChatViewController: UIViewController {
     
     var chatView: ChatView!
     var item: ChatViewItem?
+    var keyboardObserver: Any?
     
     override func loadView() {
         let size = UIScreen.main.bounds.size
@@ -33,6 +34,18 @@ class ChatViewController: UIViewController {
         view = chatView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        addKeyboardObserver()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        removeKeyboardObserver()
+    }
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -41,6 +54,7 @@ class ChatViewController: UIViewController {
 extension ChatViewController: ChatTopBarDelegate {
     
     func goBack() {
+        view.endEditing(true)
         dismiss(animated: true, completion: nil)
     }
 }
@@ -73,5 +87,12 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return LayoutDimension().spacing
+    }
+}
+
+extension ChatViewController: KeyboardObserverProtocol {
+    
+    func willHandleKeyboardNotification(with notif: Notification) {
+        willHandle(userInfo: notif.userInfo, view: chatView.sendView, scrollView: chatView.collectionView, offsetOnUp: 0)
     }
 }
