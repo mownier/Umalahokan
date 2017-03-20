@@ -121,6 +121,6 @@ extension MessageWriterViewController: MessageWriterHeaderDelegate {
 extension MessageWriterViewController: KeyboardObserverProtocol {
     
     func willHandleKeyboardNotification(with notif: Notification) {
-        willHandle(userInfo: notif.userInfo, view: messageWriterView.sendView, scrollView: messageWriterView.tableView, offsetOnUp: -messageWriterView.sendView.frame.height)
+        willHandle(userInfo: notif.userInfo, view: messageWriterView.sendView, scrollView: messageWriterView.tableView)
     }
 }
