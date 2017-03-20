@@ -12,12 +12,14 @@ protocol ChatDisplayData {
 
     var message: String { set get }
     var isMe: Bool { set get }
+    var isAnimatable: Bool { set get }
 }
 
 struct ChatDisplayDataItem: ChatDisplayData {
     
     var message: String = ""
     var isMe: Bool = false
+    var isAnimatable: Bool = true
 }
 
 func generateRandomChatDisplayItems() -> [ChatDisplayData] {
