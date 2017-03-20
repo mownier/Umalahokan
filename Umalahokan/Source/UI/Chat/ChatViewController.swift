@@ -84,15 +84,15 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: width, height: height)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return LayoutDimension().spacing
-    }
 }
 
 extension ChatViewController: KeyboardObserverProtocol {
     
     func willHandleKeyboardNotification(with notif: Notification) {
-        willHandle(userInfo: notif.userInfo, view: chatView.sendView, scrollView: chatView.collectionView, offsetOnUp: 0)
+        willHandle(
+            userInfo: notif.userInfo,
+            view: chatView.sendView,
+            scrollView: chatView.collectionView
+        )
     }
 }
