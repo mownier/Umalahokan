@@ -14,6 +14,7 @@ class ChatView: UIView {
     var collectionView: UICollectionView!
     var sendView: SendView!
     var flowLayout: UICollectionViewFlowLayout!
+    var isValidToReload: Bool = false
     
     convenience init() {
         self.init(frame: .zero)
