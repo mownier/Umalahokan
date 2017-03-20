@@ -12,6 +12,7 @@ class ChatView: UIView {
     
     var topBar: ChatTopBar!
     var collectionView: UICollectionView!
+    var sendView: SendView!
     var flowLayout = UICollectionViewFlowLayout()
     
     convenience init() {
@@ -27,8 +28,15 @@ class ChatView: UIView {
         topBar.frame = rect
     
         rect.origin.y = rect.maxY
-        rect.size.height = frame.height - rect.height
+        rect.size.height = frame.height - rect.height - sendView.frame.height
         collectionView.frame = rect
+        
+        if !sendView.layer.hasAnimation {
+            rect.size.height = sendView.frame.height
+            rect.origin.y = frame.height - rect.height
+            rect.size.width = frame.width
+            sendView.frame = rect
+        }
     }
     
     func initSetup() {
@@ -43,7 +51,10 @@ class ChatView: UIView {
         collectionView.contentInset.top = spacing
         collectionView.contentInset.bottom = spacing
         
+        sendView = SendView()
+        
         addSubview(collectionView)
         addSubview(topBar)
+        addSubview(sendView)
     }
 }
