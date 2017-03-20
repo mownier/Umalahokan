@@ -13,7 +13,7 @@ class ChatView: UIView {
     var topBar: ChatTopBar!
     var collectionView: UICollectionView!
     var sendView: SendView!
-    var flowLayout = UICollectionViewFlowLayout()
+    var flowLayout: UICollectionViewFlowLayout!
     
     convenience init() {
         self.init(frame: .zero)
@@ -45,6 +45,9 @@ class ChatView: UIView {
         backgroundColor = UIColor.white
         
         topBar = ChatTopBar()
+        
+        flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumLineSpacing = spacing
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = UIColor.clear
