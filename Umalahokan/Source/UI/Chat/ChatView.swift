@@ -42,6 +42,12 @@ class ChatView: UIView {
     func initSetup() {
         let spacing = LayoutDimension().spacing
         
+        let tap = UITapGestureRecognizer()
+        tap.numberOfTapsRequired = 1
+        tap.cancelsTouchesInView = false
+        tap.addTarget(self, action: #selector(UIView.endEditing(_:)))
+        addGestureRecognizer(tap)
+        
         backgroundColor = UIColor.white
         
         topBar = ChatTopBar()
