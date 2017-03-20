@@ -17,7 +17,7 @@ class SendView: UIView {
 
     weak var delegate: SendViewDelegate?
     
-    var messageTextField: UITextField!
+    var messageTextView: UmalahokanTextView!
     var sendButton: UIButton!
     
     convenience init() {
@@ -39,10 +39,10 @@ class SendView: UIView {
         sendButton.layer.cornerRadius = rect.width / 2
         
         rect.size.width = rect.origin.x - spacing * 2
-        rect.size.height = messageTextField.sizeThatFits(rect.size).height
+        rect.size.height = messageTextView.sizeThatFits(rect.size).height + spacing * 2
         rect.origin.x = spacing
         rect.origin.y = (frame.height - rect.height) / 2
-        messageTextField.frame = rect
+        messageTextView.frame = rect
     }
     
     func initSetup() {
@@ -50,12 +50,15 @@ class SendView: UIView {
         
         backgroundColor = theme.color.gray3
         
-        messageTextField = UITextField()
-        messageTextField.placeholder = "Your message"
-        messageTextField.font = theme.font.medium.size(12)
-        messageTextField.textColor = theme.color.gray
-        messageTextField.tintColor = theme.color.gray
-        messageTextField.keyboardAppearance = .dark
+        messageTextView = UmalahokanTextView()
+        messageTextView.font = theme.font.medium.size(12)
+        messageTextView.textColor = theme.color.gray
+        messageTextView.tintColor = theme.color.gray
+        messageTextView.keyboardAppearance = .dark
+        messageTextView.backgroundColor = .clear
+        messageTextView.placeholderLabel.text = "Your message"
+        messageTextView.placeholderLabel.font = messageTextView.font
+        messageTextView.placeholderLabel.textColor = messageTextView.textColor
         
         sendButton = UIButton()
         sendButton.addTarget(self, action: #selector(self.didTapSend), for: .touchUpInside)
@@ -65,7 +68,7 @@ class SendView: UIView {
         sendButton.layer.masksToBounds = true
         sendButton.imageEdgeInsets = UIEdgeInsetsMake(2, 0, 0, 2)
         
-        addSubview(messageTextField)
+        addSubview(messageTextView)
         addSubview(sendButton)
     }
     
