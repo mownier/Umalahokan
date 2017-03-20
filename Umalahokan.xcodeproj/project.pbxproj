@@ -263,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */,
-				B98C12031E7F7F290072B440 /* UmalahokanTextView.swift */,
 				B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */,
 				B9D3ABD91E72699C00DB34BE /* KeyboardObserverProtocol.swift */,
 				B9C5F9BE1E7A3941004C930A /* LayoutDimension.swift */,
@@ -271,6 +270,7 @@
 				B98C12011E7F6CF30072B440 /* SendView.swift */,
 				B905834C1E7796DA00B18334 /* UITheme.swift */,
 				B9AFD8E51E6AA5DC003401FE /* UmalahokanDrawerController.swift */,
+				B98C12031E7F7F290072B440 /* UmalahokanTextView.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
