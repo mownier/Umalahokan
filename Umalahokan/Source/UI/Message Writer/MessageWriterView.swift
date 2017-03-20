@@ -14,7 +14,7 @@ class MessageWriterView: UIView {
     var tableView: UITableView!
     var isValidToReload: Bool = false
     var isInitiallyReloaded: Bool = false
-    var sendView: MessageWriterSendView!
+    var sendView: SendView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,12 +34,13 @@ class MessageWriterView: UIView {
         header.frame = rect
         
         rect.origin.y = rect.maxY
-        rect.size.height = frame.height - rect.height
+        rect.size.height = frame.height - rect.height - sendView.frame.height
         tableView.frame = rect
     
         if !sendView.layer.hasAnimation {
-            rect.size.height = 44
+            rect.size.height = sendView.frame.height
             rect.origin.y = frame.height - rect.height
+            rect.size.width = frame.width
             sendView.frame = rect
         }
     }
@@ -52,7 +53,7 @@ class MessageWriterView: UIView {
         tableView = UITableView()
         tableView.tableFooterView = UIView()
         
-        sendView = MessageWriterSendView()
+        sendView = SendView()
         
         addSubview(header)
         addSubview(tableView)
