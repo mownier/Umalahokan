@@ -29,6 +29,7 @@
 		B97264471E7D120900A49B50 /* ContactListDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97264461E7D120900A49B50 /* ContactListDisplayData.swift */; };
 		B97264491E7D15D000A49B50 /* RecentChatViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97264481E7D15D000A49B50 /* RecentChatViewItem.swift */; };
 		B98C12021E7F6CF30072B440 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C12011E7F6CF30072B440 /* SendView.swift */; };
+		B98C12041E7F7F290072B440 /* UmalahokanTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C12031E7F7F290072B440 /* UmalahokanTextView.swift */; };
 		B99043F11E712138008D6D31 /* MessageWriterSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99043F01E712138008D6D31 /* MessageWriterSendView.swift */; };
 		B992500E1E4DA5A800DF5C23 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */; };
 		B992FCEC1E4EBFFA000C694B /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */; };
@@ -121,6 +122,7 @@
 		B97264461E7D120900A49B50 /* ContactListDisplayData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListDisplayData.swift; sourceTree = "<group>"; };
 		B97264481E7D15D000A49B50 /* RecentChatViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatViewItem.swift; sourceTree = "<group>"; };
 		B98C12011E7F6CF30072B440 /* SendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
+		B98C12031E7F7F290072B440 /* UmalahokanTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmalahokanTextView.swift; sourceTree = "<group>"; };
 		B99043F01E712138008D6D31 /* MessageWriterSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageWriterSendView.swift; sourceTree = "<group>"; };
 		B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		B992FCEB1E4EBFFA000C694B /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				B992500D1E4DA5A800DF5C23 /* CALayerExtension.swift */,
+				B98C12031E7F7F290072B440 /* UmalahokanTextView.swift */,
 				B917922F1E4AECE4007F1BB8 /* KeyboardHandler.swift */,
 				B9D3ABD91E72699C00DB34BE /* KeyboardObserverProtocol.swift */,
 				B9C5F9BE1E7A3941004C930A /* LayoutDimension.swift */,
@@ -725,6 +728,7 @@
 				B9AFD8BB1E6A74AC003401FE /* TranslationTransitioning.swift in Sources */,
 				B9C5F9BD1E7A3635004C930A /* ChatView.swift in Sources */,
 				B9D3ABDF1E7275AD00DB34BE /* Contact.swift in Sources */,
+				B98C12041E7F7F290072B440 /* UmalahokanTextView.swift in Sources */,
 				B97264471E7D120900A49B50 /* ContactListDisplayData.swift in Sources */,
 				B9BDC79C1E41A57C001805D8 /* MessageWriterHeader.swift in Sources */,
 				B9C1EF8F1E7BABBE001CA14D /* ChatMessageLabel.swift in Sources */,
