@@ -64,6 +64,7 @@ class ChatTransition: NSObject, UIViewControllerAnimatedTransitioning {
             presented.topBar.onlineStatusIndicator.alpha = 0
             presented.topBar.backgroundColor = UIColor.clear
             presented.collectionView.alpha = 0
+            presented.sendView.alpha = 0
             avatarOriginalFrame = presented.topBar.avatarImageView.frame
             presented.topBar.avatarImageView.frame = avatarFrame
             presented.backgroundColor =  UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.0)
@@ -106,6 +107,16 @@ class ChatTransition: NSObject, UIViewControllerAnimatedTransitioning {
                 presented.topBar.moodIndicator.alpha = 1
                 presented.topBar.onlineStatusIndicator.alpha = 1
                 presented.collectionView.alpha = 1
+            })
+            
+            keyframeDuration = 0.25
+            delay = 0.25
+            relativeStartTime = relativeDuration + (delay / totalDuration)
+            relativeDuration += (keyframeDuration / totalDuration)
+            totalKeyframeDuration += (keyframeDuration + delay)
+            
+            UIView.addKeyframe(withRelativeStartTime: relativeStartTime, relativeDuration: relativeDuration, animations: {
+                presented.sendView.alpha = 1
             })
 
         }) { _ in
