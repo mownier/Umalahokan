@@ -40,36 +40,36 @@ extension KeyboardObserverProtocol {
         willHandle(userInfo: userInfo, view: nil, scrollView: scrollView, offsetOnUp: 0)
     }
     
-    func willHandle(userInfo: [AnyHashable: Any]?, view: UIView?, scrollView: UIScrollView, offsetOnUp: CGFloat = 0, willMoveUsedView: Bool = true) {
+    func willHandle(userInfo: [AnyHashable: Any]?, view: UIView?, scrollView: UIScrollView, isContentOffsetIncluded: Bool = false, offsetOnUp: CGFloat = 0, willMoveUsedView: Bool = true) {
         var handler = KeyboardHandler()
         handler.info = userInfo
         handler.willMoveUsedView = willMoveUsedView
         
         handler.handle(using: view ?? scrollView, with: { delta in
+            let update: CGFloat?
+            
             switch delta.direction {
             case .down:
-                if delta.height == 0 {
-                    scrollView.contentInset.bottom -= abs(delta.y)
-                    scrollView.scrollIndicatorInsets.bottom -= abs(delta.y)
-                    
-                } else {
-                    scrollView.contentInset.bottom -= abs(delta.height)
-                    scrollView.scrollIndicatorInsets.bottom -= abs(delta.height)
-                }
+                update = delta.height == 0 ? -abs(delta.y) : -abs(delta.height)
                 
             case .up:
-                if delta.height == 0 {
-                    scrollView.contentInset.bottom += (abs(delta.y) - offsetOnUp)
-                    scrollView.scrollIndicatorInsets.bottom += (abs(delta.y) - offsetOnUp)
-                    
-                } else {
-                    scrollView.contentInset.bottom += abs(delta.height)
-                    scrollView.scrollIndicatorInsets.bottom += abs(delta.height)
-                }
+                update = delta.height == 0 ? (abs(delta.y) - offsetOnUp) : abs(delta.height)
                 
             default:
-                break
+                update = nil
             }
+            
+            guard update != nil else { return }
+            
+            scrollView.contentInset.bottom += update!
+            scrollView.scrollIndicatorInsets.bottom += update!
+            
+            guard isContentOffsetIncluded else { return }
+            
+            let heightThreshold = scrollView.contentSize.height - scrollView.contentOffset.y + scrollView.contentInset.bottom
+            var offset = scrollView.contentOffset
+            offset.y = heightThreshold > scrollView.frame.height ? max(-scrollView.contentInset.top, offset.y + update!) : offset.y
+            scrollView.setContentOffset(offset, animated: false)
         })
     }
 }
