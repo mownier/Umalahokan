@@ -159,7 +159,8 @@ extension ChatViewController: KeyboardObserverProtocol {
         willHandle(
             userInfo: notif.userInfo,
             view: chatView.sendView,
-            scrollView: chatView.collectionView
+            scrollView: chatView.collectionView,
+            isContentOffsetIncluded: true
         )
     }
 }
