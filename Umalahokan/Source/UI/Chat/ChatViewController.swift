@@ -16,6 +16,8 @@ class ChatViewController: UIViewController {
     var chatView: ChatView!
     var item: ChatViewItem?
     var keyboardObserver: Any?
+    var isCellDisplayAnimationEnabled: Bool = false
+    var isReloadedOnAppear: Bool = false
     
     override func loadView() {
         let size = UIScreen.main.bounds.size
@@ -34,6 +36,17 @@ class ChatViewController: UIViewController {
         view = chatView
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        reloadCollectionView()
+        
+        if !isReloadedOnAppear {
+            reloadCollectionView(true)
+            isReloadedOnAppear = true
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -49,6 +62,23 @@ class ChatViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    func reloadCollectionView(_ animated: Bool = false) {
+        if animated {
+            chatView.collectionView.performBatchUpdates({ [unowned self] in
+                self.chatView.collectionView.reloadData()
+                
+            }, completion: { _ in
+                let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
+                self.chatView.collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .bottom)
+                self.isCellDisplayAnimationEnabled = true
+                self.chatView.collectionView.reloadData()
+            })
+            
+        } else {
+            chatView.collectionView.reloadData()
+        }
+    }
 }
 
 extension ChatViewController: ChatTopBarDelegate {
@@ -62,7 +92,7 @@ extension ChatViewController: ChatTopBarDelegate {
 extension ChatViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return chatView.isValidToReload ? messages.count : 0
+        return messages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -79,9 +109,6 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
         var item = messages[indexPath.item]
         guard let cell = cell as? ChatMessageCell, item.isAnimatable else { return }
         
-        item.isAnimatable = false
-        messages[indexPath.item] = item
-        
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
         
@@ -90,16 +117,6 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
         let fromX: CGFloat
         let fromAlpha: CGFloat = 0
         
-        let indexPaths = collectionView.indexPathsForVisibleItems.sorted(by: { indexPath1, indexPath2 -> Bool in
-            return indexPath1.item < indexPath2.item
-        })
-        let relativeIndex = indexPaths.index(where: { visibleRowIndexpath -> Bool in
-            return indexPath == visibleRowIndexpath
-        }) ?? 0
-        
-        let delay: TimeInterval = 0.25 + (Double(relativeIndex) / 50.0)
-        let duration: TimeInterval = 0.5
-        
         switch cell.layoutStyle {
         case .me    : fromX = cell.frame.width
         case .other : fromX = -cell.messageLabel.frame.width
@@ -107,6 +124,18 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
         
         cell.messageLabel.frame.origin.x = fromX
         cell.messageLabel.alpha = fromAlpha
+        
+        guard isCellDisplayAnimationEnabled else { return }
+        
+        item.isAnimatable = false
+        messages[indexPath.item] = item
+        
+        let relativePoint = cell.convert(cell.messageLabel.frame.origin, to: nil)
+        let relativeIndex = (1.0 - abs(relativePoint.y/view.frame.height)) * 0.1
+        
+        let delay: TimeInterval = Double(relativeIndex)
+        let duration: TimeInterval = 0.5
+        
         UIView.animate(withDuration: duration, delay: delay, options: .curveEaseInOut, animations: {
             cell.messageLabel.frame.origin.x = toX
             cell.messageLabel.alpha = toAlpha
