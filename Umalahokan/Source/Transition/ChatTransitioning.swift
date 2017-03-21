@@ -122,12 +122,5 @@ class ChatTransition: NSObject, UIViewControllerAnimatedTransitioning {
         }) { _ in
             context.completeTransition(!context.transitionWasCancelled)
         }
-        
-        perform(#selector(self.reloadCollectionView(_:)), with: presented, afterDelay: 0.75)
-    }
-    
-    func reloadCollectionView(_ presented: ChatView) {
-        presented.isValidToReload = true
-        presented.collectionView.reloadData()
     }
 }
