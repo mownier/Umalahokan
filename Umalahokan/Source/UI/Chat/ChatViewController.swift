@@ -95,28 +95,20 @@ extension ChatViewController: SendViewDelegate {
     func send(_ view: SendView) {
         guard let message = view.messageTextView.text, !message.isEmpty else { return }
         
-        let inset = view.messageTextView.contentInset
-        let offset = CGPoint(x: 0, y: -inset.top)
+        view.messageTextView.text = nil
+        var newItem: ChatDisplayData = ChatDisplayDataItem()
+        newItem.message = message
+        newItem.isMe = true
+        newItem.isAnimatable = true
+        messages.append(newItem)
         
-        UIView.animate(withDuration: 0.25, animations: { 
-            view.messageTextView.setContentOffset(offset, animated: false)
+        isCellDisplayAnimationEnabled = false
+        chatView.collectionView.reloadData()
         
-        }) { [unowned self] _ in
-            view.messageTextView.text = nil
-            var newItem: ChatDisplayData = ChatDisplayDataItem()
-            newItem.message = message
-            newItem.isMe = true
-            newItem.isAnimatable = true
-            self.messages.append(newItem)
-            
-            self.isCellDisplayAnimationEnabled = false
-            self.chatView.collectionView.reloadData()
-            
-            let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
-            self.chatView.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .bottom)
-            self.isCellDisplayAnimationEnabled = true
-            self.chatView.collectionView.reloadData()
-        }
+        let indexPath = IndexPath(item: messages.count - 1, section: 0)
+        chatView.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .bottom)
+        isCellDisplayAnimationEnabled = true
+        chatView.collectionView.reloadData()
     }
 }
 
