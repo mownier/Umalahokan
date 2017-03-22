@@ -26,6 +26,7 @@ class ChatViewController: UIViewController {
         chatView.frame.size = size
         chatView.configure(item)
         chatView.topBar.delegate = self
+        chatView.sendView.delegate = self
         chatView.collectionView.delegate = self
         chatView.collectionView.dataSource = self
         
@@ -86,6 +87,36 @@ extension ChatViewController: ChatTopBarDelegate {
     func goBack() {
         view.endEditing(true)
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ChatViewController: SendViewDelegate {
+    
+    func send(_ view: SendView) {
+        guard let message = view.messageTextView.text, !message.isEmpty else { return }
+        
+        let inset = view.messageTextView.contentInset
+        let offset = CGPoint(x: 0, y: -inset.top)
+        
+        UIView.animate(withDuration: 0.25, animations: { 
+            view.messageTextView.setContentOffset(offset, animated: false)
+        
+        }) { [unowned self] _ in
+            view.messageTextView.text = nil
+            var newItem: ChatDisplayData = ChatDisplayDataItem()
+            newItem.message = message
+            newItem.isMe = true
+            newItem.isAnimatable = true
+            self.messages.append(newItem)
+            
+            self.isCellDisplayAnimationEnabled = false
+            self.chatView.collectionView.reloadData()
+            
+            let indexPath = IndexPath(item: self.messages.count - 1, section: 0)
+            self.chatView.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .bottom)
+            self.isCellDisplayAnimationEnabled = true
+            self.chatView.collectionView.reloadData()
+        }
     }
 }
 
