@@ -34,6 +34,12 @@ class UmalahokanTextView: UITextView {
         }
     }
     
+    override var text: String? {
+        didSet {
+            placeholderLabel.isHidden = text != nil && !text!.isEmpty
+        }
+    }
+    
     
     deinit {
         notificationCenter.removeObserver(self)
