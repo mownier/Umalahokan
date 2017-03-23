@@ -9,7 +9,7 @@
 public protocol AuthService {
 
     func login(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?)
-    func resgister(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?)
+    func register(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?)
     func resetPassword(email: String, completion: ((_ result: AuthServiceResult) -> Void)?)
 }
 
