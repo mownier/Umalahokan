@@ -5,15 +5,15 @@
       location = "container:"
       name = "Modules">
       <FileRef
+         location = "group:Core/Core.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Login/Login.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:ServiceProvider/ServiceProvider.xcodeproj">
+      </FileRef>
    </Group>
-   <FileRef
-      location = "group:Core/Core.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:ServiceProvider/ServiceProvider.xcodeproj">
-   </FileRef>
    <FileRef
       location = "group:Umalahokan.xcodeproj">
    </FileRef>
