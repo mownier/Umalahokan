@@ -11,7 +11,7 @@ import XCTest
 
 class AuthServiceTest: XCTestCase {
 
-    func testLoginHavingAnErrorResult() {
+    func testLoginHasAnErrorResult() {
         let loginResult = expectation(description: "testLoginHavingAnErrorResult")
         
         let service = AuthServiceProvider()
