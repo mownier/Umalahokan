@@ -48,6 +48,82 @@ class AuthServiceTest: XCTestCase {
             XCTAssertNil(error, "Expectation Timeout with error: \(error)")
         }
     }
+    
+    func testRegisterHasErrorResult() {
+        let registerResult = expectation(description: "Register result")
+        
+        let service = AuthServiceProvider()
+        service.hasError = true
+        service.register(email: "", password: "") { result in
+            switch result {
+            case .error : break
+            case .data  : XCTFail("Result is not of type '.error'")
+            }
+            
+            registerResult.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { error in
+            XCTAssertNil(error, "Expectation Timeout with error: \(error)")
+        }
+    }
+    
+    func testRegisterHasDataResult() {
+        let registerResult = expectation(description: "Register result")
+        
+        let service = AuthServiceProvider()
+        service.hasError = false
+        service.register(email: "", password: "") { result in
+            switch result {
+            case .error : XCTFail("Result is not of type '.data'")
+            case .data  : break
+            }
+            
+            registerResult.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { error in
+            XCTAssertNil(error, "Expectation Timeout with error: \(error)")
+        }
+    }
+    
+    func testResetPasswordHasErrorResult() {
+        let resetPasswordResult = expectation(description: "Reset password result")
+        
+        let service = AuthServiceProvider()
+        service.hasError = true
+        service.resetPassword(email: "") { result in
+            switch result {
+            case .error : break
+            case .data  : XCTFail("Result is not of type '.error'")
+            }
+            
+            resetPasswordResult.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { error in
+            XCTAssertNil(error, "Expectation Timeout with error: \(error)")
+        }
+    }
+    
+    func testResetPasswordHasDataResult() {
+        let resetPasswordResult = expectation(description: "Reset password result")
+        
+        let service = AuthServiceProvider()
+        service.hasError = false
+        service.resetPassword(email: "") { result in
+            switch result {
+            case .error : XCTFail("Result is not of type '.data'")
+            case .data  : break
+            }
+            
+            resetPasswordResult.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { error in
+            XCTAssertNil(error, "Expectation Timeout with error: \(error)")
+        }
+    }
 }
 
 class AuthServiceProvider: AuthService {
@@ -56,19 +132,23 @@ class AuthServiceProvider: AuthService {
     var queue = DispatchQueue(label: "AuthServiceProvider")
     
     func login(email: String, password: String, completion: ((AuthServiceResult) -> Void)?) {
+        processQueue(completion)
+    }
+    
+    func register(email: String, password: String, completion: ((AuthServiceResult) -> Void)?) {
+        processQueue(completion)
+    }
+    
+    func resetPassword(email: String, completion: ((AuthServiceResult) -> Void)?) {
+        processQueue(completion)
+    }
+    
+    private func processQueue(_ completion: ((AuthServiceResult) -> Void)?) {
         queue.async {
             DispatchQueue.main.async { [unowned self] in
                 self.processResult(completion)
             }
         }
-    }
-    
-    func register(email: String, password: String, completion: ((AuthServiceResult) -> Void)?) {
-        
-    }
-    
-    func resetPassword(email: String, completion: ((AuthServiceResult) -> Void)?) {
-        
     }
     
     private func processResult(_ completion: ((AuthServiceResult) -> Void)?) {
