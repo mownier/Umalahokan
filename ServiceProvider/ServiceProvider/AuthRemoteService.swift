@@ -15,7 +15,7 @@ open class AuthRemoteService: AuthService {
         
     }
     
-    public func resgister(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?) {
+    public func register(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?) {
         
     }
     
