@@ -12,7 +12,7 @@ import XCTest
 class AuthServiceTest: XCTestCase {
 
     func testLoginHasAnErrorResult() {
-        let loginResult = expectation(description: "testLoginHavingAnErrorResult")
+        let loginResult = expectation(description: "Login result")
         
         let service = AuthServiceProvider()
         service.hasError = true
@@ -20,6 +20,25 @@ class AuthServiceTest: XCTestCase {
             switch result {
             case .error : break
             case .data  : XCTFail("Result is not of type '.error'")
+            }
+            
+            loginResult.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { error in
+            XCTAssertNil(error, "Expectation Timeout with error: \(error)")
+        }
+    }
+    
+    func testLoginHasDataResult() {
+        let loginResult = expectation(description: "Login result")
+        
+        let service = AuthServiceProvider()
+        service.hasError = false
+        service.login(email: "", password: "") { (result) in
+            switch result {
+            case .error : XCTFail("Result is not of type '.data'")
+            case .data  : break
             }
             
             loginResult.fulfill()
