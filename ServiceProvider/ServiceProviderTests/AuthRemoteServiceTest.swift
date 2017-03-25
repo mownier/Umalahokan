@@ -11,8 +11,22 @@ import XCTest
 
 class AuthRemoteServiceTest: XCTestCase {
     
-    func testAuthRemoteServiceWithError() {
+    func testInitializationHasNilFirebaseAuth() {
         let service = AuthRemoteService()
-        
+        XCTAssertNil(service.auth, "")
+    }
+    
+    func testLoginHasErrorResult() {
+        let resultExpectation = expectation(description: "Login result")
+        let service = AuthRemoteService()
+        service.login(email: "", password: "") { result in
+            switch result {
+            case .error : break
+            default     : break
+            }
+            XCTFail()
+            resultExpectation.fulfill()
+        }
+        waitForExpectations(timeout: 1)
     }
 }

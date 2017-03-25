@@ -7,10 +7,16 @@
 //
 
 import Core
-import FirebaseAuth
+import Firebase
 
 open class AuthRemoteService: AuthService {
 
+    private(set) var auth: FIRAuth?
+    
+    init(auth firebaseAuth: FIRAuth? = FIRAuth.auth()) {
+        auth = firebaseAuth
+    }
+    
     public func login(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?) {
         
     }

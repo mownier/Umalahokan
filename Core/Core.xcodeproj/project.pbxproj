@@ -166,9 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9B20F351E83763A000E7E44 /* Build configuration list for PBXNativeTarget "CoreTests" */;
 			buildPhases = (
+				72A756EC413A67FB9C596C4C /* [CP] Check Pods Manifest.lock */,
 				B9B20F231E83763A000E7E44 /* Sources */,
 				B9B20F241E83763A000E7E44 /* Frameworks */,
 				B9B20F251E83763A000E7E44 /* Resources */,
+				CC958B1D7F1D44BE3578D454 /* [CP] Embed Pods Frameworks */,
+				227FA3E6FFC412FA3D42B66E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,6 +241,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		227FA3E6FFC412FA3D42B66E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CoreTests/Pods-CoreTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72A756EC413A67FB9C596C4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CC958B1D7F1D44BE3578D454 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CoreTests/Pods-CoreTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B9B20F191E83763A000E7E44 /* Sources */ = {
@@ -373,7 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -394,7 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
 				DYLIB_COMPATIBILITY_VERSION = 1;

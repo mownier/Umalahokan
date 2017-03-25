@@ -400,6 +400,7 @@
 				B9B20F0D1E83748F000E7E44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9B20F0E1E83748F000E7E44 /* Build configuration list for PBXNativeTarget "LoginTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +409,7 @@
 				B9B20F101E83748F000E7E44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
