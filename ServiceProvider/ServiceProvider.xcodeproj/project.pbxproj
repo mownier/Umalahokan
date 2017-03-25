@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		3B5D5889D4573D2930297993 /* Pods_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F9911BF6F26CB3E605D2A9 /* Pods_ServiceProviderTests.framework */; };
 		6F4B2C8CC73811514A3A25C3 /* Pods_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D32F4CC4BDDD61F21B2B6E /* Pods_ServiceProvider.framework */; };
+		B992F6A51E863ACE00A997EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B992F6A41E863ACE00A997EA /* GoogleService-Info.plist */; };
+		B992F6B21E8644DA00A997EA /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */; };
 		B9E3266E1E851A7100084B38 /* ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326641E851A7100084B38 /* ServiceProvider.framework */; };
 		B9E326751E851A7100084B38 /* ServiceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E326671E851A7100084B38 /* ServiceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9E3267F1E851AD600084B38 /* AuthRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */; };
 		B9E326811E851ADE00084B38 /* AuthRemoteServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E326801E851ADE00084B38 /* AuthRemoteServiceTest.swift */; };
 		B9E326831E851AE800084B38 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326821E851AE800084B38 /* Core.framework */; };
+		D61EDE7FDF684BA74DBADF23 /* Pods_ServiceProvider_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D92EBCD8CC711205F67090 /* Pods_ServiceProvider_ServiceProviderTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,11 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E5E26B1286897BD9C565357 /* Pods-ServiceProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProviderTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProviderTests/Pods-ServiceProviderTests.release.xcconfig"; sourceTree = "<group>"; };
-		5C37476EE93BF8991562BAAB /* Pods-ServiceProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProviderTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProviderTests/Pods-ServiceProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E531F4D2DDD84A17B5843D3 /* Pods-ServiceProvider-ServiceProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider-ServiceProviderTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider-ServiceProviderTests/Pods-ServiceProvider-ServiceProviderTests.release.xcconfig"; sourceTree = "<group>"; };
+		49D92EBCD8CC711205F67090 /* Pods_ServiceProvider_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceProvider_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B20BA9A75BB787623894C5 /* Pods-ServiceProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider/Pods-ServiceProvider.release.xcconfig"; sourceTree = "<group>"; };
 		91D32F4CC4BDDD61F21B2B6E /* Pods_ServiceProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C1FC48DD3EBC6D29F0387C /* Pods-ServiceProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider/Pods-ServiceProvider.debug.xcconfig"; sourceTree = "<group>"; };
+		B992F6A41E863ACE00A997EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Umalahokan/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		B9E326641E851A7100084B38 /* ServiceProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ServiceProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E326671E851A7100084B38 /* ServiceProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceProvider.h; sourceTree = "<group>"; };
 		B9E326681E851A7100084B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +45,7 @@
 		B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRemoteService.swift; sourceTree = "<group>"; };
 		B9E326801E851ADE00084B38 /* AuthRemoteServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRemoteServiceTest.swift; sourceTree = "<group>"; };
 		B9E326821E851AE800084B38 /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = "../Core/build/Debug-iphoneos/Core.framework"; sourceTree = "<group>"; };
+		E1C6F5087ED756505E4EAD5B /* Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider-ServiceProviderTests/Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4F9911BF6F26CB3E605D2A9 /* Pods_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -59,6 +65,7 @@
 			files = (
 				B9E3266E1E851A7100084B38 /* ServiceProvider.framework in Frameworks */,
 				3B5D5889D4573D2930297993 /* Pods_ServiceProviderTests.framework in Frameworks */,
+				D61EDE7FDF684BA74DBADF23 /* Pods_ServiceProvider_ServiceProviderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +78,7 @@
 				B9E326821E851AE800084B38 /* Core.framework */,
 				91D32F4CC4BDDD61F21B2B6E /* Pods_ServiceProvider.framework */,
 				F4F9911BF6F26CB3E605D2A9 /* Pods_ServiceProviderTests.framework */,
+				49D92EBCD8CC711205F67090 /* Pods_ServiceProvider_ServiceProviderTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -80,10 +88,29 @@
 			children = (
 				95C1FC48DD3EBC6D29F0387C /* Pods-ServiceProvider.debug.xcconfig */,
 				84B20BA9A75BB787623894C5 /* Pods-ServiceProvider.release.xcconfig */,
-				5C37476EE93BF8991562BAAB /* Pods-ServiceProviderTests.debug.xcconfig */,
-				2E5E26B1286897BD9C565357 /* Pods-ServiceProviderTests.release.xcconfig */,
+				E1C6F5087ED756505E4EAD5B /* Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig */,
+				1E531F4D2DDD84A17B5843D3 /* Pods-ServiceProvider-ServiceProviderTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B992F6A61E863AE000A997EA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9E326671E851A7100084B38 /* ServiceProvider.h */,
+				B992F6A41E863ACE00A997EA /* GoogleService-Info.plist */,
+				B9E326681E851A7100084B38 /* Info.plist */,
+				B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		B992F6A81E863B3400A997EA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9E326741E851A7100084B38 /* Info.plist */,
+			);
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 		B9E3265A1E851A7100084B38 = {
@@ -109,9 +136,8 @@
 		B9E326661E851A7100084B38 /* ServiceProvider */ = {
 			isa = PBXGroup;
 			children = (
-				B9E326671E851A7100084B38 /* ServiceProvider.h */,
-				B9E326681E851A7100084B38 /* Info.plist */,
 				B9F8CC471E851CB600B22B94 /* Remote */,
+				B992F6A61E863AE000A997EA /* Support Files */,
 			);
 			path = ServiceProvider;
 			sourceTree = "<group>";
@@ -119,8 +145,8 @@
 		B9E326711E851A7100084B38 /* ServiceProviderTests */ = {
 			isa = PBXGroup;
 			children = (
-				B9E326741E851A7100084B38 /* Info.plist */,
 				B9F8CC481E851CCB00B22B94 /* Remote */,
+				B992F6A81E863B3400A997EA /* Support Files */,
 			);
 			path = ServiceProviderTests;
 			sourceTree = "<group>";
@@ -242,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B992F6A51E863ACE00A997EA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +294,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ServiceProviderTests/Pods-ServiceProviderTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ServiceProvider-ServiceProviderTests/Pods-ServiceProvider-ServiceProviderTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8BA1331351012F22C48B7FB4 /* [CP] Copy Pods Resources */ = {
@@ -327,7 +354,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ServiceProviderTests/Pods-ServiceProviderTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ServiceProvider-ServiceProviderTests/Pods-ServiceProvider-ServiceProviderTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -337,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B992F6B21E8644DA00A997EA /* FirebaseHelper.swift in Sources */,
 				B9E3267F1E851AD600084B38 /* AuthRemoteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,7 +532,7 @@
 		};
 		B9E3267C1E851A7100084B38 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C37476EE93BF8991562BAAB /* Pods-ServiceProviderTests.debug.xcconfig */;
+			baseConfigurationReference = E1C6F5087ED756505E4EAD5B /* Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
@@ -518,7 +546,7 @@
 		};
 		B9E3267D1E851A7100084B38 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E5E26B1286897BD9C565357 /* Pods-ServiceProviderTests.release.xcconfig */;
+			baseConfigurationReference = 1E531F4D2DDD84A17B5843D3 /* Pods-ServiceProvider-ServiceProviderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;

@@ -9,16 +9,32 @@
 import Core
 import Firebase
 
-open class AuthRemoteService: AuthService {
-
-    private(set) var auth: FIRAuth?
+final class AuthRemoteService: AuthService {
     
-    init(auth firebaseAuth: FIRAuth? = FIRAuth.auth()) {
-        auth = firebaseAuth
+    private var auth: FIRAuth
+    
+    required public init?(auth firebaseAuth: FIRAuth? = FIRAuth.auth()) {
+        guard firebaseAuth != nil else { return nil }
+        
+        auth = firebaseAuth!
     }
     
     public func login(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?) {
-        
+        auth.signIn(withEmail: email, password: password) { user, error in
+            guard error == nil else {
+                var info: AuthServiceError = .unknown
+                if let errorName = (error! as NSError).userInfo["error_name"] as? String {
+                    switch errorName {
+                    case "ERROR_WRONG_PASSWORD" : info = .wrongPassword
+                    case "ERROR_INVALID_EMAIL"  : info = .invalidEmail
+                    case "ERROR_USER_NOT_FOUND" : info = .emailNotFound
+                    default : break
+                    }
+                }
+                completion?(.error(info))
+                return
+            }
+        }
     }
     
     public func register(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?) {

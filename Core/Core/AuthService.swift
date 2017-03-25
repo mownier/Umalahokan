@@ -15,7 +15,7 @@ public protocol AuthService {
 
 public enum AuthServiceResult {
 
-    case error(Error)
+    case error(AuthServiceError)
     case data(AuthServiceData)
 }
 
@@ -24,4 +24,12 @@ public struct AuthServiceData {
     var accessToken: String = ""
     var refreshToken: String = ""
     var user: User?
+}
+
+public enum AuthServiceError: Error {
+    
+    case unknown
+    case wrongPassword
+    case invalidEmail
+    case emailNotFound
 }

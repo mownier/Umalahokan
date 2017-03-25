@@ -34,6 +34,6 @@ target 'ServiceProvider' do
     firebase_pods
     
     target 'ServiceProviderTests' do
-        inherit! :search_paths
+        inherit! :complete
     end
 end
