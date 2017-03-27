@@ -34,6 +34,8 @@ abstract_target 'UmalahokanApp' do
     target 'ServiceProvider' do
         project 'ServiceProvider/ServiceProvider'
         
-        target 'ServiceProviderTests'
+        target 'ServiceProviderTests' do
+            inherit! :search_paths
+        end
     end
 end

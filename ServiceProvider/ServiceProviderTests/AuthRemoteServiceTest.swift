@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Firebase
 @testable import ServiceProvider
 
 class AuthRemoteServiceTest: XCTestCase {

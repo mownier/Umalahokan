@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		232AEBA65A6770F86147DFE3 /* Pods_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D32F4CC4BDDD61F21B2B6E /* Pods_ServiceProvider.framework */; };
 		3B5D5889D4573D2930297993 /* Pods_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F9911BF6F26CB3E605D2A9 /* Pods_ServiceProviderTests.framework */; };
 		4E5E0F2F133CB390B531F9C1 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C237DE4691F23B051F961634 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */; };
-		6F5DD272EA4AC475FF1FC469 /* Pods_UmalahokanApp_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E909FCF1843EEDC8B1A1CCD /* Pods_UmalahokanApp_ServiceProvider.framework */; };
+		9EEF65EF49B273CDBC1D16AC /* Pods_UmalahokanApp_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E909FCF1843EEDC8B1A1CCD /* Pods_UmalahokanApp_ServiceProvider.framework */; };
 		B992F6A51E863ACE00A997EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B992F6A41E863ACE00A997EA /* GoogleService-Info.plist */; };
 		B992F6B21E8644DA00A997EA /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */; };
 		B9E3266E1E851A7100084B38 /* ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326641E851A7100084B38 /* ServiceProvider.framework */; };
@@ -19,6 +18,7 @@
 		B9E326811E851ADE00084B38 /* AuthRemoteServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E326801E851ADE00084B38 /* AuthRemoteServiceTest.swift */; };
 		B9E326831E851AE800084B38 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326821E851AE800084B38 /* Core.framework */; };
 		D61EDE7FDF684BA74DBADF23 /* Pods_ServiceProvider_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D92EBCD8CC711205F67090 /* Pods_ServiceProvider_ServiceProviderTests.framework */; };
+		E4AA5BC0281EB01846C4AA31 /* Pods_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D32F4CC4BDDD61F21B2B6E /* Pods_ServiceProvider.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +65,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E326831E851AE800084B38 /* Core.framework in Frameworks */,
-				6F5DD272EA4AC475FF1FC469 /* Pods_UmalahokanApp_ServiceProvider.framework in Frameworks */,
-				232AEBA65A6770F86147DFE3 /* Pods_ServiceProvider.framework in Frameworks */,
+				E4AA5BC0281EB01846C4AA31 /* Pods_ServiceProvider.framework in Frameworks */,
+				9EEF65EF49B273CDBC1D16AC /* Pods_UmalahokanApp_ServiceProvider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ServiceProviderTests/Pods-ServiceProviderTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8BA1331351012F22C48B7FB4 /* [CP] Copy Pods Resources */ = {
@@ -374,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ServiceProviderTests/Pods-ServiceProviderTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -552,7 +552,7 @@
 		};
 		B9E3267C1E851A7100084B38 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FDFA3175293AFCF3C3E0B82 /* Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.debug.xcconfig */;
+			baseConfigurationReference = 77AC40EE7E6E842F3764A56C /* Pods-ServiceProviderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
@@ -566,7 +566,7 @@
 		};
 		B9E3267D1E851A7100084B38 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02B91A95F32AE608EC255FB7 /* Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.release.xcconfig */;
+			baseConfigurationReference = B28A545B70DF55276A1EBF98 /* Pods-ServiceProviderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
