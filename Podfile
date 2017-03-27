@@ -33,10 +33,7 @@ abstract_target 'UmalahokanApp' do
     
     target 'ServiceProvider' do
         project 'ServiceProvider/ServiceProvider'
-        inherit! :complete
         
-        target 'ServiceProviderTests' do
-            inherit! :complete
-        end
+        target 'ServiceProviderTests'
     end
 end
