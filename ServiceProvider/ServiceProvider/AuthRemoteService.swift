@@ -31,7 +31,7 @@ final class AuthRemoteService: AuthService {
                     default : break
                     }
                 }
-                completion?(.error(info))
+                completion?(.fail(info))
                 return
             }
         }

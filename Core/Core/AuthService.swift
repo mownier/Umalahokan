@@ -15,8 +15,8 @@ public protocol AuthService {
 
 public enum AuthServiceResult {
 
-    case error(AuthServiceError)
-    case data(AuthServiceData)
+    case fail(AuthServiceError)
+    case success(AuthServiceData)
 }
 
 public struct AuthServiceData {
