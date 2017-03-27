@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		429346A081D228862DA30ED2 /* Pods_UmalahokanApp_Umalahokan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1688DAC288223C47BDFC3BC /* Pods_UmalahokanApp_Umalahokan.framework */; };
 		6E31D5F7C0228DD48936A2DC /* Pods_UmalahokanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C24530B998E459FBFF079C37 /* Pods_UmalahokanTests.framework */; };
 		B905834D1E7796DA00B18334 /* UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B905834C1E7796DA00B18334 /* UITheme.swift */; };
 		B9086EB31E3EEFFB003AECC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9086EB11E3EEFFB003AECC4 /* Main.storyboard */; };
@@ -87,12 +88,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BD6FD7F82158478E0A1A0AE /* Pods-UmalahokanApp-Umalahokan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-Umalahokan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmalahokanApp-Umalahokan/Pods-UmalahokanApp-Umalahokan.debug.xcconfig"; sourceTree = "<group>"; };
 		27F7FE06E842EE3898EFEA01 /* Pods_UmalahokanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E584955A5C615153C133310 /* Pods_Umalahokan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Umalahokan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		640E7DC5F52558C9A3CEAF3E /* Pods-UmalahokanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmalahokanUITests/Pods-UmalahokanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B7FE67CA091773535224300 /* Pods-UmalahokanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmalahokanUITests/Pods-UmalahokanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9811A91BEDB2340C91D3DE78 /* Pods-Umalahokan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umalahokan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umalahokan/Pods-Umalahokan.release.xcconfig"; sourceTree = "<group>"; };
 		989E523D15A79A933EB5BAC9 /* Pods-Umalahokan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umalahokan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Umalahokan/Pods-Umalahokan.debug.xcconfig"; sourceTree = "<group>"; };
+		A052D57493A2EEE877CF0B0A /* Pods-UmalahokanApp-Umalahokan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-Umalahokan.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmalahokanApp-Umalahokan/Pods-UmalahokanApp-Umalahokan.release.xcconfig"; sourceTree = "<group>"; };
 		B1C0162BD98E8EBF727AEE64 /* Pods-UmalahokanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UmalahokanTests/Pods-UmalahokanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B880388330294EA5BA16CCB7 /* Pods-UmalahokanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmalahokanTests/Pods-UmalahokanTests.release.xcconfig"; sourceTree = "<group>"; };
 		B905834C1E7796DA00B18334 /* UITheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITheme.swift; sourceTree = "<group>"; };
@@ -159,6 +162,7 @@
 		B9FA25411E3F0CC6009801F0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B9FA25441E3F0CF1009801F0 /* RecentChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentChatViewController.swift; sourceTree = "<group>"; };
 		C24530B998E459FBFF079C37 /* Pods_UmalahokanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1688DAC288223C47BDFC3BC /* Pods_UmalahokanApp_Umalahokan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanApp_Umalahokan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD4985A4447E26F85A26804A /* Pods_Umalahokan.framework in Frameworks */,
+				429346A081D228862DA30ED2 /* Pods_UmalahokanApp_Umalahokan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +200,7 @@
 				3E584955A5C615153C133310 /* Pods_Umalahokan.framework */,
 				C24530B998E459FBFF079C37 /* Pods_UmalahokanTests.framework */,
 				27F7FE06E842EE3898EFEA01 /* Pods_UmalahokanUITests.framework */,
+				F1688DAC288223C47BDFC3BC /* Pods_UmalahokanApp_Umalahokan.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -208,6 +214,8 @@
 				B880388330294EA5BA16CCB7 /* Pods-UmalahokanTests.release.xcconfig */,
 				640E7DC5F52558C9A3CEAF3E /* Pods-UmalahokanUITests.debug.xcconfig */,
 				8B7FE67CA091773535224300 /* Pods-UmalahokanUITests.release.xcconfig */,
+				0BD6FD7F82158478E0A1A0AE /* Pods-UmalahokanApp-Umalahokan.debug.xcconfig */,
+				A052D57493A2EEE877CF0B0A /* Pods-UmalahokanApp-Umalahokan.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -612,7 +620,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Umalahokan/Pods-Umalahokan-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UmalahokanApp-Umalahokan/Pods-UmalahokanApp-Umalahokan-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6E2ED8E84EE4E0AA12DEF3CD /* [CP] Embed Pods Frameworks */ = {
@@ -642,7 +650,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Umalahokan/Pods-Umalahokan-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UmalahokanApp-Umalahokan/Pods-UmalahokanApp-Umalahokan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		810DE35FDD92E36F3226B28F /* [CP] Check Pods Manifest.lock */ = {
@@ -916,7 +924,7 @@
 		};
 		B9086ED61E3EEFFB003AECC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 989E523D15A79A933EB5BAC9 /* Pods-Umalahokan.debug.xcconfig */;
+			baseConfigurationReference = 0BD6FD7F82158478E0A1A0AE /* Pods-UmalahokanApp-Umalahokan.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -931,7 +939,7 @@
 		};
 		B9086ED71E3EEFFB003AECC4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9811A91BEDB2340C91D3DE78 /* Pods-Umalahokan.release.xcconfig */;
+			baseConfigurationReference = A052D57493A2EEE877CF0B0A /* Pods-UmalahokanApp-Umalahokan.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

@@ -16,24 +16,27 @@ def util_pods
     pod 'Viper', :git => 'https://github.com/mownier/viper.git', :tag => '1.0'
 end
 
-target 'Umalahokan' do
-    firebase_pods
-    util_pods
-    
-    target 'UmalahokanTests' do
-        inherit! :search_paths
-    end
-    
-    target 'UmalahokanUITests' do
-        inherit! :search_paths
-    end
-end
-
-target 'ServiceProvider' do
-    project 'ServiceProvider/ServiceProvider'
+abstract_target 'UmalahokanApp' do
     firebase_pods
     
-    target 'ServiceProviderTests' do
+    target 'Umalahokan' do
+        util_pods
+        
+        target 'UmalahokanTests' do
+            inherit! :search_paths
+        end
+        
+        target 'UmalahokanUITests' do
+            inherit! :search_paths
+        end
+    end
+    
+    target 'ServiceProvider' do
+        project 'ServiceProvider/ServiceProvider'
         inherit! :complete
+        
+        target 'ServiceProviderTests' do
+            inherit! :complete
+        end
     end
 end
