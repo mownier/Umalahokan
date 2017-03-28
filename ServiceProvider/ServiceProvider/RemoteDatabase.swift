@@ -9,23 +9,36 @@
 import Core
 import Firebase
 
-class RemoteDatabase: DatabaseProtocol {
+public class RemoteDatabase: DatabaseProtocol {
     
-    var rootRef: FIRDatabaseReference = FIRDatabase.database().reference()
+    var source: FIRDatabaseReference? {
+        guard FIRApp.defaultApp() == nil else { return nil }
+        
+        return FIRDatabase.database().reference()
+    }
     
     public func fetchUsers(ids: [String], completion: (([User]) -> Void)?) {
-        if ids.count == 1 {
-            let path = UsersResource.singleUser(ids[0]).path
-            rootRef.child(path).observeSingleEvent(of: .value, with: { snapshot in
-                guard snapshot.exists() else {
-                    completion?([User]())
-                    return
-                }
-                
-                var user = User()
-                user.parse(data: snapshot)
-                completion?([user])
-            })
+        guard let source = source else {
+            completion?([User]())
+            return
         }
+        
+        let path: String
+        if ids.count == 1 {
+            path = UsersResource.singleUser(ids[0]).path
+        } else {
+            path = UsersResource.allUsers.path
+        }
+        
+        source.child(path).observeSingleEvent(of: .value, with: { snapshot in
+            guard snapshot.exists() else {
+                completion?([User]())
+                return
+            }
+            
+            var user = User()
+            user.parse(data: snapshot)
+            completion?([user])
+        })
     }
 }

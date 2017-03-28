@@ -21,26 +21,24 @@ class AuthRemoteServiceTest: XCTestCase {
     func testInitialization() {
         FirebaseHelper.clearApp()
         var service = AuthRemoteService()
-        XCTAssertNil(service, "CONTEXT: FIRApp is not yet configured,\nMESSAGE: 'service' MUST be nil")
+        XCTAssertNil(service)
         
         FirebaseHelper.configureApp()
         service = AuthRemoteService()
-        XCTAssertNotNil(service, "CONTEXT: FIRApp is already configured,\nMESSAGE: 'service' must NOT be nil")
+        XCTAssertNotNil(service)
         
-        let auth = FirebaseHelper.createAuth()
-        service = AuthRemoteService(auth: auth)
-        if auth == nil {
-            XCTAssertNil(service, "CONTEXT: 'auth' is nil,\nMESSAGE: 'service' MUST be nil")
-        
-        } else {
-            XCTAssertNotNil(service, "CONTEXT: 'auth' is NOT nil,\nMESSAGE: 'service' must NOT be nil")
-        }
+        let access = RemoteDatabaseAccessMock()
+        let database = RemoteDatabaseMock()
+        service = AuthRemoteService(access: access, database: database)
+        XCTAssertNotNil(service)
     }
     
     func testLoginHasErrorResultWithWrongPassword() {
-        let auth = FIRAuthMock(context: nil)
-        auth.expectedError = .errorCodeWrongPassword
-        let service = AuthRemoteService(auth: auth)!
+        let access = RemoteDatabaseAccessMock()
+        let database = RemoteDatabaseMock()
+        let service = AuthRemoteService(access: access, database: database)!
+        
+        access.expectedErrorCode = .errorCodeWrongPassword
         
         let expectation1 = expectation(description: "Empty email and password")
         service.login(email: "", password: "") { result in
@@ -91,9 +89,11 @@ class AuthRemoteServiceTest: XCTestCase {
     }
     
     func testLoginHasErroResultWithInvalidEmailFormat() {
-        let auth = FIRAuthMock(context: nil)
-        auth.expectedError = .errorCodeInvalidEmail
-        let service = AuthRemoteService(auth: auth)!
+        let access = RemoteDatabaseAccessMock()
+        let database = RemoteDatabaseMock()
+        let service = AuthRemoteService(access: access, database: database)!
+        
+        access.expectedErrorCode = .errorCodeInvalidEmail
         
         let expectation1 = expectation(description: "Invalid email format having no @ and non-empty password")
         service.login(email: "afdsafsafdsf", password: "kkJDKFj213898pr") { result in
@@ -189,9 +189,11 @@ class AuthRemoteServiceTest: XCTestCase {
     }
     
     func testLoginHasErrorResultWithEmailNotFound() {
-        let auth = FIRAuthMock(context: nil)
-        auth.expectedError = .errorCodeUserNotFound
-        let service = AuthRemoteService(auth: auth)!
+        let access = RemoteDatabaseAccessMock()
+        let database = RemoteDatabaseMock()
+        let service = AuthRemoteService(access: access, database: database)!
+        
+        access.expectedErrorCode = .errorCodeUserNotFound
         
         let expectation1 = expectation(description: "Valid email but non-existing and non-empty password")
         service.login(email: "kasjdkf@kjsdkfjk", password: "kkJDKFj213898pr") { result in
@@ -212,9 +214,9 @@ class AuthRemoteServiceTest: XCTestCase {
     }
     
     func testLoginHasSuccessfulResult() {
-        let auth = FIRAuthMock(context: nil)
-        let service = AuthRemoteService(auth: auth)!
-        service.database = RemoteDatabaseMock()
+        let access = RemoteDatabaseAccessMock()
+        let database = RemoteDatabaseMock()
+        let service = AuthRemoteService(access: access, database: database)!
         
         let expectation1 = expectation(description: "Login result")
         

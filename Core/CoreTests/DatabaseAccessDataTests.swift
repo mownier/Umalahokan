@@ -15,5 +15,6 @@ class DatabaseAccessDataTests: XCTestCase {
         let data = DatabaseAccessData()
         XCTAssertNil(data.accessToken)
         XCTAssertNil(data.refreshToken)
+        XCTAssertNil(data.userId)
     }
 }

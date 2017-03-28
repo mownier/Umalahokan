@@ -21,9 +21,11 @@ public struct DatabaseAccessData {
     
     public var refreshToken: String?
     public var accessToken: String?
+    public var userId: String?
     
     public init() {
         refreshToken = nil
         accessToken = nil
+        userId = nil
     }
 }

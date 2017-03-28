@@ -11,41 +11,40 @@ import Firebase
 
 public final class AuthRemoteService: AuthService {
     
-    private var auth: FIRAuth
-    public lazy var database: DatabaseProtocol = RemoteDatabase()
+    private var access: DatabaseAccess
+    private var database: DatabaseProtocol
     
-    required public init?(auth firebaseAuth: FIRAuth? = FIRAuth.auth()) {
-        guard firebaseAuth != nil else { return nil }
+    public required init?(access: DatabaseAccess? = RemoteDatabaseAccess(), database: DatabaseProtocol = RemoteDatabase()) {
+        guard access != nil else { return nil }
         
-        auth = firebaseAuth!
+        self.access = access!
+        self.database = database
     }
     
     public func login(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?) {
-        auth.signIn(withEmail: email, password: password) { user, error in
-            guard let user = user, error == nil else {
-                let info = AuthServiceError(code: error!._code)
+        access.login(email: email, password: password) { [unowned self] result in
+            switch result {
+            case .denied(let error):
+                let info = AuthServiceError(code: error._code)
                 completion?(.fail(info))
-                return
-            }
             
-            user.getTokenWithCompletion() { [unowned self] token, error in
-                guard let token = token, error == nil else {
-                    let info = AuthServiceError(code: error!._code)
-                    completion?(.fail(info))
+            case .accepted(let data):
+                guard let userId = data.userId else {
+                    completion?(.fail(.unknown))
                     return
                 }
                 
-                self.database.fetchUsers(ids: [user.uid], completion: { users in
+                self.database.fetchUsers(ids: [userId], completion: { users in
                     guard users.count == 1 else {
                         completion?(.fail(.unknown))
                         return
                     }
                     
-                    var data = AuthServiceData()
-                    data.accessToken = token
-                    data.refreshToken = user.refreshToken
-                    data.user = users[0]
-                    completion?(.success(data))
+                    var authData = AuthServiceData()
+                    authData.accessToken = data.accessToken
+                    authData.refreshToken = data.refreshToken
+                    authData.user = users[0]
+                    completion?(.success(authData))
                 })
             }
         }
