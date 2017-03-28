@@ -218,11 +218,27 @@
 			path = ServiceProviderTests;
 			sourceTree = "<group>";
 		};
-		B9F8CC471E851CB600B22B94 /* Remote */ = {
+		B9F7966D1E8A2652005F645A /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		B9F7966E1E8A265A005F645A /* Database */ = {
+			isa = PBXGroup;
+			children = (
 				B9F796621E8A20F3005F645A /* RemoteDatabase.swift */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		B9F8CC471E851CB600B22B94 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				B9F7966E1E8A265A005F645A /* Database */,
+				B9F7966D1E8A2652005F645A /* Services */,
 			);
 			name = Remote;
 			sourceTree = "<group>";
