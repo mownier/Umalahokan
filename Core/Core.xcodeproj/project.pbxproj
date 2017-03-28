@@ -15,6 +15,8 @@
 		B9B20FB11E83AF68000E7E44 /* AuthServiceDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B20FB01E83AF68000E7E44 /* AuthServiceDataTest.swift */; };
 		B9F7965F1E8A0E0E005F645A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F7965E1E8A0E0E005F645A /* UserService.swift */; };
 		B9F796611E8A201F005F645A /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796601E8A201F005F645A /* DatabaseProtocol.swift */; };
+		B9F796731E8A28B2005F645A /* DatabaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796721E8A28B2005F645A /* DatabaseAccess.swift */; };
+		B9F7967B1E8A2E31005F645A /* DatabaseAccessDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F7967A1E8A2E31005F645A /* DatabaseAccessDataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		B9B20FB01E83AF68000E7E44 /* AuthServiceDataTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceDataTest.swift; sourceTree = "<group>"; };
 		B9F7965E1E8A0E0E005F645A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		B9F796601E8A201F005F645A /* DatabaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
+		B9F796721E8A28B2005F645A /* DatabaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccess.swift; sourceTree = "<group>"; };
+		B9F7967A1E8A2E31005F645A /* DatabaseAccessDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccessDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		B9B20F2B1E83763A000E7E44 /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				B9F7967C1E8A2E7E005F645A /* Database */,
 				B9B20FAF1E83A91A000E7E44 /* Models */,
 				B9B20FB21E83AF6E000E7E44 /* Services */,
 				B9F7966C1E8A2578005F645A /* Support Files */,
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				B9F796601E8A201F005F645A /* DatabaseProtocol.swift */,
+				B9F796721E8A28B2005F645A /* DatabaseAccess.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -155,6 +161,14 @@
 				B9B20F2E1E83763A000E7E44 /* Info.plist */,
 			);
 			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		B9F7967C1E8A2E7E005F645A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				B9F7967A1E8A2E31005F645A /* DatabaseAccessDataTests.swift */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F796731E8A28B2005F645A /* DatabaseAccess.swift in Sources */,
 				B9F796611E8A201F005F645A /* DatabaseProtocol.swift in Sources */,
 				B9B20F3F1E837AD8000E7E44 /* User.swift in Sources */,
 				B9B20F391E83777E000E7E44 /* AuthService.swift in Sources */,
@@ -282,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F7967B1E8A2E31005F645A /* DatabaseAccessDataTests.swift in Sources */,
 				B9B20FAE1E83A8D2000E7E44 /* UserTest.swift in Sources */,
 				B9B20FB11E83AF68000E7E44 /* AuthServiceDataTest.swift in Sources */,
 			);

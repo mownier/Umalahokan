@@ -25,6 +25,9 @@
 		B9F7965D1E8A0AE6005F645A /* ResourcePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F7965C1E8A0AE6005F645A /* ResourcePath.swift */; };
 		B9F796631E8A20F3005F645A /* RemoteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796621E8A20F3005F645A /* RemoteDatabase.swift */; };
 		B9F796701E8A27E1005F645A /* RemoteDatabaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F7966F1E8A27E1005F645A /* RemoteDatabaseMock.swift */; };
+		B9F796751E8A2A4D005F645A /* RemoteDatabaseAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796741E8A2A4D005F645A /* RemoteDatabaseAccessTests.swift */; };
+		B9F796771E8A2AA5005F645A /* RemoteDatabaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796761E8A2AA5005F645A /* RemoteDatabaseAccess.swift */; };
+		B9F796791E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796781E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift */; };
 		D61EDE7FDF684BA74DBADF23 /* Pods_ServiceProvider_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D92EBCD8CC711205F67090 /* Pods_ServiceProvider_ServiceProviderTests.framework */; };
 		E4AA5BC0281EB01846C4AA31 /* Pods_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D32F4CC4BDDD61F21B2B6E /* Pods_ServiceProvider.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +73,9 @@
 		B9F7965C1E8A0AE6005F645A /* ResourcePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcePath.swift; sourceTree = "<group>"; };
 		B9F796621E8A20F3005F645A /* RemoteDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabase.swift; sourceTree = "<group>"; };
 		B9F7966F1E8A27E1005F645A /* RemoteDatabaseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseMock.swift; sourceTree = "<group>"; };
+		B9F796741E8A2A4D005F645A /* RemoteDatabaseAccessTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseAccessTests.swift; sourceTree = "<group>"; };
+		B9F796761E8A2AA5005F645A /* RemoteDatabaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseAccess.swift; sourceTree = "<group>"; };
+		B9F796781E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseAccessMock.swift; sourceTree = "<group>"; };
 		C237DE4691F23B051F961634 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C6F5087ED756505E4EAD5B /* Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider-ServiceProviderTests/Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4F9911BF6F26CB3E605D2A9 /* Pods_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +217,7 @@
 		B9E326711E851A7100084B38 /* ServiceProviderTests */ = {
 			isa = PBXGroup;
 			children = (
+				B9F7967D1E8A3310005F645A /* Database */,
 				B9F796711E8A27E7005F645A /* Mock */,
 				B9F8CC481E851CCB00B22B94 /* Remote */,
 				B992F6A81E863B3400A997EA /* Support Files */,
@@ -230,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				B9F796621E8A20F3005F645A /* RemoteDatabase.swift */,
+				B9F796761E8A2AA5005F645A /* RemoteDatabaseAccess.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -238,8 +246,17 @@
 			isa = PBXGroup;
 			children = (
 				B9F7966F1E8A27E1005F645A /* RemoteDatabaseMock.swift */,
+				B9F796781E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift */,
 			);
 			name = Mock;
+			sourceTree = "<group>";
+		};
+		B9F7967D1E8A3310005F645A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				B9F796741E8A2A4D005F645A /* RemoteDatabaseAccessTests.swift */,
+			);
+			name = Database;
 			sourceTree = "<group>";
 		};
 		B9F8CC471E851CB600B22B94 /* Remote */ = {
@@ -460,6 +477,7 @@
 				B98299901E88FB0000624644 /* FIRAuthMock.swift in Sources */,
 				B9F7965D1E8A0AE6005F645A /* ResourcePath.swift in Sources */,
 				B98299981E88FB7000624644 /* AuthServiceErrorExtension.swift in Sources */,
+				B9F796771E8A2AA5005F645A /* RemoteDatabaseAccess.swift in Sources */,
 				B992F6B21E8644DA00A997EA /* FirebaseHelper.swift in Sources */,
 				B982999A1E88FB8F00624644 /* FIRDataSnapshotExtension.swift in Sources */,
 				B9F796631E8A20F3005F645A /* RemoteDatabase.swift in Sources */,
@@ -473,6 +491,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F796701E8A27E1005F645A /* RemoteDatabaseMock.swift in Sources */,
+				B9F796751E8A2A4D005F645A /* RemoteDatabaseAccessTests.swift in Sources */,
+				B9F796791E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift in Sources */,
 				B9E326811E851ADE00084B38 /* AuthRemoteServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
