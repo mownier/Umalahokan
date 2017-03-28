@@ -13,11 +13,13 @@ class RemoteDatabaseAccessTests: XCTestCase {
     
     func testInitialization() {
         FirebaseHelper.clearApp()
-        var access = RemoteDatabaseAccess()
+        var auth = FirebaseHelper.createAuth()
+        var access = RemoteDatabaseAccess(firebaseAuth: auth)
         XCTAssertNil(access)
         
         FirebaseHelper.configureApp()
-        access = RemoteDatabaseAccess()
+        auth = FirebaseHelper.createAuth()
+        access = RemoteDatabaseAccess(firebaseAuth: auth)
         XCTAssertNotNil(access)
     }
 }

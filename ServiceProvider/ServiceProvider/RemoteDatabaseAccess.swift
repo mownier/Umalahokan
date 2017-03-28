@@ -13,7 +13,7 @@ public class RemoteDatabaseAccess: DatabaseAccess {
 
     private var auth: FIRAuth
     
-    public required init?(firebaseAuth: FIRAuth? = FIRAuth.auth()) {
+    public required init?(firebaseAuth: FIRAuth?) {
         guard firebaseAuth != nil else { return nil }
         
         auth = firebaseAuth!
