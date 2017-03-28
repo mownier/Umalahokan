@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Core
 @testable import ServiceProvider
 
 class AuthRemoteServiceTest: XCTestCase {
@@ -37,10 +38,9 @@ class AuthRemoteServiceTest: XCTestCase {
     }
     
     func testLoginHasErrorResultWithWrongPassword() {
-        guard let service = AuthRemoteService() else {
-            XCTFail("AuthRemoteService instance must NOT be nil")
-            return
-        }
+        let auth = FIRAuthMock(context: nil)
+        auth.expectedError = .errorCodeWrongPassword
+        let service = AuthRemoteService(auth: auth)!
         
         let expectation1 = expectation(description: "Empty email and password")
         service.login(email: "", password: "") { result in
@@ -91,10 +91,9 @@ class AuthRemoteServiceTest: XCTestCase {
     }
     
     func testLoginHasErroResultWithInvalidEmailFormat() {
-        guard let service = AuthRemoteService() else {
-            XCTFail("AuthRemoteService instance must NOT be nil")
-            return
-        }
+        let auth = FIRAuthMock(context: nil)
+        auth.expectedError = .errorCodeInvalidEmail
+        let service = AuthRemoteService(auth: auth)!
         
         let expectation1 = expectation(description: "Invalid email format having no @ and non-empty password")
         service.login(email: "afdsafsafdsf", password: "kkJDKFj213898pr") { result in
@@ -190,22 +189,44 @@ class AuthRemoteServiceTest: XCTestCase {
     }
     
     func testLoginHasErrorResultWithEmailNotFound() {
-        guard let service = AuthRemoteService() else {
-            XCTFail("AuthRemoteService instance must NOT be nil")
-            return
-        }
+        let auth = FIRAuthMock(context: nil)
+        auth.expectedError = .errorCodeUserNotFound
+        let service = AuthRemoteService(auth: auth)!
         
         let expectation1 = expectation(description: "Valid email but non-existing and non-empty password")
         service.login(email: "kasjdkf@kjsdkfjk", password: "kkJDKFj213898pr") { result in
             switch result {
             case .fail(let info):
                 switch info {
-                case .emailNotFound : break
+                case .userNotFound : break
                 default : XCTFail("Error 'info' is not of type '.emailNotFound'")
                 }
                 
             default:
                 XCTFail("'result' is not of type '.fail'")
+            }
+            expectation1.fulfill()
+        }
+        
+        waitForExpectations(timeout: timeout)
+    }
+    
+    func testLoginHasSuccessfulResult() {
+        let auth = FIRAuthMock(context: nil)
+        let service = AuthRemoteService(auth: auth)!
+        service.database = RemoteDatabaseMock()
+        
+        let expectation1 = expectation(description: "Login result")
+        
+        service.login(email: "me@me.com", password: "123456789") { result in
+            switch result {
+            case .success(let info):
+                XCTAssertNotNil(info.accessToken, "'accessToken' must NOT be nil")
+                XCTAssertFalse(info.accessToken!.isEmpty, "'accessToken' must NOT be empty")
+                XCTAssertNotNil(info.user, "'user' must NOT be nil")
+                XCTAssertFalse(info.user!.id.isEmpty, "'user.id' must NOT be empty")
+            default:
+                XCTFail("Result is not of type '.success'")
             }
             expectation1.fulfill()
         }

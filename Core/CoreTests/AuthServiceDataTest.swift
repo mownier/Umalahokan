@@ -15,9 +15,7 @@ class AuthServiceDataTest: XCTestCase {
         let data = AuthServiceData()
         
         XCTAssertNil(data.user, "'user' MUST be nil")
-        XCTAssertNotNil(data.accessToken, "'accessToken' must NOT be nil")
-        XCTAssert(data.accessToken.isEmpty, "'accessToken' MUST be empty")
-        XCTAssertNotNil(data.refreshToken, "'refreshToken' must NOT be nil")
-        XCTAssert(data.refreshToken.isEmpty, "'refreshToken' MUST be empty")
+        XCTAssertNil(data.refreshToken, "'refreshToken' MUST be nil")
+        XCTAssertNil(data.accessToken, "'accessToken' MUST be nil")
     }
 }

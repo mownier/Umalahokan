@@ -8,8 +8,15 @@
 
 public struct User {
     
-    public var id: String = ""
-    public var firstName: String = ""
-    public var lastName: String = ""
-    public var userName: String = ""
+    public var id: String
+    public var firstName: String
+    public var lastName: String
+    public var userName: String
+    
+    public init() {
+        id = ""
+        firstName = ""
+        lastName = ""
+        userName = ""
+    }
 }

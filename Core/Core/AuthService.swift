@@ -7,7 +7,7 @@
 //
 
 public protocol AuthService {
-
+    
     func login(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?)
     func register(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?)
     func resetPassword(email: String, completion: ((_ result: AuthServiceResult) -> Void)?)
@@ -21,9 +21,15 @@ public enum AuthServiceResult {
 
 public struct AuthServiceData {
     
-    var accessToken: String = ""
-    var refreshToken: String = ""
-    var user: User?
+    public var accessToken: String?
+    public var refreshToken: String?
+    public var user: User?
+    
+    public init() {
+        accessToken = nil
+        refreshToken = nil
+        user = nil
+    }
 }
 
 public enum AuthServiceError: Error {
@@ -31,5 +37,5 @@ public enum AuthServiceError: Error {
     case unknown
     case wrongPassword
     case invalidEmail
-    case emailNotFound
+    case userNotFound
 }

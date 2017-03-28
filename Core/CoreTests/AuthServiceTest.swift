@@ -18,8 +18,8 @@ class AuthServiceTest: XCTestCase {
         service.hasError = true
         service.login(email: "", password: "") { (result) in
             switch result {
-            case .error : break
-            case .data  : XCTFail("Result is not of type '.error'")
+            case .fail : break
+            case .success  : XCTFail("Result is not of type '.error'")
             }
             
             loginResult.fulfill()
@@ -37,8 +37,8 @@ class AuthServiceTest: XCTestCase {
         service.hasError = false
         service.login(email: "", password: "") { (result) in
             switch result {
-            case .error : XCTFail("Result is not of type '.data'")
-            case .data  : break
+            case .fail : XCTFail("Result is not of type '.data'")
+            case .success  : break
             }
             
             loginResult.fulfill()
@@ -56,8 +56,8 @@ class AuthServiceTest: XCTestCase {
         service.hasError = true
         service.register(email: "", password: "") { result in
             switch result {
-            case .error : break
-            case .data  : XCTFail("Result is not of type '.error'")
+            case .fail : break
+            case .success  : XCTFail("Result is not of type '.error'")
             }
             
             registerResult.fulfill()
@@ -75,8 +75,8 @@ class AuthServiceTest: XCTestCase {
         service.hasError = false
         service.register(email: "", password: "") { result in
             switch result {
-            case .error : XCTFail("Result is not of type '.data'")
-            case .data  : break
+            case .fail : XCTFail("Result is not of type '.data'")
+            case .success  : break
             }
             
             registerResult.fulfill()
@@ -94,8 +94,8 @@ class AuthServiceTest: XCTestCase {
         service.hasError = true
         service.resetPassword(email: "") { result in
             switch result {
-            case .error : break
-            case .data  : XCTFail("Result is not of type '.error'")
+            case .fail : break
+            case .success  : XCTFail("Result is not of type '.error'")
             }
             
             resetPasswordResult.fulfill()
@@ -113,8 +113,8 @@ class AuthServiceTest: XCTestCase {
         service.hasError = false
         service.resetPassword(email: "") { result in
             switch result {
-            case .error : XCTFail("Result is not of type '.data'")
-            case .data  : break
+            case .fail : XCTFail("Result is not of type '.data'")
+            case .success  : break
             }
             
             resetPasswordResult.fulfill()
@@ -155,12 +155,12 @@ class AuthServiceProvider: AuthService {
         let result: AuthServiceResult
         
         if hasError {
-            let info = NSError(domain: "", code: 0, userInfo: nil)
-            result = .error(info)
+            let info = AuthServiceError.unknown
+            result = .fail(info)
             
         } else {
             let info = AuthServiceData()
-            result = .data(info)
+            result = .success(info)
         }
         
         completion?(result)

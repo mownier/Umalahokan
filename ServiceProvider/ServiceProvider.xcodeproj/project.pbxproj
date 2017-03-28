@@ -10,6 +10,11 @@
 		3B5D5889D4573D2930297993 /* Pods_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F9911BF6F26CB3E605D2A9 /* Pods_ServiceProviderTests.framework */; };
 		4E5E0F2F133CB390B531F9C1 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C237DE4691F23B051F961634 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */; };
 		9EEF65EF49B273CDBC1D16AC /* Pods_UmalahokanApp_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E909FCF1843EEDC8B1A1CCD /* Pods_UmalahokanApp_ServiceProvider.framework */; };
+		B98299901E88FB0000624644 /* FIRAuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B982998F1E88FB0000624644 /* FIRAuthMock.swift */; };
+		B98299921E88FB1600624644 /* FIRUserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299911E88FB1600624644 /* FIRUserMock.swift */; };
+		B98299951E88FB3900624644 /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299941E88FB3900624644 /* UserExtension.swift */; };
+		B98299981E88FB7000624644 /* AuthServiceErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299971E88FB7000624644 /* AuthServiceErrorExtension.swift */; };
+		B982999A1E88FB8F00624644 /* FIRDataSnapshotExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */; };
 		B992F6A51E863ACE00A997EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B992F6A41E863ACE00A997EA /* GoogleService-Info.plist */; };
 		B992F6B21E8644DA00A997EA /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */; };
 		B9E3266E1E851A7100084B38 /* ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326641E851A7100084B38 /* ServiceProvider.framework */; };
@@ -17,6 +22,9 @@
 		B9E3267F1E851AD600084B38 /* AuthRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */; };
 		B9E326811E851ADE00084B38 /* AuthRemoteServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E326801E851ADE00084B38 /* AuthRemoteServiceTest.swift */; };
 		B9E326831E851AE800084B38 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326821E851AE800084B38 /* Core.framework */; };
+		B9F7965D1E8A0AE6005F645A /* ResourcePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F7965C1E8A0AE6005F645A /* ResourcePath.swift */; };
+		B9F796631E8A20F3005F645A /* RemoteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796621E8A20F3005F645A /* RemoteDatabase.swift */; };
+		B9F796651E8A23C1005F645A /* RemoteDatabaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796641E8A23C1005F645A /* RemoteDatabaseMock.swift */; };
 		D61EDE7FDF684BA74DBADF23 /* Pods_ServiceProvider_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D92EBCD8CC711205F67090 /* Pods_ServiceProvider_ServiceProviderTests.framework */; };
 		E4AA5BC0281EB01846C4AA31 /* Pods_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D32F4CC4BDDD61F21B2B6E /* Pods_ServiceProvider.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +52,11 @@
 		95C1FC48DD3EBC6D29F0387C /* Pods-ServiceProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider/Pods-ServiceProvider.debug.xcconfig"; sourceTree = "<group>"; };
 		A71F129002C0B64817BEAF56 /* Pods-UmalahokanApp-ServiceProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-ServiceProvider.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-ServiceProvider/Pods-UmalahokanApp-ServiceProvider.debug.xcconfig"; sourceTree = "<group>"; };
 		B28A545B70DF55276A1EBF98 /* Pods-ServiceProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProviderTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProviderTests/Pods-ServiceProviderTests.release.xcconfig"; sourceTree = "<group>"; };
+		B982998F1E88FB0000624644 /* FIRAuthMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRAuthMock.swift; sourceTree = "<group>"; };
+		B98299911E88FB1600624644 /* FIRUserMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRUserMock.swift; sourceTree = "<group>"; };
+		B98299941E88FB3900624644 /* UserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
+		B98299971E88FB7000624644 /* AuthServiceErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceErrorExtension.swift; sourceTree = "<group>"; };
+		B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRDataSnapshotExtension.swift; sourceTree = "<group>"; };
 		B992F6A41E863ACE00A997EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Umalahokan/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		B9E326641E851A7100084B38 /* ServiceProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ServiceProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +67,9 @@
 		B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRemoteService.swift; sourceTree = "<group>"; };
 		B9E326801E851ADE00084B38 /* AuthRemoteServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRemoteServiceTest.swift; sourceTree = "<group>"; };
 		B9E326821E851AE800084B38 /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = "../Core/build/Debug-iphoneos/Core.framework"; sourceTree = "<group>"; };
+		B9F7965C1E8A0AE6005F645A /* ResourcePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcePath.swift; sourceTree = "<group>"; };
+		B9F796621E8A20F3005F645A /* RemoteDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabase.swift; sourceTree = "<group>"; };
+		B9F796641E8A23C1005F645A /* RemoteDatabaseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseMock.swift; sourceTree = "<group>"; };
 		C237DE4691F23B051F961634 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C6F5087ED756505E4EAD5B /* Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider-ServiceProviderTests/Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F4F9911BF6F26CB3E605D2A9 /* Pods_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,13 +130,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B982998C1E88E54900624644 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */,
+				B9F7965C1E8A0AE6005F645A /* ResourcePath.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		B98299931E88FB2B00624644 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				B982998F1E88FB0000624644 /* FIRAuthMock.swift */,
+				B98299911E88FB1600624644 /* FIRUserMock.swift */,
+				B9F796641E8A23C1005F645A /* RemoteDatabaseMock.swift */,
+			);
+			name = Mock;
+			sourceTree = "<group>";
+		};
+		B98299961E88FB4800624644 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B98299971E88FB7000624644 /* AuthServiceErrorExtension.swift */,
+				B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */,
+				B98299941E88FB3900624644 /* UserExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		B992F6A61E863AE000A997EA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				B9E326671E851A7100084B38 /* ServiceProvider.h */,
 				B992F6A41E863ACE00A997EA /* GoogleService-Info.plist */,
 				B9E326681E851A7100084B38 /* Info.plist */,
-				B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -156,8 +200,11 @@
 		B9E326661E851A7100084B38 /* ServiceProvider */ = {
 			isa = PBXGroup;
 			children = (
+				B98299961E88FB4800624644 /* Extension */,
+				B98299931E88FB2B00624644 /* Mock */,
 				B9F8CC471E851CB600B22B94 /* Remote */,
 				B992F6A61E863AE000A997EA /* Support Files */,
+				B982998C1E88E54900624644 /* Util */,
 			);
 			path = ServiceProvider;
 			sourceTree = "<group>";
@@ -175,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */,
+				B9F796621E8A20F3005F645A /* RemoteDatabase.swift */,
 			);
 			name = Remote;
 			sourceTree = "<group>";
@@ -384,7 +432,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98299921E88FB1600624644 /* FIRUserMock.swift in Sources */,
+				B98299901E88FB0000624644 /* FIRAuthMock.swift in Sources */,
+				B9F796651E8A23C1005F645A /* RemoteDatabaseMock.swift in Sources */,
+				B9F7965D1E8A0AE6005F645A /* ResourcePath.swift in Sources */,
+				B98299981E88FB7000624644 /* AuthServiceErrorExtension.swift in Sources */,
 				B992F6B21E8644DA00A997EA /* FirebaseHelper.swift in Sources */,
+				B982999A1E88FB8F00624644 /* FIRDataSnapshotExtension.swift in Sources */,
+				B9F796631E8A20F3005F645A /* RemoteDatabase.swift in Sources */,
+				B98299951E88FB3900624644 /* UserExtension.swift in Sources */,
 				B9E3267F1E851AD600084B38 /* AuthRemoteService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
