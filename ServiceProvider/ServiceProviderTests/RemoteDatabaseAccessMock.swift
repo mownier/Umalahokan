@@ -21,7 +21,9 @@ class RemoteDatabaseAccessMock: DatabaseAccess {
                 completion?(.denied(error))
                 
             } else {
-                let data = DatabaseAccessData()
+                var data = DatabaseAccessData()
+                data.accessToken = "adsfdasfsadf"
+                data.userId = "123213213"
                 completion?(.accepted(data))
             }
         }

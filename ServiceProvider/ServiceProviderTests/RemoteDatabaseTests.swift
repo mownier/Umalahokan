@@ -11,4 +11,9 @@ import XCTest
 
 class RemoteDatabaseTests: XCTestCase {
     
+    func testSourceShouldNotBeNil() {
+        FirebaseHelper.configureApp()
+        let database = RemoteDatabase()
+        XCTAssertNotNil(database.source)
+    }
 }

@@ -14,7 +14,7 @@ public final class AuthRemoteService: AuthService {
     private var access: DatabaseAccess
     private var database: DatabaseProtocol
     
-    public required init?(access: DatabaseAccess? = RemoteDatabaseAccess(), database: DatabaseProtocol = RemoteDatabase()) {
+    public required init?(access: DatabaseAccess?, database: DatabaseProtocol) {
         guard access != nil else { return nil }
         
         self.access = access!

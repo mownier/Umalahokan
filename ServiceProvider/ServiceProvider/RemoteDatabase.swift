@@ -11,18 +11,11 @@ import Firebase
 
 public class RemoteDatabase: DatabaseProtocol {
     
-    var source: FIRDatabaseReference? {
-        guard FIRApp.defaultApp() == nil else { return nil }
-        
+    var source: FIRDatabaseReference {
         return FIRDatabase.database().reference()
     }
     
     public func fetchUsers(ids: [String], completion: (([User]) -> Void)?) {
-        guard let source = source else {
-            completion?([User]())
-            return
-        }
-        
         let path: String
         if ids.count == 1 {
             path = UsersResource.singleUser(ids[0]).path
