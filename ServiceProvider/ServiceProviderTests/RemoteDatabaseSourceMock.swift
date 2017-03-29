@@ -6,8 +6,8 @@
 //  Copyright © 2017 Ner. All rights reserved.
 //
 
-import Firebase
 import ServiceProvider
+import Firebase
 
 class RemoteDatabaseSourceMock: RemoteDatabaseSourceProtocol {
 

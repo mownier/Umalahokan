@@ -7,8 +7,8 @@
 //
 
 import XCTest
-import Firebase
 @testable import ServiceProvider
+import Firebase
 
 class RemoteDatabaseAccessTest: XCTestCase {
     
