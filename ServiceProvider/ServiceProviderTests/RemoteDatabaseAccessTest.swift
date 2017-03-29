@@ -1,5 +1,5 @@
 //
-//  RemoteDatabaseAccessTests.swift
+//  RemoteDatabaseAccessTest.swift
 //  ServiceProvider
 //
 //  Created by Mounir Ybanez on 28/03/2017.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import ServiceProvider
 
-class RemoteDatabaseAccessTests: XCTestCase {
+class RemoteDatabaseAccessTest: XCTestCase {
     
     func testInitialization() {
         FirebaseHelper.clearApp()
