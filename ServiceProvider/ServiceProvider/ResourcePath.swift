@@ -11,7 +11,7 @@ public enum UsersResource {
     case allUsers
     case singleUser(String)
     
-    var path: String {
+    public var path: String {
         switch self {
         case .allUsers:
             return "users"

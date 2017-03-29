@@ -29,14 +29,15 @@ public final class AuthRemoteService: AuthService {
                 completion?(.fail(info))
             
             case .accepted(let data):
-                guard let userId = data.userId else {
-                    completion?(.fail(.unknown))
+                guard let userId = data.userId, !userId.isEmpty else {
+                    completion?(.fail(.userIdUndefined))
                     return
                 }
                 
                 self.database.fetchUsers(ids: [userId], completion: { users in
-                    guard users.count == 1 else {
-                        completion?(.fail(.unknown))
+                    let error: AuthServiceError? = users.count == 1 ? nil : users.count == 0 ? .noUserInfo : .multipleUserInfo
+                    guard error == nil else {
+                        completion?(.fail(error!))
                         return
                     }
                     

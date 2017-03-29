@@ -2,7 +2,7 @@
 //  AuthService.swift
 //  Core
 //
-//  Created by Mounir Ybanez on 23/03/2017.
+//  Created waitForExpectations(timeout: timeout)waitForExpectations(timeout: timeout)by Mounir Ybanez on 23/03/2017.
 //  Copyright © 2017 Ner. All rights reserved.
 //
 
@@ -38,4 +38,7 @@ public enum AuthServiceError: Error {
     case wrongPassword
     case invalidEmail
     case userNotFound
+    case userIdUndefined
+    case noUserInfo
+    case multipleUserInfo
 }

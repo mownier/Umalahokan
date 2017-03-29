@@ -17,6 +17,10 @@
 		B992F6B21E8644DA00A997EA /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */; };
 		B9BB81671E8B5C5B00A95E8E /* UsersResourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB81661E8B5C5B00A95E8E /* UsersResourceTest.swift */; };
 		B9BB816A1E8B5D3400A95E8E /* AuthServiceErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB81691E8B5D3400A95E8E /* AuthServiceErrorTest.swift */; };
+		B9BB816C1E8B7B9800A95E8E /* RemoteDatabaseSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB816B1E8B7B9800A95E8E /* RemoteDatabaseSourceTest.swift */; };
+		B9BB816E1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB816D1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift */; };
+		B9BB81701E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB816F1E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift */; };
+		B9BB81721E8B802100A95E8E /* FIRDatabaseReferenceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB81711E8B802100A95E8E /* FIRDatabaseReferenceMock.swift */; };
 		B9E3266E1E851A7100084B38 /* ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326641E851A7100084B38 /* ServiceProvider.framework */; };
 		B9E326751E851A7100084B38 /* ServiceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E326671E851A7100084B38 /* ServiceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9E3267F1E851AD600084B38 /* AuthRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */; };
@@ -64,6 +68,10 @@
 		B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		B9BB81661E8B5C5B00A95E8E /* UsersResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersResourceTest.swift; sourceTree = "<group>"; };
 		B9BB81691E8B5D3400A95E8E /* AuthServiceErrorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceErrorTest.swift; sourceTree = "<group>"; };
+		B9BB816B1E8B7B9800A95E8E /* RemoteDatabaseSourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseSourceTest.swift; sourceTree = "<group>"; };
+		B9BB816D1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseSourceMock.swift; sourceTree = "<group>"; };
+		B9BB816F1E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRDataSnapshotMock.swift; sourceTree = "<group>"; };
+		B9BB81711E8B802100A95E8E /* FIRDatabaseReferenceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRDatabaseReferenceMock.swift; sourceTree = "<group>"; };
 		B9E326641E851A7100084B38 /* ServiceProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ServiceProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E326671E851A7100084B38 /* ServiceProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceProvider.h; sourceTree = "<group>"; };
 		B9E326681E851A7100084B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -249,8 +257,11 @@
 		B9F796711E8A27E7005F645A /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				B9F7966F1E8A27E1005F645A /* RemoteDatabaseMock.swift */,
+				B9BB81711E8B802100A95E8E /* FIRDatabaseReferenceMock.swift */,
+				B9BB816F1E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift */,
 				B9F796781E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift */,
+				B9F7966F1E8A27E1005F645A /* RemoteDatabaseMock.swift */,
+				B9BB816D1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift */,
 			);
 			name = Mock;
 			sourceTree = "<group>";
@@ -259,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				B9F796741E8A2A4D005F645A /* RemoteDatabaseAccessTest.swift */,
+				B9BB816B1E8B7B9800A95E8E /* RemoteDatabaseSourceTest.swift */,
 				B9F7967E1E8A3DC8005F645A /* RemoteDatabaseTest.swift */,
 			);
 			name = Database;
@@ -497,9 +509,13 @@
 			files = (
 				B9F796701E8A27E1005F645A /* RemoteDatabaseMock.swift in Sources */,
 				B9F796751E8A2A4D005F645A /* RemoteDatabaseAccessTest.swift in Sources */,
+				B9BB81721E8B802100A95E8E /* FIRDatabaseReferenceMock.swift in Sources */,
 				B9F7967F1E8A3DC8005F645A /* RemoteDatabaseTest.swift in Sources */,
+				B9BB816C1E8B7B9800A95E8E /* RemoteDatabaseSourceTest.swift in Sources */,
+				B9BB816E1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift in Sources */,
 				B9BB816A1E8B5D3400A95E8E /* AuthServiceErrorTest.swift in Sources */,
 				B9BB81671E8B5C5B00A95E8E /* UsersResourceTest.swift in Sources */,
+				B9BB81701E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift in Sources */,
 				B9F796791E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift in Sources */,
 				B9E326811E851ADE00084B38 /* AuthRemoteServiceTest.swift in Sources */,
 			);

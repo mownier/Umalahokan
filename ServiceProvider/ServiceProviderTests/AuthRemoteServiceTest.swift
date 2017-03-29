@@ -207,4 +207,92 @@ class AuthRemoteServiceTest: XCTestCase {
         
         waitForExpectations(timeout: timeout)
     }
+    
+    func testLoginHasBeenAcceptedButUserIdIsNil() {
+        let access = RemoteDatabaseAccessMock()
+        let database = RemoteDatabaseMock()
+        let service = AuthRemoteService(access: access, database: database)!
+        
+        access.userIdShouldBeEmpty = true
+        
+        let expectation1 = expectation(description: "The returned userId is nil")
+        service.login(email: "me@me.com", password: "123456789") { result in
+            switch result {
+            case .fail(let error) where error == .userIdUndefined:
+                break
+                
+            default:
+                XCTFail()
+            }
+            expectation1.fulfill()
+        }
+        
+        waitForExpectations(timeout: timeout)
+    }
+    
+    func testLoginHasBeenAcceptedButUserIdIsEmpty() {
+        let access = RemoteDatabaseAccessMock()
+        let database = RemoteDatabaseMock()
+        let service = AuthRemoteService(access: access, database: database)!
+        
+        access.userIdShouldBeNil = true
+        
+        let expectation1 = expectation(description: "The returned userId is nil")
+        service.login(email: "me@me.com", password: "123456789") { result in
+            switch result {
+            case .fail(let error) where error == .userIdUndefined:
+                break
+                
+            default:
+                XCTFail()
+            }
+            expectation1.fulfill()
+        }
+        
+        waitForExpectations(timeout: timeout)
+    }
+    
+    func testLoginHasBeenAcceptedButNoUserInformationRetrieved() {
+        let access = RemoteDatabaseAccessMock()
+        let database = RemoteDatabaseMock()
+        let service = AuthRemoteService(access: access, database: database)!
+        
+        database.userCount = 0
+        
+        let expectation1 = expectation(description: "User not found")
+        service.login(email: "me@me.com", password: "123456789") { result in
+            switch result {
+            case .fail(let error) where error == .noUserInfo:
+                break
+                
+            default:
+                XCTFail()
+            }
+            expectation1.fulfill()
+        }
+        
+        waitForExpectations(timeout: timeout)
+    }
+
+    func testLoginHasBeenAcceptedButMultipleUserInformationRetrieved() {
+        let access = RemoteDatabaseAccessMock()
+        let database = RemoteDatabaseMock()
+        let service = AuthRemoteService(access: access, database: database)!
+        
+        database.userCount = 4
+        
+        let expectation1 = expectation(description: "User not found")
+        service.login(email: "me@me.com", password: "123456789") { result in
+            switch result {
+            case .fail(let error) where error == .multipleUserInfo:
+                break
+                
+            default:
+                XCTFail()
+            }
+            expectation1.fulfill()
+        }
+        
+        waitForExpectations(timeout: timeout)
+    }
 }

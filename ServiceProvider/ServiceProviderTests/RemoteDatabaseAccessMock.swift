@@ -12,6 +12,8 @@ import Firebase
 class RemoteDatabaseAccessMock: DatabaseAccess {
     
     var expectedErrorCode: FIRAuthErrorCode?
+    var userIdShouldBeEmpty: Bool = false
+    var userIdShouldBeNil: Bool = false
     
     func login(email: String, password: String, completion: ((DatabaseAccessResult) -> Void)?) {
         let queue = DispatchQueue(label: "RemoteDatabaseAccessMock")
@@ -23,7 +25,7 @@ class RemoteDatabaseAccessMock: DatabaseAccess {
             } else {
                 var data = DatabaseAccessData()
                 data.accessToken = "adsfdasfsadf"
-                data.userId = "123213213"
+                data.userId = self.userIdShouldBeNil ? nil : self.userIdShouldBeEmpty ? "" : "123213213"
                 completion?(.accepted(data))
             }
         }
