@@ -44,14 +44,11 @@ class AuthRemoteServiceTest: XCTestCase {
         let expectation1 = expectation(description: "Empty email and password")
         service.login(email: "", password: "") { result in
             switch result {
-            case .fail(let info):
-                switch info {
-                case .wrongPassword : break
-                default : XCTFail("Error 'info' is not of type '.wrongPassword'")
-                }
+            case .fail(let info) where info == .wrongPassword:
+                break
                 
             default:
-                XCTFail("'result' is not of type '.fail'")
+                XCTFail()
             }
             expectation1.fulfill()
         }
@@ -59,29 +56,23 @@ class AuthRemoteServiceTest: XCTestCase {
         let expectation2 = expectation(description: "Existing email and empty password")
         service.login(email: "me@me.com", password: "") { result in
             switch result {
-            case .fail(let info):
-                switch info {
-                case .wrongPassword : break
-                default : XCTFail("Error 'info' is not of type '.wrongPassword'")
-                }
+            case .fail(let info) where info == .wrongPassword:
+                break
                 
             default:
-                XCTFail("'result' is not of type '.fail'")
+                XCTFail()
             }
             expectation2.fulfill()
         }
         
         let expectation3 = expectation(description: "Existing email and mismatched password")
-        service.login(email: "me@me.com", password: "kkJDKFj213898pr") { result in
+        service.login(email: "me@me.com", password: "abcdef12345678") { result in
             switch result {
-            case .fail(let info):
-                switch info {
-                case .wrongPassword : break
-                default : XCTFail("Error 'info' is not of type '.wrongPassword'")
-                }
+            case .fail(let info) where info == .wrongPassword:
+                break
                 
             default:
-                XCTFail("'result' is not of type '.fail'")
+                XCTFail()
             }
             expectation3.fulfill()
         }
@@ -97,91 +88,73 @@ class AuthRemoteServiceTest: XCTestCase {
         access.expectedErrorCode = .errorCodeInvalidEmail
         
         let expectation1 = expectation(description: "Invalid email format having no @ and non-empty password")
-        service.login(email: "afdsafsafdsf", password: "kkJDKFj213898pr") { result in
+        service.login(email: "abcde12334qwert", password: "123456789abcde") { result in
             switch result {
-            case .fail(let info):
-                switch info {
-                case .invalidEmail : break
-                default : XCTFail("Error 'info' is not of type '.invalidEmail'")
-                }
+            case .fail(let info) where info == .invalidEmail:
+                break
                 
             default:
-                XCTFail("'result' is not of type '.fail'")
+                XCTFail()
             }
             expectation1.fulfill()
         }
         
         let expectation2 = expectation(description: "Invalid email format having @ at the end")
-        service.login(email: "123adkl213@", password: "kkJDKFj213898pr") { result in
+        service.login(email: "you@", password: "123456789abcde") { result in
             switch result {
-            case .fail(let info):
-                switch info {
-                case .invalidEmail : break
-                default : XCTFail("Error 'info' is not of type '.invalidEmail'")
-                }
+            case .fail(let info) where info == .invalidEmail:
+                break
                 
             default:
-                XCTFail("'result' is not of type '.fail'")
+                XCTFail()
             }
             expectation2.fulfill()
         }
         
         let expectation3 = expectation(description: "Invalid email format having @ at the beginning")
-        service.login(email: "@123jkjsdf", password: "kkJDKFj213898pr") { result in
+        service.login(email: "@you.com", password: "123456789abcde") { result in
             switch result {
-            case .fail(let info):
-                switch info {
-                case .invalidEmail : break
-                default : XCTFail("Error 'info' is not of type '.invalidEmail'")
-                }
+            case .fail(let info) where info == .invalidEmail:
+                break
                 
             default:
-                XCTFail("'result' is not of type '.fail'")
+                XCTFail()
             }
             expectation3.fulfill()
         }
         
         let expectation4 = expectation(description: "Invalid email format having @ at the end and beginning")
-        service.login(email: "@123jkjsdf@", password: "kkJDKFj213898pr") { result in
+        service.login(email: "@you@", password: "123456789abcde") { result in
             switch result {
-            case .fail(let info):
-                switch info {
-                case .invalidEmail : break
-                default : XCTFail("Error 'info' is not of type '.invalidEmail'")
-                }
+            case .fail(let info) where info == .invalidEmail:
+                break
                 
             default:
-                XCTFail("'result' is not of type '.fail'")
+                XCTFail()
             }
             expectation4.fulfill()
         }
         
         let expectation5 = expectation(description: "Invalid email format with all @")
-        service.login(email: "@@@@@@", password: "kkJDKFj213898pr") { result in
+        service.login(email: "@@@@@@", password: "123456789abcde") { result in
             switch result {
-            case .fail(let info):
-                switch info {
-                case .invalidEmail : break
-                default : XCTFail("Error 'info' is not of type '.invalidEmail'")
-                }
+            case .fail(let info) where info == .invalidEmail:
+                break
                 
             default:
-                XCTFail("'result' is not of type '.fail'")
+                XCTFail()
             }
             expectation5.fulfill()
         }
         
         let expectation6 = expectation(description: "Invalid email format with two @ in between")
-        service.login(email: "asdfadsf@kjksadjf@jdskf", password: "kkJDKFj213898pr") { result in
+        service.login(email: "you@me@we", password: "123456789abcde") { result in
             switch result {
-            case .fail(let info):
-                switch info {
-                case .invalidEmail : break
-                default : XCTFail("Error 'info' is not of type '.invalidEmail'")
-                }
+            case .fail(let info) where info == .invalidEmail:
+                break
                 
             default:
-                XCTFail("'result' is not of type '.fail'")
+                XCTFail()
             }
             expectation6.fulfill()
         }
@@ -189,7 +162,7 @@ class AuthRemoteServiceTest: XCTestCase {
         waitForExpectations(timeout: timeout)
     }
     
-    func testLoginHasErrorResultWithEmailNotFound() {
+    func testLoginHasErrorResultWithUserNotFound() {
         let access = RemoteDatabaseAccessMock()
         let database = RemoteDatabaseMock()
         let service = AuthRemoteService(access: access, database: database)!
@@ -197,16 +170,13 @@ class AuthRemoteServiceTest: XCTestCase {
         access.expectedErrorCode = .errorCodeUserNotFound
         
         let expectation1 = expectation(description: "Valid email but non-existing and non-empty password")
-        service.login(email: "kasjdkf@kjsdkfjk", password: "kkJDKFj213898pr") { result in
+        service.login(email: "you@you.com", password: "123456789abcde") { result in
             switch result {
-            case .fail(let info):
-                switch info {
-                case .userNotFound : break
-                default : XCTFail("Error 'info' is not of type '.emailNotFound'")
-                }
+            case .fail(let info) where info == .userNotFound:
+                break
                 
             default:
-                XCTFail("'result' is not of type '.fail'")
+                XCTFail()
             }
             expectation1.fulfill()
         }
@@ -224,12 +194,13 @@ class AuthRemoteServiceTest: XCTestCase {
         service.login(email: "me@me.com", password: "123456789") { result in
             switch result {
             case .success(let info):
-                XCTAssertNotNil(info.accessToken, "'accessToken' must NOT be nil")
-                XCTAssertFalse(info.accessToken!.isEmpty, "'accessToken' must NOT be empty")
-                XCTAssertNotNil(info.user, "'user' must NOT be nil")
-                XCTAssertFalse(info.user!.id.isEmpty, "'user.id' must NOT be empty")
+                XCTAssertNotNil(info.accessToken)
+                XCTAssertFalse(info.accessToken!.isEmpty)
+                XCTAssertNotNil(info.user)
+                XCTAssertFalse(info.user!.id.isEmpty)
+                
             default:
-                XCTFail("Result is not of type '.success'")
+                XCTFail()
             }
             expectation1.fulfill()
         }
