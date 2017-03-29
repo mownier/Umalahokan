@@ -32,12 +32,12 @@ class RemoteDatabaseAccessTest: XCTestCase {
     
     func testLoginHasADeniedResult() {
         let auth = FIRAuthMock(context: "Login has a denied result")
-        let access = RemoteDatabaseAccess(firebaseAuth: auth)!
         
+        let access1 = RemoteDatabaseAccess(firebaseAuth: auth)!
         let expectation1 = expectation(description: ".denied, .errorCodeUserNotFound")
-        access.login(email: "you@you.com", password: "12345qwertzxcvb") { result in
+        access1.login(email: "you@you.com", password: "12345qwertzxcvb") { result in
             switch result {
-            case .denied:
+            case .denied(let error) where error._code == FIRAuthErrorCode.errorCodeUserNotFound.rawValue:
                 break
                 
             default:
@@ -45,6 +45,48 @@ class RemoteDatabaseAccessTest: XCTestCase {
             }
             
             expectation1.fulfill()
+        }
+        
+        let access2 = RemoteDatabaseAccess(firebaseAuth: auth)!
+        let expectation2 = expectation(description: ".denied, .errorCodeInvalidEmail")
+        access2.login(email: "invalid@email.com", password: "12345qwertzxcvb") { result in
+            switch result {
+            case .denied(let error) where error._code == FIRAuthErrorCode.errorCodeInvalidEmail.rawValue:
+                break
+                
+            default:
+                XCTFail()
+            }
+            
+            expectation2.fulfill()
+        }
+        
+        let access3 = RemoteDatabaseAccess(firebaseAuth: auth)!
+        let expectation3 = expectation(description: ".denied, .errorCodeWrongPassword")
+        access3.login(email: "me@me.com", password: "wrong12345password") { result in
+            switch result {
+            case .denied(let error) where error._code == FIRAuthErrorCode.errorCodeWrongPassword.rawValue:
+                break
+                
+            default:
+                XCTFail()
+            }
+            
+            expectation3.fulfill()
+        }
+        
+        let access4 = RemoteDatabaseAccess(firebaseAuth: auth)!
+        let expectation4 = expectation(description: ".denied, .errorCodeWrongPassword, email found but password is incorrect")
+        access4.login(email: "me@me.com", password: "123213213") { result in
+            switch result {
+            case .denied(let error) where error._code == FIRAuthErrorCode.errorCodeWrongPassword.rawValue:
+                break
+                
+            default:
+                XCTFail()
+            }
+            
+            expectation4.fulfill()
         }
         
         waitForExpectations(timeout: timeout)

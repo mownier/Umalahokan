@@ -42,11 +42,33 @@ class FIRAuthMock: FIRAuth {
         credential.password = password
         
         let isFound = credentials.contains(credential)
+        let isEmailExisting: Bool = credentials.index { (credential) -> Bool in
+            return credential.email == email
+        } == nil ? false : true
         
         let queue = DispatchQueue(label: context)
         queue.async {
+            guard email != "invalid@email.com" else {
+                let code = FIRAuthErrorCode.errorCodeInvalidEmail.rawValue
+                let error = NSError(domain: "", code: code, userInfo: nil)
+                completion?(nil, error)
+                return
+            }
+            
+            guard password != "wrong12345password" else {
+                let code = FIRAuthErrorCode.errorCodeWrongPassword.rawValue
+                let error = NSError(domain: "", code: code, userInfo: nil)
+                completion?(nil, error)
+                return
+            }
+            
             guard isFound else {
-                let code = FIRAuthErrorCode.errorCodeUserNotFound.rawValue
+                let code: Int
+                if isEmailExisting {
+                    code = FIRAuthErrorCode.errorCodeWrongPassword.rawValue
+                } else {
+                    code = FIRAuthErrorCode.errorCodeUserNotFound.rawValue
+                }
                 let error = NSError(domain: "", code: code, userInfo: nil)
                 completion?(nil, error)
                 return
