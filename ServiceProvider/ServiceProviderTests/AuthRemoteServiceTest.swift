@@ -15,15 +15,19 @@ class AuthRemoteServiceTest: XCTestCase {
     let timeout: TimeInterval = 10
     
     func testInitialization() {
-        let database = RemoteDatabase()
-        
         FirebaseHelper.clearApp()
+        var ref = FirebaseHelper.createReference()
+        var source = RemoteDatabaseSource(reference: ref)
+        var database = RemoteDatabase(source: source)
         var auth = FirebaseHelper.createAuth()
         var access = RemoteDatabaseAccess(firebaseAuth: auth)
         var service = AuthRemoteService(access: access, database: database)
         XCTAssertNil(service)
         
         FirebaseHelper.configureApp()
+        ref = FirebaseHelper.createReference()
+        source = RemoteDatabaseSource(reference: ref)
+        database = RemoteDatabase(source: source)
         auth = FirebaseHelper.createAuth()
         access = RemoteDatabaseAccess(firebaseAuth: auth)
         service = AuthRemoteService(access: access, database: database)

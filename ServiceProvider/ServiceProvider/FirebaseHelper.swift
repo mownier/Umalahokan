@@ -28,4 +28,10 @@ class FirebaseHelper {
         
         return FIRAuth(app: app)
     }
+    
+    class func createReference() -> FIRDatabaseReference? {
+        guard FIRApp.defaultApp() != nil else { return nil }
+        
+        return FIRDatabase.database().reference()
+    }
 }

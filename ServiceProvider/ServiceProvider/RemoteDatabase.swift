@@ -11,8 +11,12 @@ import Firebase
 
 public class RemoteDatabase: DatabaseProtocol {
     
-    var source: FIRDatabaseReference {
-        return FIRDatabase.database().reference()
+    private var source: RemoteDatabaseSourceProtocol
+    
+    public required init?(source: RemoteDatabaseSourceProtocol?) {
+        guard source != nil else { return nil }
+        
+        self.source = source!
     }
     
     public func fetchUsers(ids: [String], completion: (([User]) -> Void)?) {
@@ -23,7 +27,7 @@ public class RemoteDatabase: DatabaseProtocol {
             path = UsersResource.allUsers.path
         }
         
-        source.child(path).observeSingleEvent(of: .value, with: { snapshot in
+        source.get(path) { snapshot in
             guard snapshot.exists() else {
                 completion?([User]())
                 return
@@ -32,6 +36,6 @@ public class RemoteDatabase: DatabaseProtocol {
             var user = User()
             user.parse(data: snapshot)
             completion?([user])
-        })
+        }
     }
 }

@@ -14,11 +14,11 @@ public final class AuthRemoteService: AuthService {
     private var access: DatabaseAccess
     private var database: DatabaseProtocol
     
-    public required init?(access: DatabaseAccess?, database: DatabaseProtocol) {
-        guard access != nil else { return nil }
+    public required init?(access: DatabaseAccess?, database: DatabaseProtocol?) {
+        guard access != nil, database != nil else { return nil }
         
         self.access = access!
-        self.database = database
+        self.database = database!
     }
     
     public func login(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?) {
