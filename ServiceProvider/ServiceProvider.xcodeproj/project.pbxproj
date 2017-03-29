@@ -15,6 +15,8 @@
 		B982999A1E88FB8F00624644 /* FIRDataSnapshotExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */; };
 		B992F6A51E863ACE00A997EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B992F6A41E863ACE00A997EA /* GoogleService-Info.plist */; };
 		B992F6B21E8644DA00A997EA /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */; };
+		B9BB81671E8B5C5B00A95E8E /* UsersResourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB81661E8B5C5B00A95E8E /* UsersResourceTest.swift */; };
+		B9BB816A1E8B5D3400A95E8E /* AuthServiceErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB81691E8B5D3400A95E8E /* AuthServiceErrorTest.swift */; };
 		B9E3266E1E851A7100084B38 /* ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326641E851A7100084B38 /* ServiceProvider.framework */; };
 		B9E326751E851A7100084B38 /* ServiceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E326671E851A7100084B38 /* ServiceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9E3267F1E851AD600084B38 /* AuthRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */; };
@@ -60,6 +62,8 @@
 		B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRDataSnapshotExtension.swift; sourceTree = "<group>"; };
 		B992F6A41E863ACE00A997EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Umalahokan/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B992F6B11E8644DA00A997EA /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		B9BB81661E8B5C5B00A95E8E /* UsersResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersResourceTest.swift; sourceTree = "<group>"; };
+		B9BB81691E8B5D3400A95E8E /* AuthServiceErrorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceErrorTest.swift; sourceTree = "<group>"; };
 		B9E326641E851A7100084B38 /* ServiceProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ServiceProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E326671E851A7100084B38 /* ServiceProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceProvider.h; sourceTree = "<group>"; };
 		B9E326681E851A7100084B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,6 +177,14 @@
 			name = "Support Files";
 			sourceTree = "<group>";
 		};
+		B9BB81681E8B5C5F00A95E8E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B9BB81661E8B5C5B00A95E8E /* UsersResourceTest.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		B9E3265A1E851A7100084B38 = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +223,7 @@
 				B9F796711E8A27E7005F645A /* Mock */,
 				B9F8CC481E851CCB00B22B94 /* Remote */,
 				B992F6A81E863B3400A997EA /* Support Files */,
+				B9BB81681E8B5C5F00A95E8E /* Util */,
 			);
 			path = ServiceProviderTests;
 			sourceTree = "<group>";
@@ -264,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E326801E851ADE00084B38 /* AuthRemoteServiceTest.swift */,
+				B9BB81691E8B5D3400A95E8E /* AuthServiceErrorTest.swift */,
 			);
 			name = Remote;
 			sourceTree = "<group>";
@@ -484,6 +498,8 @@
 				B9F796701E8A27E1005F645A /* RemoteDatabaseMock.swift in Sources */,
 				B9F796751E8A2A4D005F645A /* RemoteDatabaseAccessTests.swift in Sources */,
 				B9F7967F1E8A3DC8005F645A /* RemoteDatabaseTests.swift in Sources */,
+				B9BB816A1E8B5D3400A95E8E /* AuthServiceErrorTest.swift in Sources */,
+				B9BB81671E8B5C5B00A95E8E /* UsersResourceTest.swift in Sources */,
 				B9F796791E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift in Sources */,
 				B9E326811E851ADE00084B38 /* AuthRemoteServiceTest.swift in Sources */,
 			);
