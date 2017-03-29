@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B5D5889D4573D2930297993 /* Pods_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F9911BF6F26CB3E605D2A9 /* Pods_ServiceProviderTests.framework */; };
-		4E5E0F2F133CB390B531F9C1 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C237DE4691F23B051F961634 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */; };
-		9EEF65EF49B273CDBC1D16AC /* Pods_UmalahokanApp_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E909FCF1843EEDC8B1A1CCD /* Pods_UmalahokanApp_ServiceProvider.framework */; };
+		3BE97A70C6F57EF0512C55D0 /* Pods_UmalahokanApp_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A17F789C2311597E8003423 /* Pods_UmalahokanApp_ServiceProvider.framework */; };
+		AD78E9B22D80F193B0522BD5 /* Pods_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427F46B0937CB083D1169737 /* Pods_ServiceProviderTests.framework */; };
 		B98299951E88FB3900624644 /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299941E88FB3900624644 /* UserExtension.swift */; };
 		B98299981E88FB7000624644 /* AuthServiceErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299971E88FB7000624644 /* AuthServiceErrorExtension.swift */; };
 		B982999A1E88FB8F00624644 /* FIRDataSnapshotExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */; };
@@ -21,21 +20,21 @@
 		B9BB816E1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB816D1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift */; };
 		B9BB81701E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB816F1E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift */; };
 		B9BB81721E8B802100A95E8E /* FIRDatabaseReferenceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB81711E8B802100A95E8E /* FIRDatabaseReferenceMock.swift */; };
+		B9BB81741E8B8EA100A95E8E /* FIRAuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB81731E8B8EA100A95E8E /* FIRAuthMock.swift */; };
+		B9BB81781E8B981C00A95E8E /* RemoteDatabaseAccessTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB81771E8B981C00A95E8E /* RemoteDatabaseAccessTest.swift */; };
+		B9BB817A1E8B9EDD00A95E8E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BB81791E8B9EDD00A95E8E /* Core.framework */; };
 		B9E3266E1E851A7100084B38 /* ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326641E851A7100084B38 /* ServiceProvider.framework */; };
 		B9E326751E851A7100084B38 /* ServiceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E326671E851A7100084B38 /* ServiceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9E3267F1E851AD600084B38 /* AuthRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */; };
 		B9E326811E851ADE00084B38 /* AuthRemoteServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E326801E851ADE00084B38 /* AuthRemoteServiceTest.swift */; };
-		B9E326831E851AE800084B38 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326821E851AE800084B38 /* Core.framework */; };
 		B9F7965D1E8A0AE6005F645A /* ResourcePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F7965C1E8A0AE6005F645A /* ResourcePath.swift */; };
 		B9F796631E8A20F3005F645A /* RemoteDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796621E8A20F3005F645A /* RemoteDatabase.swift */; };
 		B9F796701E8A27E1005F645A /* RemoteDatabaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F7966F1E8A27E1005F645A /* RemoteDatabaseMock.swift */; };
-		B9F796751E8A2A4D005F645A /* RemoteDatabaseAccessTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796741E8A2A4D005F645A /* RemoteDatabaseAccessTest.swift */; };
 		B9F796771E8A2AA5005F645A /* RemoteDatabaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796761E8A2AA5005F645A /* RemoteDatabaseAccess.swift */; };
 		B9F796791E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796781E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift */; };
 		B9F7967F1E8A3DC8005F645A /* RemoteDatabaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F7967E1E8A3DC8005F645A /* RemoteDatabaseTest.swift */; };
 		B9F796811E8A55BA005F645A /* RemoteDatabaseSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F796801E8A55BA005F645A /* RemoteDatabaseSource.swift */; };
-		D61EDE7FDF684BA74DBADF23 /* Pods_ServiceProvider_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D92EBCD8CC711205F67090 /* Pods_ServiceProvider_ServiceProviderTests.framework */; };
-		E4AA5BC0281EB01846C4AA31 /* Pods_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D32F4CC4BDDD61F21B2B6E /* Pods_ServiceProvider.framework */; };
+		F8E7EDE11D707C1D0E53FB4C /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FD20B100D2D46CB6704F14 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,18 +48,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02B91A95F32AE608EC255FB7 /* Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.release.xcconfig"; sourceTree = "<group>"; };
-		0FDFA3175293AFCF3C3E0B82 /* Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1E531F4D2DDD84A17B5843D3 /* Pods-ServiceProvider-ServiceProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider-ServiceProviderTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider-ServiceProviderTests/Pods-ServiceProvider-ServiceProviderTests.release.xcconfig"; sourceTree = "<group>"; };
-		49D92EBCD8CC711205F67090 /* Pods_ServiceProvider_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceProvider_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E909FCF1843EEDC8B1A1CCD /* Pods_UmalahokanApp_ServiceProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanApp_ServiceProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A17F789C2311597E8003423 /* Pods_UmalahokanApp_ServiceProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanApp_ServiceProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B350DA682748CBBFFAEF756 /* Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		427F46B0937CB083D1169737 /* Pods_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		485AFBA84B707F7B1EFFC214 /* Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests/Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.release.xcconfig"; sourceTree = "<group>"; };
 		77AC40EE7E6E842F3764A56C /* Pods-ServiceProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProviderTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProviderTests/Pods-ServiceProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		805BEAB255CB3090AE70485B /* Pods-UmalahokanApp-ServiceProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-ServiceProvider.release.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-ServiceProvider/Pods-UmalahokanApp-ServiceProvider.release.xcconfig"; sourceTree = "<group>"; };
-		84B20BA9A75BB787623894C5 /* Pods-ServiceProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider/Pods-ServiceProvider.release.xcconfig"; sourceTree = "<group>"; };
-		91D32F4CC4BDDD61F21B2B6E /* Pods_ServiceProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		95C1FC48DD3EBC6D29F0387C /* Pods-ServiceProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider/Pods-ServiceProvider.debug.xcconfig"; sourceTree = "<group>"; };
 		A71F129002C0B64817BEAF56 /* Pods-UmalahokanApp-ServiceProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-ServiceProvider.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-ServiceProvider/Pods-UmalahokanApp-ServiceProvider.debug.xcconfig"; sourceTree = "<group>"; };
 		B28A545B70DF55276A1EBF98 /* Pods-ServiceProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProviderTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProviderTests/Pods-ServiceProviderTests.release.xcconfig"; sourceTree = "<group>"; };
+		B2FD20B100D2D46CB6704F14 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98299941E88FB3900624644 /* UserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
 		B98299971E88FB7000624644 /* AuthServiceErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceErrorExtension.swift; sourceTree = "<group>"; };
 		B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRDataSnapshotExtension.swift; sourceTree = "<group>"; };
@@ -72,6 +68,9 @@
 		B9BB816D1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseSourceMock.swift; sourceTree = "<group>"; };
 		B9BB816F1E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRDataSnapshotMock.swift; sourceTree = "<group>"; };
 		B9BB81711E8B802100A95E8E /* FIRDatabaseReferenceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRDatabaseReferenceMock.swift; sourceTree = "<group>"; };
+		B9BB81731E8B8EA100A95E8E /* FIRAuthMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRAuthMock.swift; sourceTree = "<group>"; };
+		B9BB81771E8B981C00A95E8E /* RemoteDatabaseAccessTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseAccessTest.swift; sourceTree = "<group>"; };
+		B9BB81791E8B9EDD00A95E8E /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = "../Core/build/Debug-iphoneos/Core.framework"; sourceTree = "<group>"; };
 		B9E326641E851A7100084B38 /* ServiceProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ServiceProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E326671E851A7100084B38 /* ServiceProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceProvider.h; sourceTree = "<group>"; };
 		B9E326681E851A7100084B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,18 +78,13 @@
 		B9E326741E851A7100084B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRemoteService.swift; sourceTree = "<group>"; };
 		B9E326801E851ADE00084B38 /* AuthRemoteServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRemoteServiceTest.swift; sourceTree = "<group>"; };
-		B9E326821E851AE800084B38 /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = "../Core/build/Debug-iphoneos/Core.framework"; sourceTree = "<group>"; };
 		B9F7965C1E8A0AE6005F645A /* ResourcePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcePath.swift; sourceTree = "<group>"; };
 		B9F796621E8A20F3005F645A /* RemoteDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabase.swift; sourceTree = "<group>"; };
 		B9F7966F1E8A27E1005F645A /* RemoteDatabaseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseMock.swift; sourceTree = "<group>"; };
-		B9F796741E8A2A4D005F645A /* RemoteDatabaseAccessTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseAccessTest.swift; sourceTree = "<group>"; };
 		B9F796761E8A2AA5005F645A /* RemoteDatabaseAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseAccess.swift; sourceTree = "<group>"; };
 		B9F796781E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseAccessMock.swift; sourceTree = "<group>"; };
 		B9F7967E1E8A3DC8005F645A /* RemoteDatabaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseTest.swift; sourceTree = "<group>"; };
 		B9F796801E8A55BA005F645A /* RemoteDatabaseSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseSource.swift; sourceTree = "<group>"; };
-		C237DE4691F23B051F961634 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1C6F5087ED756505E4EAD5B /* Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProvider-ServiceProviderTests/Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F4F9911BF6F26CB3E605D2A9 /* Pods_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9E326831E851AE800084B38 /* Core.framework in Frameworks */,
-				E4AA5BC0281EB01846C4AA31 /* Pods_ServiceProvider.framework in Frameworks */,
-				9EEF65EF49B273CDBC1D16AC /* Pods_UmalahokanApp_ServiceProvider.framework in Frameworks */,
+				B9BB817A1E8B9EDD00A95E8E /* Core.framework in Frameworks */,
+				3BE97A70C6F57EF0512C55D0 /* Pods_UmalahokanApp_ServiceProvider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,9 +102,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E3266E1E851A7100084B38 /* ServiceProvider.framework in Frameworks */,
-				3B5D5889D4573D2930297993 /* Pods_ServiceProviderTests.framework in Frameworks */,
-				D61EDE7FDF684BA74DBADF23 /* Pods_ServiceProvider_ServiceProviderTests.framework in Frameworks */,
-				4E5E0F2F133CB390B531F9C1 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework in Frameworks */,
+				F8E7EDE11D707C1D0E53FB4C /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework in Frameworks */,
+				AD78E9B22D80F193B0522BD5 /* Pods_ServiceProviderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,12 +113,10 @@
 		08FF93673BBE06F8D9E08305 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B9E326821E851AE800084B38 /* Core.framework */,
-				91D32F4CC4BDDD61F21B2B6E /* Pods_ServiceProvider.framework */,
-				F4F9911BF6F26CB3E605D2A9 /* Pods_ServiceProviderTests.framework */,
-				49D92EBCD8CC711205F67090 /* Pods_ServiceProvider_ServiceProviderTests.framework */,
-				6E909FCF1843EEDC8B1A1CCD /* Pods_UmalahokanApp_ServiceProvider.framework */,
-				C237DE4691F23B051F961634 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */,
+				B9BB81791E8B9EDD00A95E8E /* Core.framework */,
+				1A17F789C2311597E8003423 /* Pods_UmalahokanApp_ServiceProvider.framework */,
+				B2FD20B100D2D46CB6704F14 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */,
+				427F46B0937CB083D1169737 /* Pods_ServiceProviderTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,16 +124,12 @@
 		56EDD29F956691320471B898 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				95C1FC48DD3EBC6D29F0387C /* Pods-ServiceProvider.debug.xcconfig */,
-				84B20BA9A75BB787623894C5 /* Pods-ServiceProvider.release.xcconfig */,
-				E1C6F5087ED756505E4EAD5B /* Pods-ServiceProvider-ServiceProviderTests.debug.xcconfig */,
-				1E531F4D2DDD84A17B5843D3 /* Pods-ServiceProvider-ServiceProviderTests.release.xcconfig */,
 				77AC40EE7E6E842F3764A56C /* Pods-ServiceProviderTests.debug.xcconfig */,
 				B28A545B70DF55276A1EBF98 /* Pods-ServiceProviderTests.release.xcconfig */,
 				A71F129002C0B64817BEAF56 /* Pods-UmalahokanApp-ServiceProvider.debug.xcconfig */,
 				805BEAB255CB3090AE70485B /* Pods-UmalahokanApp-ServiceProvider.release.xcconfig */,
-				0FDFA3175293AFCF3C3E0B82 /* Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.debug.xcconfig */,
-				02B91A95F32AE608EC255FB7 /* Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.release.xcconfig */,
+				3B350DA682748CBBFFAEF756 /* Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.debug.xcconfig */,
+				485AFBA84B707F7B1EFFC214 /* Pods-UmalahokanApp-ServiceProvider-ServiceProviderTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -257,6 +243,7 @@
 		B9F796711E8A27E7005F645A /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				B9BB81731E8B8EA100A95E8E /* FIRAuthMock.swift */,
 				B9BB81711E8B802100A95E8E /* FIRDatabaseReferenceMock.swift */,
 				B9BB816F1E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift */,
 				B9F796781E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift */,
@@ -269,7 +256,7 @@
 		B9F7967D1E8A3310005F645A /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				B9F796741E8A2A4D005F645A /* RemoteDatabaseAccessTest.swift */,
+				B9BB81771E8B981C00A95E8E /* RemoteDatabaseAccessTest.swift */,
 				B9BB816B1E8B7B9800A95E8E /* RemoteDatabaseSourceTest.swift */,
 				B9F7967E1E8A3DC8005F645A /* RemoteDatabaseTest.swift */,
 			);
@@ -508,13 +495,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F796701E8A27E1005F645A /* RemoteDatabaseMock.swift in Sources */,
-				B9F796751E8A2A4D005F645A /* RemoteDatabaseAccessTest.swift in Sources */,
 				B9BB81721E8B802100A95E8E /* FIRDatabaseReferenceMock.swift in Sources */,
 				B9F7967F1E8A3DC8005F645A /* RemoteDatabaseTest.swift in Sources */,
 				B9BB816C1E8B7B9800A95E8E /* RemoteDatabaseSourceTest.swift in Sources */,
+				B9BB81741E8B8EA100A95E8E /* FIRAuthMock.swift in Sources */,
 				B9BB816E1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift in Sources */,
 				B9BB816A1E8B5D3400A95E8E /* AuthServiceErrorTest.swift in Sources */,
 				B9BB81671E8B5C5B00A95E8E /* UsersResourceTest.swift in Sources */,
+				B9BB81781E8B981C00A95E8E /* RemoteDatabaseAccessTest.swift in Sources */,
 				B9BB81701E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift in Sources */,
 				B9F796791E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift in Sources */,
 				B9E326811E851ADE00084B38 /* AuthRemoteServiceTest.swift in Sources */,
