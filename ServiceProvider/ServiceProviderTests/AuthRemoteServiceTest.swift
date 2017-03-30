@@ -191,7 +191,7 @@ class AuthRemoteServiceTest: XCTestCase {
         
         let expectation1 = expectation(description: "Login result")
         
-        service.login(email: "me@me.com", password: "123456789") { result in
+        service.login(email: "me@me.com", password: "abcde12345qwert") { result in
             switch result {
             case .success(let info):
                 XCTAssertNotNil(info.accessToken)
@@ -216,7 +216,7 @@ class AuthRemoteServiceTest: XCTestCase {
         access.userIdShouldBeEmpty = true
         
         let expectation1 = expectation(description: "The returned userId is nil")
-        service.login(email: "me@me.com", password: "123456789") { result in
+        service.login(email: "me@me.com", password: "abcde12345qwert") { result in
             switch result {
             case .fail(let error) where error == .userIdUndefined:
                 break
@@ -238,7 +238,7 @@ class AuthRemoteServiceTest: XCTestCase {
         access.userIdShouldBeNil = true
         
         let expectation1 = expectation(description: "The returned userId is nil")
-        service.login(email: "me@me.com", password: "123456789") { result in
+        service.login(email: "me@me.com", password: "abcde12345qwert") { result in
             switch result {
             case .fail(let error) where error == .userIdUndefined:
                 break
@@ -260,7 +260,7 @@ class AuthRemoteServiceTest: XCTestCase {
         database.userCount = 0
         
         let expectation1 = expectation(description: "User not found")
-        service.login(email: "me@me.com", password: "123456789") { result in
+        service.login(email: "me@me.com", password: "abcde12345qwert") { result in
             switch result {
             case .fail(let error) where error == .noUserInfo:
                 break
@@ -282,7 +282,7 @@ class AuthRemoteServiceTest: XCTestCase {
         database.userCount = 4
         
         let expectation1 = expectation(description: "User not found")
-        service.login(email: "me@me.com", password: "123456789") { result in
+        service.login(email: "me@me.com", password: "abcde12345qwert") { result in
             switch result {
             case .fail(let error) where error == .multipleUserInfo:
                 break

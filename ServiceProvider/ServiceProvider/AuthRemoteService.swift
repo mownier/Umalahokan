@@ -24,8 +24,9 @@ public final class AuthRemoteService: AuthService {
     public func login(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?) {
         access.login(email: email, password: password) { [unowned self] result in
             switch result {
-            case .denied(let error):
-                let info = AuthServiceError(code: error._code)
+            case .denied(let accessError):
+                let code = accessError.detailedError?._code ?? 0
+                let info = AuthServiceError(code: code)
                 completion?(.fail(info))
             
             case .accepted(let data):

@@ -41,8 +41,8 @@ class FIRAuthMock: FIRAuth {
         credential.email = email
         credential.password = password
         
-        let isFound = credentials.contains(credential)
-        let isEmailExisting: Bool = credentials.index { (credential) -> Bool in
+        let isEmailAndPasswordMatched = credentials.contains(credential)
+        let isEmailFound: Bool = credentials.index { (credential) -> Bool in
             return credential.email == email
         } == nil ? false : true
         
@@ -62,13 +62,15 @@ class FIRAuthMock: FIRAuth {
                 return
             }
             
-            guard isFound else {
-                let code: Int
-                if isEmailExisting {
-                    code = FIRAuthErrorCode.errorCodeWrongPassword.rawValue
-                } else {
-                    code = FIRAuthErrorCode.errorCodeUserNotFound.rawValue
-                }
+            guard isEmailFound else {
+                let code: Int = FIRAuthErrorCode.errorCodeUserNotFound.rawValue
+                let error = NSError(domain: "", code: code, userInfo: nil)
+                completion?(nil, error)
+                return
+            }
+            
+            guard isEmailAndPasswordMatched else {
+                let code = FIRAuthErrorCode.errorCodeWrongPassword.rawValue
                 let error = NSError(domain: "", code: code, userInfo: nil)
                 completion?(nil, error)
                 return

@@ -13,7 +13,7 @@ public protocol DatabaseAccess {
 
 public enum DatabaseAccessResult {
     
-    case denied(Error)
+    case denied(DatabaseAccessError)
     case accepted(DatabaseAccessData)
 }
 
@@ -27,5 +27,25 @@ public struct DatabaseAccessData {
         refreshToken = nil
         accessToken = nil
         userId = nil
+    }
+}
+
+public enum DatabaseAccessError: Error {
+    
+    case unknown(Error?)
+    case invalidCredential(Error?)
+    case credentialNotFound(Error?)
+    case tokenUnavailable(Error?)
+    case unauthorized(Error?)
+    
+    public var detailedError: Error? {
+        switch self {
+        case .unknown(let error),
+             .invalidCredential(let error),
+             .credentialNotFound(let error),
+             .tokenUnavailable(let error),
+             .unauthorized(let error):
+            return error
+        }
     }
 }

@@ -20,24 +20,37 @@ public class RemoteDatabaseAccess: DatabaseAccess {
     }
     
     public func login(email: String, password: String, completion: ((DatabaseAccessResult) -> Void)?) {
-        auth.signIn(withEmail: email, password: password) { user, error in
-            guard let user = user, error == nil else {
-                completion?(.denied(error!))
+        auth.signIn(withEmail: email, password: password) { [unowned self] user, error in
+            guard error == nil else {
+                let accessError = DatabaseAccessError(detailedError: error!)
+                completion?(.denied(accessError))
                 return
             }
             
-            user.getTokenWithCompletion() { token, error in
-                guard let token = token, error == nil else {
-                    completion?(.denied(error!))
-                    return
-                }
-                
-                var data = DatabaseAccessData()
-                data.accessToken = token
-                data.refreshToken = user.refreshToken
-                
-                completion?(.accepted(data))
+            self.getAccessToken(user: user) { result in
+                completion?(result)
             }
+        }
+    }
+    
+    public func getAccessToken(user: FIRUser?, completion: ((DatabaseAccessResult) -> Void)?) {
+        guard let user = user, !user.uid.isEmpty  else {
+            completion?(.denied(.unauthorized(nil)))
+            return
+        }
+        
+        user.getTokenWithCompletion() { token, error in
+            guard let token = token, error == nil else {
+                completion?(.denied(.tokenUnavailable(error)))
+                return
+            }
+            
+            var data = DatabaseAccessData()
+            data.accessToken = token
+            data.refreshToken = user.refreshToken
+            data.userId = user.uid
+            
+            completion?(.accepted(data))
         }
     }
 }
