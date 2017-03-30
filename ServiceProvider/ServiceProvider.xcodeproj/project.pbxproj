@@ -23,6 +23,8 @@
 		B9BB81741E8B8EA100A95E8E /* FIRAuthMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB81731E8B8EA100A95E8E /* FIRAuthMock.swift */; };
 		B9BB81781E8B981C00A95E8E /* RemoteDatabaseAccessTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB81771E8B981C00A95E8E /* RemoteDatabaseAccessTest.swift */; };
 		B9BB817A1E8B9EDD00A95E8E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BB81791E8B9EDD00A95E8E /* Core.framework */; };
+		B9CDDDFB1E8CC8B4004B0AD0 /* FIRUserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDDDFA1E8CC8B4004B0AD0 /* FIRUserMock.swift */; };
+		B9CDDDFD1E8CE96C004B0AD0 /* DatabaseAccessErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CDDDFC1E8CE96C004B0AD0 /* DatabaseAccessErrorExtension.swift */; };
 		B9E3266E1E851A7100084B38 /* ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E326641E851A7100084B38 /* ServiceProvider.framework */; };
 		B9E326751E851A7100084B38 /* ServiceProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E326671E851A7100084B38 /* ServiceProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9E3267F1E851AD600084B38 /* AuthRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3267E1E851AD600084B38 /* AuthRemoteService.swift */; };
@@ -71,6 +73,8 @@
 		B9BB81731E8B8EA100A95E8E /* FIRAuthMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRAuthMock.swift; sourceTree = "<group>"; };
 		B9BB81771E8B981C00A95E8E /* RemoteDatabaseAccessTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDatabaseAccessTest.swift; sourceTree = "<group>"; };
 		B9BB81791E8B9EDD00A95E8E /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = "../Core/build/Debug-iphoneos/Core.framework"; sourceTree = "<group>"; };
+		B9CDDDFA1E8CC8B4004B0AD0 /* FIRUserMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRUserMock.swift; sourceTree = "<group>"; };
+		B9CDDDFC1E8CE96C004B0AD0 /* DatabaseAccessErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccessErrorExtension.swift; sourceTree = "<group>"; };
 		B9E326641E851A7100084B38 /* ServiceProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ServiceProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E326671E851A7100084B38 /* ServiceProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceProvider.h; sourceTree = "<group>"; };
 		B9E326681E851A7100084B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				B98299971E88FB7000624644 /* AuthServiceErrorExtension.swift */,
+				B9CDDDFC1E8CE96C004B0AD0 /* DatabaseAccessErrorExtension.swift */,
 				B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */,
 				B98299941E88FB3900624644 /* UserExtension.swift */,
 			);
@@ -246,6 +251,7 @@
 				B9BB81731E8B8EA100A95E8E /* FIRAuthMock.swift */,
 				B9BB81711E8B802100A95E8E /* FIRDatabaseReferenceMock.swift */,
 				B9BB816F1E8B7FFC00A95E8E /* FIRDataSnapshotMock.swift */,
+				B9CDDDFA1E8CC8B4004B0AD0 /* FIRUserMock.swift */,
 				B9F796781E8A2BF4005F645A /* RemoteDatabaseAccessMock.swift */,
 				B9F7966F1E8A27E1005F645A /* RemoteDatabaseMock.swift */,
 				B9BB816D1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift */,
@@ -479,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F7965D1E8A0AE6005F645A /* ResourcePath.swift in Sources */,
+				B9CDDDFD1E8CE96C004B0AD0 /* DatabaseAccessErrorExtension.swift in Sources */,
 				B98299981E88FB7000624644 /* AuthServiceErrorExtension.swift in Sources */,
 				B9F796771E8A2AA5005F645A /* RemoteDatabaseAccess.swift in Sources */,
 				B9F796811E8A55BA005F645A /* RemoteDatabaseSource.swift in Sources */,
@@ -499,6 +506,7 @@
 				B9F7967F1E8A3DC8005F645A /* RemoteDatabaseTest.swift in Sources */,
 				B9BB816C1E8B7B9800A95E8E /* RemoteDatabaseSourceTest.swift in Sources */,
 				B9BB81741E8B8EA100A95E8E /* FIRAuthMock.swift in Sources */,
+				B9CDDDFB1E8CC8B4004B0AD0 /* FIRUserMock.swift in Sources */,
 				B9BB816E1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift in Sources */,
 				B9BB816A1E8B5D3400A95E8E /* AuthServiceErrorTest.swift in Sources */,
 				B9BB81671E8B5C5B00A95E8E /* UsersResourceTest.swift in Sources */,
@@ -538,6 +546,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -591,6 +600,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
