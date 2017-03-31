@@ -24,7 +24,8 @@ extension DatabaseAccessError {
         
         case FIRAuthErrorCode.errorCodeInvalidCustomToken.rawValue,
              FIRAuthErrorCode.errorCodeInvalidUserToken.rawValue,
-             FIRAuthErrorCode.errorCodeUserTokenExpired.rawValue:
+             FIRAuthErrorCode.errorCodeUserTokenExpired.rawValue,
+             FIRAuthErrorCode.errorCodeCustomTokenMismatch.rawValue:
             self = .tokenUnavailable(detailedError)
         
         default:

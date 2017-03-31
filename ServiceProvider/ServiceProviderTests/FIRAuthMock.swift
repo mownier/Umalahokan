@@ -47,7 +47,7 @@ class FIRAuthMock: FIRAuth {
         } == nil ? false : true
         
         let queue = DispatchQueue(label: context)
-        queue.async {
+        queue.async { [unowned self] in
             guard email != "invalid@email.com" else {
                 let code = FIRAuthErrorCode.errorCodeInvalidEmail.rawValue
                 let error = NSError(domain: "", code: code, userInfo: nil)
@@ -75,6 +75,10 @@ class FIRAuthMock: FIRAuth {
                 completion?(nil, error)
                 return
             }
+            
+            let user = FIRUserMock(context: self.context)
+            user.accessToken = "accesstoken"
+            completion?(user, nil)
         }
     }
 }

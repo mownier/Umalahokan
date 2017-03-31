@@ -117,6 +117,27 @@ class RemoteDatabaseAccessTest: XCTestCase {
         waitForExpectations(timeout: timeout)
     }
     
+    func testLoginHasAnAcceptedResult() {
+        let context = "Login has an accepted result"
+        let auth = FIRAuthMock(context: context)
+        let access = RemoteDatabaseAccess(firebaseAuth: auth)!
+        let expectation1 = expectation(description: context)
+        access.login(email: "me@me.com", password: "abcde12345qwert") { result in
+            switch result {
+            case .accepted(let data):
+                XCTAssertNotNil(data.accessToken)
+                XCTAssertFalse(data.accessToken!.isEmpty)
+                XCTAssertNotNil(data.userId)
+                XCTAssertFalse(data.userId!.isEmpty)
+                
+            default:
+                XCTFail()
+            }
+            expectation1.fulfill()
+        }
+        waitForExpectations(timeout: timeout)
+    }
+    
     func testGetAccessTokenWithDeniedResult() {
         let context = "Get access token with .denied result"
         let auth = FIRAuthMock(context: context)

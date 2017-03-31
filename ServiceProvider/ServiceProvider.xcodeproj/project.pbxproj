@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3BE97A70C6F57EF0512C55D0 /* Pods_UmalahokanApp_ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A17F789C2311597E8003423 /* Pods_UmalahokanApp_ServiceProvider.framework */; };
 		AD78E9B22D80F193B0522BD5 /* Pods_ServiceProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 427F46B0937CB083D1169737 /* Pods_ServiceProviderTests.framework */; };
+		B970BFDA1E8DF615009F010D /* DatabaseAccessErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B970BFD91E8DF615009F010D /* DatabaseAccessErrorTest.swift */; };
 		B98299951E88FB3900624644 /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299941E88FB3900624644 /* UserExtension.swift */; };
 		B98299981E88FB7000624644 /* AuthServiceErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299971E88FB7000624644 /* AuthServiceErrorExtension.swift */; };
 		B982999A1E88FB8F00624644 /* FIRDataSnapshotExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */; };
@@ -59,6 +60,7 @@
 		A71F129002C0B64817BEAF56 /* Pods-UmalahokanApp-ServiceProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-ServiceProvider.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-ServiceProvider/Pods-UmalahokanApp-ServiceProvider.debug.xcconfig"; sourceTree = "<group>"; };
 		B28A545B70DF55276A1EBF98 /* Pods-ServiceProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceProviderTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceProviderTests/Pods-ServiceProviderTests.release.xcconfig"; sourceTree = "<group>"; };
 		B2FD20B100D2D46CB6704F14 /* Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanApp_ServiceProvider_ServiceProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B970BFD91E8DF615009F010D /* DatabaseAccessErrorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccessErrorTest.swift; sourceTree = "<group>"; };
 		B98299941E88FB3900624644 /* UserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
 		B98299971E88FB7000624644 /* AuthServiceErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceErrorExtension.swift; sourceTree = "<group>"; };
 		B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRDataSnapshotExtension.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				B9BB81771E8B981C00A95E8E /* RemoteDatabaseAccessTest.swift */,
 				B9BB816B1E8B7B9800A95E8E /* RemoteDatabaseSourceTest.swift */,
 				B9F7967E1E8A3DC8005F645A /* RemoteDatabaseTest.swift */,
+				B970BFD91E8DF615009F010D /* DatabaseAccessErrorTest.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				B9BB81741E8B8EA100A95E8E /* FIRAuthMock.swift in Sources */,
 				B9CDDDFB1E8CC8B4004B0AD0 /* FIRUserMock.swift in Sources */,
 				B9BB816E1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift in Sources */,
+				B970BFDA1E8DF615009F010D /* DatabaseAccessErrorTest.swift in Sources */,
 				B9BB816A1E8B5D3400A95E8E /* AuthServiceErrorTest.swift in Sources */,
 				B9BB81671E8B5C5B00A95E8E /* UsersResourceTest.swift in Sources */,
 				B9BB81781E8B981C00A95E8E /* RemoteDatabaseAccessTest.swift in Sources */,
