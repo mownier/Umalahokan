@@ -11,6 +11,7 @@ import Firebase
 public protocol RemoteDatabaseSourceProtocol {
     
     func get(_ path: String, completion: @escaping (FIRDataSnapshot) -> Void)
+    func getUserInfo(_ id: String, completion: @escaping(FIRDataSnapshot) -> Void)
 }
 
 public class RemoteDatabaseSource: RemoteDatabaseSourceProtocol {
@@ -25,5 +26,10 @@ public class RemoteDatabaseSource: RemoteDatabaseSourceProtocol {
     
     public func get(_ path: String, completion: @escaping (FIRDataSnapshot) -> Void) {
         ref.child(path).observeSingleEvent(of: .value, with: completion)
+    }
+    
+    public func getUserInfo(_ id: String, completion: @escaping (FIRDataSnapshot) -> Void) {
+        let path = UsersResource.singleUser(id).path
+        get(path, completion: completion)
     }
 }

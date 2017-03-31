@@ -11,9 +11,11 @@ import Firebase
 
 class FIRDatabaseReferenceMock: FIRDatabaseReference {
     
+    let queue = DispatchQueue(label: "FIRDatabaseReferenceMock")
+    
     var id: String = ""
     var identifiers = ["abcde12345qwert"]
-    var mockSnapshot = FIRDataSnaphostMock()
+    var mockSnapshot = FIRDataSnapshotMock()
     
     override func child(_ path: String) -> FIRDatabaseReference {
         switch path {
@@ -37,7 +39,6 @@ class FIRDatabaseReferenceMock: FIRDatabaseReference {
     }
     
     override func observeSingleEvent(of eventType: FIRDataEventType, with block: @escaping (FIRDataSnapshot) -> Void) {
-        let queue = DispatchQueue(label: "Observe single event")
         queue.async { [unowned self] in
             switch eventType {
             case .value:

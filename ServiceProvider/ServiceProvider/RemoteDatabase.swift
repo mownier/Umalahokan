@@ -20,22 +20,27 @@ public class RemoteDatabase: DatabaseProtocol {
     }
     
     public func fetchUsers(ids: [String], completion: (([User]) -> Void)?) {
-        let path: String
-        if ids.count == 1 {
-            path = UsersResource.singleUser(ids[0]).path
-        } else {
-            path = UsersResource.allUsers.path
+        guard !ids.isEmpty else {
+            completion?([User]())
+            return
         }
         
-        source.get(path) { snapshot in
-            guard snapshot.exists() else {
-                completion?([User]())
-                return
+        var completionCount: Int = 0
+        var users = [User]()
+        for id in ids {
+            source.getUserInfo(id) { snapshot in
+                completionCount += 1
+                
+                if snapshot.exists() {
+                    var user = User()
+                    user.parse(data: snapshot)
+                    users.append(user)
+                }
+                
+                if completionCount == ids.count {
+                    completion?(users)
+                }
             }
-            
-            var user = User()
-            user.parse(data: snapshot)
-            completion?([user])
         }
     }
 }

@@ -11,19 +11,29 @@ import Firebase
 
 class RemoteDatabaseSourceMock: RemoteDatabaseSourceProtocol {
 
+    let queue = DispatchQueue(label: "RemoteDatabaseSourceMock")
+    var mockSnapshots = [String: FIRDataSnapshotMock?]()
+    var mockSnapshot: FIRDataSnapshotMock?
+    
     func get(_ path: String, completion: @escaping (FIRDataSnapshot) -> Void) {
-        let queue = DispatchQueue(label: "RemoteDatabaseSourceMock")
-        queue.async {
-            let snapshot = FIRDataSnaphostMock()
+        mockSnapshots[path] = mockSnapshot
+        queue.async { [unowned self] in
+            let data: FIRDataSnapshotMock
             
-            switch path {
-            case UsersResource.allUsers.path:
-                snapshot.isExisting = true
-                
-            default:
-                snapshot.isExisting = false
+            if let snapshot = self.mockSnapshots[path], snapshot != nil {
+                data = snapshot!
+            
+            } else {
+                data = FIRDataSnapshotMock()
+                data.isExisting = false
             }
-            completion(snapshot)
+            
+            completion(data)
         }
+    }
+    
+    func getUserInfo(_ id: String, completion: @escaping (FIRDataSnapshot) -> Void) {
+        mockSnapshot = snapshotForUser(id)
+        get(UsersResource.singleUser(id).path, completion: completion)
     }
 }

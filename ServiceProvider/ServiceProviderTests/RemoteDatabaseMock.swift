@@ -10,18 +10,22 @@ import Core
 
 class RemoteDatabaseMock: DatabaseProtocol {
     
-    var userCount: Int = 1
+    let queue = DispatchQueue(label: "RemoteDatabaseMock")
+    var users = userList
     
     func fetchUsers(ids: [String], completion: (([User]) -> Void)?) {
-        let queue = DispatchQueue(label: "Fetch users")
         queue.async { [unowned self] in
-            var users = [User]()
-            for _ in 0..<self.userCount {
-                var user = User()
-                user.id = "\(Date().timeIntervalSince1970)"
-                users.append(user)
+            var data = [User]()
+            for id in ids {
+                data.append(contentsOf: self.usersForId(id))
             }
-            completion?(users)
+            completion?(data)
         }
+    }
+    
+    private func usersForId(_ id: String) -> [User] {
+        return users.filter({ user -> Bool in
+            return user.id == id
+        })
     }
 }

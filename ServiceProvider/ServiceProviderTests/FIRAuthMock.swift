@@ -9,31 +9,12 @@
 import Firebase
 
 class FIRAuthMock: FIRAuth {
-
-    struct Credential: Equatable {
-        
-        var email: String
-        var password: String
-        
-        init() {
-            email = ""
-            password = ""
-        }
-        
-        static func ==(lhs: Credential, rhs: Credential) -> Bool {
-            return lhs.email == rhs.email && lhs.password == rhs.password
-        }
-    }
     
+    private var credentials = credentialList
     private var context: String
-    private var credentials = [Credential]()
     
     required init(context: String) {
         self.context = context
-        var credential = Credential()
-        credential.email = "me@me.com"
-        credential.password = "abcde12345qwert"
-        credentials.append(credential)
     }
     
     override func signIn(withEmail email: String, password: String, completion: FirebaseAuth.FIRAuthResultCallback? = nil) {

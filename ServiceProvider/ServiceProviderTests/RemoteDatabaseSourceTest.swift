@@ -68,4 +68,30 @@ class RemoteDatabaseSourceTest: XCTestCase {
         }
         waitForExpectations(timeout: timeout)
     }
+    
+    func testGetUserInfoHavingAnExistingId() {
+        let expectation1 = expectation(description: "Get user info")
+        let id = "abcde12345qwert"
+        let ref = FIRDatabaseReferenceMock()
+        let source = RemoteDatabaseSource(reference: ref)!
+        ref.id = id
+        source.getUserInfo(id) { snapshot in
+            XCTAssert(snapshot.exists())
+            expectation1.fulfill()
+        }
+        waitForExpectations(timeout: timeout)
+    }
+    
+    func testGetUserInfoHavingNonExistingId() {
+        let expectation1 = expectation(description: "Get for singleUser path")
+        let id = "ghihk67890zxcvb"
+        let ref = FIRDatabaseReferenceMock()
+        let source = RemoteDatabaseSource(reference: ref)!
+        ref.id = id
+        source.getUserInfo(id) { snapshot in
+            XCTAssertFalse(snapshot.exists())
+            expectation1.fulfill()
+        }
+        waitForExpectations(timeout: timeout)
+    }
 }

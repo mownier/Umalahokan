@@ -256,11 +256,8 @@ class AuthRemoteServiceTest: XCTestCase {
         let access = RemoteDatabaseAccessMock()
         let database = RemoteDatabaseMock()
         let service = AuthRemoteService(access: access, database: database)!
-        
-        database.userCount = 0
-        
-        let expectation1 = expectation(description: "User not found")
-        service.login(email: "me@me.com", password: "abcde12345qwert") { result in
+        let expectation1 = expectation(description: "No user info has been retrieved")
+        service.login(email: "nouser@info.com", password: "abcde12345qwert") { result in
             switch result {
             case .fail(let error) where error == .noUserInfo:
                 break
@@ -278,11 +275,8 @@ class AuthRemoteServiceTest: XCTestCase {
         let access = RemoteDatabaseAccessMock()
         let database = RemoteDatabaseMock()
         let service = AuthRemoteService(access: access, database: database)!
-        
-        database.userCount = 4
-        
-        let expectation1 = expectation(description: "User not found")
-        service.login(email: "me@me.com", password: "abcde12345qwert") { result in
+        let expectation1 = expectation(description: "Multiple user info has been retrieved")
+        service.login(email: "multipleuser@info.com", password: "abcde12345qwert") { result in
             switch result {
             case .fail(let error) where error == .multipleUserInfo:
                 break
@@ -292,7 +286,6 @@ class AuthRemoteServiceTest: XCTestCase {
             }
             expectation1.fulfill()
         }
-        
         waitForExpectations(timeout: timeout)
     }
 }
