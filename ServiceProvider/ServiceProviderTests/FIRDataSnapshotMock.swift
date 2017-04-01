@@ -11,7 +11,7 @@ import Firebase
 class FIRDataSnapshotMock: FIRDataSnapshot {
     
     var isExisting: Bool = true
-    var childDictionary = [String: Any]()
+    var childDictionary = [String: Any?]()
     var childKey: String = ""
     
     override var value: Any? {
