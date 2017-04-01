@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		145A5E3A4CF0D9A0C057B789 /* Pods_UmalahokanComponent_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C9995FFE4847C4B2D41B29 /* Pods_UmalahokanComponent_Login.framework */; };
-		9FB05C936DB5E92CC253FE6F /* Pods_LoginUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D74836595941A8B47AA90BC /* Pods_LoginUITests.framework */; };
+		B981A37C1E8F8CC200D14233 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B981A37A1E8F8CC200D14233 /* Core.framework */; };
+		B981A37D1E8F8CC200D14233 /* ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B981A37B1E8F8CC200D14233 /* ServiceProvider.framework */; };
+		B981A37F1E8F8CD800D14233 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981A37E1E8F8CD800D14233 /* LoginInteractor.swift */; };
+		B981A3821E8F8E5000D14233 /* LoginInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981A3811E8F8E5000D14233 /* LoginInteractorTest.swift */; };
+		B981A3851E8F8FA200D14233 /* AuthServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981A3841E8F8FA200D14233 /* AuthServiceMock.swift */; };
+		B981A3881E8F937A00D14233 /* LoginInteractorOutputMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981A3871E8F937A00D14233 /* LoginInteractorOutputMock.swift */; };
 		B9B20F011E83748F000E7E44 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B20EF71E83748F000E7E44 /* Login.framework */; };
 		B9B20F081E83748F000E7E44 /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B20EFA1E83748F000E7E44 /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC512676B6D82F250E68ACD9 /* Pods_LoginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67DCE89D1E226765BEEBD147 /* Pods_LoginTests.framework */; };
@@ -30,8 +35,13 @@
 		67DCE89D1E226765BEEBD147 /* Pods_LoginTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D74836595941A8B47AA90BC /* Pods_LoginUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C9995FFE4847C4B2D41B29 /* Pods_UmalahokanComponent_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanComponent_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B981A36D1E8F886E00D14233 /* LoginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B981A3711E8F886E00D14233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B981A37A1E8F8CC200D14233 /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Umalahokan-fugcbvoipmqliwfxmepdglekpjqz/Build/Products/Debug-iphonesimulator/Core.framework"; sourceTree = "<group>"; };
+		B981A37B1E8F8CC200D14233 /* ServiceProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceProvider.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Umalahokan-fugcbvoipmqliwfxmepdglekpjqz/Build/Products/Debug-iphonesimulator/ServiceProvider.framework"; sourceTree = "<group>"; };
+		B981A37E1E8F8CD800D14233 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		B981A3811E8F8E5000D14233 /* LoginInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractorTest.swift; sourceTree = "<group>"; };
+		B981A3841E8F8FA200D14233 /* AuthServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceMock.swift; sourceTree = "<group>"; };
+		B981A3871E8F937A00D14233 /* LoginInteractorOutputMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractorOutputMock.swift; sourceTree = "<group>"; };
 		B9B20EF71E83748F000E7E44 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B20EFA1E83748F000E7E44 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		B9B20EFB1E83748F000E7E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,18 +54,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B981A36A1E8F886E00D14233 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9FB05C936DB5E92CC253FE6F /* Pods_LoginUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B9B20EF31E83748F000E7E44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B981A37C1E8F8CC200D14233 /* Core.framework in Frameworks */,
+				B981A37D1E8F8CC200D14233 /* ServiceProvider.framework in Frameworks */,
 				145A5E3A4CF0D9A0C057B789 /* Pods_UmalahokanComponent_Login.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +109,31 @@
 			name = "Support Files";
 			sourceTree = "<group>";
 		};
+		B981A3801E8F8CE100D14233 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B981A37E1E8F8CD800D14233 /* LoginInteractor.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		B981A3831E8F8E5700D14233 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B981A3811E8F8E5000D14233 /* LoginInteractorTest.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		B981A3861E8F8FA400D14233 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				B981A3841E8F8FA200D14233 /* AuthServiceMock.swift */,
+				B981A3871E8F937A00D14233 /* LoginInteractorOutputMock.swift */,
+			);
+			name = Mock;
+			sourceTree = "<group>";
+		};
 		B9B20EED1E83748F000E7E44 = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +151,6 @@
 			children = (
 				B9B20EF71E83748F000E7E44 /* Login.framework */,
 				B9B20F001E83748F000E7E44 /* LoginTests.xctest */,
-				B981A36D1E8F886E00D14233 /* LoginUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +158,7 @@
 		B9B20EF91E83748F000E7E44 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				B981A3801E8F8CE100D14233 /* Interactor */,
 				B981A3751E8F889300D14233 /* Support Files */,
 			);
 			path = Login;
@@ -138,6 +167,8 @@
 		B9B20F041E83748F000E7E44 /* LoginTests */ = {
 			isa = PBXGroup;
 			children = (
+				B981A3831E8F8E5700D14233 /* Interactor */,
+				B981A3861E8F8FA400D14233 /* Mock */,
 				B981A3761E8F88AF00D14233 /* Support Files */,
 			);
 			path = LoginTests;
@@ -159,6 +190,8 @@
 		D6D1D6B9D6FF076D2E4028C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B981A37A1E8F8CC200D14233 /* Core.framework */,
+				B981A37B1E8F8CC200D14233 /* ServiceProvider.framework */,
 				67DCE89D1E226765BEEBD147 /* Pods_LoginTests.framework */,
 				9D74836595941A8B47AA90BC /* Pods_LoginUITests.framework */,
 				B7C9995FFE4847C4B2D41B29 /* Pods_UmalahokanComponent_Login.framework */,
@@ -180,26 +213,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B981A36C1E8F886E00D14233 /* LoginUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B981A3741E8F886E00D14233 /* Build configuration list for PBXNativeTarget "LoginUITests" */;
-			buildPhases = (
-				8BCBCD25E7DA18045FC3858D /* [CP] Check Pods Manifest.lock */,
-				B981A3691E8F886E00D14233 /* Sources */,
-				B981A36A1E8F886E00D14233 /* Frameworks */,
-				B981A36B1E8F886E00D14233 /* Resources */,
-				29E9DE8371A17BEE744A0E4F /* [CP] Embed Pods Frameworks */,
-				D23F101E125DCBB568B91A00 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LoginUITests;
-			productName = LoginUITests;
-			productReference = B981A36D1E8F886E00D14233 /* LoginUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		B9B20EF61E83748F000E7E44 /* Login */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9B20F0B1E83748F000E7E44 /* Build configuration list for PBXNativeTarget "Login" */;
@@ -251,19 +264,16 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Ner;
 				TargetAttributes = {
-					B981A36C1E8F886E00D14233 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4WBRGV5Z9M;
-						ProvisioningStyle = Automatic;
-					};
 					B9B20EF61E83748F000E7E44 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4WBRGV5Z9M;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					B9B20EFF1E83748F000E7E44 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4WBRGV5Z9M;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -282,19 +292,11 @@
 			targets = (
 				B9B20EF61E83748F000E7E44 /* Login */,
 				B9B20EFF1E83748F000E7E44 /* LoginTests */,
-				B981A36C1E8F886E00D14233 /* LoginUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B981A36B1E8F886E00D14233 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B9B20EF51E83748F000E7E44 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,21 +327,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LoginTests/Pods-LoginTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		29E9DE8371A17BEE744A0E4F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LoginUITests/Pods-LoginUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5A4A127099672FFEC2ED31B3 /* [CP] Check Pods Manifest.lock */ = {
@@ -387,36 +374,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8BCBCD25E7DA18045FC3858D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D23F101E125DCBB568B91A00 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LoginUITests/Pods-LoginUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DCD27C3801289C32B2EB5209 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -435,17 +392,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B981A3691E8F886E00D14233 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B9B20EF21E83748F000E7E44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B981A37F1E8F8CD800D14233 /* LoginInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +404,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B981A3821E8F8E5000D14233 /* LoginInteractorTest.swift in Sources */,
+				B981A3851E8F8FA200D14233 /* AuthServiceMock.swift in Sources */,
+				B981A3881E8F937A00D14233 /* LoginInteractorOutputMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,32 +421,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		B981A3721E8F886E00D14233 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4138AA9D784B0228B6A36EE /* Pods-LoginUITests.debug.xcconfig */;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
-				INFOPLIST_FILE = LoginUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ner.Umalahokan.LoginUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		B981A3731E8F886E00D14233 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8ED032698391288273FF986 /* Pods-LoginUITests.release.xcconfig */;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
-				INFOPLIST_FILE = LoginUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ner.Umalahokan.LoginUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 		B9B20F091E83748F000E7E44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -511,6 +439,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -564,6 +493,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -596,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4524E9A534BA1C920BD32897 /* Pods-UmalahokanComponent-Login.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
@@ -608,6 +539,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ner.Umalahokan.Login;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -616,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1612C1D9E351C61EC2057683 /* Pods-UmalahokanComponent-Login.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
@@ -636,11 +569,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8CCD7753A84A0832E0FED73 /* Pods-LoginTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
 				INFOPLIST_FILE = LoginTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ner.Umalahokan.LoginTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -649,6 +585,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E219B9E50BF6D791EC5C9CA7 /* Pods-LoginTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
 				INFOPLIST_FILE = LoginTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -661,14 +599,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B981A3741E8F886E00D14233 /* Build configuration list for PBXNativeTarget "LoginUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B981A3721E8F886E00D14233 /* Debug */,
-				B981A3731E8F886E00D14233 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		B9B20EF11E83748F000E7E44 /* Build configuration list for PBXProject "Login" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

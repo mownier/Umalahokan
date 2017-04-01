@@ -49,9 +49,5 @@ abstract_target 'UmalahokanComponent' do
         target 'LoginTests' do
             inherit! :search_paths
         end
-        
-        target 'LoginUITests' do
-            inherit! :search_paths
-        end
     end
 end
