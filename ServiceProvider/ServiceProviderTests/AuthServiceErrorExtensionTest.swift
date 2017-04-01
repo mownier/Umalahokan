@@ -1,5 +1,5 @@
 //
-//  AuthServiceErrorTest.swift
+//  AuthServiceErrorExtensionTest.swift
 //  ServiceProvider
 //
 //  Created by Mounir Ybanez on 29/03/2017.
@@ -11,7 +11,7 @@ import Core
 import Firebase
 @testable import ServiceProvider
 
-class AuthServiceErrorTest: XCTestCase {
+class AuthServiceErrorExtensionTest: XCTestCase {
     
     func testInitialization() {
         var error = AuthServiceError(code: FIRAuthErrorCode.errorCodeWrongPassword.rawValue)
