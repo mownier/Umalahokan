@@ -25,8 +25,11 @@ public final class AuthRemoteService: AuthService {
         access.login(email: email, password: password) { [unowned self] result in
             switch result {
             case .denied(let accessError):
-                let code = accessError.detailedError?._code ?? 0
-                let info = AuthServiceError(code: code)
+                var info: AuthServiceError = .unknown
+                if let detailedError = accessError.detailedError {
+                    info = AuthServiceError(code: detailedError._code)
+                }
+                
                 completion?(.fail(info))
             
             case .accepted(let data):
