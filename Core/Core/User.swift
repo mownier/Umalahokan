@@ -6,7 +6,7 @@
 //  Copyright © 2017 Ner. All rights reserved.
 //
 
-public struct User {
+public struct User: Equatable {
     
     public var id: String
     public var firstName: String
@@ -19,4 +19,11 @@ public struct User {
         lastName = ""
         userName = ""
     }
+}
+
+public func ==(lhs: User, rhs: User) -> Bool {
+    return lhs.id == rhs.id &&
+        lhs.firstName == rhs.firstName &&
+        lhs.lastName == rhs.lastName &&
+        lhs.userName == rhs.userName
 }
