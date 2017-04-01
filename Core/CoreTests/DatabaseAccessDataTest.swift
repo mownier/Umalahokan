@@ -1,5 +1,5 @@
 //
-//  DatabaseAccessDataTests.swift
+//  DatabaseAccessDataTest.swift
 //  Core
 //
 //  Created by Mounir Ybanez on 28/03/2017.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Core
 
-class DatabaseAccessDataTests: XCTestCase {
+class DatabaseAccessDataTest: XCTestCase {
     
     func testInitialization() {
         let data = DatabaseAccessData()
