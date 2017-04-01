@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145A5E3A4CF0D9A0C057B789 /* Pods_UmalahokanComponent_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C9995FFE4847C4B2D41B29 /* Pods_UmalahokanComponent_Login.framework */; };
+		9FB05C936DB5E92CC253FE6F /* Pods_LoginUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D74836595941A8B47AA90BC /* Pods_LoginUITests.framework */; };
 		B9B20F011E83748F000E7E44 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B20EF71E83748F000E7E44 /* Login.framework */; };
 		B9B20F081E83748F000E7E44 /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B20EFA1E83748F000E7E44 /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC512676B6D82F250E68ACD9 /* Pods_LoginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67DCE89D1E226765BEEBD147 /* Pods_LoginTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +25,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1612C1D9E351C61EC2057683 /* Pods-UmalahokanComponent-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanComponent-Login.release.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanComponent-Login/Pods-UmalahokanComponent-Login.release.xcconfig"; sourceTree = "<group>"; };
+		4524E9A534BA1C920BD32897 /* Pods-UmalahokanComponent-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanComponent-Login.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanComponent-Login/Pods-UmalahokanComponent-Login.debug.xcconfig"; sourceTree = "<group>"; };
+		67DCE89D1E226765BEEBD147 /* Pods_LoginTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D74836595941A8B47AA90BC /* Pods_LoginUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7C9995FFE4847C4B2D41B29 /* Pods_UmalahokanComponent_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanComponent_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B981A36D1E8F886E00D14233 /* LoginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B981A3711E8F886E00D14233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9B20EF71E83748F000E7E44 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +37,10 @@
 		B9B20EFB1E83748F000E7E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9B20F001E83748F000E7E44 /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B20F071E83748F000E7E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8CCD7753A84A0832E0FED73 /* Pods-LoginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LoginTests/Pods-LoginTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E219B9E50BF6D791EC5C9CA7 /* Pods-LoginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LoginTests/Pods-LoginTests.release.xcconfig"; sourceTree = "<group>"; };
+		E4138AA9D784B0228B6A36EE /* Pods-LoginUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginUITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LoginUITests/Pods-LoginUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E8ED032698391288273FF986 /* Pods-LoginUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginUITests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LoginUITests/Pods-LoginUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB05C936DB5E92CC253FE6F /* Pods_LoginUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145A5E3A4CF0D9A0C057B789 /* Pods_UmalahokanComponent_Login.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9B20F011E83748F000E7E44 /* Login.framework in Frameworks */,
+				CC512676B6D82F250E68ACD9 /* Pods_LoginTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +112,8 @@
 				B9B20F041E83748F000E7E44 /* LoginTests */,
 				B981A36E1E8F886E00D14233 /* LoginUITests */,
 				B9B20EF81E83748F000E7E44 /* Products */,
+				D4CBCC214DA9D00975520E36 /* Pods */,
+				D6D1D6B9D6FF076D2E4028C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +143,29 @@
 			path = LoginTests;
 			sourceTree = "<group>";
 		};
+		D4CBCC214DA9D00975520E36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8CCD7753A84A0832E0FED73 /* Pods-LoginTests.debug.xcconfig */,
+				E219B9E50BF6D791EC5C9CA7 /* Pods-LoginTests.release.xcconfig */,
+				E4138AA9D784B0228B6A36EE /* Pods-LoginUITests.debug.xcconfig */,
+				E8ED032698391288273FF986 /* Pods-LoginUITests.release.xcconfig */,
+				4524E9A534BA1C920BD32897 /* Pods-UmalahokanComponent-Login.debug.xcconfig */,
+				1612C1D9E351C61EC2057683 /* Pods-UmalahokanComponent-Login.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D6D1D6B9D6FF076D2E4028C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67DCE89D1E226765BEEBD147 /* Pods_LoginTests.framework */,
+				9D74836595941A8B47AA90BC /* Pods_LoginUITests.framework */,
+				B7C9995FFE4847C4B2D41B29 /* Pods_UmalahokanComponent_Login.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -144,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B981A3741E8F886E00D14233 /* Build configuration list for PBXNativeTarget "LoginUITests" */;
 			buildPhases = (
+				8BCBCD25E7DA18045FC3858D /* [CP] Check Pods Manifest.lock */,
 				B981A3691E8F886E00D14233 /* Sources */,
 				B981A36A1E8F886E00D14233 /* Frameworks */,
 				B981A36B1E8F886E00D14233 /* Resources */,
+				29E9DE8371A17BEE744A0E4F /* [CP] Embed Pods Frameworks */,
+				D23F101E125DCBB568B91A00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,10 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9B20F0B1E83748F000E7E44 /* Build configuration list for PBXNativeTarget "Login" */;
 			buildPhases = (
+				5A4A127099672FFEC2ED31B3 /* [CP] Check Pods Manifest.lock */,
 				B9B20EF21E83748F000E7E44 /* Sources */,
 				B9B20EF31E83748F000E7E44 /* Frameworks */,
 				B9B20EF41E83748F000E7E44 /* Headers */,
 				B9B20EF51E83748F000E7E44 /* Resources */,
+				77A5125EC56ED539C6BA5B7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9B20F0E1E83748F000E7E44 /* Build configuration list for PBXNativeTarget "LoginTests" */;
 			buildPhases = (
+				7CD7FCEA5DE9D35981540182 /* [CP] Check Pods Manifest.lock */,
 				B9B20EFC1E83748F000E7E44 /* Sources */,
 				B9B20EFD1E83748F000E7E44 /* Frameworks */,
 				B9B20EFE1E83748F000E7E44 /* Resources */,
+				DCD27C3801289C32B2EB5209 /* [CP] Embed Pods Frameworks */,
+				273282937CDB9C29FA42D761 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,6 +311,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		273282937CDB9C29FA42D761 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LoginTests/Pods-LoginTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29E9DE8371A17BEE744A0E4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LoginUITests/Pods-LoginUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A4A127099672FFEC2ED31B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		77A5125EC56ED539C6BA5B7D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-UmalahokanComponent-Login/Pods-UmalahokanComponent-Login-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CD7FCEA5DE9D35981540182 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8BCBCD25E7DA18045FC3858D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D23F101E125DCBB568B91A00 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LoginUITests/Pods-LoginUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCD27C3801289C32B2EB5209 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-LoginTests/Pods-LoginTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B981A3691E8F886E00D14233 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -298,6 +469,7 @@
 /* Begin XCBuildConfiguration section */
 		B981A3721E8F886E00D14233 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4138AA9D784B0228B6A36EE /* Pods-LoginUITests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
 				INFOPLIST_FILE = LoginUITests/Info.plist;
@@ -310,6 +482,7 @@
 		};
 		B981A3731E8F886E00D14233 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8ED032698391288273FF986 /* Pods-LoginUITests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
 				INFOPLIST_FILE = LoginUITests/Info.plist;
@@ -421,6 +594,7 @@
 		};
 		B9B20F0C1E83748F000E7E44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4524E9A534BA1C920BD32897 /* Pods-UmalahokanComponent-Login.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -440,6 +614,7 @@
 		};
 		B9B20F0D1E83748F000E7E44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1612C1D9E351C61EC2057683 /* Pods-UmalahokanComponent-Login.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -459,6 +634,7 @@
 		};
 		B9B20F0F1E83748F000E7E44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8CCD7753A84A0832E0FED73 /* Pods-LoginTests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
 				INFOPLIST_FILE = LoginTests/Info.plist;
@@ -471,6 +647,7 @@
 		};
 		B9B20F101E83748F000E7E44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E219B9E50BF6D791EC5C9CA7 /* Pods-LoginTests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
 				INFOPLIST_FILE = LoginTests/Info.plist;
