@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B981A3701E8F886E00D14233 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981A36F1E8F886E00D14233 /* LoginUITests.swift */; };
 		B9B20F011E83748F000E7E44 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B20EF71E83748F000E7E44 /* Login.framework */; };
 		B9B20F061E83748F000E7E44 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B20F051E83748F000E7E44 /* LoginTests.swift */; };
 		B9B20F081E83748F000E7E44 /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B20EFA1E83748F000E7E44 /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +24,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B981A36D1E8F886E00D14233 /* LoginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B981A36F1E8F886E00D14233 /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
+		B981A3711E8F886E00D14233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9B20EF71E83748F000E7E44 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B20EFA1E83748F000E7E44 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		B9B20EFB1E83748F000E7E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +36,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B981A36A1E8F886E00D14233 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B9B20EF31E83748F000E7E44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,11 +61,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B981A36E1E8F886E00D14233 /* LoginUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B981A36F1E8F886E00D14233 /* LoginUITests.swift */,
+				B981A3711E8F886E00D14233 /* Info.plist */,
+			);
+			path = LoginUITests;
+			sourceTree = "<group>";
+		};
 		B9B20EED1E83748F000E7E44 = {
 			isa = PBXGroup;
 			children = (
 				B9B20EF91E83748F000E7E44 /* Login */,
 				B9B20F041E83748F000E7E44 /* LoginTests */,
+				B981A36E1E8F886E00D14233 /* LoginUITests */,
 				B9B20EF81E83748F000E7E44 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +85,7 @@
 			children = (
 				B9B20EF71E83748F000E7E44 /* Login.framework */,
 				B9B20F001E83748F000E7E44 /* LoginTests.xctest */,
+				B981A36D1E8F886E00D14233 /* LoginUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +122,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B981A36C1E8F886E00D14233 /* LoginUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B981A3741E8F886E00D14233 /* Build configuration list for PBXNativeTarget "LoginUITests" */;
+			buildPhases = (
+				B981A3691E8F886E00D14233 /* Sources */,
+				B981A36A1E8F886E00D14233 /* Frameworks */,
+				B981A36B1E8F886E00D14233 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoginUITests;
+			productName = LoginUITests;
+			productReference = B981A36D1E8F886E00D14233 /* LoginUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B9B20EF61E83748F000E7E44 /* Login */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9B20F0B1E83748F000E7E44 /* Build configuration list for PBXNativeTarget "Login" */;
@@ -146,6 +185,11 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Ner;
 				TargetAttributes = {
+					B981A36C1E8F886E00D14233 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4WBRGV5Z9M;
+						ProvisioningStyle = Automatic;
+					};
 					B9B20EF61E83748F000E7E44 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4WBRGV5Z9M;
@@ -172,11 +216,19 @@
 			targets = (
 				B9B20EF61E83748F000E7E44 /* Login */,
 				B9B20EFF1E83748F000E7E44 /* LoginTests */,
+				B981A36C1E8F886E00D14233 /* LoginUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B981A36B1E8F886E00D14233 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B9B20EF51E83748F000E7E44 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,6 +246,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B981A3691E8F886E00D14233 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B981A3701E8F886E00D14233 /* LoginUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B9B20EF21E83748F000E7E44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,6 +280,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		B981A3721E8F886E00D14233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
+				INFOPLIST_FILE = LoginUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ner.Umalahokan.LoginUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B981A3731E8F886E00D14233 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 4WBRGV5Z9M;
+				INFOPLIST_FILE = LoginUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ner.Umalahokan.LoginUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		B9B20F091E83748F000E7E44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -384,6 +468,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B981A3741E8F886E00D14233 /* Build configuration list for PBXNativeTarget "LoginUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B981A3721E8F886E00D14233 /* Debug */,
+				B981A3731E8F886E00D14233 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B9B20EF11E83748F000E7E44 /* Build configuration list for PBXProject "Login" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
