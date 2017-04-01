@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B981A3701E8F886E00D14233 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981A36F1E8F886E00D14233 /* LoginUITests.swift */; };
 		B9B20F011E83748F000E7E44 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B20EF71E83748F000E7E44 /* Login.framework */; };
-		B9B20F061E83748F000E7E44 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B20F051E83748F000E7E44 /* LoginTests.swift */; };
 		B9B20F081E83748F000E7E44 /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B20EFA1E83748F000E7E44 /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -25,13 +23,11 @@
 
 /* Begin PBXFileReference section */
 		B981A36D1E8F886E00D14233 /* LoginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B981A36F1E8F886E00D14233 /* LoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		B981A3711E8F886E00D14233 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9B20EF71E83748F000E7E44 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B20EFA1E83748F000E7E44 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		B9B20EFB1E83748F000E7E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9B20F001E83748F000E7E44 /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9B20F051E83748F000E7E44 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		B9B20F071E83748F000E7E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,10 +60,34 @@
 		B981A36E1E8F886E00D14233 /* LoginUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B981A36F1E8F886E00D14233 /* LoginUITests.swift */,
-				B981A3711E8F886E00D14233 /* Info.plist */,
+				B981A3771E8F88B400D14233 /* Support Files */,
 			);
 			path = LoginUITests;
+			sourceTree = "<group>";
+		};
+		B981A3751E8F889300D14233 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9B20EFA1E83748F000E7E44 /* Login.h */,
+				B9B20EFB1E83748F000E7E44 /* Info.plist */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		B981A3761E8F88AF00D14233 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9B20F071E83748F000E7E44 /* Info.plist */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		B981A3771E8F88B400D14233 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B981A3711E8F886E00D14233 /* Info.plist */,
+			);
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 		B9B20EED1E83748F000E7E44 = {
@@ -93,8 +113,7 @@
 		B9B20EF91E83748F000E7E44 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				B9B20EFA1E83748F000E7E44 /* Login.h */,
-				B9B20EFB1E83748F000E7E44 /* Info.plist */,
+				B981A3751E8F889300D14233 /* Support Files */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -102,8 +121,7 @@
 		B9B20F041E83748F000E7E44 /* LoginTests */ = {
 			isa = PBXGroup;
 			children = (
-				B9B20F051E83748F000E7E44 /* LoginTests.swift */,
-				B9B20F071E83748F000E7E44 /* Info.plist */,
+				B981A3761E8F88AF00D14233 /* Support Files */,
 			);
 			path = LoginTests;
 			sourceTree = "<group>";
@@ -250,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B981A3701E8F886E00D14233 /* LoginUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +282,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9B20F061E83748F000E7E44 /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
