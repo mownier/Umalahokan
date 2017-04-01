@@ -14,6 +14,10 @@ class FIRDataSnapshotMock: FIRDataSnapshot {
     var childDictionary = [String: Any]()
     var childKey: String = ""
     
+    override var value: Any? {
+        return childDictionary[childKey]
+    }
+    
     override func exists() -> Bool {
         return isExisting
     }
@@ -27,7 +31,9 @@ class FIRDataSnapshotMock: FIRDataSnapshot {
         return self
     }
     
-    override var value: Any? {
-        return childDictionary[childKey]
+    override func hasChild(_ keyPath: String) -> Bool {
+        return childDictionary.contains(where: { (key, value) -> Bool in
+            return key == keyPath
+        })
     }
 }

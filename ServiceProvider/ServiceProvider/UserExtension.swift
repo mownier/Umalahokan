@@ -19,9 +19,20 @@ extension User: DataSnapshotParser {
     public mutating func parse(data: FIRDataSnapshot, exceptions: String...) {
         guard data.exists() else { return  }
         
-        id = data.getValue("id", exceptions) ?? ""
-        userName = data.getValue("user_name", exceptions) ?? ""
-        firstName = data.getValue("first_name", exceptions) ?? ""
-        lastName = data.getValue("last_name", exceptions) ?? ""
+        if !exceptions.contains("id") {
+            id = data.getValue("id") ?? ""
+        }
+        
+        if !exceptions.contains("user_name") {
+            userName = data.getValue("user_name") ?? ""
+        }
+        
+        if !exceptions.contains("first_name") {
+            firstName = data.getValue("first_name") ?? ""
+        }
+        
+        if !exceptions.contains("last_name") {
+            lastName = data.getValue("last_name") ?? ""
+        }
     }
 }

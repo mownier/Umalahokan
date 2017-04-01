@@ -10,9 +10,8 @@ import Firebase
 
 public extension FIRDataSnapshot {
     
-    public func getValue<T>(_ key: String, _ exceptions: [String]) -> T? {
-        guard !exceptions.contains(key), hasChild(key),
-            let child = childSnapshot(forPath: key).value as? T else {
+    public func getValue<T>(_ key: String) -> T? {
+        guard hasChild(key), let child = childSnapshot(forPath: key).value as? T else {
             return nil
         }
         

@@ -12,6 +12,7 @@
 		B970BFDA1E8DF615009F010D /* DatabaseAccessErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B970BFD91E8DF615009F010D /* DatabaseAccessErrorTest.swift */; };
 		B970BFDC1E8E06E5009F010D /* CredentialList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B970BFDB1E8E06E5009F010D /* CredentialList.swift */; };
 		B970BFDF1E8E0751009F010D /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B970BFDE1E8E0751009F010D /* UserList.swift */; };
+		B981A3581E8F6D3500D14233 /* FIRDataSnapshotExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981A3571E8F6D3500D14233 /* FIRDataSnapshotExtensionTest.swift */; };
 		B98299951E88FB3900624644 /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299941E88FB3900624644 /* UserExtension.swift */; };
 		B98299981E88FB7000624644 /* AuthServiceErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299971E88FB7000624644 /* AuthServiceErrorExtension.swift */; };
 		B982999A1E88FB8F00624644 /* FIRDataSnapshotExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */; };
@@ -65,6 +66,7 @@
 		B970BFD91E8DF615009F010D /* DatabaseAccessErrorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccessErrorTest.swift; sourceTree = "<group>"; };
 		B970BFDB1E8E06E5009F010D /* CredentialList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialList.swift; sourceTree = "<group>"; };
 		B970BFDE1E8E0751009F010D /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		B981A3571E8F6D3500D14233 /* FIRDataSnapshotExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRDataSnapshotExtensionTest.swift; sourceTree = "<group>"; };
 		B98299941E88FB3900624644 /* UserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
 		B98299971E88FB7000624644 /* AuthServiceErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServiceErrorExtension.swift; sourceTree = "<group>"; };
 		B98299991E88FB8F00624644 /* FIRDataSnapshotExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRDataSnapshotExtension.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				B9BB81691E8B5D3400A95E8E /* AuthServiceErrorExtensionTest.swift */,
+				B981A3571E8F6D3500D14233 /* FIRDataSnapshotExtensionTest.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				B970BFDF1E8E0751009F010D /* UserList.swift in Sources */,
 				B9BB81741E8B8EA100A95E8E /* FIRAuthMock.swift in Sources */,
 				B9CDDDFB1E8CC8B4004B0AD0 /* FIRUserMock.swift in Sources */,
+				B981A3581E8F6D3500D14233 /* FIRDataSnapshotExtensionTest.swift in Sources */,
 				B9BB816E1E8B7CA100A95E8E /* RemoteDatabaseSourceMock.swift in Sources */,
 				B970BFDC1E8E06E5009F010D /* CredentialList.swift in Sources */,
 				B970BFDA1E8DF615009F010D /* DatabaseAccessErrorTest.swift in Sources */,
