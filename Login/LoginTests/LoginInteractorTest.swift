@@ -35,10 +35,6 @@ class LoginInteractorTest: XCTestCase {
             }
             expectation1.fulfill()
         }
-        output.loginWithDataBlock = { data in
-            XCTFail()
-            expectation1.fulfill()
-        }
         interactor.output = output
         interactor.login(email: "you@you.com", password: "me12345")
         waitForExpectations(timeout: timeout)

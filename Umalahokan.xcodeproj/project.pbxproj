@@ -636,7 +636,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UmalahokanApp-Umalahokan/Pods-UmalahokanApp-Umalahokan-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Umalahokan/Pods-Umalahokan-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6E2ED8E84EE4E0AA12DEF3CD /* [CP] Embed Pods Frameworks */ = {
@@ -666,7 +666,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UmalahokanApp-Umalahokan/Pods-UmalahokanApp-Umalahokan-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Umalahokan/Pods-Umalahokan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		810DE35FDD92E36F3226B28F /* [CP] Check Pods Manifest.lock */ = {
@@ -940,7 +940,7 @@
 		};
 		B9086ED61E3EEFFB003AECC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BD6FD7F82158478E0A1A0AE /* Pods-UmalahokanApp-Umalahokan.debug.xcconfig */;
+			baseConfigurationReference = 989E523D15A79A933EB5BAC9 /* Pods-Umalahokan.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -955,7 +955,7 @@
 		};
 		B9086ED71E3EEFFB003AECC4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A052D57493A2EEE877CF0B0A /* Pods-UmalahokanApp-Umalahokan.release.xcconfig */;
+			baseConfigurationReference = 9811A91BEDB2340C91D3DE78 /* Pods-Umalahokan.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
