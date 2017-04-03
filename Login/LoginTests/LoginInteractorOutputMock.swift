@@ -11,14 +11,14 @@ import Login
 
 class LoginInteractorOutputMock: LoginInteractorOutput {
 
-    var loginWithErrorBlock: ((AuthServiceError) -> Void)?
-    var loginWithDataBlock: ((AuthServiceData) -> Void)?
+    var error: AuthServiceError?
+    var data: AuthServiceData?
     
-    func didLogin(error: AuthServiceError) {
-        loginWithErrorBlock?(error)
+    func didLogin(error serviceError: AuthServiceError) {
+        error = serviceError
     }
     
-    func didLogin(data: AuthServiceData) {
-        loginWithDataBlock?(data)
+    func didLogin(data serviceData: AuthServiceData) {
+        data = serviceData
     }
 }

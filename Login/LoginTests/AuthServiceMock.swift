@@ -10,11 +10,30 @@ import Core
 
 class AuthServiceMock: AuthService {
     
-    let queue = DispatchQueue(label: "AuthServiceMock")
+    let credentials = credentialList
+    let users = userList
     
     func login(email: String, password: String, completion: ((AuthServiceResult) -> Void)?) {
-        queue.async {
-            completion?(.fail(.userNotFound))
+        let credential = Credential(email: email, password: password)
+        let isCredentialMatched = credentials.contains(credential)
+        if isCredentialMatched {
+            let userId = userIdForEmail(email)
+            let userIndex = users.index(where: { user -> Bool in
+                return user.id == userId
+            })!
+            var data = AuthServiceData()
+            data.accessToken = "accessToken"
+            data.user = users[userIndex]
+            completion?(.success(data))
+        } else {
+            let isEmailFound = credentials.contains(where: { credential -> Bool in
+                return credential.email == email
+            })
+            if isEmailFound {
+                completion?(.fail(.wrongPassword))
+            } else {
+                completion?(.fail(.userNotFound))
+            }
         }
     }
     
