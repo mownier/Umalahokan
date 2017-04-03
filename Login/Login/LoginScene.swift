@@ -10,5 +10,8 @@ import Viper
 
 public protocol LoginScene: Scene {
 
+    var presenter: LoginArbiter! { set get }
+    var isShowingLoadView: Bool { set get }
+    
     func showLoginError(message: String)
 }
