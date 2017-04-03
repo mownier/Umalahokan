@@ -28,8 +28,14 @@ class LoginPresenterTest: XCTestCase {
         interactor.output = presenter
         presenter.interactor = interactor
         presenter.scene = scene
+        service.beforeExecution = { () -> Void in
+            XCTAssertTrue(scene.isShowingLoadView)
+        }
+        service.afterExecution = { () -> Void in
+            XCTAssertFalse(scene.isShowingLoadView)
+            XCTAssertNil(scene.errorMessage)
+        }
         presenter.login(email: "me@me.com", password: "abcde12345qwert")
-        XCTAssertFalse(scene.isShowingLoadView)
-        XCTAssertNil(scene.errorMessage)
+        
     }
 }

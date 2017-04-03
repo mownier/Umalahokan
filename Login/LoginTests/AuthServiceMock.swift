@@ -12,8 +12,12 @@ class AuthServiceMock: AuthService {
     
     let credentials = credentialList
     let users = userList
+    var beforeExecution: (() -> Void)?
+    var afterExecution: (() -> Void)?
     
     func login(email: String, password: String, completion: ((AuthServiceResult) -> Void)?) {
+        beforeExecution?()
+        
         let credential = Credential(email: email, password: password)
         let isCredentialMatched = credentials.contains(credential)
         if isCredentialMatched {
@@ -35,6 +39,8 @@ class AuthServiceMock: AuthService {
                 completion?(.fail(.userNotFound))
             }
         }
+        
+        afterExecution?()
     }
     
     func register(email: String, password: String, completion: ((AuthServiceResult) -> Void)?) {
