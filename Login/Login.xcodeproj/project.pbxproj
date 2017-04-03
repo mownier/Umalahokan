@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B94435D81E91FB87006A0D1E /* CredentialList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435D71E91FB87006A0D1E /* CredentialList.swift */; };
+		B94435DA1E91FB99006A0D1E /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435D91E91FB99006A0D1E /* UserList.swift */; };
+		B94435DD1E91FDAC006A0D1E /* FIRDataSnapshotMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435DC1E91FDAC006A0D1E /* FIRDataSnapshotMock.swift */; };
+		B94435DF1E921538006A0D1E /* LoginWireframeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435DE1E921538006A0D1E /* LoginWireframeTest.swift */; };
+		B94435E11E921638006A0D1E /* LoginWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435E01E921638006A0D1E /* LoginWireframe.swift */; };
+		B94435E51E9231E6006A0D1E /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435E41E9231E6006A0D1E /* LoginScene.swift */; };
 		B981A37C1E8F8CC200D14233 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B981A37A1E8F8CC200D14233 /* Core.framework */; };
 		B981A37D1E8F8CC200D14233 /* ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B981A37B1E8F8CC200D14233 /* ServiceProvider.framework */; };
 		B981A37F1E8F8CD800D14233 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981A37E1E8F8CD800D14233 /* LoginInteractor.swift */; };
@@ -44,6 +50,12 @@
 		8DAC452A953F04A8E7938E24 /* Pods-UmalahokanApp-UmalahokanComponent-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-UmalahokanComponent-Login.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-UmalahokanComponent-Login/Pods-UmalahokanApp-UmalahokanComponent-Login.debug.xcconfig"; sourceTree = "<group>"; };
 		9D74836595941A8B47AA90BC /* Pods_LoginUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C9995FFE4847C4B2D41B29 /* Pods_UmalahokanComponent_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanComponent_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B94435D71E91FB87006A0D1E /* CredentialList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CredentialList.swift; path = ../../ServiceProvider/ServiceProviderTests/CredentialList.swift; sourceTree = "<group>"; };
+		B94435D91E91FB99006A0D1E /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserList.swift; path = ../../ServiceProvider/ServiceProviderTests/UserList.swift; sourceTree = "<group>"; };
+		B94435DC1E91FDAC006A0D1E /* FIRDataSnapshotMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIRDataSnapshotMock.swift; path = ../../ServiceProvider/ServiceProviderTests/FIRDataSnapshotMock.swift; sourceTree = "<group>"; };
+		B94435DE1E921538006A0D1E /* LoginWireframeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireframeTest.swift; sourceTree = "<group>"; };
+		B94435E01E921638006A0D1E /* LoginWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireframe.swift; sourceTree = "<group>"; };
+		B94435E41E9231E6006A0D1E /* LoginScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
 		B981A37A1E8F8CC200D14233 /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Umalahokan-fugcbvoipmqliwfxmepdglekpjqz/Build/Products/Debug-iphonesimulator/Core.framework"; sourceTree = "<group>"; };
 		B981A37B1E8F8CC200D14233 /* ServiceProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceProvider.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Umalahokan-fugcbvoipmqliwfxmepdglekpjqz/Build/Products/Debug-iphonesimulator/ServiceProvider.framework"; sourceTree = "<group>"; };
 		B981A37E1E8F8CD800D14233 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -84,6 +96,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B94435DB1E91FBA4006A0D1E /* List */ = {
+			isa = PBXGroup;
+			children = (
+				B94435D91E91FB99006A0D1E /* UserList.swift */,
+				B94435D71E91FB87006A0D1E /* CredentialList.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		B94435E21E92163B006A0D1E /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				B94435E01E921638006A0D1E /* LoginWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		B94435E31E922F31006A0D1E /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				B94435DE1E921538006A0D1E /* LoginWireframeTest.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		B94435E61E9231EA006A0D1E /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				B94435E41E9231E6006A0D1E /* LoginScene.swift */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
 		B981A3751E8F889300D14233 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +165,10 @@
 		B981A3861E8F8FA400D14233 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				B94435DC1E91FDAC006A0D1E /* FIRDataSnapshotMock.swift */,
 				B981A3841E8F8FA200D14233 /* AuthServiceMock.swift */,
 				B981A3871E8F937A00D14233 /* LoginInteractorOutputMock.swift */,
+				B94435DB1E91FBA4006A0D1E /* List */,
 			);
 			name = Mock;
 			sourceTree = "<group>";
@@ -150,7 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				B981A3801E8F8CE100D14233 /* Interactor */,
+				B94435E61E9231EA006A0D1E /* Scene */,
 				B981A3751E8F889300D14233 /* Support Files */,
+				B94435E21E92163B006A0D1E /* Wireframe */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -161,6 +210,7 @@
 				B981A3831E8F8E5700D14233 /* Interactor */,
 				B981A3861E8F8FA400D14233 /* Mock */,
 				B981A3761E8F88AF00D14233 /* Support Files */,
+				B94435E31E922F31006A0D1E /* Wireframe */,
 			);
 			path = LoginTests;
 			sourceTree = "<group>";
@@ -396,6 +446,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94435E11E921638006A0D1E /* LoginWireframe.swift in Sources */,
+				B94435E51E9231E6006A0D1E /* LoginScene.swift in Sources */,
 				B981A37F1E8F8CD800D14233 /* LoginInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,9 +456,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94435DF1E921538006A0D1E /* LoginWireframeTest.swift in Sources */,
+				B94435DA1E91FB99006A0D1E /* UserList.swift in Sources */,
 				B981A3821E8F8E5000D14233 /* LoginInteractorTest.swift in Sources */,
 				B981A3851E8F8FA200D14233 /* AuthServiceMock.swift in Sources */,
+				B94435D81E91FB87006A0D1E /* CredentialList.swift in Sources */,
 				B981A3881E8F937A00D14233 /* LoginInteractorOutputMock.swift in Sources */,
+				B94435DD1E91FDAC006A0D1E /* FIRDataSnapshotMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
