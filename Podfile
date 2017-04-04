@@ -16,7 +16,7 @@ def util_pods
 end
 
 def viper_pods
-    pod 'Viper', :git => 'https://github.com/mownier/viper.git', :tag => '1.1'
+    pod 'Viper', :git => 'https://github.com/mownier/viper.git', :tag => '1.1.1'
 end
 
 target 'Umalahokan' do
