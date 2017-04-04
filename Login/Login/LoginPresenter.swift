@@ -19,9 +19,6 @@ public class LoginPresenter: Presenter, Interactable {
     public var wireframe: Wireframe!
     public var interactor: LoginInteractorInput!
     
-    weak var arbiter: LoginArbiter!
-    weak var interactorOutput: LoginInteractorOutput!
-    
     init() {
         scene = nil
         wireframe = nil
