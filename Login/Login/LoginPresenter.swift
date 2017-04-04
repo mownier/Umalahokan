@@ -12,7 +12,6 @@ import Core
 public class LoginPresenter: Presenter, Interactable {
 
     public typealias ModuleScene = LoginScene
-    public typealias ModuleWireframe = Wireframe
     public typealias ModuleInteractor = LoginInteractorInput
     
     weak public var scene: LoginScene!
