@@ -43,12 +43,11 @@ extension LoginPresenter: LoginArbiter {
 
 extension LoginPresenter: LoginInteractorOutput {
     
-    public func didLogin(data: AuthServiceData) {
+    public func didLogin(error: AuthServiceError?) {
         scene.isShowingLoadView = false
-    }
-    
-    public func didLogin(error: AuthServiceError) {
-        scene.isShowingLoadView = false
-        scene.showLoginError(message: error.localizedDescription)
+        
+        if let message = error?.localizedDescription {
+            scene.showLoginError(message: message)
+        }
     }
 }

@@ -16,8 +16,7 @@ public protocol LoginInteractorInput: InteractorInput {
 
 public protocol LoginInteractorOutput: InteractorOutput {
     
-    func didLogin(error: AuthServiceError)
-    func didLogin(data: AuthServiceData)
+    func didLogin(error: AuthServiceError?)
 }
 
 public class LoginInteractor: Interactor {
@@ -41,7 +40,7 @@ extension LoginInteractor: LoginInteractorInput {
         authService.login(email: email, password: password) { [unowned self] result in
             switch result {
             case .fail(let error): self.output?.didLogin(error: error)
-            case .success(let data): self.output?.didLogin(data: data)
+            case .success: self.output?.didLogin(error: nil)
             }
         }
     }

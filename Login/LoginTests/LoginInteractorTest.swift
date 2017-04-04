@@ -30,11 +30,9 @@ class LoginInteractorTest: XCTestCase {
         interactor.output = output
         interactor.login(email: "me@me.com", password: "12345")
         XCTAssertEqual(output.error, .wrongPassword)
-        XCTAssertNil(output.data)
         
         interactor.login(email: "user@notfound.com", password: "12345")
         XCTAssertEqual(output.error, .userNotFound)
-        XCTAssertNil(output.data)
     }
     
     func testLoginHasASuccessResult() {
@@ -44,10 +42,5 @@ class LoginInteractorTest: XCTestCase {
         interactor.output = output
         interactor.login(email: "me@me.com", password: "abcde12345qwert")
         XCTAssertNil(output.error)
-        XCTAssertNotNil(output.data)
-        XCTAssertNotNil(output.data!.accessToken)
-        XCTAssertFalse(output.data!.accessToken!.isEmpty)
-        XCTAssertNotNil(output.data!.user)
-        XCTAssertFalse(output.data!.user!.id.isEmpty)
     }
 }
