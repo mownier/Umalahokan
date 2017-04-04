@@ -2,7 +2,7 @@
 //  AuthService.swift
 //  Core
 //
-//  Created waitForExpectations(timeout: timeout)waitForExpectations(timeout: timeout)by Mounir Ybanez on 23/03/2017.
+//  Created by Mounir Ybanez on 23/03/2017.
 //  Copyright © 2017 Ner. All rights reserved.
 //
 
