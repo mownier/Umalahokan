@@ -46,8 +46,17 @@ extension LoginPresenter: LoginInteractorOutput {
     public func didLogin(error: AuthServiceError?) {
         scene.isShowingLoadView = false
         
-        if let message = error?.localizedDescription {
-            scene.showLoginError(message: message)
+        guard let error = error else { return }
+        
+        let message: String
+        
+        switch error {
+        case .wrongPassword: message = "Password not correct"
+        case .invalidEmail : message = "Email format not valid"
+        case .userNotFound : message = "User not yet registered"
+        default            : message = "Something went wrong while signing in"
         }
+        
+        scene.showLoginError(message: message)
     }
 }

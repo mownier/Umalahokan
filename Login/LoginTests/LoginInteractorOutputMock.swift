@@ -12,7 +12,7 @@ import Login
 class LoginInteractorOutputMock: LoginInteractorOutput {
 
     var error: AuthServiceError?
-    
+
     func didLogin(error serviceError: AuthServiceError?) {
         error = serviceError
     }

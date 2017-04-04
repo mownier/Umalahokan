@@ -14,9 +14,16 @@ class AuthServiceMock: AuthService {
     let users = userList
     var beforeExecution: (() -> Void)?
     var afterExecution: (() -> Void)?
+    var expectedError: AuthServiceError?
     
     func login(email: String, password: String, completion: ((AuthServiceResult) -> Void)?) {
         beforeExecution?()
+        
+        guard expectedError == nil else {
+            completion?(.fail(expectedError!))
+            afterExecution?()
+            return
+        }
         
         let credential = Credential(email: email, password: password)
         let isCredentialMatched = credentials.contains(credential)
