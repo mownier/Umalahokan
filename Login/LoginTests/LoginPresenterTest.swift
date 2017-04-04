@@ -19,7 +19,7 @@ class LoginPresenterTest: XCTestCase {
         XCTAssertNil(presenter.interactor)
     }
     
-    func testLogin() {
+    func testLoginHasSucceeded() {
         let service = AuthServiceMock()
         let interactor = LoginInteractor(authService: service)!
         let presenter = LoginPresenter()
@@ -36,6 +36,25 @@ class LoginPresenterTest: XCTestCase {
             XCTAssertNil(scene.errorMessage)
         }
         presenter.login(email: "me@me.com", password: "abcde12345qwert")
-        
+    }
+    
+    func testLoginHasFailed() {
+        let service = AuthServiceMock()
+        let interactor = LoginInteractor(authService: service)!
+        let presenter = LoginPresenter()
+        let scene = LoginSceneMock()
+        scene.presenter = presenter
+        interactor.output = presenter
+        presenter.interactor = interactor
+        presenter.scene = scene
+        service.beforeExecution = { () -> Void in
+            XCTAssertTrue(scene.isShowingLoadView)
+        }
+        service.afterExecution = { () -> Void in
+            XCTAssertFalse(scene.isShowingLoadView)
+            XCTAssertNotNil(scene.errorMessage)
+            XCTAssertFalse(scene.errorMessage!.isEmpty)
+        }
+        presenter.login(email: "me@me.com", password: "12345")
     }
 }
