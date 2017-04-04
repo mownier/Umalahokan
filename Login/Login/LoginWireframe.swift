@@ -17,7 +17,7 @@ public class LoginWireframe: Wireframe {
     public var completion: (() -> Void)?
     public var animated: Bool
     
-    init() {
+    public init() {
         viewController = nil
         root = nil
         style = .root

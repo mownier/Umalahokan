@@ -182,4 +182,12 @@ class LoginPresenterTest: XCTestCase {
         }
         presenter.login(email: "me@me.com", password: "12345")
     }
+    
+    func testExit() {
+        let wireframe = LoginWireframeMock()
+        let presenter = LoginPresenter()
+        presenter.wireframe = wireframe
+        presenter.exit()
+        XCTAssertTrue(wireframe.isExited)
+    }
 }

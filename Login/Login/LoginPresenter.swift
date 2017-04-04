@@ -12,11 +12,11 @@ import Core
 public class LoginPresenter: Presenter, Interactable {
 
     public typealias ModuleScene = LoginScene
-    public typealias ModuleWireframe = LoginWireframe
+    public typealias ModuleWireframe = Wireframe
     public typealias ModuleInteractor = LoginInteractorInput
     
     weak public var scene: LoginScene!
-    public var wireframe: LoginWireframe!
+    public var wireframe: Wireframe!
     public var interactor: LoginInteractorInput!
     
     weak var arbiter: LoginArbiter!
