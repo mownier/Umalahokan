@@ -32,6 +32,14 @@ class AuthRemoteServiceTest: XCTestCase {
         access = RemoteDatabaseAccess(firebaseAuth: auth)
         service = AuthRemoteService(access: access, database: database)
         XCTAssertNotNil(service)
+        
+        FirebaseHelper.clearApp()
+        service = AuthRemoteService()
+        XCTAssertNil(service)
+        
+        FirebaseHelper.configureApp()
+        service = AuthRemoteService()
+        XCTAssertNotNil(service)
     }
     
     func testLoginHasErrorResultWithWrongPassword() {

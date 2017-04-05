@@ -21,6 +21,15 @@ public final class AuthRemoteService: AuthService {
         self.database = database!
     }
     
+    public convenience init?() {
+        guard FIRApp.defaultApp() != nil else { return nil }
+        
+        let access = RemoteDatabaseAccess(firebaseAuth: FIRAuth.auth())
+        let source = RemoteDatabaseSource(reference: FIRDatabase.database().reference())
+        let database = RemoteDatabase(source: source)
+        self.init(access: access, database: database)
+    }
+    
     public func login(email: String, password: String, completion: ((_ result: AuthServiceResult) -> Void)?) {
         access.login(email: email, password: password) { [unowned self] result in
             switch result {

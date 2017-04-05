@@ -159,10 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				B981A3801E8F8CE100D14233 /* Interactor */,
+				B94435F11E923537006A0D1E /* Module */,
 				B94435EB1E9233BD006A0D1E /* Presenter */,
 				B94435E61E9231EA006A0D1E /* Scene */,
 				B94435E21E92163B006A0D1E /* Wireframe */,
-				B94435F11E923537006A0D1E /* Module */,
 			);
 			name = Source;
 			sourceTree = "<group>";
