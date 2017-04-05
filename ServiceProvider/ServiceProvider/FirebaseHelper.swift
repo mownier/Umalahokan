@@ -6,18 +6,17 @@
 //  Copyright © 2017 Ner. All rights reserved.
 //
 
-import Core
 import Firebase
 
-class FirebaseHelper {
+final public class FirebaseHelper {
     
-    class func configureApp() {
+    public class func configureApp() {
         if FIRApp.defaultApp() == nil {
             FIRApp.configure()
         }
     }
     
-    class func clearApp() {
+    public class func clearApp() {
         guard let app = FIRApp.defaultApp() else { return }
         
         app.delete { _ in }
