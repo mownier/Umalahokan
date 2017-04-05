@@ -38,12 +38,20 @@ target 'Umalahokan' do
             inherit! :search_paths
         end
         
-        target 'Login' do
+        target 'UserInterface' do
             viper_pods
-            project 'Login/Login'
+            project 'UserInterface/UserInterface'
             
-            target 'LoginTests' do
+            target 'UserInterfaceTests' do
                 inherit! :search_paths
+            end
+            
+            target 'Login' do
+                project 'Login/Login'
+                
+                target 'LoginTests' do
+                    inherit! :search_paths
+                end
             end
         end
     end
