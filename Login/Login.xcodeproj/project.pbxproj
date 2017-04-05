@@ -17,6 +17,9 @@
 		B94435EA1E9233BA006A0D1E /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435E91E9233BA006A0D1E /* LoginPresenter.swift */; };
 		B94435F01E923533006A0D1E /* LoginArbiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435EF1E923533006A0D1E /* LoginArbiter.swift */; };
 		B94435F41E92389E006A0D1E /* LoginSceneMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435F31E92389E006A0D1E /* LoginSceneMock.swift */; };
+		B97DBEAB1E94BF9900E11124 /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97DBEAA1E94BF9900E11124 /* LoginModule.swift */; };
+		B97DBEAD1E94C0DF00E11124 /* LoginModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97DBEAC1E94C0DF00E11124 /* LoginModuleTest.swift */; };
+		B97DBEB61E94C68300E11124 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B97DBEB51E94C68300E11124 /* GoogleService-Info.plist */; };
 		B981A37C1E8F8CC200D14233 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B981A37A1E8F8CC200D14233 /* Core.framework */; };
 		B981A37D1E8F8CC200D14233 /* ServiceProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B981A37B1E8F8CC200D14233 /* ServiceProvider.framework */; };
 		B981A37F1E8F8CD800D14233 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981A37E1E8F8CD800D14233 /* LoginInteractor.swift */; };
@@ -65,6 +68,9 @@
 		B94435E91E9233BA006A0D1E /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		B94435EF1E923533006A0D1E /* LoginArbiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginArbiter.swift; sourceTree = "<group>"; };
 		B94435F31E92389E006A0D1E /* LoginSceneMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSceneMock.swift; sourceTree = "<group>"; };
+		B97DBEAA1E94BF9900E11124 /* LoginModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModule.swift; sourceTree = "<group>"; };
+		B97DBEAC1E94C0DF00E11124 /* LoginModuleTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModuleTest.swift; sourceTree = "<group>"; };
+		B97DBEB51E94C68300E11124 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Umalahokan/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B981A37A1E8F8CC200D14233 /* Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Core.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Umalahokan-fugcbvoipmqliwfxmepdglekpjqz/Build/Products/Debug-iphonesimulator/Core.framework"; sourceTree = "<group>"; };
 		B981A37B1E8F8CC200D14233 /* ServiceProvider.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceProvider.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Umalahokan-fugcbvoipmqliwfxmepdglekpjqz/Build/Products/Debug-iphonesimulator/ServiceProvider.framework"; sourceTree = "<group>"; };
 		B981A37E1E8F8CD800D14233 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
@@ -171,8 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				B981A3831E8F8E5700D14233 /* Interactor */,
-				B94435E31E922F31006A0D1E /* Wireframe */,
+				B97DBEAE1E94C0E400E11124 /* Module */,
 				B94435EC1E92345A006A0D1E /* Presenter */,
+				B94435E31E922F31006A0D1E /* Wireframe */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -181,6 +188,15 @@
 			isa = PBXGroup;
 			children = (
 				B94435EF1E923533006A0D1E /* LoginArbiter.swift */,
+				B97DBEAA1E94BF9900E11124 /* LoginModule.swift */,
+			);
+			name = Module;
+			sourceTree = "<group>";
+		};
+		B97DBEAE1E94C0E400E11124 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				B97DBEAC1E94C0DF00E11124 /* LoginModuleTest.swift */,
 			);
 			name = Module;
 			sourceTree = "<group>";
@@ -188,8 +204,9 @@
 		B981A3751E8F889300D14233 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B9B20EFA1E83748F000E7E44 /* Login.h */,
+				B97DBEB51E94C68300E11124 /* GoogleService-Info.plist */,
 				B9B20EFB1E83748F000E7E44 /* Info.plist */,
+				B9B20EFA1E83748F000E7E44 /* Login.h */,
 			);
 			name = "Support Files";
 			sourceTree = "<group>";
@@ -263,8 +280,8 @@
 		B9B20F041E83748F000E7E44 /* LoginTests */ = {
 			isa = PBXGroup;
 			children = (
-				B94435EE1E923470006A0D1E /* Source */,
 				B981A3861E8F8FA400D14233 /* Mock */,
+				B94435EE1E923470006A0D1E /* Source */,
 				B981A3761E8F88AF00D14233 /* Support Files */,
 			);
 			path = LoginTests;
@@ -406,6 +423,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B97DBEB61E94C68300E11124 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +524,7 @@
 				B94435E11E921638006A0D1E /* LoginWireframe.swift in Sources */,
 				B94435E51E9231E6006A0D1E /* LoginScene.swift in Sources */,
 				B981A37F1E8F8CD800D14233 /* LoginInteractor.swift in Sources */,
+				B97DBEAB1E94BF9900E11124 /* LoginModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +539,7 @@
 				B94435E81E923333006A0D1E /* LoginPresenterTest.swift in Sources */,
 				B94435D81E91FB87006A0D1E /* CredentialList.swift in Sources */,
 				B9A8DDE41E936E2B00172C58 /* LoginWireframeMock.swift in Sources */,
+				B97DBEAD1E94C0DF00E11124 /* LoginModuleTest.swift in Sources */,
 				B981A3881E8F937A00D14233 /* LoginInteractorOutputMock.swift in Sources */,
 				B94435DD1E91FDAC006A0D1E /* FIRDataSnapshotMock.swift in Sources */,
 				B94435F41E92389E006A0D1E /* LoginSceneMock.swift in Sources */,
