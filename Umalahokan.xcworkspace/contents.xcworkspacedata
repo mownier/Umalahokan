@@ -13,6 +13,9 @@
       <FileRef
          location = "group:ServiceProvider/ServiceProvider.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:UserInterface/UserInterface.xcodeproj">
+      </FileRef>
    </Group>
    <FileRef
       location = "group:Umalahokan.xcodeproj">

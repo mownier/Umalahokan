@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		928F12F7E0701EC13AFBB5B4 /* Pods_Umalahokan_ServiceProvider_UserInterface_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E11D4540825DECDE3C1A1E /* Pods_Umalahokan_ServiceProvider_UserInterface_Login.framework */; };
 		B94435D81E91FB87006A0D1E /* CredentialList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435D71E91FB87006A0D1E /* CredentialList.swift */; };
 		B94435DA1E91FB99006A0D1E /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435D91E91FB99006A0D1E /* UserList.swift */; };
 		B94435DD1E91FDAC006A0D1E /* FIRDataSnapshotMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94435DC1E91FDAC006A0D1E /* FIRDataSnapshotMock.swift */; };
@@ -45,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		02784D2C22597F58DA46D2F5 /* Pods-UmalahokanApp-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-Login.release.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-Login/Pods-UmalahokanApp-Login.release.xcconfig"; sourceTree = "<group>"; };
+		02AB06E049472EC389074BD4 /* Pods-Umalahokan-ServiceProvider-UserInterface-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umalahokan-ServiceProvider-UserInterface-Login.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Umalahokan-ServiceProvider-UserInterface-Login/Pods-Umalahokan-ServiceProvider-UserInterface-Login.release.xcconfig"; sourceTree = "<group>"; };
+		08E11D4540825DECDE3C1A1E /* Pods_Umalahokan_ServiceProvider_UserInterface_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Umalahokan_ServiceProvider_UserInterface_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1612C1D9E351C61EC2057683 /* Pods-UmalahokanComponent-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanComponent-Login.release.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanComponent-Login/Pods-UmalahokanComponent-Login.release.xcconfig"; sourceTree = "<group>"; };
 		2C96EBFF67A7520DC0B24B29 /* Pods-UmalahokanApp-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmalahokanApp-Login.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-UmalahokanApp-Login/Pods-UmalahokanApp-Login.debug.xcconfig"; sourceTree = "<group>"; };
 		3706B29BB427CDC9BB042DFE /* Pods_UmalahokanApp_UmalahokanComponent_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmalahokanApp_UmalahokanComponent_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +86,7 @@
 		B9B20EFB1E83748F000E7E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9B20F001E83748F000E7E44 /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B20F071E83748F000E7E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2F487EC0ECC47D50FD86A6A /* Pods-Umalahokan-ServiceProvider-UserInterface-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umalahokan-ServiceProvider-UserInterface-Login.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Umalahokan-ServiceProvider-UserInterface-Login/Pods-Umalahokan-ServiceProvider-UserInterface-Login.debug.xcconfig"; sourceTree = "<group>"; };
 		C8CCD7753A84A0832E0FED73 /* Pods-LoginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LoginTests/Pods-LoginTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E219B9E50BF6D791EC5C9CA7 /* Pods-LoginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-LoginTests/Pods-LoginTests.release.xcconfig"; sourceTree = "<group>"; };
 		E4138AA9D784B0228B6A36EE /* Pods-LoginUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginUITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-LoginUITests/Pods-LoginUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				B981A37C1E8F8CC200D14233 /* Core.framework in Frameworks */,
 				B981A37D1E8F8CC200D14233 /* ServiceProvider.framework in Frameworks */,
 				D9FCE6DA122BB32D6416D75D /* Pods_Umalahokan_ServiceProvider_Login.framework in Frameworks */,
+				928F12F7E0701EC13AFBB5B4 /* Pods_Umalahokan_ServiceProvider_UserInterface_Login.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +307,8 @@
 				02784D2C22597F58DA46D2F5 /* Pods-UmalahokanApp-Login.release.xcconfig */,
 				4D136CB1CA7C2F669AF63EC6 /* Pods-Umalahokan-ServiceProvider-Login.debug.xcconfig */,
 				7DEE12C5DF6A959F8780E57D /* Pods-Umalahokan-ServiceProvider-Login.release.xcconfig */,
+				C2F487EC0ECC47D50FD86A6A /* Pods-Umalahokan-ServiceProvider-UserInterface-Login.debug.xcconfig */,
+				02AB06E049472EC389074BD4 /* Pods-Umalahokan-ServiceProvider-UserInterface-Login.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -317,6 +324,7 @@
 				3706B29BB427CDC9BB042DFE /* Pods_UmalahokanApp_UmalahokanComponent_Login.framework */,
 				60A37DF0EE6C6CF9B059BA61 /* Pods_UmalahokanApp_Login.framework */,
 				41A55CC9896FAD3DFF42C414 /* Pods_Umalahokan_ServiceProvider_Login.framework */,
+				08E11D4540825DECDE3C1A1E /* Pods_Umalahokan_ServiceProvider_UserInterface_Login.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -479,7 +487,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Umalahokan-ServiceProvider-Login/Pods-Umalahokan-ServiceProvider-Login-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Umalahokan-ServiceProvider-UserInterface-Login/Pods-Umalahokan-ServiceProvider-UserInterface-Login-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7CD7FCEA5DE9D35981540182 /* [CP] Check Pods Manifest.lock */ = {
@@ -660,7 +668,7 @@
 		};
 		B9B20F0C1E83748F000E7E44 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D136CB1CA7C2F669AF63EC6 /* Pods-Umalahokan-ServiceProvider-Login.debug.xcconfig */;
+			baseConfigurationReference = C2F487EC0ECC47D50FD86A6A /* Pods-Umalahokan-ServiceProvider-UserInterface-Login.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -682,7 +690,7 @@
 		};
 		B9B20F0D1E83748F000E7E44 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DEE12C5DF6A959F8780E57D /* Pods-Umalahokan-ServiceProvider-Login.release.xcconfig */;
+			baseConfigurationReference = 02AB06E049472EC389074BD4 /* Pods-Umalahokan-ServiceProvider-UserInterface-Login.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
