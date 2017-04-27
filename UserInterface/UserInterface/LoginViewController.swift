@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Viper
 import Login
 
 public class LoginViewController: UIViewController  {
@@ -39,12 +38,17 @@ public class LoginViewController: UIViewController  {
 }
 
 extension LoginViewController: LoginScene {
-
-    public func setupArbiter<T : Arbiter>(_ arbiter: T) {
-        presenter = arbiter as! LoginArbiter
-    }
     
     public func showLoginError(message: String) {
         
+    }
+}
+
+extension LoginModule {
+    
+    public convenience init() {
+        let vc = LoginViewController()
+        self.init(scene: vc)
+        vc.presenter = self.presenter
     }
 }
