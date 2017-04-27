@@ -7,14 +7,9 @@
 //
 
 import UIKit
+import Core
 
-enum Mood {
-
-    case relaxed
-    case romantic
-    case neutral
-    case curious
-    case happy
+extension Mood {
     
     var text: String {
         switch self {
