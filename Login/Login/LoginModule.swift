@@ -32,6 +32,5 @@ public class LoginModule: Module, Interactable {
         presenter.wireframe = wireframe
         presenter.interactor = interactor
         interactor.output = presenter
-        scene.setupArbiter(presenter)
     }
 }
