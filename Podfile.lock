@@ -40,7 +40,7 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
   - Kingfisher (3.1.1)
-  - Viper (1.1.2)
+  - Viper (1.1.1)
 
 DEPENDENCIES:
   - DateTools
@@ -48,7 +48,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - Kingfisher (from `https://github.com/onevcat/Kingfisher.git`, tag `3.1.1`)
-  - Viper (from `https://github.com/mownier/viper.git`, tag `1.1.2`)
+  - Viper (from `https://github.com/mownier/viper.git`, tag `1.1.1`)
 
 EXTERNAL SOURCES:
   Kingfisher:
@@ -56,7 +56,7 @@ EXTERNAL SOURCES:
     :tag: 3.1.1
   Viper:
     :git: https://github.com/mownier/viper.git
-    :tag: 1.1.2
+    :tag: 1.1.1
 
 CHECKOUT OPTIONS:
   Kingfisher:
@@ -64,7 +64,7 @@ CHECKOUT OPTIONS:
     :tag: 3.1.1
   Viper:
     :git: https://github.com/mownier/viper.git
-    :tag: 1.1.2
+    :tag: 1.1.1
 
 SPEC CHECKSUMS:
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
@@ -78,8 +78,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
-  Viper: dfa1d085707788d91e09f037aae65da21a28b5f2
+  Viper: a6b0a486e22f99a716ef00db4c09a7802f6bae9a
 
-PODFILE CHECKSUM: 6579dd4434837dcfb284dd1fe4e1660548caf0a6
+PODFILE CHECKSUM: 35a73300ae6df610f3bf6117905f15d0603e1624
 
 COCOAPODS: 1.2.0
