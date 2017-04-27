@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2CA1CF1174392E1FDB70D8F9 /* Pods_Umalahokan_ServiceProvider_UserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 854A95945FE8DFC235176BC7 /* Pods_Umalahokan_ServiceProvider_UserInterface.framework */; };
 		8013CC0E194496E999308E9A /* Pods_UserInterfaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A453FB95E74FB95F305CE27 /* Pods_UserInterfaceTests.framework */; };
+		B93103EA1EB1C60A00780F5A /* LoginModuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93103E91EB1C60A00780F5A /* LoginModuleTest.swift */; };
 		B9CEFD421E94D03400397D61 /* UserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CEFD381E94D03400397D61 /* UserInterface.framework */; };
 		B9CEFD491E94D03400397D61 /* UserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CEFD3B1E94D03400397D61 /* UserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9CEFD541E94D05900397D61 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CEFD531E94D05900397D61 /* LoginViewController.swift */; };
@@ -34,6 +35,7 @@
 		854A95945FE8DFC235176BC7 /* Pods_Umalahokan_ServiceProvider_UserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Umalahokan_ServiceProvider_UserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A453FB95E74FB95F305CE27 /* Pods_UserInterfaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserInterfaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B013B0EEE0A0D4D44975C842 /* Pods-Umalahokan-UserInterface.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umalahokan-UserInterface.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Umalahokan-UserInterface/Pods-Umalahokan-UserInterface.debug.xcconfig"; sourceTree = "<group>"; };
+		B93103E91EB1C60A00780F5A /* LoginModuleTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModuleTest.swift; sourceTree = "<group>"; };
 		B9CEFD381E94D03400397D61 /* UserInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9CEFD3B1E94D03400397D61 /* UserInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInterface.h; sourceTree = "<group>"; };
 		B9CEFD3C1E94D03400397D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		B9CEFD5C1E94D5B000397D61 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				B93103E91EB1C60A00780F5A /* LoginModuleTest.swift */,
 				B9CEFD5A1E94D5AB00397D61 /* LoginViewControllerTest.swift */,
 			);
 			name = Login;
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9CEFD5B1E94D5AB00397D61 /* LoginViewControllerTest.swift in Sources */,
+				B93103EA1EB1C60A00780F5A /* LoginModuleTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
