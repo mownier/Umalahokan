@@ -1,13 +1,12 @@
 //
-//  Mood.swift
+//  MoodExtension.swift
 //  Umalahokan
 //
-//  Created by Mounir Ybanez on 18/03/2017.
+//  Created by Mounir Ybanez on 05/05/2017.
 //  Copyright © 2017 Ner. All rights reserved.
 //
 
 import UIKit
-import Core
 
 extension Mood {
     

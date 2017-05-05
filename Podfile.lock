@@ -1,30 +1,31 @@
 PODS:
   - DateTools (2.0.0)
-  - Firebase/Auth (3.15.0):
+  - Firebase/Auth (3.17.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
-  - Firebase/Core (3.15.0):
-    - FirebaseAnalytics (= 3.7.0)
-    - FirebaseCore (= 3.5.2)
-  - Firebase/Database (3.15.0):
+  - Firebase/Core (3.17.0):
+    - FirebaseAnalytics (= 3.9.0)
+    - FirebaseCore (= 3.6.0)
+  - Firebase/Database (3.17.0):
     - Firebase/Core
     - FirebaseDatabase (= 3.1.2)
-  - Firebase/Storage (3.15.0):
+  - Firebase/Storage (3.17.0):
     - Firebase/Core
     - FirebaseStorage (= 1.1.0)
-  - FirebaseAnalytics (3.7.0):
-    - FirebaseCore (~> 3.5)
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseAuth (3.1.1):
     - FirebaseAnalytics (~> 3.7)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (3.5.2):
+  - FirebaseCore (3.6.0):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseDatabase (3.1.2):
     - FirebaseAnalytics (~> 3.7)
-  - FirebaseInstanceID (1.0.9)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
   - FirebaseStorage (1.1.0):
     - FirebaseAnalytics (~> 3.7)
     - GTMSessionFetcher/Core (~> 1.1)
@@ -39,7 +40,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
-  - Kingfisher (3.1.1)
+  - Kingfisher (3.6.2)
   - Viper (1.1.1)
 
 DEPENDENCIES:
@@ -47,39 +48,33 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
-  - Kingfisher (from `https://github.com/onevcat/Kingfisher.git`, tag `3.1.1`)
+  - Kingfisher
   - Viper (from `https://github.com/mownier/viper.git`, tag `1.1.1`)
 
 EXTERNAL SOURCES:
-  Kingfisher:
-    :git: https://github.com/onevcat/Kingfisher.git
-    :tag: 3.1.1
   Viper:
     :git: https://github.com/mownier/viper.git
     :tag: 1.1.1
 
 CHECKOUT OPTIONS:
-  Kingfisher:
-    :git: https://github.com/onevcat/Kingfisher.git
-    :tag: 3.1.1
   Viper:
     :git: https://github.com/mownier/viper.git
     :tag: 1.1.1
 
 SPEC CHECKSUMS:
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
-  Firebase: 2b1cdfba1cda8589f32904a697cc753322bff9d8
-  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
+  Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
-  FirebaseCore: a024587e43778508700af8c6b1209f7c4516ba02
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
   FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
-  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
-  Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
+  Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
   Viper: a6b0a486e22f99a716ef00db4c09a7802f6bae9a
 
-PODFILE CHECKSUM: 35a73300ae6df610f3bf6117905f15d0603e1624
+PODFILE CHECKSUM: 061cc3eb7bb914e203cbb641ccc4c6d5b44dedfc
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <Group
-      location = "container:"
-      name = "Modules">
-      <FileRef
-         location = "group:Core/Core.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Login/Login.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:ServiceProvider/ServiceProvider.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:UserInterface/UserInterface.xcodeproj">
-      </FileRef>
-   </Group>
    <FileRef
       location = "group:Umalahokan.xcodeproj">
    </FileRef>

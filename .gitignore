@@ -2,6 +2,7 @@
 
 GoogleService-Info.plist
 *.gpx
+Modules/
 
 # Xcode
 #
@@ -28,6 +29,8 @@ xcuserdata/
 ## Other
 *.moved-aside
 *.xcuserstate
+*.xccheckout
+*.xcscmblueprint
 
 ## Obj-C/Swift specific
 *.hmap
